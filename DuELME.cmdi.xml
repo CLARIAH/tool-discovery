@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF8'?>
+<CMD xmlns="http://www.clarin.eu/cmd/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" CMDVersion="1.1" xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1342181139640/xsd ">
+   <Header>
+      <MdCreator>rogierkraf</MdCreator>
+      <MdCreationDate>2013-11-30+02:00</MdCreationDate>
+      <MdProfile>clarin.eu:cr1:p_1342181139640</MdProfile>
+      <MdCollectionDisplayName>CLARIN Netherlands</MdCollectionDisplayName>
+   </Header>
+   <Resources>
+      <ResourceProxyList>
+        <ResourceProxy id="resource">
+          <ResourceType mimetype="text/html">Resource</ResourceType>
+          <ResourceRef>http://hdl.handle.net/10032/89511c6d452ec7110717d8b3fc359e4d</ResourceRef>
+	</ResourceProxy>
+        <ResourceProxy id="SearchPage">
+          <ResourceType mimetype="text/html">SearchPage</ResourceType>
+          <ResourceRef>http://hdl.handle.net/10032/89511c6d452ec7110717d8b3fc359e4d</ResourceRef>
+	</ResourceProxy>
+      </ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <ClarinSoftwareDescription>
+         <GeneralInfo>
+            <name xml:lang="eng">DuELME LMF</name>
+            <title xml:lang="eng">DuELME: Search interface to the Dutch Electronic Lexicon of Multiword Expressions</title>
+            <owner>Dutch Language Union (Nederlandse Taalunie, NTU)</owner>
+            <publicationYear>2008</publicationYear>
+            <url>http://duelme.clarin.inl.nl/</url><CLARINCentre>Dutch Language Institute</CLARINCentre><OriginalSource>http://portal.clarin.nl/node/1916</OriginalSource>
+            <ReleaseStatus>
+               <LifeCycleStatus>published</LifeCycleStatus>
+               <lastUpdate>2010-08-18</lastUpdate>
+            </ReleaseStatus>
+            <NationalProjects><Project><name>CLARIN-NL</name><title>CLARIN in the Netherlands</title><id>184.021.003</id><funder>NWO</funder><url>http://www.clarin.nl</url><Contact><Person>Jan Odijk</Person><Role>National Coordinator</Role><Address>Utrecht, the Netherlands</Address><Email>j.odijk@uu.nl</Email><Department>UiL-OTS</Department><Organisation>Utrecht University</Organisation></Contact><Duration><StartYear>2009</StartYear><CompletionYear>2015</CompletionYear></Duration></Project></NationalProjects><Country><CountryName>Netherlands</CountryName><CountryCoding>NL</CountryCoding></Country><Description>
+				<Description>The DuELME search interface provides access to the DUELME electronic lexicon, which contains more than 5,000 Dutch multiword expressions (MWEs). MWEs with the same syntactic pattern are grouped in the same equivalence class. The search interface enables users to search for MWEs on the basis of a range of syntactic and semantic criteria, among them expression, pattern id, written form, type, conjugation, polarity, parameters, form, etc. Extensive documentation on the structure of the database is available. DuELME (Dutch Electronic Lexicon of Multiword Expressions) is one of the results of the project Identification and Representation of Multiword Expressions (IRME). The lexical descriptions boast to be highly theory- and implementation-neutral. The DUELME LMF lexicon is suitable for theoretical research on multiword expressions as for use in NLP systems. The DuELME-LMF project has been carried out within the CLARIN-NL programme.</Description>
+            </Description>
+         </GeneralInfo>
+         <SoftwareFunction>
+            <toolCategory>language resource</toolCategory>
+            <toolCategory>lexical resource</toolCategory>
+            <toolCategory>mono-lingual tool</toolCategory>
+            <toolCategory>written language tool</toolCategory>
+            <ToolTasks><toolTask>browsing</toolTask>
+            <toolTask>dictionary searching</toolTask>
+			</ToolTasks><ResearchPhases><ResearchPhase>Browsing and Searching</ResearchPhase></ResearchPhases><ResearchDomains>
+				<researchDomain>Linguistics</researchDomain>
+			</ResearchDomains>
+            <LinguisticsSubject>
+               <linguisticsSubject>lexicology</linguisticsSubject>
+				<Description>
+					<Description/>
+				</Description>
+            </LinguisticsSubject>
+            <LinguisticsSubject>
+               <linguisticsSubject>syntax</linguisticsSubject>
+				<Description>
+					<Description/>
+				</Description>
+            </LinguisticsSubject>
+            <LanguageVariety>
+               <languageDependent>yes</languageDependent>
+               <Language><LanguageName>Dutch</LanguageName><ISO639><iso-639-3-code>nld</iso-639-3-code></ISO639></Language><Centuries>
+					<centuryDependent>yes</centuryDependent>
+					<CenturyInterval>
+					   <centuryFrom>20</centuryFrom>
+					   <centuryThrough>21</centuryThrough>
+					</CenturyInterval>
+				</Centuries>
+            </LanguageVariety>
+         </SoftwareFunction>
+         <SoftwareImplementation>
+            <distributionMedium>Online available</distributionMedium>
+            <UserInterface>
+               <interfaceType>graphical user interface</interfaceType>
+               <applicationType>web application</applicationType>
+            </UserInterface>
+            <Input>
+               <inputType>text</inputType>
+            </Input>
+            <Output>
+               <outputType>text</outputType>
+               <MimeType>
+				   <MimeType>text/xml</MimeType>
+               </MimeType>
+            </Output>
+         </SoftwareImplementation>
+         <Access>
+            <ResourceLicense>
+               <license>unknown</license>
+               <distributionType>public</distributionType>
+               <Price>
+                  <amount>0</amount>
+                  <ISO4217>
+                     <iso-4217-currency>EUR</iso-4217-currency>
+                  </ISO4217>
+               </Price>
+            </ResourceLicense>
+            <Contact>
+               <Email>servicedesk@ivdnt.org</Email>
+               <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
+               <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
+               <Url>http://www.ivdnt.org/</Url>
+            </Contact>
+         </Access>
+         <ResourceDocumentation>
+            <Documentation>
+               <title>Manual</title>
+               <documentationTarget>user</documentationTarget>
+               <url>http://duelme.clarin.inl.nl/documentation.php</url>
+               <ISO639>
+                  <iso-639-3-code>eng</iso-639-3-code>
+               </ISO639>
+            </Documentation>
+            <Documentation>
+               <title>user documentation</title>
+               <documentationTarget>user</documentationTarget>
+               <url>http://www.ivdnt.org/images/stories/producten/duelme_lmf_documentation.zip</url>
+               <ISO639>
+                  <iso-639-3-code>eng</iso-639-3-code>
+               </ISO639>
+            </Documentation>
+		<Publication>
+		 <publicationCategory>PhD thesis</publicationCategory>
+		 <publicationPurpose>scientific background</publicationPurpose>
+		 <peerReviewStatus>yes</peerReviewStatus>
+		 <Description>
+		   <Description LanguageID="eng">Grégoire, N. (2009), Untangling Multiword Expressions. A study on the representation and variation of Dutch multiword expressions, PhD thesis, University of Utrecht. 
+		   </Description>
+		 </Description>
+		</Publication>
+         </ResourceDocumentation>
+         <SoftwareDevelopment>
+            <Project>
+               <name>DuELME-LMF</name>
+               <title>Dutch Electronic Lexicon of Multiword Expressions LMF</title>
+               <id>CLARIN-NL-09-008</id>
+               <funder>clarin-nl</funder>
+               <url>http://portal.clarin.nl/node/1916</url>
+               <Contact>
+		 <Person>prof.dr. J.E.J.M. Odijk</Person>
+                 <Email>j.odijk@uu.nl</Email>
+                 <Organisation>UiL-OTS, Utrecht University</Organisation>
+               </Contact>
+               <Duration/>
+            </Project>
+            <Creator>
+              <Role>Project leader</Role>
+              <Contact>
+		<Person>prof.dr. J.E.J.M. Odijk</Person>
+                <Email>j.odijk@uu.nl</Email>
+                <Organisation>Utrecht University</Organisation>
+              </Contact>
+            </Creator>
+                <Creator>
+                    <Role>Computational linguist</Role>
+                    <Contact>
+                        <Person>Nicole Gregoire</Person>
+			<Email/>
+                        <Organisation>UiL-OTS, University of Utrecht</Organisation>
+                    </Contact>
+                </Creator>
+         </SoftwareDevelopment>
+         <TechnicalInfo>
+            <ImplementationLanguage>
+               <implementationLanguage>PHP</implementationLanguage>
+               <version>unknown</version>
+            </ImplementationLanguage>
+         </TechnicalInfo>
+      </ClarinSoftwareDescription>
+   </Components>
+</CMD>

@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF8'?>
+<CMD xmlns="http://www.clarin.eu/cmd/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" CMDVersion="1.1" xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1342181139640/xsd ">
+   <Header>
+      <MdCreator>rogierkraf</MdCreator>
+      <MdCreationDate>2013-11-30+02:00</MdCreationDate>
+      <MdProfile>clarin.eu:cr1:p_1342181139640</MdProfile>
+   <MdCollectionDisplayName>CLARIN Netherlands</MdCollectionDisplayName></Header>
+   <Resources>
+	<ResourceProxyList>
+		<ResourceProxy id="ISOCAT001">
+			<ResourceType>Resource</ResourceType>
+			<ResourceRef>http://www.isocat.org/</ResourceRef>
+		</ResourceProxy>
+	</ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <ClarinSoftwareDescription>
+         <GeneralInfo>
+            <name xml:lang="eng">ISOcat</name>
+            <title xml:lang="eng">ISOcat</title>
+            <publicationYear>2012</publicationYear>
+            <url>http://www.isocat.org/</url><CLARINCentre>MPI for Psycholinguistics</CLARINCentre><OriginalSource>http://portal.clarin.nl/node/1955</OriginalSource>
+            <ReleaseStatus>
+               <LifeCycleStatus>retired</LifeCycleStatus>
+               <lastUpdate>2014-12-31</lastUpdate>
+            </ReleaseStatus>
+            <NationalProjects><Project><name>CLARIN-NL</name><title>CLARIN in the Netherlands</title><id>184.021.003</id><funder>NWO</funder><url>http://www.clarin.nl</url><Contact><Person>Jan Odijk</Person><Role>National Coordinator</Role><Address>Utrecht, the Netherlands</Address><Email>j.odijk@uu.nl</Email><Department>UiL-OTS</Department><Organisation>Utrecht University</Organisation></Contact><Duration><StartYear>2009</StartYear><CompletionYear>2015</CompletionYear></Duration></Project></NationalProjects><Country><CountryName>Netherlands</CountryName><CountryCoding>NL</CountryCoding></Country><Description>
+				<Description>This service is no longer operational! The ISO TC37 Data Category Registry (DCR) was created in 2008 as one of the first ISO standards delivered in the form of a database (ISOcat). The Max Planck Institute for Psycholinguistics (MPI) has provided development, hosting, and support services and acted as the Registration Authority (RA) until December 2014. For users from the European CLARIN research infrastructure, the Meertens Institute develops and hosts a new registry for CLARIN relevant concepts based on the corresponding ISOcat data categories, such as those used for the Component MetaData Infrastructure (CMDI). This can be found here: http://portal.clarin.nl/node/4216.
+				ISO 12620 provides a framework for defining data categories compliant with the ISO/IEC 11179 family of standards. According to this model, each data category is assigned a unique administrative identifier, together with information on the status or decision-making process associated with the data category. In addition, data category specifications in the DCR contain linguistic descriptions, such as data category definitions, statements of associated value domains, and examples. Data category specifications can be associated with a variety of data element names and with language-specific versions of definitions, names, value domains and other attributes. For now the entries of the Data Category Registry are still available in a static manner, i.e., can't be changed anymore. All Data Category Peristent IDentifiers, e.g., http://www.isocat.org/datcat/DC-4146 (link is external), remain resolvable. The public part of the registry can be browsed via the Guest workspace: http://www.isocat.org/rest/user/guest/workspace . new location for this data category registry is http://www.datcatinfo.net/ .</Description>
+            </Description>
+         </GeneralInfo>
+         <SoftwareFunction>
+            <toolCategory>misc tool</toolCategory>
+            <ToolTasks><toolTask>semantic registry and mapping</toolTask>
+			</ToolTasks><ResearchPhases><ResearchPhase>Publishing Data / Software</ResearchPhase></ResearchPhases><ResearchDomains>
+				<researchDomain>General</researchDomain>
+			</ResearchDomains>
+            <LanguageVariety>
+               <languageDependent>no</languageDependent>
+				<Centuries><centuryDependent>no</centuryDependent></Centuries>
+            </LanguageVariety>
+         </SoftwareFunction>
+         <SoftwareImplementation>
+            <distributionMedium>Online available</distributionMedium>
+            <UserInterface>
+               <interfaceType>graphical user interface</interfaceType>
+               <applicationType>web application</applicationType>
+            </UserInterface>
+            <Input>
+               <inputType>text</inputType>
+            </Input>
+            <Output>
+               <outputType>text</outputType>
+            </Output>
+         </SoftwareImplementation>
+         <Access>
+            <ResourceLicense>
+               <license>unknown</license>
+               <distributionType>public</distributionType>
+               <url>http://www.isocat.org/</url>
+               <Price>
+                  <amount>0</amount>
+                  <ISO4217>
+                     <iso-4217-currency>EUR</iso-4217-currency>
+                  </ISO4217>
+               </Price>
+            </ResourceLicense>
+            <Contact>
+               <Email>isocat@mpi.nl</Email>
+               <Organisation xml:lang="eng">MPI for Psycholinguistics</Organisation>
+            </Contact>
+         </Access>
+         <ResourceDocumentation>
+            <Documentation>
+               <title>n.a.</title>
+               <documentationTarget>general</documentationTarget>
+               <url>http://www.isocat.org/</url>
+               <ISO639>
+                  <iso-639-3-code>eng</iso-639-3-code>
+               </ISO639>
+            </Documentation>
+         </ResourceDocumentation>
+         <SoftwareDevelopment>
+            <Project>
+               <name>ISOcat</name>
+               <title>ISOcat</title>
+               <funder>?</funder>
+               <url>http://portal.clarin.nl/node/1955</url>
+               <Contact>
+                  <Email>isocat@mpi.nl</Email>
+               </Contact>
+               <Duration/>
+            </Project>
+            <Creator>
+               <Contact>
+				  <Person>Menzo Windhouwer</Person>
+                  <Email>menzo.windhouwer@meertens.knaw.nl</Email>
+               </Contact>
+            </Creator>
+         </SoftwareDevelopment>
+         <TechnicalInfo>
+            <ImplementationLanguage>
+               <implementationLanguage>unknown</implementationLanguage>
+               <version>unknown</version>
+            </ImplementationLanguage>
+         </TechnicalInfo>
+      </ClarinSoftwareDescription>
+   </Components>
+</CMD>

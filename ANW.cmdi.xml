@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF8'?>
+<CMD xmlns="http://www.clarin.eu/cmd/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" CMDVersion="1.1" xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1342181139640/xsd">
+   <Header>
+      <MdCreator>bobboelhouwer</MdCreator>
+      <MdCreationDate>2013-11-30+02:00</MdCreationDate>
+      <MdProfile>clarin.eu:cr1:p_1342181139640</MdProfile>
+      <MdCollectionDisplayName>CLARIN Netherlands</MdCollectionDisplayName>
+   </Header>
+   <Resources>
+      <ResourceProxyList>
+        <ResourceProxy id="resource">
+          <ResourceType mimetype="text/html">Resource</ResourceType>
+          <ResourceRef>http://hdl.handle.net/10032/3aa9c824f9e17c284b2f683f7f22cdef</ResourceRef>
+        </ResourceProxy>
+        <ResourceProxy id="SearchPage">
+          <ResourceType>SearchPage</ResourceType>
+          <ResourceRef>http://hdl.handle.net/10032/a797b8bd004b065086e852ee2fe5ee7f</ResourceRef>
+        </ResourceProxy>                        
+        <ResourceProxy id="LandingPage">
+          <ResourceType>LandingPage</ResourceType>
+          <ResourceRef>http://hdl.handle.net/10032/f296155827418ea7c16b275c1fd62a3a</ResourceRef>
+        </ResourceProxy>                        
+      </ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <ClarinSoftwareDescription>
+         <GeneralInfo>
+            <name xml:lang="nld">ANW</name>
+            <name xml:lang="eng">ANW</name>
+            <title xml:lang="nld">Algemeen Nederlands Woordenboek</title>
+            <title xml:lang="eng">General Dutch Dictionary</title>
+            <publicationYear>2009</publicationYear>
+            <url>http://anw.ivdnt.org</url><CLARINCentre>Dutch Language Institute</CLARINCentre>
+            <ReleaseStatus>
+               <LifeCycleStatus>published</LifeCycleStatus>
+               <lastUpdate>2016-01-01</lastUpdate>
+	       <version/>
+            </ReleaseStatus>
+            <NationalProjects><Project><name>CLARIN-NL</name><title>CLARIN in the Netherlands</title><id>184.021.003</id><funder>NWO</funder><url>http://www.clarin.nl</url><Contact><Person>Jan Odijk</Person><Role>National Coordinator</Role><Address>Utrecht, the Netherlands</Address><Email>j.odijk@uu.nl</Email><Department>UiL-OTS</Department><Organisation>Utrecht University</Organisation></Contact><Duration><StartYear>2009</StartYear><CompletionYear>2015</CompletionYear></Duration></Project></NationalProjects><Country><CountryName>Netherlands</CountryName><CountryCoding>NL</CountryCoding></Country><Description>
+	      <Description>Corpus based dictionary descibing contemporary Dutch in the Netherlands and in Flanders of the period 1970-2019.</Description>
+            </Description>
+         </GeneralInfo>
+         <SoftwareFunction>
+			 <toolCategory>lexical resource</toolCategory>
+			 <toolCategory>multi-lingual tool</toolCategory>
+            <toolCategory>language resource</toolCategory>
+            <ToolTasks><toolTask>dictionary searching</toolTask>
+            <toolTask>other</toolTask>
+			</ToolTasks><ResearchPhases><ResearchPhase>Browsing and Searching</ResearchPhase><ResearchPhase>Data analysis</ResearchPhase></ResearchPhases><ResearchDomains>
+				<researchDomain>Linguistics</researchDomain>
+			</ResearchDomains>
+            <LinguisticsSubject>
+              <linguisticsSubject>general linguistics</linguisticsSubject>
+	      <Description>
+		<Description/>
+	      </Description>
+            </LinguisticsSubject>
+            <LinguisticsSubject>
+              <linguisticsSubject>language documentation</linguisticsSubject>
+	      <Description>
+		<Description/>
+	      </Description>
+            </LinguisticsSubject>
+            <LinguisticsSubject>
+              <linguisticsSubject>lexicology</linguisticsSubject>
+	      <Description>
+		<Description/>
+	      </Description>
+            </LinguisticsSubject>
+            <LanguageVariety>
+              <languageDependent>yes</languageDependent>
+               <Language><LanguageName>Modern Dutch</LanguageName><ISO639><iso-639-3-code>nld</iso-639-3-code></ISO639></Language><Centuries>
+					<centuryDependent>yes</centuryDependent>
+					<CenturyInterval>
+					   <centuryFrom>20</centuryFrom>
+					   <centuryThrough>21</centuryThrough>
+					</CenturyInterval>
+				</Centuries>
+            </LanguageVariety>
+         </SoftwareFunction>
+         <SoftwareImplementation>
+           <distributionMedium>Online available</distributionMedium>
+           <UserInterface>
+             <interfaceType>graphical user interface</interfaceType>
+             <applicationType>web application</applicationType>
+           </UserInterface>
+           <Input>
+             <inputType>text</inputType>
+           </Input>
+           <Output>
+             <outputType>text</outputType>
+	     <AnnotationType>
+	       <AnnotationType>Lemma</AnnotationType>
+	       <Description>
+		 <Description>Modern Dutch Lemma</Description>
+	       </Description>
+	     </AnnotationType>
+	     <AnnotationType>
+	       <AnnotationType>Etymology</AnnotationType>
+		 <Description>
+		   <Description>Describes the origin of a word</Description>
+		 </Description>
+	     </AnnotationType>
+	     <AnnotationType>
+	       <AnnotationType>Semantics</AnnotationType>
+	       <Description>
+		 <Description>describes the meaning of a words</Description>
+	       </Description>
+	     </AnnotationType>
+	     <AnnotationType>
+	       <AnnotationType>Morphology</AnnotationType>
+	       <Description>
+		 <Description>describes the structure of a word</Description>
+	       </Description>
+	     </AnnotationType>
+           </Output>
+         </SoftwareImplementation>
+         <Access>
+            <ResourceLicense>
+               <license>unknown</license>
+               <distributionType>public</distributionType>
+	       <availability/>
+               <url>http://anw.ivdnt.org</url>
+               <Price>
+                  <amount>0</amount>
+                  <ISO4217>
+                     <iso-4217-currency>EUR</iso-4217-currency>
+                  </ISO4217>
+               </Price>
+            </ResourceLicense>
+            <Contact>
+               <Email>servicedesk@ivdnt.org</Email>
+               <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
+               <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
+               <Url>http://www.ivdnt.org/</Url>
+            </Contact>
+         </Access>
+         <ResourceDocumentation>
+            <Documentation>
+               <title>Frequently Asked Questions</title>
+               <documentationTarget>user</documentationTarget>
+               <url>http://anw.ivdnt.org/about</url>
+               <ISO639>
+                  <iso-639-3-code>ndl</iso-639-3-code>
+               </ISO639>
+            </Documentation>
+         </ResourceDocumentation>
+         <SoftwareDevelopment>
+            <Project>
+               <name>ANW</name>
+               <title>Algemeen Nederlands Woordenboek</title>
+               <funder>IVDNT.ORG</funder>
+               <url>http://ivdnt.org</url>
+               <Contact>
+                  <Email>servicedesk@ivdnt.org</Email>
+		  <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
+		  <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
+		  <Url>http://www.ivdnt.org/</Url>
+               </Contact>
+               <Duration/>
+            </Project>
+            <Creator>
+               <Contact>
+		 <Person>Carole Tiberius</Person>
+                  <Email>carole.tiberius@ivdnt.org</Email>
+		  <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
+		  <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
+		  <Url>http://www.ivdnt.org/over-ons/contact/medewerkers</Url>
+               </Contact>
+            </Creator>
+         </SoftwareDevelopment>
+         <TechnicalInfo>
+            <ImplementationLanguage>
+               <implementationLanguage>Apache Tomcat, Lucene, Xalan, Log4J, Velocity</implementationLanguage>
+               <version>unknown</version>
+            </ImplementationLanguage>
+         </TechnicalInfo>
+      </ClarinSoftwareDescription>
+   </Components>
+</CMD>

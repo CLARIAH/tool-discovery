@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF8'?>
+<CMD xmlns="http://www.clarin.eu/cmd/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" CMDVersion="1.1" xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1342181139640/xsd ">
+   <Header>
+      <MdCreator>JanOdijk</MdCreator>
+      <MdCreationDate>2017-12-21</MdCreationDate>
+      <MdProfile>clarin.eu:cr1:p_1342181139640</MdProfile>
+   <MdCollectionDisplayName>CLARIN Flanders</MdCollectionDisplayName></Header>
+   <Resources>
+	<ResourceProxyList>
+		<ResourceProxy id="GrETEL001">
+			<ResourceType>Resource</ResourceType>
+			<ResourceRef>http://gretel.ccl.kuleuven.be/gretel3/</ResourceRef>
+		</ResourceProxy>
+	</ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <ClarinSoftwareDescription>
+         <GeneralInfo>
+            <name xml:lang="eng">GrETEL 3.0</name>
+            <title xml:lang="eng">GrETEL Search Engine for Querying Syntactic Constructions in Treebanks</title>
+			<version>3.0</version>
+            <publicationYear>2016</publicationYear>
+            <url>http://gretel.ccl.kuleuven.be/gretel3/index.php</url><CLARINCentre>none yet</CLARINCentre><OriginalSource>http://portal.clarin.nl/node/1967</OriginalSource>
+            <ReleaseStatus>
+               <LifeCycleStatus>published</LifeCycleStatus>
+               <lastUpdate>2017-07-04</lastUpdate>
+	   			<version>3.0</version>
+
+            </ReleaseStatus>
+            <NationalProjects><Project><name>CLARIN-DLU</name><title>CLARIN in Flanders</title><id/><funder>EWI</funder><url/><Contact><Person>Ineke Schuurman</Person><Role>Coordinator</Role><Address>Leuven, Belgium</Address><Email>Ineke.Schuurman@ccl.kuleuven.be</Email><Department>CCL</Department><Organisation>KU Leuven</Organisation></Contact><Duration><StartYear>2010</StartYear><CompletionYear>2012</CompletionYear></Duration></Project></NationalProjects><Country><CountryName>Belgium</CountryName><CountryCoding>BE</CountryCoding></Country>
+			<Description>
+				<Description>
+				     GrETEL is a query engine in which linguists can use a natural language example as a starting point for searching a treebank with limited knowledge about tree representations and formal query languages. Instead of a formal search instruction, it takes a natural language example as input. This provides a convenient way for novice and non-technical users to use treebanks with a limited knowledge of the underlying syntax and formal query languages. By allowing linguists to search for constructions similar to the example they provide, it aims to bridge the gap between descriptive-theoretical and computational linguistics.
+
+     The example-based query procedure consists of six steps. In the first step the user enters an example of the construction he/she is interested in. In the second step the example sentence is automatically parsed with the Alpino parser, resulting in a parse tree. In the third step the example is returned in the form of a matrix, in which the user specifies which aspects of this example are essential for the construction under investigation. Based on the information indicated in the matrix, a query tree is cut out of the initial parse tree and automatically converted to an XPath query. By clicking the advanced options button, the XPath query is made visible, and can be edited if desired. This query will be used for the actual treebank search.
+     In the fourth step the user can select which treebank needs to be queried. The fifth step provides an overview of the search instruction, i.e. the input sentence, the selected treebank(s), the query tree and the (adapted) XPath query. In the sixth step the query is executed on the selected corpus. The matching constructions are presented to the user as a list of sentences, which can be downloaded. The user can also click on the sentences in order to visualize the results as syntax trees.
+
+     In addition to the example-based search functionality, users can also query the treebanks using an XPath expression. This query is then processed in the same way as the automatically generated query in the example-based approach.
+
+     GrETEL enables search in several Dutch treebanks: the 1-million word LASSY-Small (written Dutch) and CGN treebanks (spoken Dutch), and the 500-million word SoNaR-500 treebank (written Dutch).
+               </Description>
+            </Description>
+         </GeneralInfo>
+         <SoftwareFunction>
+            <toolCategory>written language tool</toolCategory>
+            <ToolTasks><toolTask>corpus searching</toolTask>
+                       <toolTask>corpus exploration</toolTask>
+            <toolTask>querying</toolTask>
+			</ToolTasks><ResearchPhases><ResearchPhase>Browsing and Searching</ResearchPhase></ResearchPhases><ResearchDomains>
+				<researchDomain>Linguistics</researchDomain>
+			</ResearchDomains>
+            <LinguisticsSubject>
+               <linguisticsSubject>syntax</linguisticsSubject>
+				<Description>
+					<Description/>
+				</Description>
+            </LinguisticsSubject>
+            <LinguisticsSubject>
+               <linguisticsSubject>morpho-syntax</linguisticsSubject>
+				<Description>
+					<Description/>
+				</Description>
+            </LinguisticsSubject>
+             <LinguisticsSubject>
+               <linguisticsSubject>computational linguistics</linguisticsSubject>
+				<Description>
+					<Description/>
+				</Description>
+            </LinguisticsSubject>
+            <LanguageVariety>
+               <languageDependent>yes</languageDependent>
+               <Language><LanguageName>Dutch</LanguageName><ISO639><iso-639-3-code>nld</iso-639-3-code></ISO639></Language><Centuries>
+					<centuryDependent>yes</centuryDependent>
+					<CenturyInterval>
+					   <centuryFrom>20</centuryFrom>
+					   <centuryThrough>20</centuryThrough>
+					</CenturyInterval>
+				</Centuries>
+            </LanguageVariety>
+         </SoftwareFunction>
+         <SoftwareImplementation>
+            <distributionMedium>Online available</distributionMedium>
+            <UserInterface>
+               <interfaceType>graphical user interface</interfaceType>
+               <applicationType>web application</applicationType>
+            </UserInterface>
+            <Input>
+               <inputType>text</inputType>
+            </Input>
+			<Output>	
+				<outputType>text</outputType>
+				<characterEncoding>UTF8</characterEncoding>
+				<outputResource>query results</outputResource>
+				<Schema><schemaname/></Schema><MimeType>
+					<MimeType>text/html</MimeType>
+				</MimeType>	
+			</Output>
+			<Output>	
+				<outputType>text</outputType>
+				<characterEncoding>UTF8</characterEncoding>
+				<outputResource>downloaded query results</outputResource>
+				<Schema><schemaname>CSV, tab-separated</schemaname></Schema><MimeType>
+					<MimeType>text/csv</MimeType>
+				</MimeType>	
+			</Output>
+         </SoftwareImplementation>
+         <Access>
+            <ResourceLicense>
+               <license>CC-BY-NC-SA</license>
+			   <version>4.0</version>
+               <distributionType>public</distributionType>
+               <Price>
+                  <amount>0</amount>
+                  <ISO4217>
+                     <iso-4217-currency>EUR</iso-4217-currency>
+                  </ISO4217>
+               </Price>
+            </ResourceLicense>
+            <Contact>
+               <Person>Liesbeth Augustinus</Person>
+               <Email>liesbeth.augustinus@kuleuven.be</Email>
+               <Organisation xml:lang="nld">KU Leuven</Organisation>
+            </Contact>
+         </Access>
+         <ResourceDocumentation>
+            <Documentation>
+               <title>GrETEL manual and documentation</title>
+               <documentationTarget>user</documentationTarget>
+               <url>http://gretel.ccl.kuleuven.be/gretel3/documentation.php</url>
+               <ISO639>
+                  <iso-639-3-code>eng</iso-639-3-code>
+               </ISO639>
+            </Documentation>
+	<Publication><publicationCategory>in book</publicationCategory><publicationPurpose>scientific background</publicationPurpose><peerReviewStatus>yes</peerReviewStatus><Description><Description LanguageID="eng">Augustinus, L, Vandeghinste, V, Schuurman, I and Van Eynde, F. 2017. GrETEL: A Tool for Example-Based Treebank Mining. In: Odijk, J and van Hessen, A. (eds.) CLARIN in the Low Countries, Pp. 269–280. London: Ubiquity Press. DOI: https://doi.org/10.5334/bbi.22. License: CC-BY 4.0</Description></Description></Publication><Publication>
+		 <publicationCategory>misc</publicationCategory>
+		 <publicationPurpose>scientific background</publicationPurpose>
+		 <peerReviewStatus>yes</peerReviewStatus>
+		 <Description>
+		   <Description LanguageID="eng">http://gretel.ccl.kuleuven.be/project/publications.php</Description>
+		 </Description>
+		</Publication>
+		<Pictures>
+		   <picture type="other" width="600" height="600">
+			  http://dev.clarin.nl/sites/default/files/GrETEL3_0.png
+		   </picture>
+		</Pictures>			
+         </ResourceDocumentation>
+         <SoftwareDevelopment>
+            <Project>
+               <name>SCATE</name>
+               <title>Smart Computer-Aided Translation Environment</title>
+               <funder>IWT, Flanders</funder>
+               <url>http://portal.clarin.nl/node/1967</url>
+               <Contact>
+			      <Person>Vincent Vandeghinste</Person>
+                  <Role>Coordinator</Role>
+				  <Address>Leuven, Belgium</Address>
+				  <Email>Vincent.Vandeghinste@ccl.kuleuven.be</Email>
+				  <Department>CCL</Department>
+				  <Organisation>KU Leuven</Organisation>
+               </Contact>
+               <Duration><StartYear>2014</StartYear><CompletionYear>2018</CompletionYear></Duration>
+            </Project>
+            <Creator>
+               <Contact>
+				  <Person>Liesbeth Augustinus</Person>
+                  <Email>liesbeth.augustinus@kuleuven.be</Email>
+               </Contact>
+            </Creator>
+         </SoftwareDevelopment>
+         <TechnicalInfo>
+            <ImplementationLanguage>
+               <implementationLanguage>Perl</implementationLanguage>
+               <version>5.10</version>
+            </ImplementationLanguage>
+            <ImplementationLanguage>
+               <implementationLanguage>PHP</implementationLanguage>
+               <version>5.3</version>
+            </ImplementationLanguage>
+         </TechnicalInfo>
+      </ClarinSoftwareDescription>
+   </Components>
+</CMD>

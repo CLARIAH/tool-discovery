@@ -1,0 +1,289 @@
+<?xml version='1.0' encoding='UTF8'?>
+<CMD xmlns="http://www.clarin.eu/cmd/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" CMDVersion="1.1" xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1342181139640/xsd ">
+   <Header>
+      <MdCreator>JanOdijk</MdCreator>
+      <MdCreationDate>2017-12-21</MdCreationDate>
+      <MdProfile>clarin.eu:cr1:p_1342181139640</MdProfile>
+   <MdCollectionDisplayName>CLARIN Netherlands</MdCollectionDisplayName></Header>
+   <Resources>
+	<ResourceProxyList>
+		<ResourceProxy id="GrETEL001">
+			<ResourceType>Resource</ResourceType>
+			<ResourceRef>http://gretel.hum.uu.nl/gretel4/</ResourceRef>
+		</ResourceProxy>
+	</ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <ClarinSoftwareDescription>
+         <GeneralInfo>
+            <name xml:lang="eng">GrETEL 4.0</name>
+            <title xml:lang="eng">GrETEL Search Engine for Querying Syntactic Constructions in Treebanks</title>
+			<version>4.0</version>
+            <publicationYear>2017</publicationYear>
+            <url>http://gretel.ccl.kuleuven.be/gretel-2.0/</url><CLARINCentre>none yet</CLARINCentre><OriginalSource>http://portal.clarin.nl/node/1967</OriginalSource>
+            <ReleaseStatus>
+               <LifeCycleStatus>alpha</LifeCycleStatus>
+               <lastUpdate>2017-12-20</lastUpdate>
+    			<version>4.0</version>
+
+            </ReleaseStatus>
+            <NationalProjects><Project><name>CLARIAH-CORE</name><title>Common Lab Research Infrastructure for the Arts and the Humanities</title><id>184.033.101</id><funder>NWO</funder><url>http://www.clariah.nl</url><Contact><Person>Jan Odijk</Person><Role>National Coordinator</Role><Address>Utrecht, the Netherlands</Address><Email>j.odijk@uu.nl</Email><Department>UiL-OTS</Department><Organisation>Utrecht University</Organisation></Contact><Duration><StartYear>2015</StartYear><CompletionYear>2018</CompletionYear></Duration></Project></NationalProjects><Country><CountryName>Belgium</CountryName><CountryCoding>BE</CountryCoding></Country>
+			<Description>
+				<Description>
+				GrETEL Version 4 extends the functionality of GrETEL in a number of ways: 
+				
+				(1) it allows uploading one's own corpus, either a parsed corpus in LASSY DTD format, or a text corpus in a variety of formats (currently supported: plain text, CHAT; FoLiA and TEI to follow). An uploaded unparsed  corpus will be automatically parsed by Alpino and made available in the search interface.
+				(2) It also enables  upload of metadata that are contained in the data, e.g. in accordance with the PaQu metadata format
+				(3) Checking of XPath expressions and suggestions for selecting valid attributes and values have been added, as have the use of macros (a la PaQu)
+				(4) filtering on the basis of metadata has been made possible
+				(5) full analysis of the metadta in combination with nodes and their properties from the syntactic structures is available, allowing a user to select, group, sort, and filter data and metadata in combination, through a pivot table with draggable attributes and node properties. Sums , counts, heatmaps and other graphical visualisation enable rapid analysis of the data.
+				
+				GrETEL 4 is being developed by Utrecht University (UiL-OTS and Digital Humanities Lab) in the context of the AnnCor and CLARIAH-CORE projects. It based on GrETEL 3 developed by KU Leuven.
+				
+				     GrETEL is a query engine in which linguists can use a natural language example as a starting point for searching a treebank with limited knowledge about tree representations and formal query languages. Instead of a formal search instruction, it takes a natural language example as input. This provides a convenient way for novice and non-technical users to use treebanks with a limited knowledge of the underlying syntax and formal query languages. By allowing linguists to search for constructions similar to the example they provide, it aims to bridge the gap between descriptive-theoretical and computational linguistics.
+
+     The example-based query procedure consists of six steps. In the first step the user enters an example of the construction he/she is interested in. In the second step the example sentence is automatically parsed with the Alpino parser, resulting in a parse tree. In the third step the example is returned in the form of a matrix, in which the user specifies which aspects of this example are essential for the construction under investigation. Based on the information indicated in the matrix, a query tree is cut out of the initial parse tree and automatically converted to an XPath query. By clicking the advanced options button, the XPath query is made visible, and can be edited if desired. This query will be used for the actual treebank search.
+     In the fourth step the user can select which treebank needs to be queried. The fifth step provides an overview of the search instruction, i.e. the input sentence, the selected treebank(s), the query tree and the (adapted) XPath query. In the sixth step the query is executed on the selected corpus. The matching constructions are presented to the user as a list of sentences, which can be downloaded. The user can also click on the sentences in order to visualize the results as syntax trees.
+
+     In addition to the example-based search functionality, users can also query the treebanks using an XPath expression. This query is then processed in the same way as the automatically generated query in the example-based approach.
+
+				 </Description>
+            </Description>
+         </GeneralInfo>
+         <SoftwareFunction>
+            <toolCategory>annotation tool</toolCategory>
+            <toolCategory>written language tool</toolCategory>
+            <ToolTasks>
+				<toolTask>corpus searching</toolTask>
+                <toolTask>corpus exploration</toolTask>
+				<toolTask>querying</toolTask>
+				<toolTask>corpus processing</toolTask>
+				<toolTask>parsing</toolTask>
+				<toolTask>dependency parsing</toolTask>
+				<toolTask>grammatical relation assignment</toolTask>
+				<toolTask>analysis</toolTask>
+			</ToolTasks><ResearchPhases><ResearchPhase>Browsing and Searching</ResearchPhase><ResearchPhase>Data analysis</ResearchPhase><ResearchPhase>Enriching Data</ResearchPhase></ResearchPhases><ResearchDomains>
+				<researchDomain>Linguistics</researchDomain>
+			</ResearchDomains>
+            <LinguisticsSubject>
+               <linguisticsSubject>syntax</linguisticsSubject>
+				<Description>
+					<Description/>
+				</Description>
+            </LinguisticsSubject>
+            <LinguisticsSubject>
+               <linguisticsSubject>morpho-syntax</linguisticsSubject>
+				<Description>
+					<Description/>
+				</Description>
+            </LinguisticsSubject>
+             <LinguisticsSubject>
+               <linguisticsSubject>computational linguistics</linguisticsSubject>
+				<Description>
+					<Description/>
+				</Description>
+            </LinguisticsSubject>
+            <LanguageVariety>
+               <languageDependent>yes</languageDependent>
+               <Language><LanguageName>Dutch</LanguageName><ISO639><iso-639-3-code>nld</iso-639-3-code></ISO639></Language><Centuries>
+					<centuryDependent>yes</centuryDependent>
+					<CenturyInterval>
+					   <centuryFrom>20</centuryFrom>
+					   <centuryThrough>20</centuryThrough>
+					</CenturyInterval>
+				</Centuries>
+            </LanguageVariety>
+         </SoftwareFunction>
+         <SoftwareImplementation>
+            <distributionMedium>Online available</distributionMedium>
+			<sourcecodeURI>https://github.com/UUDigitalHumanitieslab/gretel</sourcecodeURI>
+			<sourcecodeURI>https://github.com/UUDigitalHumanitieslab/GrETEL-upload</sourcecodeURI>
+			<sourcecodeURI>https://github.com/JanOdijk/chamd</sourcecodeURI>
+            <UserInterface>
+               <interfaceType>graphical user interface</interfaceType>
+               <applicationType>web application</applicationType>
+            </UserInterface>
+			<Input>	
+				<characterEncoding>UTF8</characterEncoding>
+				<inputType>text</inputType>
+				<inputResource>treebank</inputResource>
+				<Schema><schemaname>LASSY DTD</schemaname></Schema><MimeType>
+					<MimeType>text/xml</MimeType>
+				</MimeType>	
+			</Input>
+			<Input>	
+				<characterEncoding>UTF8</characterEncoding>
+				<inputType>text</inputType>
+				<inputResource>text corpus</inputResource>
+				<Schema><schemaname>plain text</schemaname></Schema><MimeType>
+					<MimeType>text/plain</MimeType>
+				</MimeType>	
+			</Input>
+			<Input>	
+				<characterEncoding>UTF8</characterEncoding>
+				<inputType>text</inputType>
+				<inputResource>text corpus</inputResource>
+				<Schema><schemaname>CHAT</schemaname></Schema><MimeType>
+					<MimeType>text/plain</MimeType>
+				</MimeType>	
+			</Input>
+            <Input>
+				<characterEncoding>UTF8</characterEncoding>
+               <inputType>text</inputType>
+				<inputResource>query</inputResource>
+            </Input>
+			<Output>	
+				<outputType>text</outputType>
+				<characterEncoding>UTF8</characterEncoding>
+				<outputResource>Treebank</outputResource>
+				<Schema><schemaname/></Schema><MimeType>
+					<MimeType>text/html</MimeType>
+				</MimeType>	
+				<AnnotationType>
+					<AnnotationType>Lemma</AnnotationType>
+					<AnnotationType>Word form</AnnotationType>
+					<AnnotationType>Morphology</AnnotationType>
+					<AnnotationType>Morphosyntax</AnnotationType>
+					<AnnotationType>Syntax</AnnotationType>
+				</AnnotationType>
+			</Output>
+			<Output>	
+				<outputType>text</outputType>
+				<characterEncoding>UTF8</characterEncoding>
+				<outputResource>query results</outputResource>
+				<Schema><schemaname/></Schema><MimeType>
+					<MimeType>text/html</MimeType>
+				</MimeType>	
+			</Output>
+			<Output>	
+				<outputType>text</outputType>
+				<characterEncoding>UTF8</characterEncoding>
+				<outputResource>downloaded query results</outputResource>
+				<Schema><schemaname>CSV, tab-separated</schemaname></Schema><MimeType>
+					<MimeType>text/csv</MimeType>
+				</MimeType>	
+			</Output>
+			<Output>	
+				<outputType>text</outputType>
+				<characterEncoding>UTF8</characterEncoding>
+				<outputResource>downloaded analysis results</outputResource>
+				<Schema><schemaname>CSV, tab-separated</schemaname></Schema><MimeType>
+					<MimeType>text/csv</MimeType>
+				</MimeType>	
+			</Output>
+			<Output>	
+				<outputType>text</outputType>
+				<characterEncoding>UTF8</characterEncoding>
+				<outputResource>downloaded analysis results</outputResource>
+				<Schema><schemaname>Excel</schemaname></Schema><MimeType>
+					<MimeType>application/vnd.ms-excel</MimeType>
+				</MimeType>	
+			</Output>
+         </SoftwareImplementation>
+         <Access>
+            <ResourceLicense>
+               <license>CC-BY-NC-SA</license>
+			   <version>4.0</version>
+               <distributionType>public</distributionType>
+               <Price>
+                  <amount>0</amount>
+                  <ISO4217>
+                     <iso-4217-currency>EUR</iso-4217-currency>
+                  </ISO4217>
+               </Price>
+            </ResourceLicense>
+            <Contact>
+               <Person>Jan Odijk</Person>
+               <Email>j.odijk@uu.nl</Email>
+               <Organisation xml:lang="nld">KU Leuven</Organisation>
+            </Contact>
+         </Access>
+         <ResourceDocumentation>
+            <Documentation>
+               <title>GrETEL manual and documentation</title>
+               <documentationTarget>user</documentationTarget>
+               <url>http://nederbooms.ccl.kuleuven.be/eng/docgretel</url>
+               <ISO639>
+                  <iso-639-3-code>eng</iso-639-3-code>
+               </ISO639>
+            </Documentation>
+	<Publication><publicationCategory>in book</publicationCategory><publicationPurpose>scientific background</publicationPurpose><peerReviewStatus>yes</peerReviewStatus><Description><Description LanguageID="eng">Augustinus, L, Vandeghinste, V, Schuurman, I and Van Eynde, F. 2017. GrETEL: A Tool for Example-Based Treebank Mining. In: Odijk, J and van Hessen, A. (eds.) CLARIN in the Low Countries, Pp. 269–280. London: Ubiquity Press. DOI: https://doi.org/10.5334/bbi.22. License: CC-BY 4.0</Description></Description></Publication><Publication>
+		 <publicationCategory>in proceedings</publicationCategory>
+		 <publicationPurpose>scientific background</publicationPurpose>
+		 <peerReviewStatus>yes</peerReviewStatus>
+		 <Description>
+		   <Description LanguageID="eng">Jan Odijk, Martijn van der Klis and Sheean Spoel. 2018. Extensions to the GrETEL Treebank Query Application, in Proceedings of TLT16, 23-24 Jan 2018, Prague, Czech Republic
+    	   </Description>
+		 </Description>
+		</Publication>
+		<Pictures>
+		   <picture type="other" width="600" height="600">
+			  http://dev.clarin.nl/sites/default/files/gretel4-cropped.png
+		   </picture>
+		</Pictures>			
+         </ResourceDocumentation>
+         <SoftwareDevelopment>
+            <Project>
+               <name>AnnCor</name>
+               <title>Annotation of Corpora</title>
+               <funder>Utrecht University</funder>
+               <url>https://anncor.sites.uu.nl/</url>
+               <Contact>
+			      <Person>Jan Odijk</Person>
+                  <Email>j.odijk@uu.nl</Email>
+               </Contact>
+               <Duration>
+				<StartYear>2015</StartYear>
+				<CompletionYear>2019</CompletionYear>
+			   </Duration>
+            </Project>
+			<Project>
+				<name>CLARIAH-CORE</name>
+				<title>Common Lab Research Infrastructure for the Arts and the Humanities</title>
+				<id>184.033.101</id>
+				<funder>NWO</funder>
+				<url>http://www.clariah.nl</url>
+				<Contact><Person>Jan Odijk</Person><Role>National Coordinator</Role><Address>Utrecht, the Netherlands</Address><Email>j.odijk@uu.nl</Email><Department>UiL-OTS</Department><Organisation>Utrecht University</Organisation></Contact>
+				<Duration><StartYear>2015</StartYear><CompletionYear>2018</CompletionYear></Duration>
+			</Project>			
+            <Creator>
+               <Contact>
+				  <Person>Jan Odijk</Person>
+				  <Role>project leader</Role>
+                  <Email>j.odijk@uu.nl</Email>
+               </Contact>
+            </Creator>
+            <Creator>
+               <Contact>
+				  <Person>Martijn van der Klis</Person>
+				  <Role>developer</Role>
+               </Contact>
+            </Creator>
+            <Creator>
+               <Contact>
+				  <Person>Sheean Spoel</Person>
+				  <Role>developer</Role>
+               </Contact>
+            </Creator>
+            <Creator>
+               <Contact>
+				  <Person>Gerson Foks</Person>
+				  <Role>developer</Role>
+               </Contact>
+            </Creator>
+         </SoftwareDevelopment>
+         <TechnicalInfo>
+            <ImplementationLanguage>
+               <implementationLanguage>Perl</implementationLanguage>
+               <version>5.10</version>
+            </ImplementationLanguage>
+            <ImplementationLanguage>
+               <implementationLanguage>PHP</implementationLanguage>
+               <version>5.3</version>
+            </ImplementationLanguage>
+         </TechnicalInfo>
+      </ClarinSoftwareDescription>
+   </Components>
+</CMD>

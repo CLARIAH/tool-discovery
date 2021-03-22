@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='UTF8'?>
+<CMD xmlns="http://www.clarin.eu/cmd/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" CMDVersion="1.1" xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1342181139640/xsd ">
+   <Header>
+      <MdCreator>rogierkraf</MdCreator>
+      <MdCreationDate>2013-11-30+02:00</MdCreationDate>
+      <MdProfile>clarin.eu:cr1:p_1342181139640</MdProfile>
+   <MdCollectionDisplayName>CLARIN Netherlands</MdCollectionDisplayName></Header>
+   <Resources>
+	<ResourceProxyList>
+		<ResourceProxy id="NederLab001">
+			<ResourceType>Resource</ResourceType>
+			<ResourceRef>http://www.nederlab.nl/onderzoeksportaal/</ResourceRef>
+		</ResourceProxy>
+	</ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <ClarinSoftwareDescription>
+         <GeneralInfo>
+            <name xml:lang="eng">Nederlab</name>
+            <title xml:lang="eng">Nederlab, online laboratory for humanities research on Dutch text collections</title>
+			<version>2</version>
+            <publicationYear>2015</publicationYear>
+            <url>http://www.nederlab.nl/</url><CLARINCentre>Meertens Institute</CLARINCentre><OriginalSource>http://portal.clarin.nl/node/4233</OriginalSource>
+            <ReleaseStatus>
+               <LifeCycleStatus>published</LifeCycleStatus>
+               <lastUpdate>2015-09-03</lastUpdate>
+            </ReleaseStatus>
+            <NationalProjects><Project><name>CLARIN-NL</name><title>CLARIN in the Netherlands</title><id>184.021.003</id><funder>NWO</funder><url>http://www.clarin.nl</url><Contact><Person>Jan Odijk</Person><Role>National Coordinator</Role><Address>Utrecht, the Netherlands</Address><Email>j.odijk@uu.nl</Email><Department>UiL-OTS</Department><Organisation>Utrecht University</Organisation></Contact><Duration><StartYear>2009</StartYear><CompletionYear>2015</CompletionYear></Duration></Project><Project><name>CLARIAH-CORE</name><title>Common Lab Research Infrastructure for the Arts and the Humanities</title><id>184.033.101</id><funder>NWO</funder><url>http://www.clariah.nl</url><Contact><Person>Jan Odijk</Person><Role>National Coordinator</Role><Address>Utrecht, the Netherlands</Address><Email>j.odijk@uu.nl</Email><Department>UiL-OTS</Department><Organisation>Utrecht University</Organisation></Contact><Duration><StartYear>2015</StartYear><CompletionYear>2018</CompletionYear></Duration></Project></NationalProjects><Country><CountryName>Netherlands</CountryName><CountryCoding>NL</CountryCoding></Country><Description>
+				<Description>The Nederlab project aims to bring together all digitized texts relevant to Dutch national heritage, the history of Dutch language and culture (c. 800 - present) in one user-friendly and tool-enriched open access web interface, allowing scholars to simultaneously search and analyze data from texts spanning the full recorded history of the Netherlands, its language and culture. The project builds on various initiatives: for corpora Nederlab collaborates with the scientific libraries and institutions, for infrastructure with CLARIN (and CLARIAH), for tools with eHumanities programmes such as Catch, IMPACT and CLARIN (TICCL, frog).
+Nederlab will offer a large number of search options with which researchers can find the occurrence of a particular term in a particular corpus or subcorpus. It'll also offer visualization of search results through line graphs, bar graphs, circle graphs, or scatter graphs. Furthermore, this online lab will offer a large set of tools, like tokenization tools, tools for spelling normalization, PoS-tagging tools, lemmatization tools, a computational historical lexicon and indices. Also, the use of (semi-) automatic syntactic parsing, tools for text mining, data mining and sentiment mining, Named Entity Recognition tools, coreference resolution tools, plagiarism detection tools, paraphrase detection tools and cartographical tools is offered
+The first version of Nederlab was launched in early 2015, it’ll be expanded until the end of 2017. Nederlab is financed by NWO, KNAW, CLARIAH and CLARIN-NL.</Description>
+            </Description>
+         </GeneralInfo>
+         <SoftwareFunction>
+            <toolCategory>annotation tool</toolCategory>
+            <toolCategory>multimodality tool</toolCategory>
+            <toolCategory>written language tool</toolCategory>
+            <ToolTasks><toolTask>coreference resolution</toolTask>
+            <toolTask>corpus searching</toolTask>
+            <toolTask>corpus processing</toolTask>
+            <toolTask>corpus workbench</toolTask>
+            <toolTask>lemmatisation</toolTask>
+            <toolTask>part of speech tagging</toolTask>
+            <toolTask>dependency parsing</toolTask>
+            <toolTask>tokenisation</toolTask>
+			</ToolTasks><ResearchPhases><ResearchPhase>Browsing and Searching</ResearchPhase><ResearchPhase>Data analysis</ResearchPhase></ResearchPhases><ResearchDomains>
+				<researchDomain>Linguistics</researchDomain>
+				<researchDomain>History</researchDomain>
+				<researchDomain>Cultural Sciences</researchDomain>
+			</ResearchDomains>
+            <LinguisticsSubject>
+               <linguisticsSubject>historical linguistics</linguisticsSubject>
+				<Description>
+					<Description/>
+				</Description>
+            </LinguisticsSubject>
+            <LanguageVariety>
+               <languageDependent>yes</languageDependent>
+               <Language><LanguageName>Dutch</LanguageName><ISO639><iso-639-3-code>nld</iso-639-3-code></ISO639></Language><Centuries>
+					<centuryDependent>yes</centuryDependent>
+					<CenturyInterval>
+					   <centuryFrom>09</centuryFrom>
+					   <centuryThrough>20</centuryThrough>
+					</CenturyInterval>
+				</Centuries>
+            </LanguageVariety>
+         </SoftwareFunction>
+         <SoftwareImplementation>
+            <distributionMedium>Online available</distributionMedium>
+			<sourcecodeURI>https://github.com/meertensinstituut/mtas</sourcecodeURI>
+			<InstallationRequirements><SoftwareRequirements><RequiredSoftware>
+<SoftwareShortDescription>
+	<resourceName>PHP</resourceName>
+	<version>5.3.3</version>
+	<url>http://php.net/</url>
+	<toolCategory>other</toolCategory>
+	<applicationType>other</applicationType>
+</SoftwareShortDescription>
+<SoftwareShortDescription>
+	<resourceName>MySQL</resourceName>
+	<version>unknown</version>
+	<url>https://www.mysql.com/</url>
+	<toolCategory>other</toolCategory>
+	<applicationType>other</applicationType>
+</SoftwareShortDescription>
+
+</RequiredSoftware></SoftwareRequirements></InstallationRequirements>
+            <UserInterface>
+               <interfaceType>graphical user interface</interfaceType>
+               <applicationType>web application</applicationType>
+            </UserInterface>
+            <Input>
+               <inputType>text</inputType>
+            </Input>
+            <Output>
+               <outputType>text</outputType>
+            </Output>
+         </SoftwareImplementation>
+         <Access>
+            <ResourceLicense>
+               <license>GNU GPL</license>
+               <distributionType>public</distributionType>
+               <Price>
+                  <amount>0</amount>
+                  <ISO4217>
+                     <iso-4217-currency>EUR</iso-4217-currency>
+                  </ISO4217>
+               </Price>
+            </ResourceLicense>
+            <Contact>
+               <Person>Hennie Brugman</Person>
+               <Email>hennie.brugman@meertens.knaw.nl</Email>
+               <Organisation xml:lang="eng">Meertens Institute</Organisation>
+            </Contact>
+         </Access>
+         <ResourceDocumentation>
+            <Documentation>
+               <title>Help</title>
+               <documentationTarget>user</documentationTarget>
+               <url>http://www.nederlab.nl/onderzoeksportaal/?action=help</url>
+               <ISO639>
+                  <iso-639-3-code>nld</iso-639-3-code>
+               </ISO639>
+            </Documentation>
+            <Documentation>
+               <title>Multi Tier Annotation Search</title>
+               <documentationTarget>technical</documentationTarget>
+               <url>https://meertensinstituut.github.io/mtas/</url>
+               <ISO639>
+                  <iso-639-3-code>eng</iso-639-3-code>
+               </ISO639>
+            </Documentation>
+		<Publication>
+		 <publicationCategory>unpublished</publicationCategory>
+		 <publicationPurpose>unknown</publicationPurpose>
+		 <peerReviewStatus>yes</peerReviewStatus>
+		 <Description>
+		   <Description LanguageID="eng">http://www.nederlab.nl/wp/?page_id=12 
+    	   </Description>
+		 </Description>
+		</Publication>
+		<Pictures>
+		   <picture type="logo" width="400" height="400">
+			  http://dev.clarin.nl/sites/default/files/nederlab_logo_0.png
+		   </picture>
+		</Pictures>
+		</ResourceDocumentation>
+         <SoftwareDevelopment>
+            <Project>
+               <name>Nederlab</name>
+               <title>Nederlab, online laboratory for humanities research on Dutch text collections</title>
+               <funder>NWO</funder>
+               <url>http://portal.clarin.nl/node/4233</url>
+               <url>http://www.nederlab.nl</url>
+               <Contact>
+                  <Email>hennie.brugman@meertens.knaw.nl</Email>
+               </Contact>
+               <Duration/>
+            </Project>
+            <Creator>
+               <Contact>
+                  <Email>hennie.brugman@meertens.knaw.nl</Email>
+               </Contact>
+            </Creator>
+         </SoftwareDevelopment>
+         <TechnicalInfo>
+            <ImplementationLanguage>
+               <implementationLanguage>PHP</implementationLanguage>
+               <version>5.3.3</version>
+            </ImplementationLanguage>
+            <ImplementationLanguage>
+               <implementationLanguage>JavaScript</implementationLanguage>
+               <version>unknown</version>
+            </ImplementationLanguage>
+         </TechnicalInfo>
+      </ClarinSoftwareDescription>
+   </Components>
+</CMD>

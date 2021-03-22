@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF8'?>
+<CMD xmlns="http://www.clarin.eu/cmd/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" CMDVersion="1.1" xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1342181139640/xsd ">
+   <Header>
+      <MdCreator>Paul Trilsbeek</MdCreator>
+      <MdCreationDate>2016-08-15</MdCreationDate>
+      <MdProfile>clarin.eu:cr1:p_1342181139640</MdProfile>
+   <MdCollectionDisplayName>CLARIN Netherlands</MdCollectionDisplayName></Header>
+   <Resources>
+	<ResourceProxyList>
+		<ResourceProxy id="Adelheid001">
+			<ResourceType>Resource</ResourceType>
+			<ResourceRef>http://hdl.handle.net/1839/00-SERV-0000-0000-0009-D</ResourceRef>
+		</ResourceProxy>
+		<ResourceProxy id="Adelheid002">
+			<ResourceType>LandingPage</ResourceType>
+			<ResourceRef>http://adelheid.ruhosting.nl</ResourceRef>
+		</ResourceProxy>
+	</ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <ClarinSoftwareDescription>
+         <GeneralInfo>
+            <name xml:lang="eng">Adelheid Visualiser/Editor</name>
+            <title xml:lang="eng">A Visualiser/Editor for part-of-speech tagged corpora</title>
+            <publicationYear>2010</publicationYear>
+            <url>http://hdl.handle.net/1839/00-SERV-0000-0000-0009-D</url><CLARINCentre>MPI for Psycholinguistics</CLARINCentre><OriginalSource>http://portal.clarin.nl/node/1918</OriginalSource>
+            <ReleaseStatus>
+               <LifeCycleStatus>released</LifeCycleStatus>
+               <lastUpdate>2010-01-01</lastUpdate>
+            </ReleaseStatus>
+            <NationalProjects><Project><name>CLARIN-NL</name><title>CLARIN in the Netherlands</title><id>184.021.003</id><funder>NWO</funder><url>http://www.clarin.nl</url><Contact><Person>Jan Odijk</Person><Role>National Coordinator</Role><Address>Utrecht, the Netherlands</Address><Email>j.odijk@uu.nl</Email><Department>UiL-OTS</Department><Organisation>Utrecht University</Organisation></Contact><Duration><StartYear>2009</StartYear><CompletionYear>2015</CompletionYear></Duration></Project></NationalProjects><Country><CountryName>Netherlands</CountryName><CountryCoding>NL</CountryCoding></Country><Description>
+               <Description>With this web-application an end user can view and edit corpora tokenized, lemmatized and part-of-speech tagged with Adelheid.
+               </Description>      
+            </Description>
+         </GeneralInfo>
+         <SoftwareFunction>
+            <toolCategory>written language tool</toolCategory>
+            <ToolTasks><toolTask>visualisation</toolTask>
+            <toolTask>querying</toolTask>
+            <toolTask>corpus browsing</toolTask>
+            <toolTask>annotation</toolTask>
+            <toolTask>editing</toolTask>
+			</ToolTasks><ResearchPhases><ResearchPhase>Visualisation</ResearchPhase></ResearchPhases><ResearchDomains>
+				<researchDomain>Linguistics</researchDomain>
+			</ResearchDomains>
+            <LinguisticsSubject>
+               <linguisticsSubject>general linguistics</linguisticsSubject>
+            </LinguisticsSubject>
+            <LinguisticsSubject>
+               <linguisticsSubject>syntax</linguisticsSubject>
+            </LinguisticsSubject>
+            <LinguisticsSubject>
+               <linguisticsSubject>historical linguistics</linguisticsSubject>
+            </LinguisticsSubject>
+            <LanguageVariety>
+               <languageDependent>no</languageDependent>
+				<Centuries><centuryDependent>no</centuryDependent></Centuries>
+            </LanguageVariety>
+         </SoftwareFunction>
+         <SoftwareImplementation>
+            <distributionMedium>Online available</distributionMedium>
+            <InstallationRequirements>
+				<MinimumHardwareRequirements>
+				   <SystemRequirements>
+				      <workingMemoryMin/>
+				      <hardDiskMin/>
+				      <Platform>
+				         <operatingSystem>Windows</operatingSystem>
+				         <operatingSystemVersion/>
+				         <bitArchitecture>unknown</bitArchitecture>
+				      </Platform>
+				      <Platform>
+				         <operatingSystem>OS X</operatingSystem>
+				         <operatingSystemVersion/>
+				         <bitArchitecture>unknown</bitArchitecture>
+				      </Platform>
+				      <Platform>
+				         <operatingSystem>Linux</operatingSystem>
+				         <operatingSystemVersion/>
+				         <bitArchitecture>unknown</bitArchitecture>
+				      </Platform>
+				      <Processor>
+				         <brand/>
+				         <version/>
+				         <clockRate/>
+				         <bandwidth/>
+				      </Processor>
+				   </SystemRequirements>
+				</MinimumHardwareRequirements>
+               <SoftwareRequirements>
+					<RequiredSoftware>
+					   <SoftwareShortDescription>
+					      <resourceName/>
+					      <version/>
+					      <url/>
+					      <applicationType>unknown</applicationType>
+					   </SoftwareShortDescription>
+					</RequiredSoftware>
+				</SoftwareRequirements>
+            </InstallationRequirements>
+            <UserInterface>
+               <interfaceType>other</interfaceType>
+               <applicationType>web application</applicationType>
+            </UserInterface>
+            <Input>
+			   <characterEncoding>utf8</characterEncoding>
+               <inputType>text</inputType>
+            </Input>
+            <Input>
+			   <characterEncoding>utf8</characterEncoding>
+               <inputType>text</inputType>
+			   </Input>
+            <Output>
+               <outputType>text</outputType>
+			   <characterEncoding>utf8</characterEncoding>
+            </Output>
+         </SoftwareImplementation>
+         <Access>
+            <ResourceLicense>
+               <license>unknown</license>
+               <distributionType>public</distributionType>
+               <Price>
+                  <amount>0</amount>
+                  <ISO4217>
+                     <iso-4217-currency>EUR</iso-4217-currency>
+                  </ISO4217>
+               </Price>
+            </ResourceLicense>
+            <Contact>
+               <Email/>
+               <Organisation xml:lang="eng">Centre for Language and Speech Technology</Organisation>
+               <Url>http://www.ru.nl/clst/contact/contact/</Url>
+            </Contact>
+         </Access>
+         <ResourceDocumentation>
+            <Documentation>
+               <title>Annotation Tool Manual</title>
+               <documentationTarget>user</documentationTarget>
+               <url>http://adelheid.ruhosting.nl/download/Adelheid1_AnntoolManual.pdf</url>
+               <ISO639>
+                  <iso-639-3-code>eng</iso-639-3-code>
+               </ISO639>
+            </Documentation>
+            <Documentation>
+               <title>Web service metadata</title>
+               <documentationTarget>technical</documentationTarget>
+               <url>https://catalog.clarin.eu/metadata/cmdi/services/Adelheid.cmdi</url>
+               <ISO639>
+                  <iso-639-3-code>eng</iso-639-3-code>
+               </ISO639>
+            </Documentation>
+			<Pictures>
+			   <picture type="other" width="200" height="200">
+				  http://dev.clarin.nl/sites/default/files/adelheid.jpg
+			   </picture>
+			</Pictures>
+
+			</ResourceDocumentation>
+         <SoftwareDevelopment>
+            <Project>
+               <name>Adelheid</name>
+               <title/>
+               <funder>CLARIN-NL</funder>
+               <url>http://portal.clarin.nl/node/1918</url>
+               <Contact>
+                  <Person>Dr. Hans van Halteren</Person>
+                  <Email/>
+               </Contact>
+               <Duration/>
+            </Project>
+            <Creator>
+               <Contact>
+                  <Email/>
+                  <Organisation>Centre for Language and Speech Technology</Organisation>
+               </Contact>
+            </Creator>
+         </SoftwareDevelopment>
+         <TechnicalInfo>
+            <ImplementationLanguage>
+               <implementationLanguage/>
+               <version/>
+            </ImplementationLanguage>
+         </TechnicalInfo>
+      </ClarinSoftwareDescription>
+   </Components>
+</CMD>

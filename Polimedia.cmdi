@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF8'?>
+<CMD xmlns="http://www.clarin.eu/cmd/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" CMDVersion="1.1" xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1342181139640/xsd ">
+   <Header>
+      <MdCreator>rogierkraf</MdCreator>
+      <MdCreationDate>2013-11-30+02:00</MdCreationDate>
+      <MdProfile>clarin.eu:cr1:p_1342181139640</MdProfile>
+   <MdCollectionDisplayName>CLARIN Netherlands</MdCollectionDisplayName></Header>
+   <Resources>
+	<ResourceProxyList>
+		<ResourceProxy id="Polimedia001">
+			<ResourceType>Resource</ResourceType>
+			<ResourceRef>http://www.polimedia.nl/</ResourceRef>
+		</ResourceProxy>
+	</ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <ClarinSoftwareDescription>
+         <GeneralInfo>
+            <name xml:lang="eng">Polimedia</name>
+            <title xml:lang="eng">Polimedia: Interlinking multimedia for the analysis of media coverage of political debates</title>
+            <publicationYear>2013</publicationYear>
+            <url>http://www.polimedia.nl/</url><CLARINCentre>NISV</CLARINCentre><OriginalSource>http://portal.clarin.nl/node/1932</OriginalSource>
+            <ReleaseStatus>
+               <LifeCycleStatus>published</LifeCycleStatus>
+               <lastUpdate>2013-01-01</lastUpdate>
+            </ReleaseStatus>
+            <NationalProjects><Project><name>CLARIN-NL</name><title>CLARIN in the Netherlands</title><id>184.021.003</id><funder>NWO</funder><url>http://www.clarin.nl</url><Contact><Person>Jan Odijk</Person><Role>National Coordinator</Role><Address>Utrecht, the Netherlands</Address><Email>j.odijk@uu.nl</Email><Department>UiL-OTS</Department><Organisation>Utrecht University</Organisation></Contact><Duration><StartYear>2009</StartYear><CompletionYear>2015</CompletionYear></Duration></Project></NationalProjects><Country><CountryName>Netherlands</CountryName><CountryCoding>NL</CountryCoding></Country><Description>
+				<Description>PoliMedia links the minutes of the debates in the Dutch Parliament (Dutch Hansard) to the databases of historical newspapers and ANP radio bulletins to allow cross-media analysis of coverage in a uniform search interface. For each fragment from a single speaker in a debate, the developers extracted relevant information: the speaker, the date, important terms from its content and important terms from the description of the complete debate. This information was then combined to create a query with which they searched the archives of newspapers, radio bulletins and television programmes. Media items that corresponded to this query were retrieved and a link was created between the speech and the media item, creating a Semantic Web of Dutch Hansard and media coverage. This Semantic Web contains links from the Dutch Hansard to newspaper articles and radio bulletins. From evaluations it was found that there was a 62% recall and 75% precision.
+				
+				To navigate this Semantic Web, a search user interface was developed based on a requirements study with five scholars in history and political communication. The developers created a faceted search interface in which the Dutch parliamentary minutes can be searched in full-text and in which refinements can be performed based on the speaker, the role of the speaker (parliament of government), political party and year. These debates are presented with links to the original locations of the media items.
+				
+				Polimedia is a collaboration of the TU Delft and the Free University (development of Semantic Web of Dutch Hansard and media), the Netherlands Institute of Sound and Vision (development of the search user interface) and Erasmus University Rotterdam (projectleader and user research of historians and political communication researchers). </Description>
+            </Description>
+         </GeneralInfo>
+         <SoftwareFunction>
+            <toolCategory>language resource</toolCategory>
+            <toolCategory>multimedia tool</toolCategory>
+            <toolCategory>multimodality tool</toolCategory>
+            <ToolTasks><toolTask>corpus searching</toolTask>
+            <toolTask>corpus browsing</toolTask>
+            </ToolTasks><ResearchPhases><ResearchPhase>Browsing and Searching</ResearchPhase></ResearchPhases><ResearchDomains>
+               <researchDomain>History</researchDomain>
+               <researchDomain>Political Studies</researchDomain>
+            </ResearchDomains>
+			   <LanguageVariety>
+               <languageDependent>yes</languageDependent>
+		  <Language><LanguageName>Dutch</LanguageName><ISO639><iso-639-3-code>nld</iso-639-3-code></ISO639></Language><Centuries>
+					<centuryDependent>yes</centuryDependent>
+					<CenturyInterval>
+					   <centuryFrom>20</centuryFrom>
+					   <centuryThrough>21</centuryThrough>
+					</CenturyInterval>
+				</Centuries>
+            </LanguageVariety>
+         </SoftwareFunction>
+         <SoftwareImplementation>
+            <distributionMedium>Online available</distributionMedium>
+			<InstallationRequirements>
+				<MinimumHardwareRequirements>
+<SystemRequirements>
+<workingMemoryMin>8GB
+</workingMemoryMin>
+<hardDiskMin>6GB
+</hardDiskMin>
+<Platform>
+<operatingSystem>Linux</operatingSystem>
+<operatingSystemVersion>unknown</operatingSystemVersion>
+<bitArchitecture>unknown</bitArchitecture>
+</Platform>
+
+</SystemRequirements>
+</MinimumHardwareRequirements>	
+				<RecommendedHardwareSpecifications>
+<SystemRequirements>
+<workingMemoryMin>16GB
+</workingMemoryMin>
+<hardDiskMin>10GB
+</hardDiskMin>
+<Platform>
+<operatingSystem>Linux</operatingSystem>
+<operatingSystemVersion>unknown</operatingSystemVersion>
+<bitArchitecture>unknown</bitArchitecture>
+</Platform>
+
+</SystemRequirements>
+</RecommendedHardwareSpecifications>
+				<SoftwareRequirements>
+					<RequiredSoftware>
+						<SoftwareShortDescription><resourceName>Python</resourceName><version>2.6</version><url>https://www.python.org/</url><toolCategory>other</toolCategory><applicationType>other</applicationType></SoftwareShortDescription>
+						<SoftwareShortDescription><resourceName>Django</resourceName><version/><url>https://www.djangoproject.com/</url><toolCategory>other</toolCategory><applicationType>other</applicationType></SoftwareShortDescription>
+						<SoftwareShortDescription><resourceName>SOLR</resourceName><version>1.4.1</version><url>http://lucene.apache.org/solr/</url><toolCategory>other</toolCategory><applicationType>other</applicationType></SoftwareShortDescription>
+						<SoftwareShortDescription><resourceName>Tomcat</resourceName><version>6.0.39</version><url>http://tomcat.apache.org/</url><toolCategory>other</toolCategory><applicationType>other</applicationType></SoftwareShortDescription>
+						<SoftwareShortDescription><resourceName>OpenRDF Sesame</resourceName><version/><url>http://www.openrdf.org/</url><toolCategory>other</toolCategory><applicationType>other</applicationType></SoftwareShortDescription>
+						<SoftwareShortDescription><resourceName>OpenRDF Workbench</resourceName><version/><url>http://www.openrdf.org/</url><toolCategory>other</toolCategory><applicationType>other</applicationType></SoftwareShortDescription>
+					</RequiredSoftware>
+				</SoftwareRequirements>
+			</InstallationRequirements>
+			
+            <UserInterface>
+               <interfaceType>graphical user interface</interfaceType>
+               <applicationType>web application</applicationType>
+            </UserInterface>
+            <Input>
+               <inputType>text</inputType>
+            </Input>
+            <Output>
+               <outputType>text</outputType>
+            </Output>
+         </SoftwareImplementation>
+         <Access>
+            <ResourceLicense>
+               <license>unknown</license>
+               <distributionType>public</distributionType>
+               <url>http://www.polimedia.nl/</url>
+               <Price>
+                  <amount>0</amount>
+                  <ISO4217>
+                     <iso-4217-currency>EUR</iso-4217-currency>
+                  </ISO4217>
+               </Price>
+            </ResourceLicense>
+            <Contact>
+               <Email>kleppe@eshcc.eur.nl</Email>
+               <Organisation xml:lang="eng">Netherlands Institute for Sound and Vision (NISV) </Organisation>
+            </Contact>
+         </Access>
+         <ResourceDocumentation>
+            <Documentation>
+               <title>Help</title>
+               <documentationTarget>user</documentationTarget>
+               <url>http://www.polimedia.nl/help</url>
+               <ISO639>
+                  <iso-639-3-code>nld</iso-639-3-code>
+               </ISO639>
+            </Documentation>
+			<Documentation>
+               <title>User Scenario (Screencast)</title>
+               <documentationTarget>user</documentationTarget>
+               <url>http://youtu.be/TYt0kq7D_7Y</url>
+               <ISO639>
+                  <iso-639-3-code>nld</iso-639-3-code>
+               </ISO639>
+            </Documentation>
+			 
+			<Publication>
+		 <publicationCategory>in proceedings</publicationCategory>
+		 <publicationPurpose>scientific background</publicationPurpose>
+		 <peerReviewStatus>yes</peerReviewStatus>
+		 <Description>
+		   <Description LanguageID="eng">Juric, D., Hollink, L., and Houben, G. (2013). Discovering links between political debates and media. The 13th International Conference on Web Engineering (ICWE'13). Aalborg, Denmark.
+		   </Description>
+		 </Description>
+		</Publication>
+			<Publication>
+		 <publicationCategory>in proceedings</publicationCategory>
+		 <publicationPurpose>scientific background</publicationPurpose>
+		 <peerReviewStatus>yes</peerReviewStatus>
+		 <Description>
+		   <Description LanguageID="eng">Juric, D., Hollink, L., and Houben, G. (2012). Bringing parliamentary debates to the Semantic Web. DeRiVE workshop on Detection, Representation, and Exploitation of Events in the Semantic Web.
+		   </Description>
+		 </Description>
+		</Publication>
+			<Publication>
+		 <publicationCategory>in proceedings</publicationCategory>
+		 <publicationPurpose>scientific background</publicationPurpose>
+		 <peerReviewStatus>yes</peerReviewStatus>
+		 <Description>
+		   <Description LanguageID="eng">Kemman, M. J., and Kleppe, M. (2013). PoliMedia - Improving Analyses of Radio, TV and Newspaper Coverage of Political Debates. In T. Aalberg and E. Al. (Eds.), TPDL2013, LCNS 8092 (pp. 409-412). Springer-Verlag Berlin Heidelberg.
+		   </Description>
+		 </Description>
+		</Publication>
+			<Publication>
+		 <publicationCategory>in proceedings</publicationCategory>
+		 <publicationPurpose>scientific background</publicationPurpose>
+		 <peerReviewStatus>yes</peerReviewStatus>
+		 <Description>
+		   <Description LanguageID="eng">Kemman, M. J., Kleppe, M., and Maarseveen, J. (2013). Eye Tracking the Use of a Collapsible Facets Panel in a Search Interface. In T. Aalberg and E. Al. (Eds.), TPDL2013, LCNS 8092 (pp. 405-408). Springer-Verlag Berlin Heidelberg.
+		   </Description>
+		 </Description>
+		</Publication>
+		<Publication>
+		 <publicationCategory>in proceedings</publicationCategory>
+		 <publicationPurpose>scientific background</publicationPurpose>
+		 <peerReviewStatus>yes</peerReviewStatus>
+		 <Description>
+		   <Description LanguageID="eng"> Martijn Kleppe, Laura Hollink, Max Kemman, Damir Juric, Henri Beunders, Jaap Blom, Johan Oomen and Geert-Jan Houben. PoliMedia: Analysing Media Coverage of political debates by automatically generated links to Radio &amp; Newspaper Items. http://ceur-ws.org/Vol-1124/linkedup_veni2013_04.pdf
+		   </Description>
+		 </Description>
+		</Publication>
+		<Pictures>
+		   <picture type="other" width="400" height="200">
+			  http://dev.clarin.nl/sites/default/files/Polimedia.png
+		   </picture>
+		</Pictures>
+		</ResourceDocumentation>
+         <SoftwareDevelopment>
+            <Project>
+               <name>Polimedia</name>
+               <title>Polimedia: Interlinking multimedia for the analysis of media coverage of political debates</title>
+               <funder>unknown</funder>
+               <url>http://portal.clarin.nl/node/1932</url>
+               <Contact>
+				  <Person>Martijn Kleppe</Person> 
+                  <Email>kleppe@eshcc.eur.nl</Email>
+               </Contact>
+               <Duration/>
+            </Project>
+            <Creator>
+               <Contact>
+				  <Person>Prof. dr. Henri Beunders</Person>
+                  <Email>beunders@eshcc.eur.nl</Email>
+               </Contact>
+            </Creator>
+         </SoftwareDevelopment>
+         <TechnicalInfo>
+            <ImplementationLanguage>
+               <implementationLanguage>Python</implementationLanguage>
+               <version>2.6</version>
+            </ImplementationLanguage>
+         </TechnicalInfo>
+      </ClarinSoftwareDescription>
+   </Components>
+</CMD>

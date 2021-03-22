@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF8'?>
+<CMD xmlns="http://www.clarin.eu/cmd/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" CMDVersion="1.1" xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1342181139640/xsd ">
+   <Header>
+      <MdCreator>rogierkraf</MdCreator>
+      <MdCreationDate>2013-11-30+02:00</MdCreationDate>
+      <MdProfile>clarin.eu:cr1:p_1342181139640</MdProfile>
+      <MdCollectionDisplayName>CLARIN Netherlands</MdCollectionDisplayName>
+   </Header>
+   <Resources>
+	<ResourceProxyList>
+		<ResourceProxy id="CRN001">
+			<ResourceType>Resource</ResourceType>
+			<ResourceRef>http://cornetto.clarin.inl.nl/</ResourceRef>
+		</ResourceProxy>
+	</ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <ClarinSoftwareDescription>
+         <GeneralInfo>
+            <name xml:lang="eng">Cornetto</name>
+            <title xml:lang="eng">Cornetto: Combinatorial and Relational Network as Toolkit for Dutch Language Technology</title>
+            <publicationYear>2008</publicationYear>
+            <url>http://cornetto.clarin.inl.nl/index.html</url><CLARINCentre>Dutch Language Institute</CLARINCentre><OriginalSource>http://portal.clarin.nl/node/1944</OriginalSource>
+            <ReleaseStatus>
+               <LifeCycleStatus>published</LifeCycleStatus>
+               <lastUpdate>2015-01-01</lastUpdate>
+            </ReleaseStatus>
+            <NationalProjects><Project><name>CLARIN-NL</name><title>CLARIN in the Netherlands</title><id>184.021.003</id><funder>NWO</funder><url>http://www.clarin.nl</url><Contact><Person>Jan Odijk</Person><Role>National Coordinator</Role><Address>Utrecht, the Netherlands</Address><Email>j.odijk@uu.nl</Email><Department>UiL-OTS</Department><Organisation>Utrecht University</Organisation></Contact><Duration><StartYear>2009</StartYear><CompletionYear>2015</CompletionYear></Duration></Project></NationalProjects><Country><CountryName>Netherlands</CountryName><CountryCoding>NL</CountryCoding></Country><Description>
+				<Description>Cornetto is a lexical resource for the Dutch language which combines two resources with different semantic organisations: the Dutch Wordnet with its synset organisation and the Dutch Reference Lexicon which includes definitions, usage constraints, selectional restrictions, syntactic behaviours, illustrative contexts, etc. The Cornetto database contains over 92K lemmas and almost 120K word meanings.
+				
+				The Cornetto lexical resource for Dutch covers the most generic and central part of the language. Cornetto combines the structures of the Princeton Wordnet, some of the features from the FrameNet for English and the information on morphological, syntactic, semantic and combinatorial features of lexemes normally found in dictionaries. The Cornetto resource is compiled by combining and aligning two existing semantic resources for Dutch: the Dutch wordnet (DWN) and the Referentie Bestand Nederlands (RBN). Recently, the resource is revised and extended with sentiment values in the From Text to Political Positions project , and with semantic annotations in SONAR, CGN and texts from the Web in the DutchSemCor project.
+				
+				The Cornetto Lexical Resource consists of two large repositories of lexicon data: the lexical entry repository and the synset repository. A Lexical Entry (LE) is a word-meaning pair (i.e. a single meaning of a certain word form), for which morphological, syntactical, semantical and combinatorial information is given. As such, LEs are word senses in the lexical semantic tradition, containing the linguistic knowledge that is needed to properly use the word in a specific meaning in a language. Since the LEs follow a word-to-meaning view, the semantical and combinatorial information for each meaning clarify the differences across the meanings. LEs focus on the polysemy of words and typically follow an approach to represent condensed and generalised meanings from which more specific ones can be derived.
+				
+				Each LE is aligned with a synset (set of synonyms) in the synset repository. As such, a synset can be seen as a set of LEs with the same meaning and every synset stands for a concept. The synsets in Cornetto are interconnected by different semantic relations such as hyponymy, antonymy and meronymy. The Cornet-to Resource is aligned with the English Wordnet, from which domain information was imported. The domains represent clusters of concepts that are related by a shared area of interest, such as sport, education or politics.
+				
+				The definitions of LEs from the same synset should be semantically equivalent and the LEs of a single word form should belong to different synsets. The LEs of a single word form typically differ in terms of connotation, pragmatics, syntax and semantics but synonymous words in the same synset can be differen-tiated along connotation, pragmatics and syntax but not semantics. This structure of the resource makes it possible to combine the very detailed information on form and usage of a specific LE or a group of LEs with the semantic relations which are specified in the corresponding synset(s).
+				
+				For an Open Source version lexico-semantic database for Dutch see the Open Source Dutch Wordnet (ODWN): http://wordpress.let.vupr.nl/odwn/
+				</Description>
+            </Description>
+         </GeneralInfo>
+         <SoftwareFunction>
+            <toolCategory>language resource</toolCategory>
+            <toolCategory>lexical resource</toolCategory>
+            <toolCategory>mono-lingual tool</toolCategory>
+            <toolCategory>written language tool</toolCategory>
+            <ToolTasks><toolTask>dictionary searching</toolTask>
+            <toolTask>knowledge representation</toolTask>
+            <toolTask>visualisation</toolTask>
+			</ToolTasks><ResearchPhases><ResearchPhase>Browsing and Searching</ResearchPhase></ResearchPhases><ResearchDomains>
+				<researchDomain>Linguistics</researchDomain>
+			</ResearchDomains>
+            <LinguisticsSubject>
+               <linguisticsSubject>semantics</linguisticsSubject>
+				<Description>
+					<Description/>
+				</Description>
+            </LinguisticsSubject>
+            <LanguageVariety>
+                <languageDependent>yes</languageDependent>
+                <Language>
+			        <LanguageName>Dutch</LanguageName>
+					<ISO639>
+					  <iso-639-3-code>nld</iso-639-3-code>
+					</ISO639>
+				</Language>	
+				<Centuries>
+					<centuryDependent>yes</centuryDependent>
+					<CenturyInterval>
+					   <centuryFrom>20</centuryFrom>
+					   <centuryThrough>21</centuryThrough>
+					</CenturyInterval>
+				</Centuries>
+            </LanguageVariety>
+         </SoftwareFunction>
+         <SoftwareImplementation>
+            <distributionMedium>Download</distributionMedium>
+            <distributionMedium>Online available</distributionMedium>
+            <UserInterface>
+               <interfaceType>graphical user interface</interfaceType>
+               <applicationType>web application</applicationType>
+            </UserInterface>
+            <Input>
+               <inputType>text</inputType>
+            </Input>
+			<Output>	
+				<outputType>image</outputType>
+				<outputResource>synset visualisation with d3.js https://d3js.org/</outputResource>
+				<Schema><schemaname/></Schema><MimeType>
+					<MimeType>image/svg+xml</MimeType>
+				</MimeType>	
+			</Output>
+			<Output>	
+				<outputType>text</outputType>
+				<characterEncoding>UTF8</characterEncoding>
+				<outputResource>query results</outputResource>
+				<Schema><schemaname/></Schema><MimeType>
+					<MimeType>text/html</MimeType>
+				</MimeType>	
+			</Output>
+			<Output>	
+				<outputType>text</outputType>
+				<characterEncoding>UTF8</characterEncoding>
+				<outputResource>query results</outputResource>
+				<Schema><schemaname>XML-LMF</schemaname><schemaURL>http://cornetto.inl.nl/cornetto-lmf2.xsd</schemaURL></Schema><MimeType>
+					<MimeType>text/xml</MimeType>
+				</MimeType>	
+			</Output>
+         </SoftwareImplementation>
+         <Access>
+            <ResourceLicense>
+               <license>other</license>
+               <distributionType>non-commercial</distributionType>
+               <url>http://cornetto.clarin.inl.nl/license.html</url>
+               <Price>
+                  <amount>0</amount>
+                  <ISO4217>
+                     <iso-4217-currency>EUR</iso-4217-currency>
+                  </ISO4217>
+               </Price>
+            </ResourceLicense>
+            <Contact>
+               <Email>servicedesk@ivdnt.org</Email>
+               <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
+               <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
+               <Url>http://www.ivdnt.org/</Url>
+            </Contact>
+         </Access>
+         <ResourceDocumentation>
+            <Documentation>
+               <title>User Documentation of Cornetto LMF Lexical Resource for Dutch</title>
+               <documentationTarget>user</documentationTarget>
+               <url>http://cornetto.clarin.inl.nl/help/D9-Cornetto-Documentation.pdf</url>
+               <ISO639>
+                  <iso-639-3-code>eng</iso-639-3-code>
+               </ISO639>
+            </Documentation>
+            <Documentation>
+               <title>Getting started with the Cornetto demo</title>
+               <documentationTarget>user</documentationTarget>
+               <url>http://cornetto.clarin.inl.nl/help/GettingStarted.pdf</url>
+               <ISO639>
+                  <iso-639-3-code>eng</iso-639-3-code>
+               </ISO639>
+            </Documentation>
+		<Publication>
+		 <publicationCategory>in book</publicationCategory>
+		 <publicationPurpose>scientific background</publicationPurpose>
+		 <peerReviewStatus>yes</peerReviewStatus>
+		 <Description>
+		   <Description LanguageID="eng">Vossen, P., I. maks, R. Segers, H. van der Vliet, M.F. Moens, K. Hofmann, E. Tjong Kim Sang, M. de Rijke (2013), Corntto: a lexical semantic database for Dutch, Chapter in: P. Spyns and J. Odijk (eds): Essential Speech and Language Technology for Dutch, Results by the STEVIN-programme, Publ. Springer series Theory and Applications of Natural Language Processing, ISBN 978-3-642-30909-0. 
+		   </Description>
+		 </Description>
+		</Publication>
+		<Publication>
+		 <publicationCategory>in proceedings</publicationCategory>
+		 <publicationPurpose>scientific background</publicationPurpose>
+		 <peerReviewStatus>yes</peerReviewStatus>
+		 <Description>
+		   <Description LanguageID="eng">Vossen, P., I. Maks, R. Seegers and H. van der Vliet (2008). Integrating Lexical Units, Synsets, and Ontology in the Cornetto Database. In Proceedings of LREC-2008, Marrakech, Morocco.
+		   </Description>
+		 </Description>
+		</Publication>
+         </ResourceDocumentation>
+         <SoftwareDevelopment>
+            <Project>
+               <name>Cornetto</name>
+               <title>Cornetto: Combinatorial and Relational Network as Toolkit for Dutch Language Technology</title>
+               <funder>CLARIN-NL</funder>
+               <url>http://portal.clarin.nl/node/1944</url>
+               <Contact>
+		 <Person>piek.vossen@vu.nl</Person> 
+                 <Email>piek.vossen@vu.nl</Email>
+               </Contact>
+               <Duration/>
+            </Project>
+            <Creator>
+               <Contact>
+		 <Person>Prof. dr. Piek Vossen</Person>
+                 <Email>piek.vossen@vu.nl</Email>
+               </Contact>
+            </Creator>
+         </SoftwareDevelopment>
+         <TechnicalInfo>
+            <ImplementationLanguage>
+               <implementationLanguage>unknown</implementationLanguage>
+               <version>unknown</version>
+            </ImplementationLanguage>
+         </TechnicalInfo>
+      </ClarinSoftwareDescription>
+   </Components>
+</CMD>
