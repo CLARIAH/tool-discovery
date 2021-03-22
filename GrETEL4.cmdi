@@ -29,7 +29,7 @@
     			<version>4.0</version>
 
             </ReleaseStatus>
-            <NationalProjects><Project><name>CLARIAH-CORE</name><title>Common Lab Research Infrastructure for the Arts and the Humanities</title><id>184.033.101</id><funder>NWO</funder><url>http://www.clariah.nl</url><Contact><Person>Jan Odijk</Person><Role>National Coordinator</Role><Address>Utrecht, the Netherlands</Address><Email>j.odijk@uu.nl</Email><Department>UiL-OTS</Department><Organisation>Utrecht University</Organisation></Contact><Duration><StartYear>2015</StartYear><CompletionYear>2018</CompletionYear></Duration></Project></NationalProjects><Country><CountryName>Belgium</CountryName><CountryCoding>BE</CountryCoding></Country>
+            <NationalProjects><Project><name>CLARIAH-CORE</name><title>Common Lab Research Infrastructure for the Arts and the Humanities</title><id>184.033.101</id><funder>NWO</funder><url>http://www.clariah.nl</url><Contact><Person>Jan Odijk</Person><Role>National Coordinator</Role><Address>Utrecht, the Netherlands</Address><Email>j.odijk@uu.nl</Email><Department>UiL-OTS</Department><Organisation>Utrecht University</Organisation></Contact><Duration><StartYear>2015</StartYear><CompletionYear>2018</CompletionYear></Duration></Project></NationalProjects><Country><CountryName>Netherlands</CountryName><CountryCoding>NL</CountryCoding></Country>
 			<Description>
 				<Description>
 				GrETEL Version 4 extends the functionality of GrETEL in a number of ways: 
@@ -100,7 +100,6 @@
             <distributionMedium>Online available</distributionMedium>
 			<sourcecodeURI>https://github.com/UUDigitalHumanitieslab/gretel</sourcecodeURI>
 			<sourcecodeURI>https://github.com/UUDigitalHumanitieslab/GrETEL-upload</sourcecodeURI>
-			<sourcecodeURI>https://github.com/JanOdijk/chamd</sourcecodeURI>
             <UserInterface>
                <interfaceType>graphical user interface</interfaceType>
                <applicationType>web application</applicationType>
@@ -138,15 +137,29 @@
 				<outputType>text</outputType>
 				<characterEncoding>UTF8</characterEncoding>
 				<outputResource>Treebank</outputResource>
-				<Schema><schemaname/></Schema><MimeType>
-					<MimeType>text/html</MimeType>
+				<Schema><schemaname>Alpino XML</schemaname></Schema><MimeType>
+					<MimeType>text/xml</MimeType>
 				</MimeType>	
-				<AnnotationType>
-					<AnnotationType>Lemma</AnnotationType>
-					<AnnotationType>Word form</AnnotationType>
-					<AnnotationType>Morphology</AnnotationType>
-					<AnnotationType>Morphosyntax</AnnotationType>
-					<AnnotationType>Syntax</AnnotationType>
+                <AnnotationType>
+					<AnnotationType>Discourse/Sentence Boundaries</AnnotationType>
+					<AnnotationType>Morphosyntax/Inflection</AnnotationType>
+					<AnnotationType>Morphosyntax/Lemma</AnnotationType>
+					<AnnotationType>Morphosyntax/POS</AnnotationType>
+					<AnnotationType>Morphosyntax/Word form</AnnotationType>
+					<AnnotationType>Orthography/Token</AnnotationType>
+					<TagSet>POSTags/DCOI Tagset</TagSet> 
+				</AnnotationType>
+                <AnnotationType>
+					<AnnotationType>Semantics/Named Entity</AnnotationType>
+					<AnnotationType>Semantics/Named Entity Class</AnnotationType>
+					<TagSet>NETags/Frog NE Tag Set</TagSet> 
+				</AnnotationType>
+                <AnnotationType>
+					<AnnotationType>Syntax/Chunks</AnnotationType>
+					<AnnotationType>Syntax/Dependency Relations</AnnotationType>
+					<AnnotationType>Syntax/Grammatical Relations</AnnotationType>
+					<AnnotationType>Syntax/Multiword Expressions</AnnotationType>
+					<TagSet>Syntax/Alpino Tagset</TagSet> 
 				</AnnotationType>
 			</Output>
 			<Output>	

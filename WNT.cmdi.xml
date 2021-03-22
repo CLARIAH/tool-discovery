@@ -92,7 +92,7 @@
            <Output>
              <outputType>text</outputType>
 	     <AnnotationType>
-	       <AnnotationType>Lemma</AnnotationType>
+	       <AnnotationType>Morphosyntax/Lemma</AnnotationType>
 	       <Description>
 		 <Description>Modern Dutch Lemma</Description>
 	       </Description>

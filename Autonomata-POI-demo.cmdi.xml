@@ -29,6 +29,7 @@
                <lastUpdate>2011-01-01</lastUpdate>
             </ReleaseStatus>
             <NationalProjects><Project><name>CLARIN-NL</name><title>CLARIN in the Netherlands</title><id>184.021.003</id><funder>NWO</funder><url>http://www.clarin.nl</url><Contact><Person>Jan Odijk</Person><Role>National Coordinator</Role><Address>Utrecht, the Netherlands</Address><Email>j.odijk@uu.nl</Email><Department>UiL-OTS</Department><Organisation>Utrecht University</Organisation></Contact><Duration><StartYear>2009</StartYear><CompletionYear>2015</CompletionYear></Duration></Project></NationalProjects><Country><CountryName>Netherlands</CountryName><CountryCoding>NL</CountryCoding></Country><Description>
+	      <Description xml:lang="eng">A demo of a speech recognizer for POIs (Points of Interest). This demo recognizes stay-over addresses and eateries in some big cities (inter alia Amsterdam, Antwerpen, Gent, Rotterdam).</Description>
 	      <Description xml:lang="nld">Een demo van een spraakherkenner voor POIs (Points of Interest). Deze demo herkent overnachtingsadressen en eetgelegenheden in enkele grote steden (o.a. Amsterdam, Antwerpen, Gent, Rotterdam).</Description>
             </Description>
          </GeneralInfo>

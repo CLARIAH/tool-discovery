@@ -39,7 +39,8 @@
 	       <version>1.5</version>
             </ReleaseStatus>
             <NationalProjects><Project><name>CLARIN-NL</name><title>CLARIN in the Netherlands</title><id>184.021.003</id><funder>NWO</funder><url>http://www.clarin.nl</url><Contact><Person>Jan Odijk</Person><Role>National Coordinator</Role><Address>Utrecht, the Netherlands</Address><Email>j.odijk@uu.nl</Email><Department>UiL-OTS</Department><Organisation>Utrecht University</Organisation></Contact><Duration><StartYear>2009</StartYear><CompletionYear>2015</CompletionYear></Duration></Project></NationalProjects><Country><CountryName>Netherlands</CountryName><CountryCoding>NL</CountryCoding></Country><Description>
-	      <Description xml:lang="nld">Het Middelnederlandsch Woordenboek beschrijft de woordenschat van het Nederlands dat in de dertiende tot zestiende eeuw gesproken werd.</Description>
+	      <Description xml:lang="eng">Search Application for the Middle Dutch Dictionary, which describes the vocabulary of the Dutch language as spoken from the 13th till the 16th century. .</Description>
+	      <Description xml:lang="nld">Zoekapplicatie voor het Middelnederlandsch Woordenboek, dat  de woordenschat beschrijft van het Nederlands  dat in de dertiende tot de zestiende eeuw gesproken werd.</Description>
             </Description>
          </GeneralInfo>
          <SoftwareFunction>
@@ -75,7 +76,7 @@
 					<centuryDependent>yes</centuryDependent>
 					<CenturyInterval>
 					   <centuryFrom>13</centuryFrom>
-					   <centuryThrough>15</centuryThrough>
+					   <centuryThrough>16</centuryThrough>
 					</CenturyInterval>
 				</Centuries>
             </LanguageVariety>
@@ -92,7 +93,7 @@
            <Output>
              <outputType>text</outputType>
 	     <AnnotationType>
-	       <AnnotationType>Lemma</AnnotationType>
+	       <AnnotationType>Morphosyntax/Lemma</AnnotationType>
 	       <Description>
 		 <Description>Modern Dutch Lemma</Description>
 	       </Description>

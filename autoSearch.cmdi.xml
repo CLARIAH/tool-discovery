@@ -25,6 +25,7 @@
          <GeneralInfo>
             <name xml:lang="eng">AutoSearch</name>
             <title xml:lang="eng">Blacklab AutoSearch Corpus Search</title>
+			<version>1.0.14</version>
             <publicationYear>2013</publicationYear>
             <url>http://hdl.handle.net/10032/5389ce7fdf3ce8afcb58e95fd4ee4461</url><CLARINCentre>Dutch Language Institute</CLARINCentre><OriginalSource>http://portal.clarin.nl/node/4222</OriginalSource>
             <ReleaseStatus>

@@ -25,10 +25,12 @@
             <publicationYear>2013</publicationYear>
             <url>http://yago.meertens.knaw.nl/apache/TTNWW/</url><CLARINCentre>Meertens Institute</CLARINCentre><OriginalSource>http://portal.clarin.nl/node/1964</OriginalSource>
             <ReleaseStatus>
-               <LifeCycleStatus>published</LifeCycleStatus>
-               <lastUpdate>2013-01-01</lastUpdate>
+               <LifeCycleStatus>withdrawn</LifeCycleStatus>
+               <lastUpdate>2018-09-07</lastUpdate>
             </ReleaseStatus>
-            <NationalProjects><Project><name>CLARIN-NL</name><title>CLARIN in the Netherlands</title><id>184.021.003</id><funder>NWO</funder><url>http://www.clarin.nl</url><Contact><Person>Jan Odijk</Person><Role>National Coordinator</Role><Address>Utrecht, the Netherlands</Address><Email>j.odijk@uu.nl</Email><Department>UiL-OTS</Department><Organisation>Utrecht University</Organisation></Contact><Duration><StartYear>2009</StartYear><CompletionYear>2015</CompletionYear></Duration></Project><Project><name>CLARIAH-CORE</name><title>Common Lab Research Infrastructure for the Arts and the Humanities</title><id>184.033.101</id><funder>NWO</funder><url>http://www.clariah.nl</url><Contact><Person>Jan Odijk</Person><Role>National Coordinator</Role><Address>Utrecht, the Netherlands</Address><Email>j.odijk@uu.nl</Email><Department>UiL-OTS</Department><Organisation>Utrecht University</Organisation></Contact><Duration><StartYear>2015</StartYear><CompletionYear>2018</CompletionYear></Duration></Project></NationalProjects><Country><CountryName>Netherlands</CountryName><CountryCoding>NL</CountryCoding></Country><Description>
+            <NationalProjects><Project><name>CLARIN-NL</name><title>CLARIN in the Netherlands</title><id>184.021.003</id><funder>NWO</funder><url>http://www.clarin.nl</url><Contact><Person>Jan Odijk</Person><Role>National Coordinator</Role><Address>Utrecht, the Netherlands</Address><Email>j.odijk@uu.nl</Email><Department>UiL-OTS</Department><Organisation>Utrecht University</Organisation></Contact><Duration><StartYear>2009</StartYear><CompletionYear>2015</CompletionYear></Duration></Project>
+			</NationalProjects><Country>
+			<CountryName>Netherlands</CountryName><CountryCoding>NL</CountryCoding></Country><Description>
 				<Description>TTNWW integrates and makes available existing Language Technology (LT) software components for the Dutch language that have been developed in the STEVIN and CGN projects. The LT components (for text and speech) are made available as web-services in a simplified workflow system that enables researchers without much technical background to use standard LT workflow recipes.
 				 The web services are available in two separate domains: "Text" and "Speech" processing. For "Text", workflows for the following functionality is offered by TTNWW:
 				 - Orthographic Normalisation using TICCLops (version CLARIN-NL 1.0);

@@ -42,7 +42,8 @@
                <lastUpdate>2013-01-01</lastUpdate>
             </ReleaseStatus>
             <NationalProjects><Project><name>CLARIN-NL</name><title>CLARIN in the Netherlands</title><id>184.021.003</id><funder>NWO</funder><url>http://www.clarin.nl</url><Contact><Person>Jan Odijk</Person><Role>National Coordinator</Role><Address>Utrecht, the Netherlands</Address><Email>j.odijk@uu.nl</Email><Department>UiL-OTS</Department><Organisation>Utrecht University</Organisation></Contact><Duration><StartYear>2009</StartYear><CompletionYear>2015</CompletionYear></Duration></Project></NationalProjects><Country><CountryName>Netherlands</CountryName><CountryCoding>NL</CountryCoding></Country><Description>
-	      <Description xml:lang="ndl">verzameling van alle 13e-eeuwse teksten die als bronnenmateriaal hebben gediend voor het Vroegmiddelnederlands Woordenboek. De bronbestanden van het corpus zijn op aanvraag beschikbaar </Description>
+	      <Description xml:lang="eng">Search Application into the collection of all 13th century texts that served as source material for the Early Middle Dutch Dictionary. The source files are available upon request. </Description>
+	      <Description xml:lang="nld">Zoekapplicatie op de verzameling van alle 13e-eeuwse teksten die als bronnenmateriaal hebben gediend voor het Vroegmiddelnederlands Woordenboek. De bronbestanden van het corpus zijn op aanvraag beschikbaar </Description>
             </Description>
          </GeneralInfo>
          <SoftwareFunction>

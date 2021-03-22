@@ -1,0 +1,255 @@
+<?xml version='1.0' encoding='UTF8'?>
+<CMD xmlns="http://www.clarin.eu/cmd/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" CMDVersion="1.1" xsi:schemaLocation="http://www.clarin.eu/cmd/ http://catalog.clarin.eu/ds/ComponentRegistry/rest/registry/profiles/clarin.eu:cr1:p_1342181139640/xsd ">
+   <Header>
+     <MdCreator>janodijk</MdCreator>
+      <MdCreationDate>2018-08-01+02:00</MdCreationDate>
+      <MdProfile>clarin.eu:cr1:p_1342181139640</MdProfile>
+      <MdCollectionDisplayName>CLARIN Netherlands</MdCollectionDisplayName>
+   </Header>
+   <Resources>
+	<ResourceProxyList>
+		<ResourceProxy id="Alpino001">
+			<ResourceType>Resource</ResourceType>
+			<ResourceRef>https://webservices-lst.science.ru.nl/alpino</ResourceRef>
+		</ResourceProxy>
+
+		</ResourceProxyList>
+      <JournalFileProxyList/>
+      <ResourceRelationList/>
+   </Resources>
+   <Components>
+      <ClarinSoftwareDescription>
+         <GeneralInfo>
+            <name xml:lang="eng">Alpino (CLST web service and application)</name>
+            <title xml:lang="eng">Alpino: a dependency parser for Dutch (CLST web service and application)</title>
+			<version>unknown</version>
+            <publicationYear>2018</publicationYear>
+            <url>https://webservices-lst.science.ru.nl/alpino</url><CLARINCentre>none yet</CLARINCentre>
+            <ReleaseStatus>
+               <LifeCycleStatus>published</LifeCycleStatus>
+               <lastUpdate>2018-06-08</lastUpdate>
+			   <version>0</version>
+            </ReleaseStatus>
+            <NationalProjects>
+				<Project>
+				<name>CLARIAH-CORE</name><title>Common Lab Research Infrastructure for the Arts and the Humanities</title><id>184.033.101</id><funder>NWO</funder><url>http://www.clariah.nl</url><Contact><Person>Jan Odijk</Person><Role>National Coordinator</Role><Address>Utrecht, the Netherlands</Address><Email>j.odijk@uu.nl</Email><Department>UiL-OTS</Department><Organisation>Utrecht University</Organisation></Contact><Duration><StartYear>2015</StartYear><CompletionYear>2018</CompletionYear></Duration>
+				</Project>
+			</NationalProjects>
+			<Country><CountryName>Netherlands</CountryName><CountryCoding>NL</CountryCoding></Country>
+			<Description>
+	      <Description xml:lang="eng">This is a web service and web application to the Alpino  dependency parser for Dutch, developed in the context of the PIONIER Project Algorithms for Linguistic Processing.
+	      </Description></Description>
+         </GeneralInfo>
+         <SoftwareFunction>
+            <toolCategory>written language tool</toolCategory>
+            <toolCategory>mono-lingual tool</toolCategory>
+            <ToolTasks>
+			<toolTask>parsing</toolTask>
+			<toolTask>dependency parsing</toolTask>
+            <toolTask>lemmatisation</toolTask>
+	    <toolTask>morphological analysis</toolTask>
+	    <toolTask>named entity recognition</toolTask>
+	    <toolTask>part of speech tagging</toolTask>
+	    <toolTask>sentence splitting</toolTask>
+	    <toolTask>tokenisation</toolTask>
+			</ToolTasks><ResearchPhases><ResearchPhase>Enriching Data</ResearchPhase></ResearchPhases><ResearchDomains>
+				<researchDomain>Linguistics</researchDomain>
+			</ResearchDomains>
+            <LinguisticsSubject>
+               <linguisticsSubject>general linguistics</linguisticsSubject>
+	       <Description>
+		 <Description/>
+	       </Description>
+            </LinguisticsSubject>
+            <LinguisticsSubject>
+               <linguisticsSubject>syntax</linguisticsSubject>
+	       <Description>
+		 <Description/>
+	       </Description>
+            </LinguisticsSubject>
+            <LanguageVariety>
+               <languageDependent>yes</languageDependent>
+               <Language><LanguageName>Dutch</LanguageName><ISO639><iso-639-3-code>nld</iso-639-3-code></ISO639></Language><Centuries>
+					<centuryDependent>yes</centuryDependent>
+					<CenturyInterval>
+					   <centuryFrom>20</centuryFrom>
+					   <centuryThrough>21</centuryThrough>
+					</CenturyInterval>
+				</Centuries>
+            </LanguageVariety>
+         </SoftwareFunction>
+         <SoftwareImplementation>
+            <distributionMedium>Online available</distributionMedium>
+		    <sourcecodeURI>view-source:https://webservices-lst.science.ru.nl/alpino/info/</sourcecodeURI>
+            <InstallationRequirements>
+               <MinimumHardwareRequirements>
+                  <SystemRequirements>
+                     <workingMemoryMin>not specified</workingMemoryMin>
+                     <hardDiskMin>not specified</hardDiskMin>
+                     <Platform>
+                        <operatingSystem>Linux</operatingSystem>
+						<operatingSystemVersion>not specified</operatingSystemVersion>
+						<bitArchitecture>unknown</bitArchitecture>
+                     </Platform>
+                  </SystemRequirements>
+               </MinimumHardwareRequirements>
+               <SoftwareRequirements>
+                  <RequiredSoftware>
+                    <SoftwareShortDescription>
+                        <resourceName>CLAM</resourceName>
+						<version></version>
+						<url>https://github.com/proycon/clam</url>
+						<applicationType>localDesktop</applicationType>
+					</SoftwareShortDescription>
+                    <SoftwareShortDescription>
+                        <resourceName>Alpino</resourceName>
+						<version>not specified</version>
+						<url></url>
+						<applicationType>localDesktop</applicationType>
+						<Description><Description>git clone --depth 1 git://urd.let.rug.nl/Alpino.git</Description></Description>
+					</SoftwareShortDescription>
+
+                  </RequiredSoftware>
+               </SoftwareRequirements>
+            </InstallationRequirements>
+            <UserInterface>
+               <interfaceType>graphical user interface</interfaceType>
+               <applicationType>web application</applicationType>
+            </UserInterface>
+            <UserInterface>
+               <interfaceType>web interface</interfaceType>
+               <applicationType>web service</applicationType>
+            </UserInterface>
+		<Input>
+		    <characterEncoding>utf8</characterEncoding>
+			<inputType>text</inputType>
+			<inputResource>Plain text, tokenized, one sentence per line</inputResource>
+		    <MimeType><MimeType>text/plain</MimeType></MimeType>
+		</Input>
+		<Input>
+		    <characterEncoding>utf8</characterEncoding>
+			<inputType>text</inputType>
+			<inputResource>Plain text, untokenized</inputResource>
+		    <MimeType><MimeType>text/plain</MimeType></MimeType>
+		</Input>
+		<Output><outputType>text</outputType>
+				    <characterEncoding>utf8</characterEncoding>
+                <Schema><schemaname>Alpino DTD</schemaname></Schema> 
+		        <MimeType>
+					<MimeType>text/xml</MimeType>
+					<MimeType>application/zip</MimeType>
+				</MimeType>
+                <AnnotationType>
+					<AnnotationType>Morphosyntax/Inflection</AnnotationType>
+					<AnnotationType>Morphosyntax/Lemma</AnnotationType>
+					<AnnotationType>Morphosyntax/POS</AnnotationType>
+					<AnnotationType>Morphosyntax/Word form</AnnotationType>
+					<AnnotationType>Orthography/Token</AnnotationType>
+					<TagSet>POSTags/DCOI Tagset</TagSet> 
+				</AnnotationType>
+                <AnnotationType>
+					<AnnotationType>Syntax/Chunks</AnnotationType>
+					<AnnotationType>Syntax/Dependency Relations</AnnotationType>
+					<AnnotationType>Syntax/Grammatical Relations</AnnotationType>
+					<AnnotationType>Syntax/Multiword Expressions</AnnotationType>
+					<TagSet>Syntax/Alpino Tagset</TagSet> 
+				</AnnotationType>
+		</Output>
+         </SoftwareImplementation>
+         <Access>
+            <ResourceLicense>
+               <license>GNU LGPL</license>
+			   <version>not specified</version>
+               <distributionType>public</distributionType>
+               <url>http://www.gnu.org/copyleft/lesser.html</url>
+               <Price>
+                  <amount>0</amount>
+                  <ISO4217>
+                     <iso-4217-currency>EUR</iso-4217-currency>
+                  </ISO4217>
+               </Price>
+            </ResourceLicense>
+               <Contact>
+                  <Person>
+				  Maarten van Gompel
+                  </Person>
+				  <Address>Nijmegen, the Netherlands</Address>
+                  <Email>
+				  proycon@anaproy.nl
+                  </Email>
+				  <Department>Center for Language and Speech Technology</Department>
+                  <Organisation>
+				  Radboud University Nijmegen
+                  </Organisation>
+                  <Url>
+					https://www.ru.nl/clst/
+                  </Url>
+               </Contact>
+			
+
+         </Access>
+         <ResourceDocumentation>
+            <Documentation>
+               <title>Info Page of the RUN Web application and service for Alpino</title>
+               <documentationTarget>technical</documentationTarget>
+               <url>https://webservices-lst.science.ru.nl/alpino/info/</url>
+               <ISO639>
+                  <iso-639-3-code>eng</iso-639-3-code>
+               </ISO639>
+            </Documentation>
+		<Pictures> 
+			<picture type="logo">http://www.let.rug.nl/vannoord/alp/mattenklopper.gif</picture>
+            <picture>http://www.let.rug.nl/vannoord/alp/zaag.gif</picture>
+			<picture>http://www.let.rug.nl/vannoord/alp/Alpino/mat2.gif</picture>
+		</Pictures>
+         </ResourceDocumentation>
+         <SoftwareDevelopment>
+			
+            <Project>
+               <name>CLARIAH-CORE</name>
+               <title/>
+               <funder>NWO</funder>
+               <url/>
+               <Contact>
+		 <Person/>
+		 <Email/>
+		 <Organisation xml:lang="eng"/>
+	       </Contact>
+               <Duration/>
+            </Project>
+			
+            <Creator>
+               <Role>
+			   software developer
+               </Role>
+               <Contact>
+                  <Person>
+				  Maarten van Gompel
+                  </Person>
+				  <Address>Nijmegen, the Netherlands</Address>
+                  <Email>
+				  proycon@anaproy.nl
+                  </Email>
+				  <Department>Center for Language and Speech Technology</Department>
+                  <Organisation>
+				  Radboud University Nijmegen
+                  </Organisation>
+                  <Url>
+					https://www.ru.nl/clst/
+                  </Url>
+               </Contact>
+            </Creator>
+			
+			
+
+			
+         </SoftwareDevelopment>
+         <TechnicalInfo>
+            <ImplementationLanguage>
+               <implementationLanguage>Python</implementationLanguage>
+               <version>3</version>
+            </ImplementationLanguage>
+         </TechnicalInfo>
+      </ClarinSoftwareDescription>
+   </Components>
+</CMD>

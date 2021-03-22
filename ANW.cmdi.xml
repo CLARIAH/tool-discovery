@@ -39,7 +39,7 @@
 	       <version/>
             </ReleaseStatus>
             <NationalProjects><Project><name>CLARIN-NL</name><title>CLARIN in the Netherlands</title><id>184.021.003</id><funder>NWO</funder><url>http://www.clarin.nl</url><Contact><Person>Jan Odijk</Person><Role>National Coordinator</Role><Address>Utrecht, the Netherlands</Address><Email>j.odijk@uu.nl</Email><Department>UiL-OTS</Department><Organisation>Utrecht University</Organisation></Contact><Duration><StartYear>2009</StartYear><CompletionYear>2015</CompletionYear></Duration></Project></NationalProjects><Country><CountryName>Netherlands</CountryName><CountryCoding>NL</CountryCoding></Country><Description>
-	      <Description>Corpus based dictionary descibing contemporary Dutch in the Netherlands and in Flanders of the period 1970-2019.</Description>
+	      <Description>Corpus based dictionary describing contemporary Dutch in the Netherlands and in Flanders of the period 1970-2019.</Description>
             </Description>
          </GeneralInfo>
          <SoftwareFunction>
@@ -92,7 +92,7 @@
            <Output>
              <outputType>text</outputType>
 	     <AnnotationType>
-	       <AnnotationType>Lemma</AnnotationType>
+	       <AnnotationType>Morphosyntax/Lemma</AnnotationType>
 	       <Description>
 		 <Description>Modern Dutch Lemma</Description>
 	       </Description>

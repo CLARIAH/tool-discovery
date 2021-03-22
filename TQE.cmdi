@@ -36,7 +36,7 @@
             <toolCategory>evaluation tool</toolCategory>
             <ToolTasks><toolTask>evaluation</toolTask>
             <toolTask>annotation</toolTask>
-			</ToolTasks><ResearchPhases><ResearchPhase>Obtaining Data / Software</ResearchPhase></ResearchPhases><ResearchDomains>
+			</ToolTasks><ResearchPhases><ResearchPhase>Enriching Data</ResearchPhase></ResearchPhases><ResearchDomains>
 				<researchDomain>Linguistics</researchDomain>
 				<researchDomain>Speech Processing</researchDomain>
 			</ResearchDomains>

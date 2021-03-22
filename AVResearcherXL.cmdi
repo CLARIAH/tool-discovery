@@ -19,7 +19,7 @@
       <ClarinSoftwareDescription>
          <GeneralInfo>
             <name xml:lang="eng">AVResearcherXL</name>
-            <title xml:lang="eng">AVReseracherXL: Exploring audiovisual metadata in historical context</title>
+            <title xml:lang="eng">AVResearcherXL: Exploring audiovisual metadata in historical context</title>
             <publicationYear>2014</publicationYear>
             <url>http://avresearcher.clariah.beeldengeluid.nl/</url><CLARINCentre>NISV</CLARINCentre><OriginalSource>http://portal.clarin.nl/node/4178</OriginalSource>
             <ReleaseStatus>
@@ -73,6 +73,7 @@
          </SoftwareFunction>
          <SoftwareImplementation>
             <distributionMedium>Online available</distributionMedium>
+			<sourcecodeURI>https://github.com/beeldengeluid/audiovisual-researcher</sourcecodeURI>
             <UserInterface>
                <interfaceType>graphical user interface</interfaceType>
                <applicationType>web application</applicationType>

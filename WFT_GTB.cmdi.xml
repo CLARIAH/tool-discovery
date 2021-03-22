@@ -97,7 +97,7 @@
 					<MimeType>text/csv</MimeType>
 				</MimeType>
 	     <AnnotationType>
-	       <AnnotationType>Lemma</AnnotationType>
+	       <AnnotationType>Morphosyntax/Lemma</AnnotationType>
 	       <Description>
 		 <Description>Modern Dutch Lemma and Frisian lemma</Description>
 	       </Description>

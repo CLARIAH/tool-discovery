@@ -29,7 +29,8 @@
                <lastUpdate>2011-01-01</lastUpdate>
             </ReleaseStatus>
             <NationalProjects><Project><name>CLARIN-NL</name><title>CLARIN in the Netherlands</title><id>184.021.003</id><funder>NWO</funder><url>http://www.clarin.nl</url><Contact><Person>Jan Odijk</Person><Role>National Coordinator</Role><Address>Utrecht, the Netherlands</Address><Email>j.odijk@uu.nl</Email><Department>UiL-OTS</Department><Organisation>Utrecht University</Organisation></Contact><Duration><StartYear>2009</StartYear><CompletionYear>2015</CompletionYear></Duration></Project></NationalProjects><Country><CountryName>Netherlands</CountryName><CountryCoding>NL</CountryCoding></Country><Description>
-	      <Description xml:lang="ndl">De AUTONOMATA-transcriptietoolset bestaat uit een transcriptietool en learning tools, waarmee men woordenlijsten kan verrijken met nauwkeurige uitspraakinformatie. De tool maakt gebruik van een algemene grafeem-naar-foneemomzetter (de g2p-omzetter).</Description>
+	      <Description xml:lang="eng">The AUTONOMATA transcription tool set consists of a transcription tool and learning tools, with which one can enrich word lists with precise information on the pronunciation. Thee uses a general  grapheme-to-phoneme converter (the g2p-converter).</Description>
+	      <Description xml:lang="nld">De AUTONOMATA-transcriptietoolset bestaat uit een transcriptietool en learning tools, waarmee men woordenlijsten kan verrijken met nauwkeurige uitspraakinformatie. De tool maakt gebruik van een algemene grafeem-naar-foneemomzetter (de g2p-omzetter).</Description>
             </Description>
          </GeneralInfo>
          <SoftwareFunction>
