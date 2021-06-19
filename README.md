@@ -1,6 +1,7 @@
-# Software metadata
+# CLARIAH Software Metadata
 
-This repository contains CMDI metadata for tools and services (mostly WP3 I think).
+This repository contains everything related to software metadata in CLARIAH.
 
-It has migrated here from https://surfdrive.surf.nl/files/index.php/s/VEJOEkfbFtWR6Y6
+* ``cmdi/``: Contains legacy CMDI metadata as gathered in WP3 task MD4T at Utrecht University
+*
 
