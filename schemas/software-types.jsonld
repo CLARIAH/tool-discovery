@@ -1,0 +1,17 @@
+{
+    "@context": {
+        "stype": "https://github.com/CLARIAH/software-metadata#",
+        "schema": "http://schema.org/",
+        "CommandLineApplication": { "@id": "stype:CommandLineApplication" },
+        "DesktopApplication": { "@id": "stype:DesktopApplication" },
+        "TerminalApplication": { "@id": "stype:TerminalApplication" },
+        "SoftwareDaemon": { "@id": "stype:SoftwareDaemon" },
+        "SoftwareImage": { "@id": "stype:SoftwareImage" },
+        "SoftwarePackage": { "@id": "stype:SoftwarePackage" },
+        "NotebookApplication": { "@id": "stype:NotebookApplication" },
+        "executableName": { "@id": "stype:executableName" },
+        "targetProduct": { "@id": "schema:targetProduct" },
+        "hasSourceCode": { "@id": "schema:hasSourceCode" },
+        "WebAPI": { "@id": "schema:WebAPI" }
+    }
+}
