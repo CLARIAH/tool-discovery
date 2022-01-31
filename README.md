@@ -1,7 +1,7 @@
-# CLARIAH Software Metadata
+# CLARIAH Tool Discovery
 
-This repository contains everything related to software metadata in CLARIAH.
+This repository contains everything related to tool discovery in CLARIAH.
 
-* ``cmdi/``: Contains legacy CMDI metadata as gathered in WP3 task MD4T at Utrecht University
+* ``legacy/cmdi/``: Contains legacy CMDI metadata as gathered in WP3 task MD4T at Utrecht University
 *
 
