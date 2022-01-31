@@ -1,6 +1,6 @@
 {
     "@context": {
-        "stype": "https://github.com/CLARIAH/software-metadata#",
+        "stype": "https://clariah.nl/schema/software-type#",
         "schema": "http://schema.org/",
         "CommandLineApplication": { "@id": "stype:CommandLineApplication" },
         "DesktopApplication": { "@id": "stype:DesktopApplication" },

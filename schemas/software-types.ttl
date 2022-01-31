@@ -3,7 +3,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix stype: <https://github.com/CLARIAH/software-metadata#> .
+@prefix stype: <https://clariah.nl/schema/software-type#> .
 
 # This is an extension for schema.org for linking SoftwareSourceCode, SoftwareApplication and services like WebAPI
 # all of the following are newly proposed as part of https://github.com/codemeta/codemeta/issues/271
