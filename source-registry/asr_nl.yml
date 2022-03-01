@@ -1,0 +1,4 @@
+source: https://github.com/opensource-spraakherkenning-nl/asr_nl
+services:
+  - https://webservices.cls.ru.nl/asr_nl/
+

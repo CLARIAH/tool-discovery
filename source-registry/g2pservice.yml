@@ -1,0 +1,4 @@
+source: https://github.com/opensource-spraakherkenning-nl/g2pservice/
+services:
+  - https://webservices.cls.ru.nl/g2service/
+
