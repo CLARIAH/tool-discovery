@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# we emulate a one-short service
+
+#                                     v-- one month , runit will restart the service automatically afterwards
+/usr/bin/harvest.sh $BASEURL && sleep 18748800

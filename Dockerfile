@@ -10,15 +10,18 @@ ENV BASEURL=$BASEURL
 ARG CRON_HARVEST_INTERVAL="3 * * * *"
 ENV CRON_HARVEST_INTERVAL=$CRON_HARVEST_INTERVAL
 
+ARG GITHUB_TOKEN
+ENV GITHUB_TOKEN=$GITHUB_TOKEN
+
 #Install webserver and build dependencies
 RUN apk add nginx ca-certificates runit cronie rsync
 
+ADD etc /etc
 ADD source-registry /etc/source-registry
-ADD etc/service /etc/service
 ADD bin /usr/bin/
 
 
-RUN echo "$CRON_HARVEST_INTERVAL /usr/local/bin/harvest.sh $BASEURL" > /tmp/crontab && crontab /tmp/crontab
+RUN echo "$CRON_HARVEST_INTERVAL /usr/bin/harvest.sh $BASEURL > /dev/stdout 2> /dev/stderr" > /tmp/crontab && crontab /tmp/crontab
 
 VOLUME ["/tool-store-data"]
 EXPOSE 80

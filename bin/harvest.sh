@@ -10,4 +10,5 @@ fi
 
 rm -rf /tmp/out || true
 mkdir /tmp/out
-codemeta-harvester $OPTS --outputdir /tmp/out && rsync --delete -av /tmp/out/ /tool-store-data/
+echo "Invoking harvester: codemeta-harvester $OPTS --outputdir /tmp/out /etc/source-registry && rsync --delete -av /tmp/out/ /tool-store-data/ " >&2
+codemeta-harvester $OPTS --outputdir /tmp/out /etc/source-registry && rsync --delete -av /tmp/out/ /tool-store-data/
