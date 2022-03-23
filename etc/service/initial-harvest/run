@@ -1,6 +1,10 @@
 #!/bin/sh
 
-# we emulate a one-short service
+# we emulate a one-shot service
 
-#                                     v-- one month , runit will restart the service automatically afterwards
-/usr/bin/harvest.sh $BASEURL && sleep 18748800
+if  /usr/bin/harvest.sh "$BASEURL" "$SOURCE_REGISTRY_REPO" "$SOURCE_REGISTRY_ROOT"; then
+    echo "Initial harvest finished.">&2
+else
+    echo "Initial harvest failed!">&2
+fi
+sleep 18748800 #sleep a long time (one month) to prevent continuous restarts (runit doesn't no one-shot services)
