@@ -10,18 +10,22 @@ ENV BASEURL=$BASEURL
 ARG CRON_HARVEST_INTERVAL="3 * * * *"
 ENV CRON_HARVEST_INTERVAL=$CRON_HARVEST_INTERVAL
 
-ARG GITHUB_TOKEN
-ENV GITHUB_TOKEN=$GITHUB_TOKEN
+#You will want to pass this at run time:
+#ENV GITHUB_TOKEN
+
+ENV GIT_TERMINAL_PROMPT=0
+
+ENV SOURCE_REGISTRY_REPO="https://github.com/CLARIAH/tool-discovery.git"
+#Path within the above repository where the registry is located
+ENV SOURCE_REGISTRY_ROOT="source-registry"
 
 #Install webserver and build dependencies
 RUN apk add nginx ca-certificates runit cronie rsync
 
 ADD etc /etc
-ADD source-registry /etc/source-registry
 ADD bin /usr/bin/
 
-
-RUN echo "$CRON_HARVEST_INTERVAL /usr/bin/harvest.sh $BASEURL > /dev/stdout 2> /dev/stderr" > /tmp/crontab && crontab /tmp/crontab
+RUN echo "$CRON_HARVEST_INTERVAL /usr/bin/harvest.sh $BASEURL $SOURCE_REGISTRY_REPO $SOURCE_REGISTRY_ROOT > /dev/stdout 2> /dev/stderr" > /tmp/crontab && crontab /tmp/crontab
 
 VOLUME ["/tool-store-data"]
 EXPOSE 80
