@@ -79,7 +79,7 @@ if codemeta-harvester $HARVEST_OPTS --opts "$CODEMETAPY_OPTS" --outputdir /tmp/o
     rsync --exclude 'archive' --delete -av /tmp/out/ /tool-store-data/ || die "failed to rsync"
 
     echo "Stopping the Tool Store API (will automatically restart)">&2
-    killall -w uvicorn
+    killall uvicorn
 
     rm -Rf /tmp/out #cleanup
 fi
