@@ -1,0 +1,6 @@
+#!/bin/sh
+while [ ! -e /tool-store-data/all.json ]; do
+    echo "(toolstoreapi is waiting for /tool-store-data/all.json before it can start)">&2
+    sleep 5
+done
+uvicorn toolstoreapi.main:app --proxy-headers --host 127.0.0.1 --port 8888 --log-level info

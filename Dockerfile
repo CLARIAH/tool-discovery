@@ -20,10 +20,22 @@ ENV SOURCE_REGISTRY_REPO="https://github.com/CLARIAH/tool-discovery.git"
 ENV SOURCE_REGISTRY_ROOT="source-registry"
 
 #Install webserver and build dependencies
-RUN apk add nginx ca-certificates runit cronie rsync
+RUN apk add nginx ca-certificates runit cronie rsync py3-dotenv gcc libc-dev make python3-dev
+
+#Install rdflib-endpoint, also pulls in uvicorn (for which we need the build dependencies)
+RUN pip install rdflib-endpoint
+COPY toolstoreapi /usr/src/
+RUN cd /usr/src/ && ls && pip install .
+
+#remove build dependencies
+RUN apk del gcc libc-dev make python3-dev
+RUN rm -Rf /root/.cache /usr/src
 
 ADD etc /etc
 ADD bin /usr/bin/
+
+#File that will hold the full knowledge graph, used by the Tool Store API providing a SPARQL endpoint
+ENV TOOLSTORE_DATA="/tool-store-data/all.json"
 
 RUN echo "$CRON_HARVEST_INTERVAL /usr/bin/harvest.sh $BASEURL $SOURCE_REGISTRY_REPO $SOURCE_REGISTRY_ROOT > /dev/stdout 2> /dev/stderr" > /tmp/crontab && crontab /tmp/crontab
 
