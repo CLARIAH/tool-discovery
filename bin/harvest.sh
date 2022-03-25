@@ -13,10 +13,11 @@ CSS="$BASEURI/resources/codemeta.css,$BASEURI/resources/fontawesome.css"
 if [ -n "$1" ]; then
     BASEURI="$1"
     HARVEST_OPTS="--baseuri $1"
+    CODEMETAPY_OPTS="--baseuri $1 --toolstore --css $CSS"
 else
     HARVEST_OPTS=""
+    CODEMETAPY_OPTS="--toolstore --css $CSS"
 fi
-CODEMETAPY_OPTS="--toolstore --css $CSS"
 
 CONFIGURL="$2"
 [ -n "$CONFIGURL" ] || die "No configuration URL provided (expected a git repository)"
@@ -43,7 +44,7 @@ mkdir -p /tmp/out
 
 
 #Run the harvester
-echo "Invoking harvester: codemeta-harvester $HARVEST_OPTS --opts \"$CODEMETAPY_OPTS\" --outputdir /tmp/out /usr/src/source-registry/$CONFIGPATH && rsync --delete -av /tmp/out/ /tool-store-data/ " >&2
+echo "Invoking harvester: codemeta-harvester $HARVEST_OPTS --opts \"$CODEMETAPY_OPTS\" --outputdir /tmp/out /usr/src/source-registry/$CONFIGPATH" >&2
 if codemeta-harvester $HARVEST_OPTS --opts "$CODEMETAPY_OPTS" --outputdir /tmp/out "/usr/src/source-registry/$CONFIGPATH"; then
 
     #(re-)copy CSS
