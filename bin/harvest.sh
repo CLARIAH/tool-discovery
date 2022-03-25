@@ -46,35 +46,9 @@ mkdir -p /tmp/out
 #Run the harvester
 echo "Invoking harvester: codemeta-harvester $HARVEST_OPTS --opts \"$CODEMETAPY_OPTS\" --outputdir /tmp/out /usr/src/source-registry/$CONFIGPATH" >&2
 if codemeta-harvester $HARVEST_OPTS --opts "$CODEMETAPY_OPTS" --outputdir /tmp/out "/usr/src/source-registry/$CONFIGPATH"; then
-
-    #(re-)copy CSS
-    cp -R /usr/lib/python3.*/site-packages/codemeta/resources/ /tmp/out/
-    if [ -d /etc/css/ ]; then
-        #allows providers to override CSS
-        cp -f /etc/css/*.css /tmp/out/resources/
-    fi
-
-    #Creating HTML views and Turtle variants
-    for f in /tmp/out/*.codemeta.json; do
-        if [ -e "$f" ]  && [ "$(basename "$f")" != "all.json" ]; then
-            echo "Creating HTML view for $(basename "$f")...">&2
-            outfile=$(echo $f | sed -e 's/\.json$/.html/')
-            codemetapy $CODEMETAPY_OPTS -o html "$f" > "$outfile"
-            echo "Creating Turtle version for $(basename "$f")...">&2
-            outfile=$(echo $f | sed -e 's/\.json$/.ttl/')
-            codemetapy $CODEMETAPY_OPTS -o turtle "$f" > "$outfile"
-        fi
-    done
-
     #Creating joined graph
     echo "Creating joined graph (json)">&2
-    codemetapy $CODEMETAPY_OPTS --graph /tmp/out/*.codemeta.json > /tmp/out/all.json || die "failed to create joined graph"
-    echo "Creating joined graph (turtle)">&2
-    codemetapy $CODEMETAPY_OPTS -o turtle --graph /tmp/out/*.codemeta.json > /tmp/out/all.ttl || die "failed to create joined graph"
-
-    #Creating HTML index
-    echo "Creating HTML index">&2
-    codemetapy $CODEMETAPY_OPTS -o html --graph /tmp/out/*.codemeta.json > /tmp/out/index.html || die "failed to create HTML index"
+    codemetapy $CODEMETAPY_OPTS --graph /tmp/out/*.codemeta.json > /tmp/out/data.json || die "failed to create joined graph"
 
     echo "Syncing temporary output to target dir">&2
     rsync --exclude 'archive' --delete -av /tmp/out/ /tool-store-data/ || die "failed to rsync"
