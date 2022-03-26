@@ -1,4 +1,4 @@
 source: https://bitbucket.org/fryske-akademy/udpipe.git
 root: udpipeService/
-service:
+services:
   - https://frisian.eu/udpipeapp/

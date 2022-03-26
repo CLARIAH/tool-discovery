@@ -1,3 +1,3 @@
 source: https://github.com/UUDigitalHumanitieslab/gretel
-service:
+services:
   - https://gretel.hum.uu.nl/ng/home
