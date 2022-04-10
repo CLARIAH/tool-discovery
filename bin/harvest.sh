@@ -45,7 +45,7 @@ mkdir -p /tmp/out
 
 #Run the harvester
 echo "Invoking harvester: codemeta-harvester $HARVEST_OPTS --opts \"$CODEMETAPY_OPTS\" --outputdir /tmp/out /usr/src/source-registry/$CONFIGPATH" >&2
-if codemeta-harvester $HARVEST_OPTS --opts "$CODEMETAPY_OPTS" --outputdir /tmp/out "/usr/src/source-registry/$CONFIGPATH"; then
+if codemeta-harvester $HARVEST_OPTS --opts "$CODEMETAPY_OPTS" --outputdir /tmp/out "/usr/src/source-registry/$CONFIGPATH" 2>&1 | tee /tmp/out/harvest.log; then
     #Creating joined graph
     echo "Creating joined graph (json)">&2
     codemetapy $CODEMETAPY_OPTS --graph /tmp/out/*.codemeta.json > /tmp/out/data.json || die "failed to create joined graph"
