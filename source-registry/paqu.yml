@@ -1,3 +1,3 @@
 source: https://github.com/rug-compling/paqu
 services:
-  - http://www.let.rug.nl/alfa/paqu
+  - https://paqu.let.rug.nl:8068/
