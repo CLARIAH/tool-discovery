@@ -23,16 +23,23 @@ CONFIGURL="$2"
 [ -n "$CONFIGURL" ] || die "No configuration URL provided (expected a git repository)"
 CONFIGPATH="$3"
 
+echo "Starting Harvester at $(date)">&2
+if [ -n "$GITHUB_TOKEN" ]; then
+    echo "(Github API access token is set)" >&2
+else
+    echo "(Github API access token is not set)" >&2
+fi
+
 # Update the source registry containing the configuration for codemeta-harvester
 
 mkdir -p /usr/src/
 if [ ! -d /usr/src/source-registry ]; then
-    echo "Cloning configuration repository $CONFIGURL"
+    echo "Cloning configuration repository $CONFIGURL">&2
     cd /usr/src
     git clone "$CONFIGURL" source-registry || die "Unable to clone source registry"
     cd -
 else
-    echo "Updating configuration repository $CONFIGURL"
+    echo "Updating configuration repository $CONFIGURL">&2
     cd /usr/src/source-registry
     git pull || die "Unable to update source registry"
     cd -
@@ -59,3 +66,4 @@ if codemeta-harvester $HARVEST_OPTS --opts "$CODEMETAPY_OPTS" --outputdir /tmp/o
     rm -Rf /tmp/out #cleanup
 fi
 
+echo "Harvester finished at $(date)">&2
