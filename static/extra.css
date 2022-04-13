@@ -1,0 +1,10 @@
+#header #logo {
+    display: inline-block;
+    background: url(clariah-logo.svg);
+    width: 146px;
+    height: 36px;
+}
+#header h1 {
+    display: inline-block;
+    margin-left: 5px;
+}

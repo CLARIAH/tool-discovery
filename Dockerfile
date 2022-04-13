@@ -7,7 +7,9 @@ LABEL description="CLARIAH Tool Store & Harvester"
 ARG BASEURL="https://tools.clariah.nl/"
 ENV BASEURL=$BASEURL
 ENV CODEMETA_BASEURI=$BASEURL
-ENV CODEMETA_TITLE="CLARIAH Tools"
+ENV CODEMETA_TITLE="Tools"
+ENV CODEMETA_CSS="${BASEURL}static/extra.css"
+ENV CODEMETA_INPUTLOGDIR="/tool-store-data/"
 
 ARG CRON_HARVEST_INTERVAL="3 * * * *"
 ENV CRON_HARVEST_INTERVAL=$CRON_HARVEST_INTERVAL
@@ -22,6 +24,9 @@ ENV SOURCE_REGISTRY_REPO="https://github.com/CLARIAH/tool-discovery.git"
 ENV SOURCE_REGISTRY_ROOT="source-registry"
 
 RUN mkdir -p /var/www/static && cp /usr/lib/python3.*/site-packages/codemeta/resources/* /var/www/static/
+
+#copy additional static resources
+COPY static/* /var/www/static/
 
 #Install webserver and build dependencies
 RUN apk add nginx ca-certificates runit cronie rsync py3-dotenv gcc libc-dev make python3-dev
