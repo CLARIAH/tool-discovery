@@ -31,6 +31,9 @@ COPY static/* /var/www/static/
 #Install webserver and build dependencies
 RUN apk add nginx ca-certificates runit cronie rsync py3-dotenv gcc libc-dev make python3-dev
 
+# Patch to set proper mimetype for logs
+RUN sed -i 's/txt;/txt log;/' /etc/nginx/mime.types
+
 #Install codemeta-server, this also pulls in rdflib-endpoint and uvicorn (for which we need the build dependencies)
 RUN pip install git+https://github.com/proycon/codemeta-server
 #TODO: ^-- update URL after release
