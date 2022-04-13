@@ -3,8 +3,11 @@
     background: url(clariah-logo.svg);
     width: 146px;
     height: 36px;
+    vertical-align: top;
 }
-#header h1 {
+div#header h1 {
     display: inline-block;
-    margin-left: 5px;
+    margin-left: 5px !important;
+    margin-top: 0px !important;
+    vertical-align: top;
 }
