@@ -1,3 +1,4 @@
-source: https://github.com/ETCBC/bhsa
+source: https://github.com/ETCBC/pipeline
 services:
   - https://shebanq.ancient-data.org
+

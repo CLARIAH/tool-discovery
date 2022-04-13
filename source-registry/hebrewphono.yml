@@ -1,3 +1,4 @@
-source: https://github.com/ETCBC/bhsa
+source: https://github.com/ETCBC/phono
 services:
   - https://shebanq.ancient-data.org
+
