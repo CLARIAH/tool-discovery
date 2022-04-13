@@ -26,6 +26,11 @@ CONFIGPATH="$3"
 echo "Starting Harvester at $(date)">&2
 if [ -n "$GITHUB_TOKEN" ]; then
     echo "(Github API access token is set)" >&2
+    echo "$GITHUB_TOKEN" > /tmp/github_token
+    chmod go-rwx /tmp/github_token
+elif [ -e /tmp/github_token ]; then
+    export GITHUB_TOKEN=$(cat /tmp/github_token)
+    echo "(Github API access token is read from file)" >&2
 else
     echo "(Github API access token is not set)" >&2
 fi
