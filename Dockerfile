@@ -1,57 +1,31 @@
 #Harvester + Store run in the same container as the store is merely a thin layer on top of the former
 FROM proycon/codemeta-harvester
 
-LABEL org.opencontainers.image.authors="Maarten van Gompel <proycon@anaproy.nl>"
-LABEL description="CLARIAH Tool Store & Harvester"
-
-ARG BASEURL="https://tools.clariah.nl/"
-ENV BASEURL=$BASEURL
-ENV CODEMETA_BASEURI=$BASEURL
-ENV CODEMETA_TITLE="Tools"
-ENV CODEMETA_CSS="${BASEURL}static/extra.css"
-ENV CODEMETA_INPUTLOGDIR="/tool-store-data/"
-
-ARG CRON_HARVEST_INTERVAL="3 * * * *"
-ENV CRON_HARVEST_INTERVAL=$CRON_HARVEST_INTERVAL
-
-#You will want to pass this at run time:
-#ENV GITHUB_TOKEN
-
 ENV GIT_TERMINAL_PROMPT=0
-
-ENV SOURCE_REGISTRY_REPO="https://github.com/CLARIAH/tool-discovery.git"
-#Path within the above repository where the registry is located
-ENV SOURCE_REGISTRY_ROOT="source-registry"
-
 RUN mkdir -p /var/www/static && cp /usr/lib/python3.*/site-packages/codemeta/resources/* /var/www/static/
 
-#copy additional static resources
-COPY static/* /var/www/static/
-
 #Install webserver and build dependencies
-RUN apk add nginx ca-certificates runit cronie rsync py3-dotenv gcc libc-dev make python3-dev
+#Install codemeta-server, this also pulls in rdflib-endpoint and uvicorn (for which we need the build dependencies)
+#remove build dependencies
+RUN apk add bash nginx ca-certificates runit cronie rsync py3-dotenv gcc libc-dev make python3-dev ; \
+pip install git+https://github.com/proycon/codemeta-server flask waitress ; \
+apk del gcc libc-dev make python3-dev ; rm -Rf /root/.cache /usr/src
+#manual build-tools download & build can be replace by download of official release
 
 # Patch to set proper mimetype for logs
 RUN sed -i 's/txt;/txt log;/' /etc/nginx/mime.types
-
-#Install codemeta-server, this also pulls in rdflib-endpoint and uvicorn (for which we need the build dependencies)
-RUN pip install git+https://github.com/proycon/codemeta-server
-#TODO: ^-- update URL after release
-
-#remove build dependencies
-RUN apk del gcc libc-dev make python3-dev
-RUN rm -Rf /root/.cache /usr/src
+#copy additional static resources
+COPY static/* /var/www/static/
 
 ADD etc /etc
 ADD bin /usr/bin/
+RUN chmod +x /usr/bin/*.sh
+ADD app.py /app.py
+RUN chmod +x /app.py
 
-#File that will hold the full knowledge graph, used by codemeta-server providing a SPARQL endpoint
-ENV CODEMETA_GRAPH="/tool-store-data/data.json"
+#VOLUME ["/tool-store-data/codemeta.json"]
+#EXPOSE nginx port
 
-RUN echo "$CRON_HARVEST_INTERVAL /usr/bin/harvest.sh $BASEURL $SOURCE_REGISTRY_REPO $SOURCE_REGISTRY_ROOT > /dev/stdout 2> /dev/stderr" > /tmp/crontab && crontab /tmp/crontab
-
-VOLUME ["/tool-store-data"]
-EXPOSE 80
 WORKDIR /
-
+#Runs everything under /etc/service dir: i.e. nginx, cron, codemeta-server and harvest batch
 ENTRYPOINT ["runsvdir","-P","/etc/service"]
