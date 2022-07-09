@@ -15,7 +15,7 @@ The tool discovery service, consisting of a harvester that runs on regular inter
 is deployed at https://tools.clariah.nl (production) and https://tools.dev.clariah.nl (development).
 
 All harvested data is also available as individual files via https://tools.dev.clariah.nl/files/
-
+ 
 ## Links
 
 * [Tool Discovery kanban board](https://github.com/orgs/CLARIAH/projects/1) - Project planning
