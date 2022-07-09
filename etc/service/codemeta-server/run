@@ -1,6 +1,10 @@
-#!/bin/sh
+#!/bin/bash
+
+if [ "$INITIAL_HARVEST" == "true" ]; then
 while [ ! -e /tool-store-data/data.json ]; do
     echo "(waiting for /tool-store-data/data.json before codemeta-server can start)">&2
     sleep 5
 done
-uvicorn codemeta_server.main:get_app --proxy-headers --host 127.0.0.1 --port 8080 --log-level info
+fi
+
+uvicorn codemeta_server.main:get_app --proxy-headers --host 127.0.0.1 --port 22222 --log-level info

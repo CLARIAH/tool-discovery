@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-# this script is typically invoked periodically from cron
+# this script can be invoked periodically from cron
 
 
 die() {
@@ -8,10 +8,9 @@ die() {
     exit 1
 }
 
-
+BASEURI="${1:-BASEURL}"
 CSS="$BASEURI/resources/codemeta.css,$BASEURI/resources/fontawesome.css"
 if [ -n "$1" ]; then
-    BASEURI="$1"
     HARVEST_OPTS="--baseuri $1"
     CODEMETAPY_OPTS="--baseuri $1 --toolstore --css $CSS"
 else
@@ -19,9 +18,6 @@ else
     CODEMETAPY_OPTS="--toolstore --css $CSS"
 fi
 
-CONFIGURL="$2"
-[ -n "$CONFIGURL" ] || die "No configuration URL provided (expected a git repository)"
-CONFIGPATH="$3"
 
 echo "Starting Harvester at $(date)">&2
 if [ -n "$GITHUB_TOKEN" ]; then
@@ -35,9 +31,12 @@ else
     echo "(Github API access token is not set)" >&2
 fi
 
-# Update the source registry containing the configuration for codemeta-harvester
 
 mkdir -p /usr/src/
+if [ "$LOCAL_SOURCE_REGISTRY" != "true" ]; then
+CONFIGURL="${2:-SOURCE_REGISTRY_REPO}"
+[ -n "$CONFIGURL" ] || die "No configuration URL provided (expected a git repository)"
+# Update the source registry containing the configuration for codemeta-harvester
 if [ ! -d /usr/src/source-registry ]; then
     echo "Cloning configuration repository $CONFIGURL">&2
     cd /usr/src
@@ -49,26 +48,11 @@ else
     git pull || die "Unable to update source registry"
     cd -
 fi
-
-#prepare temporary output directory
-rm -rf /tmp/out || true
-mkdir -p /tmp/out
-
-
-#Run the harvester
-echo "Invoking harvester: codemeta-harvester $HARVEST_OPTS --opts \"$CODEMETAPY_OPTS\" --outputdir /tmp/out /usr/src/source-registry/$CONFIGPATH" >&2
-if codemeta-harvester $HARVEST_OPTS --opts "$CODEMETAPY_OPTS" --outputdir /tmp/out "/usr/src/source-registry/$CONFIGPATH" 2>&1 | tee /tmp/out/harvest.log; then
-    #Creating joined graph
-    echo "Creating joined graph (json)">&2
-    codemetapy $CODEMETAPY_OPTS --graph /tmp/out/*.codemeta.json > /tmp/out/data.json || die "failed to create joined graph"
-
-    echo "Syncing temporary output to target dir">&2
-    rsync --exclude 'archive' --delete -av /tmp/out/ /tool-store-data/ || die "failed to rsync"
-
-    echo "Stopping the Tool Store API (will automatically restart)">&2
-    killall uvicorn
-
-    rm -Rf /tmp/out #cleanup
 fi
 
-echo "Harvester finished at $(date)">&2
+#Run the codemeta-harvester
+CONFIGPATH="${3:-SOURCE_REGISTRY_ROOT}"
+echo "Invoking harvester: codemeta-harvester $HARVEST_OPTS --opts \"$CODEMETAPY_OPTS\" --outputdir /tmp/out /usr/src/source-registry/$CONFIGPATH" >&2
+codemeta-harvester $HARVEST_OPTS --opts "$CODEMETAPY_OPTS" --outputdir /tmp/out "/usr/src/source-registry/$CONFIGPATH" 2>&1 | tee /tmp/out/harvest.log
+
+echo "codemeta-harvester finished at $(date)">&2
