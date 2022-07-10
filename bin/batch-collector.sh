@@ -36,9 +36,9 @@ echo "Syncing temporary output to target dir">&2
 rsync_out=$(rsync -c --include='*.codemeta.json' --exclude 'archive' -a --stats  /tmp/out/ /tool-store-data/) || die "Nothing to do or failed to rsync"
 echo "$rsync_out"
 
-new_created_files=`echo $rsync_out | grep -Eo 'Number of regular files transferred: ([0-9]+)'| awk '{split($0,arr,": "); print arr[2]}'`
-echo "New created files $new_created_files"
-[ "$new_created_files" == "0" ] && echo "rsync gave nothing to do" && exit 0
+updated_files=`echo $rsync_out | grep -Eo 'Number of regular files transferred: ([0-9]+)'| awk '{split($0,arr,": "); print arr[2]}'`
+echo "Updated files $updated_files"
+[ "$updated_files" == "0" ] && echo "rsync gave nothing to do" && exit 0
 
 
 #Creating joined graph

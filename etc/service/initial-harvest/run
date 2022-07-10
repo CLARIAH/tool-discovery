@@ -11,6 +11,7 @@ sed -i "s|git clone|git clone --depth 1 --filter=blob:limit=500k|g" /usr/bin/cod
 if [ "$INITIAL_HARVEST" == "true" ]; then
 # we emulate a one-shot service
 if  /usr/bin/harvest.sh "$BASEURL" "$SOURCE_REGISTRY_REPO" "$SOURCE_REGISTRY_ROOT"; then
+    source /usr/bin/batch-collector.sh
     echo "Initial harvest finished.">&2
 else
     echo "Initial harvest failed!">&2
