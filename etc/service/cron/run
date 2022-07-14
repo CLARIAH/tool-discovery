@@ -1,4 +1,3 @@
 #!/bin/sh
 
-crond -n
-
+cron -f
