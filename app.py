@@ -24,7 +24,7 @@ def index():
         filename=filenamify_url(value)
         filepath="/tmp/out/" + filename
         print("cleaned filename: " + filename)
-        with open(filepath, 'w', encoding='latin-1') as my_file:
+        with open(filepath, 'w', encoding='utf-8') as my_file:
             json.dump(data, my_file)
         #subprocess.Popen(['sh', '/usr/bin/event-harvest.sh']).wait()
         return jsonify(data)
