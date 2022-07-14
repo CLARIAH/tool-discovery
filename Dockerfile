@@ -7,15 +7,17 @@ RUN mkdir -p /var/www/static && cp /usr/lib/python3.*/site-packages/codemeta/res
 #Install webserver and build dependencies
 #Install codemeta-server, this also pulls in rdflib-endpoint and uvicorn (for which we need the build dependencies)
 #remove build dependencies
-RUN apk add bash nginx ca-certificates runit cronie rsync py3-dotenv apache2-utils gcc libc-dev make python3-dev ; \
-pip install git+https://github.com/proycon/codemeta-server flask waitress ; \
+RUN apk add nginx ca-certificates runit cronie rsync py3-dotenv apache2-utils gcc libc-dev make python3-dev ; \
+pip install codemeta-server flask waitress ; \
 apk del gcc libc-dev make python3-dev ; rm -Rf /root/.cache /usr/src
-#manual build-tools download & build can be replace by download of official release
+#what build tools are still needed ?
 
 # Patch to set proper mimetype for logs
 RUN sed -i 's/txt;/txt log;/' /etc/nginx/mime.types
-#nginx level auth cred.  You could add more credentials @runtime with: htpasswd -b /etc/nginx/.htpasswd <usr> <psw> && nginx -s reload
-RUN htpasswd -c -b /etc/nginx/.htpasswd user Let3gue33mypa33!
+#nginx level auth
+ARG nginx_user='user'
+ARG nginx_pass='Gue33mypa33!'
+RUN htpasswd -c -b /etc/nginx/.htpasswd $nginx_user $nginx_pass
 #copy additional static resources
 COPY static/* /var/www/static/
 
@@ -29,5 +31,5 @@ RUN chmod +x /app.py
 #EXPOSE nginx port
 
 WORKDIR /
-#Runs everything under /etc/service dir: i.e. nginx, cron, codemeta-server and harvest batch
+#Runs everything under /etc/service dir: i.e. nginx, cron, codemeta-server and harv/st batch
 ENTRYPOINT ["runsvdir","-P","/etc/service"]
