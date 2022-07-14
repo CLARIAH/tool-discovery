@@ -1,6 +1,6 @@
 FROM debian:stable-slim
 
-RUN apt-get update -qqy && apt-get install -qqy python3 python3-pip \ 
+RUN apt-get update -qqy && apt-get install -qqy --no-install-recommends python3 python3-pip \ 
 python3-yaml python3-ruamel.yaml python3-requests python3-matplotlib python3-markdown python3-rdflib python3-lxml python3-wheel \
 git curl recode gawk pandoc && \
 apt-get clean -qqy ; apt-get autoremove --yes ; rm -rf /var/lib/{apt,dpkg,cache,log}/
@@ -32,7 +32,7 @@ RUN mkdir -p /var/www/static && cp /usr/lib/python3.*/site-packages/codemeta/res
 #Install webserver and build dependencies
 #Install codemeta-server, this also pulls in rdflib-endpoint and uvicorn (for which we need the build dependencies)
 #remove build dependencies
-RUN apt-get install -qqy nginx ca-certificates runit cron rsync python3-dotenv apache2-utils gcc ; \
+RUN apt-get install -qqy --no-install-recommends nginx ca-certificates runit cron rsync python3-dotenv apache2-utils gcc ; \
 pip install --upgrade pip; pip install codemeta-server flask waitress ; \
 apt-get remove -qqy gcc libc-dev make python3-dev ; \ 
 apt-get clean -qqy ; apt-get autoremove --yes ; rm -rf /var/lib/{apt,dpkg,cache,log}/
