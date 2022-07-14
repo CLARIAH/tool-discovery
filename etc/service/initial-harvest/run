@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #prepare temporary output directory
 #rm -rf /tmp/out || true
@@ -6,7 +6,6 @@ mkdir -p /tmp/out
 
 echo "Registering git creds"
 git config --global credential.helper '!f() { sleep 1; echo "username=${GIT_USER}"; echo "password=${GIT_PASSWORD}"; }; f'
-sed -i "s|git clone|git clone --depth 1 --filter=blob:limit=500k|g" /usr/bin/codemeta-harvester
 
 if [ "$INITIAL_HARVEST" == "true" ]; then
 # we emulate a one-shot service

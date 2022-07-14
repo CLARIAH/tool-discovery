@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if [ "$INITIAL_HARVEST" == "true" ]; then
 while [ ! -e /tool-store-data/data.json ]; do

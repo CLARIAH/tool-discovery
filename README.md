@@ -23,11 +23,11 @@ All harvested data is also available as individual files via https://tools.dev.c
 ## Execution
 
 docker build -t codemeta-server-tool .
-docker run -itd --rm -p 80:80 --env-file=my-env.env --name=cm-srv -v codemeta_volume:/tool-store-data --restart=unless-stopped codemeta-server-tool 
+docker run -itd -p 80:80 --env-file=my-env.env --name=cm-srv -v codemeta_volume:/tool-store-data --restart=unless-stopped codemeta-server-tool 
 
 Local yamls for sources harvesting: add to run -v $PWD/source-registry/:/usr/src/source-registry/source-registry/ and set LOCAL_SOURCE_REGISTRY=true in my-env.env
 
-Event-based collection is always On. POST your codemeta.json file with curl -XPOST -H "Content-Type: application/json" -dcodemeta.json -u user <url>/rest/
+Event-based collection is always On. POST your codemeta.json file with curl -u <nginx-user> -XPOST -H "Content-Type: application/json" -dcodemeta.json -u user <url>/rest/
 
 For private git repo add to docker run -e  GIT_USER='youruser' -e GIT_PASSWORD='yourtoken'
 To clean up remove the volume codemeta_volume

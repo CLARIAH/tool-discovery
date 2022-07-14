@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # this script can be invoked periodically from cron
 

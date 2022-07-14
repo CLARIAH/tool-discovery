@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 die() {
     echo "$@" >&2
@@ -21,11 +21,9 @@ create_pidfile
 
 BASEURI="$BASEURL"
 CSS="$BASEURI/resources/codemeta.css,$BASEURI/resources/fontawesome.css"
-if [ -n "$1" ]; then
-    HARVEST_OPTS="--baseuri $BASEURI"
-else
-    HARVEST_OPTS=""
-    CODEMETAPY_OPTS="--toolstore --css $CSS"
+
+if [ ! -n "$1" ]; then
+   CODEMETAPY_OPTS="--toolstore --css $CSS"
 fi
 
 #Script runs every CRON_BATCH_COLLECTOR_INTERVAL_MINS
@@ -38,7 +36,7 @@ echo "$rsync_out"
 
 updated_files=`echo $rsync_out | grep -Eo 'Number of regular files transferred: ([0-9]+)'| awk '{split($0,arr,": "); print arr[2]}'`
 echo "Updated files $updated_files"
-[ "$updated_files" == "0" ] && echo "rsync gave nothing to do" && exit 0
+[ "$updated_files" = "0" ] && echo "rsync gave nothing to do" && exit 0
 
 
 #Creating joined graph
