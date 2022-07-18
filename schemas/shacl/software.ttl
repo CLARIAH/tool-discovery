@@ -1,0 +1,96 @@
+@prefix schema: <https://schema.org/> .
+@prefix codemeta: <https://codemeta.github.io/terms/> .
+@prefix clariah: <https://www.clariah.nl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix repostatus: <https://repostatus.org/#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix software-types: <https://w3id.org/software-types#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+clariah:SoftwareSourceCodeShape a sh:NodeShape ;
+    sh:targetClass schema:SoftwareSourceCode ;
+    rdfs:label "Source code repository" ;
+    sh:property [
+        sh:path schema:author ;
+        sh:or (
+            [ sh:class schema:Person ]
+            [ sh:class schema:Organization ]
+        ) ;
+        sh:minCount 1 ;
+        rdfs:label "The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably." ;
+        sh:message "Software source code must have at least one author." ;
+    ] ,
+    [
+        sh:path schema:codeRepository ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class schema:URL ;
+        rdfs:label "Link to the repository where the un-compiled, human readable code and related code is located (SVN, GitHub, CodePlex, institutional GitLab instance, etc.)." ;
+        sh:message "Software source code must have a code repository URL." ;
+    ] ,
+    [
+        sh:path schema:programmingLanguage ;
+        sh:minCount 0 ;
+        sh:or (
+            [ sh:class schema:ComputerLanguage ]
+            [ sh:datatype xsd:string ]
+        ) ;
+    ] ,
+    [
+        sh:path codemeta:contIntegration ;
+        sh:minCount 0 ;
+        sh:maxCount 1 ;
+        sh:class schema:URL ;
+        rdfs:label "link to continuous integration service." ;
+        sh:message "Software source code must have a code repository URL." ;
+    ] ,
+    [
+        sh:path codemeta:developmentStatus ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in (
+            repostatus:abandoned
+            repostatus:active
+            repostatus:concept
+            repostatus:inactive
+            repostatus:moved
+            repostatus:suspended
+            repostatus:unsupported
+            repostatus:wip
+        ) ;
+        rdfs:label "Description of development status, e.g. Active, inactive, suspended. See repostatus.org." ;
+        sh:message "Software source code must have exactly one development status." ;
+    ] ,
+    [
+        sh:path schema:name ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Software source code must have a name." ;
+    ] ,
+    [
+        sh:path schema:applicationCategory ;
+        sh:minCount 1 ;
+    ] ,
+    [
+        sh:path schema:targetProduct ;
+        sh:class schema:SoftwareApplication ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "Target Operating System / Product to which the code applies. If applies to several versions, just the product name can be used." ;
+    ] .
+
+clariah:SoftwareApplicationShape a sh:NodeShape ;
+    sh:targetClass schema:SoftwareApplication ;
+    rdfs:label "Software application" ;
+    sh:property [
+
+    ] .
+
+clariah:WebAPIShape a sh:NodeShape ;
+    sh:targetClass schema:WebAPI ;
+    rdfs:label "An application programming interface accessible over Web/Internet technologies" .
+
+# Software types: https://w3id.org/software-types# https://github.com/CLARIAH/clariah-plus/issues/98
+
+
