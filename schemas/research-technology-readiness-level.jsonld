@@ -3,25 +3,13 @@
         "trl": "https://w3id.org/research-technology-readiness-level#",
         "skos": "http://www.w3.org/2004/02/skos/core#",
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-        "prefLabel": { "@id": "skos:prefLabel" },
-        "Concept": { "@id": "skos:Concept" },
-        "definition": { "@id": "skos:definition" },
-        "notation": { "@id": "skos:notation" },
-        "inScheme": { "@id": "skos:inScheme" },
-        "Property": { "@id": "rdf:Property" },
-        "label": { "@id": "rdfs:label" },
-        "comment": { "@id": "rdfs:comment" },
-        "Property": { "@id": "rdf:Property" },
-        "OrderedCollection": { "@id": "skos:OrderedCollection" },
-        "ConceptScheme": { "@id": "skos:ConceptScheme" },
-        "memberList": { "@id": "skos:memberList" }
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
     },
     "@graph": [
         {
             "@id": "trl:Levels",
-            "@type": "OrderedCollection",
-            "memberList": [
+            "@type": "skos:OrderedCollection",
+            "skos:memberList": [
                 "tlr:Level0Idea",
                 "tlr:Level1InitialResearch",
                 "tlr:Level2ConceptFormulated",
@@ -36,93 +24,93 @@
         },
         {
             "@id": "tlr:Scheme",
-            "@type": "ConceptScheme"
+            "@type": "skos:ConceptScheme"
         },
         {
             "@id": "trl:Level0Idea",
-            "@type": "Concept",
-            "inScheme": "tlr:Scheme",
-            "prefLabel": "0 - Idea",
-            "notation": "0",
-            "definition": "Unproven, untested and largely unformulated concept"
+            "@type": "skos:Concept",
+            "skos:inScheme": "tlr:Scheme",
+            "skos:prefLabel": "0 - Idea",
+            "skos:notation": "0",
+            "skos:definition": "Unproven, untested and largely unformulated concept"
         },
         {
             "@id": "trl:Level1InitialResearch",
-            "@type": "Concept",
-            "inScheme": "tlr:Scheme",
-            "prefLabel": "1 - Initial Research",
-            "notation": "1",
-            "definition": "Basic (scholarly) needs observed and reported"
+            "@type": "skos:Concept",
+            "skos:inScheme": "tlr:Scheme",
+            "skos:prefLabel": "1 - Initial Research",
+            "skos:notation": "1",
+            "skos:definition": "Basic (scholarly) needs observed and reported"
         },
         {
             "@id": "trl:Level2ConceptFormulated",
-            "@type": "Concept",
-            "inScheme": "tlr:Scheme",
-            "prefLabel": "2 - Concept Formulated",
-            "notation": "2",
-            "definition": "Initial technology/application has seen concept formulated"
+            "@type": "skos:Concept",
+            "skos:inScheme": "tlr:Scheme",
+            "skos:prefLabel": "2 - Concept Formulated",
+            "skos:notation": "2",
+            "skos:definition": "Initial technology/application has seen concept formulated"
         },
         {
             "@id": "trl:Level3ProofOfConcept",
-            "@type": "Concept",
-            "inScheme": "tlr:Scheme",
-            "prefLabel": "3 - Proof of Concept",
-            "notation": "3",
-            "definition": "Initial Proof-of-concept of key functionality. Concept presented for initial feedback from scholarly users. Not yet validated and not suitable for end-users yet."
+            "@type": "skos:Concept",
+            "skos:inScheme": "tlr:Scheme",
+            "skos:prefLabel": "3 - Proof of Concept",
+            "skos:notation": "3",
+            "skos:definition": "Initial Proof-of-concept of key functionality. Concept presented for initial feedback from scholarly users. Not yet validated and not suitable for end-users yet."
         },
         {
             "@id": "trl:Level4ValidatedProofOfConcept",
-            "@type": "Concept",
-            "inScheme": "tlr:Scheme",
-            "prefLabel": "4 - Validated Proof of Concept",
-            "notation": "4",
-            "definition": "Validated Proof-of-concept of key functionality. Technology validated in its own experimental setting (e.g. the lab). Not mature enough for end-users yet."
+            "@type": "skos:Concept",
+            "skos:inScheme": "tlr:Scheme",
+            "skos:prefLabel": "4 - Validated Proof of Concept",
+            "skos:notation": "4",
+            "skos:definition": "Validated Proof-of-concept of key functionality. Technology validated in its own experimental setting (e.g. the lab). Not mature enough for end-users yet."
         },
         {
             "@id": "trl:Level5EarlyPrototype",
-            "@type": "Concept",
-            "inScheme": "tlr:Scheme",
-            "prefLabel": "5 - Early Prototype",
-            "notation": "5",
-            "definition": "Technology validated in target setting (e.g. with potential end-users)"
+            "@type": "skos:Concept",
+            "skos:inScheme": "tlr:Scheme",
+            "skos:prefLabel": "5 - Early Prototype",
+            "skos:notation": "5",
+            "skos:definition": "Technology validated in target setting (e.g. with potential end-users)"
         },
         {
             "@id": "trl:Level6LatePrototype",
-            "@type": "Concept",
-            "inScheme": "tlr:Scheme",
-            "prefLabel": "6 - Late prototype",
-            "notation": "6",
-            "definition": "Technology demonstrated in target setting, end-users adopt it for testing purposes."
+            "@type": "skos:Concept",
+            "skos:inScheme": "tlr:Scheme",
+            "skos:prefLabel": "6 - Late prototype",
+            "skos:notation": "6",
+            "skos:definition": "Technology demonstrated in target setting, end-users adopt it for testing purposes."
         },
         {
             "@id": "trl:Level7ReleaseCandidate",
-            "@type": "Concept",
-            "inScheme": "tlr:Scheme",
-            "prefLabel": "7 - Release Candidate",
-            "notation": "7",
-            "definition": "Technology ready enough and in initial use by end-users in intended scholarly environments. Further validation may be in progress."
+            "@type": "skos:Concept",
+            "skos:inScheme": "tlr:Scheme",
+            "skos:prefLabel": "7 - Release Candidate",
+            "skos:notation": "7",
+            "skos:definition": "Technology ready enough and in initial use by end-users in intended scholarly environments. Further validation may be in progress."
         },
         {
             "@id": "trl:Level8Complete",
-            "@type": "Concept",
-            "inScheme": "tlr:Scheme",
-            "prefLabel": "8 - Complete",
-            "notation": "8",
-            "definition": "Technology complete and qualified, released for all end-users in scholarly environments."
+            "@type": "skos:Concept",
+            "skos:inScheme": "tlr:Scheme",
+            "skos:prefLabel": "8 - Complete",
+            "skos:notation": "8",
+            "skos:definition": "Technology complete and qualified, released for all end-users in scholarly environments."
         },
         {
             "@id": "trl:Level9Proven",
-            "@type": "Concept",
-            "inScheme": "tlr:Scheme",
-            "prefLabel": "9 - Proven",
-            "notation": "9",
-            "definition": "Technology complete and proven in practice by real users."
+            "@type": "skos:Concept",
+            "skos:inScheme": "tlr:Scheme",
+            "skos:prefLabel": "9 - Proven",
+            "skos:notation": "9",
+            "skos:definition": "Technology complete and proven in practice by real users."
         },
         {
             "@id": "tlr:technologyReadinessLevel",
-            "@type": "Property",
-            "label": "Technology Readiness Level",
-            "comment": "Associates a technology readiness level with a subject (e.g. schema:SoftwareSourceCode or schema:SoftwareApplication). Takes a value (skos:Concept) from collection tlr:Levels (in conceptscheme tlr:Scheme)"
+            "@type": "rdf:Property",
+            "rdfs:label": "Technology Readiness Level",
+            "rdfs:comment": "Associates a technology readiness level with a subject (e.g. schema:SoftwareSourceCode or schema:SoftwareApplication). Takes a value (skos:Concept) from collection tlr:Levels (in conceptscheme tlr:Scheme)"
         }
     ]
 }
