@@ -27,8 +27,12 @@
             "@type": "skos:ConceptScheme"
         },
         {
+            "@id": "tlr:TechnologyReadinessLevel",
+            "@type": "rdfs:Class"
+        },
+        {
             "@id": "trl:Level0Idea",
-            "@type": "skos:Concept",
+            "@type": [ "skos:Concept", "tlr:TechnologyReadinessLevel" ],
             "skos:inScheme": "tlr:Scheme",
             "skos:prefLabel": "0 - Idea",
             "skos:notation": "0",
@@ -36,7 +40,7 @@
         },
         {
             "@id": "trl:Level1InitialResearch",
-            "@type": "skos:Concept",
+            "@type": [ "skos:Concept", "tlr:TechnologyReadinessLevel" ],
             "skos:inScheme": "tlr:Scheme",
             "skos:prefLabel": "1 - Initial Research",
             "skos:notation": "1",
@@ -44,7 +48,7 @@
         },
         {
             "@id": "trl:Level2ConceptFormulated",
-            "@type": "skos:Concept",
+            "@type": [ "skos:Concept", "tlr:TechnologyReadinessLevel" ],
             "skos:inScheme": "tlr:Scheme",
             "skos:prefLabel": "2 - Concept Formulated",
             "skos:notation": "2",
@@ -52,7 +56,7 @@
         },
         {
             "@id": "trl:Level3ProofOfConcept",
-            "@type": "skos:Concept",
+            "@type": [ "skos:Concept", "tlr:TechnologyReadinessLevel" ],
             "skos:inScheme": "tlr:Scheme",
             "skos:prefLabel": "3 - Proof of Concept",
             "skos:notation": "3",
@@ -60,7 +64,7 @@
         },
         {
             "@id": "trl:Level4ValidatedProofOfConcept",
-            "@type": "skos:Concept",
+            "@type": [ "skos:Concept", "tlr:TechnologyReadinessLevel" ],
             "skos:inScheme": "tlr:Scheme",
             "skos:prefLabel": "4 - Validated Proof of Concept",
             "skos:notation": "4",
@@ -68,7 +72,7 @@
         },
         {
             "@id": "trl:Level5EarlyPrototype",
-            "@type": "skos:Concept",
+            "@type": [ "skos:Concept", "tlr:TechnologyReadinessLevel" ],
             "skos:inScheme": "tlr:Scheme",
             "skos:prefLabel": "5 - Early Prototype",
             "skos:notation": "5",
@@ -76,7 +80,7 @@
         },
         {
             "@id": "trl:Level6LatePrototype",
-            "@type": "skos:Concept",
+            "@type": [ "skos:Concept", "tlr:TechnologyReadinessLevel" ],
             "skos:inScheme": "tlr:Scheme",
             "skos:prefLabel": "6 - Late prototype",
             "skos:notation": "6",
@@ -84,7 +88,7 @@
         },
         {
             "@id": "trl:Level7ReleaseCandidate",
-            "@type": "skos:Concept",
+            "@type": [ "skos:Concept", "tlr:TechnologyReadinessLevel" ],
             "skos:inScheme": "tlr:Scheme",
             "skos:prefLabel": "7 - Release Candidate",
             "skos:notation": "7",
@@ -92,7 +96,7 @@
         },
         {
             "@id": "trl:Level8Complete",
-            "@type": "skos:Concept",
+            "@type": [ "skos:Concept", "tlr:TechnologyReadinessLevel" ],
             "skos:inScheme": "tlr:Scheme",
             "skos:prefLabel": "8 - Complete",
             "skos:notation": "8",
@@ -100,7 +104,7 @@
         },
         {
             "@id": "trl:Level9Proven",
-            "@type": "skos:Concept",
+            "@type": [ "skos:Concept", "tlr:TechnologyReadinessLevel" ],
             "skos:inScheme": "tlr:Scheme",
             "skos:prefLabel": "9 - Proven",
             "skos:notation": "9",
@@ -110,7 +114,8 @@
             "@id": "tlr:technologyReadinessLevel",
             "@type": "rdf:Property",
             "rdfs:label": "Technology Readiness Level",
-            "rdfs:comment": "Associates a technology readiness level with a subject (e.g. schema:SoftwareSourceCode or schema:SoftwareApplication). Takes a value (skos:Concept) from collection tlr:Levels (in conceptscheme tlr:Scheme)"
+            "rdfs:comment": "Associates a technology readiness level with a subject (e.g. schema:SoftwareSourceCode or schema:SoftwareApplication). Takes a value (skos:Concept) from collection tlr:Levels (in conceptscheme tlr:Scheme)",
+            "rdfs:range": "tlr:TechnologyReadinessLevel" 
         }
     ]
 }
