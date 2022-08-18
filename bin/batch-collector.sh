@@ -7,11 +7,11 @@ die() {
 
 PIDFILE="/tmp/action1.pid"
 create_pidfile () {
-  echo $$ > "$PIDFILE"
+    echo $$ > "$PIDFILE"
 }
 
 remove_pidfile () {
-  [ -f "$PIDFILE" ] && rm "$PIDFILE"
+    [ -f "$PIDFILE" ] && rm "$PIDFILE"
 }
 
 #To handle the case that 1) the previous running cron went long
@@ -22,7 +22,7 @@ create_pidfile
 BASEURI="$BASEURL"
 CSS="$BASEURI/resources/codemeta.css,$BASEURI/resources/fontawesome.css"
 
-if [ ! -n "$1" ]; then
+if [ -z "$1" ]; then
    CODEMETAPY_OPTS="--toolstore --css $CSS"
 fi
 
@@ -34,7 +34,7 @@ echo "Syncing temporary output to target dir">&2
 rsync_out=$(rsync -c --include='*.codemeta.json' --exclude 'archive' -a --stats  /tmp/out/ /tool-store-data/) || die "Nothing to do or failed to rsync"
 echo "$rsync_out"
 
-updated_files=`echo $rsync_out | grep -Eo 'Number of regular files transferred: ([0-9]+)'| awk '{split($0,arr,": "); print arr[2]}'`
+updated_files=$(echo $rsync_out | grep -Eo 'Number of regular files transferred: ([0-9]+)'| awk '{split($0,arr,": "); print arr[2]}')
 echo "Updated files $updated_files"
 [ "$updated_files" = "0" ] && echo "rsync gave nothing to do" && exit 0
 
@@ -48,6 +48,8 @@ echo "Stopping the Tool Store API (will automatically restart)">&2
 killall uvicorn
 
 #cleanup older than startTime - delta
-rm -f $TO_REMOVE || true
+if [ -n "$TO_REMOVE" ]; then
+    rm -f $TO_REMOVE || true
+fi
 
 echo "Batch collector finished at $(date)">&2

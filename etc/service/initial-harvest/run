@@ -7,18 +7,19 @@ mkdir -p /tmp/out
 echo "Registering git creds"
 git config --global credential.helper '!f() { sleep 1; echo "username=${GIT_USER}"; echo "password=${GIT_PASSWORD}"; }; f'
 
-if [ "$INITIAL_HARVEST" == "true" ]; then
-# we emulate a one-shot service
-if  /usr/bin/harvest.sh "$BASEURL" "$SOURCE_REGISTRY_REPO" "$SOURCE_REGISTRY_ROOT"; then
-    source /usr/bin/batch-collector.sh
-    echo "Initial harvest finished.">&2
-else
-    echo "Initial harvest failed!">&2
-fi
+if [ "$INITIAL_HARVEST" = "true" ]; then
+    # we emulate a one-shot service
+    if  /usr/bin/harvest.sh "$BASEURL" "$SOURCE_REGISTRY_REPO" "$SOURCE_REGISTRY_ROOT"; then
+        source /usr/bin/batch-collector.sh
+        echo "Initial harvest finished.">&2
+    else
+        echo "Initial harvest failed!">&2
+    fi
 fi
 
 #redirect cron outs to main container process : https://gist.github.com/mowings/59790ae930accef486bfb9a417e9d446
 [ -n "$CRON_HARVEST_INTERVAL" ] && echo "$CRON_HARVEST_INTERVAL /usr/bin/harvest.sh > /proc/1/fd/1 2>&1" > /tmp/crontab 
+[ -n "$CRON_BATCH_COLLECTOR_INTERVAL_MINS" ] || CRON_BATCH_COLLECTOR_INTERVAL_MINS=2
 echo "*/$CRON_BATCH_COLLECTOR_INTERVAL_MINS * * * * /usr/bin/batch-collector.sh > /proc/1/fd/1 2>&1" >> /tmp/crontab 
 cat /tmp/crontab && crontab /tmp/crontab
 
