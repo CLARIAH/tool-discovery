@@ -8,9 +8,9 @@ die() {
     exit 1
 }
 
-BASEURI="${1:-BASEURL}"
+BASEURI="${1:-$BASEURL}"
 CSS="$BASEURI/resources/codemeta.css,$BASEURI/resources/fontawesome.css"
-if [ -n "$1" ]; then
+if [ -n "$BASEURI" ]; then
     HARVEST_OPTS="--baseuri $1"
     CODEMETAPY_OPTS="--baseuri $1 --toolstore --css $CSS"
 else
@@ -34,24 +34,24 @@ fi
 
 mkdir -p /usr/src/
 if [ "$LOCAL_SOURCE_REGISTRY" != "true" ]; then
-CONFIGURL="${2:-SOURCE_REGISTRY_REPO}"
-[ -n "$CONFIGURL" ] || die "No configuration URL provided (expected a git repository)"
-# Update the source registry containing the configuration for codemeta-harvester
-if [ ! -d /usr/src/source-registry ]; then
-    echo "Cloning configuration repository $CONFIGURL">&2
-    cd /usr/src
-    git clone "$CONFIGURL" source-registry || die "Unable to clone source registry"
-    cd -
-else
-    echo "Updating configuration repository $CONFIGURL">&2
-    cd /usr/src/source-registry
-    git pull || die "Unable to update source registry"
-    cd -
-fi
+    CONFIGURL="${2:-$SOURCE_REGISTRY_REPO}"
+    [ -n "$CONFIGURL" ] || die "No configuration URL provided (expected a git repository)"
+    # Update the source registry containing the configuration for codemeta-harvester
+    if [ ! -d /usr/src/source-registry ]; then
+        echo "Cloning configuration repository $CONFIGURL">&2
+        cd /usr/src
+        git clone "$CONFIGURL" source-registry || die "Unable to clone source registry"
+        cd -
+    else
+        echo "Updating configuration repository $CONFIGURL">&2
+        cd /usr/src/source-registry
+        git pull || die "Unable to update source registry"
+        cd -
+    fi
 fi
 
 #Run the codemeta-harvester
-CONFIGPATH="${3:-SOURCE_REGISTRY_ROOT}"
+CONFIGPATH="${3:-$SOURCE_REGISTRY_ROOT}"
 echo "Invoking harvester: codemeta-harvester $HARVEST_OPTS --opts \"$CODEMETAPY_OPTS\" --outputdir /tmp/out /usr/src/source-registry/$CONFIGPATH" >&2
 codemeta-harvester $HARVEST_OPTS --opts "$CODEMETAPY_OPTS" --outputdir /tmp/out "/usr/src/source-registry/$CONFIGPATH" 2>&1 | tee /tmp/out/harvest.log
 

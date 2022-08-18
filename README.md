@@ -19,15 +19,18 @@ All harvested data is also available as individual files via https://tools.dev.c
 ## Links
 
 * [Tool Discovery kanban board](https://github.com/orgs/CLARIAH/projects/1) - Project planning
+* [CLARIAH Tool Discovery Presentation](https://diode.zone/w/7Urqq1xdqMFDV24CRConXk) - Presented at CLARIAH Tech Day
 
-## Execution
+## Usage
 
-docker build -t codemeta-server-tool .
+```
+docker build -t codemeta-server-tool --build-arg nginx_pass=some_password .
 docker run -itd -p 80:80 --env-file=my-env.env --name=cm-srv -v codemeta_volume:/tool-store-data --restart=unless-stopped codemeta-server-tool 
+```
 
-Local yamls for sources harvesting: add to run -v $PWD/source-registry/:/usr/src/source-registry/source-registry/ and set LOCAL_SOURCE_REGISTRY=true in my-env.env
+To use local yamls for sources harvesting (rather than a remote git repo); add to run ``-v $PWD/source-registry/:/usr/src/source-registry/source-registry/`` and set ``LOCAL_SOURCE_REGISTRY=true`` in ``my-env.env``.
 
-Event-based collection is always On. POST your codemeta.json file with curl -u <nginx-user> -XPOST -H "Content-Type: application/json" -dcodemeta.json -u user <url>/rest/
+Event-based collection, i.e. allowing clients to pushing codemeta files, can be enabled by setting ``--env-arg UPLOADER=true``, you can then POST your codemeta.json file with ``curl -u <nginx-user> -XPOST -H "Content-Type: application/json" -dcodemeta.json -u user <url>/rest/``
 
-For private git repo add to docker run -e  GIT_USER='youruser' -e GIT_PASSWORD='yourtoken'
-To clean up remove the volume codemeta_volume
+For private git repo add to ``docker run -e  GIT_USER='youruser' -e GIT_PASSWORD='yourtoken'``
+To clean up remove the volume ``codemeta_volume``

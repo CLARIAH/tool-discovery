@@ -4,13 +4,22 @@
 #rm -rf /tmp/out || true
 mkdir -p /tmp/out
 
-echo "Registering git creds"
-git config --global credential.helper '!f() { sleep 1; echo "username=${GIT_USER}"; echo "password=${GIT_PASSWORD}"; }; f'
+die() {
+    echo "ERROR: $*" >&2
+    echo "(waiting 60s before quitting)" >&2
+    sleep 60
+    exit 1
+}
+
+if [ -n "$GIT_USER" ] && [ -n "$GIT_PASSWORD" ]; then
+    echo "Registering git credentials"
+    git config --global credential.helper '!f() { sleep 1; echo "username=${GIT_USER}"; echo "password=${GIT_PASSWORD}"; }; f'
+fi
 
 if [ "$INITIAL_HARVEST" = "true" ]; then
     # we emulate a one-shot service
     if  /usr/bin/harvest.sh "$BASEURL" "$SOURCE_REGISTRY_REPO" "$SOURCE_REGISTRY_ROOT"; then
-        source /usr/bin/batch-collector.sh
+        /usr/bin/batch-collector.sh || die "Batch collector failed"
         echo "Initial harvest finished.">&2
     else
         echo "Initial harvest failed!">&2
@@ -23,8 +32,10 @@ fi
 echo "*/$CRON_BATCH_COLLECTOR_INTERVAL_MINS * * * * /usr/bin/batch-collector.sh > /proc/1/fd/1 2>&1" >> /tmp/crontab 
 cat /tmp/crontab && crontab /tmp/crontab
 
-#synchronus blocking main
-python3 /app.py
-
-#sleep 18748800 #sleep a long time (one month) to prevent continuous restarts (runit doesn't no one-shot services)
+if [ "$UPLOADER" = "true" ]; then
+    #synchroneous blocking main
+    python3 /usr/bin/uploader.py
+else
+    sleep 18748800 #sleep a long time (one month) to prevent continuous restarts (runit doesn't no one-shot services)
+fi
 

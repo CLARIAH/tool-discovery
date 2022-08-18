@@ -2,6 +2,7 @@
 FROM proycon/codemeta-harvester
 
 ENV GIT_TERMINAL_PROMPT=0
+ENV UPLOADER=0
 RUN mkdir -p /var/www/static && cp /usr/lib/python3.*/site-packages/codemeta/resources/* /var/www/static/
 
 #Install webserver and build dependencies
@@ -24,8 +25,8 @@ COPY static/* /var/www/static/
 ADD etc /etc
 ADD bin /usr/bin/
 RUN chmod +x /usr/bin/*.sh
-ADD app.py /app.py
-RUN chmod +x /app.py
+ADD app.py /usr/bin/uploader.py
+RUN chmod +x /usr/bin/uploader.py
 
 #VOLUME ["/tool-store-data/codemeta.json"]
 #EXPOSE nginx port

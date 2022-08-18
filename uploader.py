@@ -30,6 +30,6 @@ def index():
         return jsonify(data)
 
 if __name__ == '__main__':
-    print ("Running Python app.py")
+    print ("Running Python uploader.py")
     from waitress import serve
     serve(app,host='127.0.0.1',port=5555)
