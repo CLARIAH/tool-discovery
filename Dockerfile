@@ -25,7 +25,7 @@ COPY static/* /var/www/static/
 ADD etc /etc
 ADD bin /usr/bin/
 RUN chmod +x /usr/bin/*.sh
-ADD app.py /usr/bin/uploader.py
+ADD uploader.py /usr/bin/uploader.py
 RUN chmod +x /usr/bin/uploader.py
 
 #VOLUME ["/tool-store-data/codemeta.json"]
