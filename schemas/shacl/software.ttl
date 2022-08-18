@@ -76,8 +76,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:path schema:targetProduct ;
         sh:class schema:SoftwareApplication ;
         sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:message "Target Operating System / Product to which the code applies. If applies to several versions, just the product name can be used." ;
+        sh:message "Target product which results from the code." ;
     ] .
 
 clariah:SoftwareApplicationShape a sh:NodeShape ;
