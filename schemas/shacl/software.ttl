@@ -96,7 +96,10 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
     [
         sh:path codemeta:contIntegration ;
         sh:minCount 1 ;
-        sh:class schema:URL ;
+        sh:or (
+            [ sh:class schema:URL ]
+            [ sh:nodeKind sh:IRI ]
+        ) ;
         rdfs:label "link to continuous integration service." ;
         sh:severity sh:Warning ; #SHOULD/RECOMMENDED
         sh:message "Software source code *SHOULD* link to a continuous integration service that builds the software and runs the software's test" ;
