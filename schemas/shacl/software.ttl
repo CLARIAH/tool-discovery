@@ -131,7 +131,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
     ] ,
     [
         sh:path schema:applicationCategory ;
-        sh:minCount 1 ;
+        sh:minCount 0 ;
     ] ,
     [
         sh:path schema:producer ;
@@ -139,7 +139,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
             [ sh:class schema:Organization ]  #Though formally persons are allowed, we really prefer organisations here
         ) ;
         sh:minCount 1 ;
-        rdfs:label "The organization who produced the software" ; 
+        rdfs:label "The organization who produced the software" ;
         sh:severity sh:Warning ;
         sh:message "The producer of the software source code *SHOULD* be expressed" ;
     ] ,
@@ -150,7 +150,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
             [ sh:class schema:Organization ] #allowed but we really prefer persons
         ) ;
         sh:minCount 1 ;
-        rdfs:label "A secondary contributor to the software" ; 
+        rdfs:label "A secondary contributor to the software" ;
         sh:severity sh:Warning ;
         sh:message "All contributors *SHOULD* be expressed" ;
     ] ,
@@ -186,17 +186,14 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
             [ sh:class schema:Report ]
         ) ;
         sh:minCount 1 ;
-        rdfs:label "An academic publication related to the software." ; 
+        rdfs:label "An academic publication related to the software." ;
         sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because there will be many cases where no reference publication exists
         sh:message "Reference publications *SHOULD* be expressed" ;
     ] .
 
 clariah:SoftwareApplicationShape a sh:NodeShape ;
     sh:targetClass schema:SoftwareApplication ;
-    rdfs:label "Software application" ;
-    sh:property [
-
-    ] .
+    rdfs:label "Software application" .
 
 clariah:WebAPIShape a sh:NodeShape ;
     sh:targetClass schema:WebAPI ;
