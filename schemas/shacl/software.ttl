@@ -21,7 +21,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         #Note: I'm trying to keep the messages consistent with the points in the software metadata requirements, as far as possible. This for example is point 6.1
         sh:message "Software source code *MUST* have a name." ;
     ] ,
-    sh:property [
+    [
         sh:path schema:description ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
@@ -160,7 +160,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
             [ sh:class software-types:SoftwareLibrary ]
             [ sh:class software-types:SoftwareImage ]
             [ sh:class software-types:SoftwarePackage ]
-        ),
+        ) ;
         sh:minCount 1 ;
         sh:severity sh:Info ;
         sh:label "Target product, a software application which results from the code." ;
