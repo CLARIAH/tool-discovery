@@ -8,6 +8,8 @@
 @prefix software-types: <https://w3id.org/software-types#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+# See https://github.com/CLARIAH/clariah-plus/blob/main/requirements/software-metadata-requirements.md
+
 clariah:SoftwareSourceCodeShape a sh:NodeShape ;
     sh:targetClass schema:SoftwareSourceCode ;
     rdfs:label "Source code repository" ;
