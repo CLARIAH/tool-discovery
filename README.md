@@ -1,3 +1,5 @@
+[![GitHub build](https://github.com/CLARIAH/tool-discovery/actions/workflows/shacl.yml/badge.svg?branch=master)](https://github.com/CLARIAH/tool-discovery/actions/)
+
 # CLARIAH Tool Discovery
 
 This repository contains everything related to tool discovery and software metadata in CLARIAH.
