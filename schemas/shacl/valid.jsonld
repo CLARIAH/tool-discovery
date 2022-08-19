@@ -1,6 +1,6 @@
 {
   "@context": {
-    "@vocab": "http://schema.org/",
+    "@vocab": "https://schema.org/",
     "codemeta": "https://codemeta.github.io/terms/",
     "repostatus": "https://www.repostatus.org/#"
   },
