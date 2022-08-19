@@ -1,0 +1,40 @@
+{
+  "@context": {
+    "@vocab": "http://schema.org/",
+    "codemeta": "https://codemeta.github.io/terms/",
+    "repostatus": "https://www.repostatus.org/#"
+  },
+  "@type": "SoftwareSourceCode",
+  "codeRepository": {"@id":  "https://github.com/netwerk-digitaal-erfgoed/network-of-terms" },
+  "contIntegration": "https://github.com/netwerk-digitaal-erfgoed/network-of-terms/actions",
+  "dateCreated": "2020-04-17",
+  "datePublished": "2020-09-24",
+  "issueTracker": "https://github.com/netwerk-digitaal-erfgoed/network-of-terms/issues",
+  "name": "Network of Terms",
+  "description": "GraphQL API for searching the Network of Terms",
+  "license": {"@id":  "https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12"},
+  "codemeta:developmentStatus": {
+    "@id": "repostatus:active"
+  },
+  "programmingLanguage": [
+    "TypeScript"
+  ],
+  "runtimePlatform": [
+    "Node.js"
+  ],
+  "relatedLink": [
+    "https://termennetwerk-api.netwerkdigitaalerfgoed.nl"
+  ],
+  "codemeta:readme": {
+    "@id": "https://github.com/netwerk-digitaal-erfgoed/network-of-terms/blob/master/README.md"
+  },
+  "version": "master",
+  "author": [{
+    "@type": "Organization",
+    "@id": "https://netwerkdigitaalerfgoed.nl"
+  }],
+  "maintainer": {
+    "@type": "Organization",
+    "@id": "https://netwerkdigitaalerfgoed.nl"
+  }
+}
