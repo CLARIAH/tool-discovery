@@ -1,4 +1,4 @@
-@prefix schema: <https://schema.org/> .
+@prefix schema: <http://schema.org/> .
 @prefix codemeta: <https://codemeta.github.io/terms/> .
 @prefix clariah: <https://www.clariah.nl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
