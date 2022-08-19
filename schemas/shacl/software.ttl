@@ -44,7 +44,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
             [ sh:class schema:Organization ]
         ) ;
         sh:minCount 1 ;
-        rdfs:label "A maintainer the software. A maintainer is a Person or Organization that manages contributions to a software project." ; #slighly diverging from schema.org description
+        rdfs:label "A maintainer of the software. A maintainer is a Person or Organization that manages contributions to a software project." ; #slighly diverging from schema.org description
         sh:severity sh:Violation ;
         sh:message "The maintainer of the software source code *MUST* be expressed." ;
     ] ,
