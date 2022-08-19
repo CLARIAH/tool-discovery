@@ -1,6 +1,7 @@
 @prefix schema: <https://schema.org/> .
 @prefix codemeta: <https://codemeta.github.io/terms/> .
 @prefix clariah: <https://www.clariah.nl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix repostatus: <https://www.repostatus.org/#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
@@ -54,7 +55,10 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:path schema:codeRepository ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:class schema:URL ;
+        sh:or (
+            [ sh:class schema:URL ]
+            [ sh:nodeKind sh:IRI ]
+        ) ;
         rdfs:label "Link to the repository where the un-compiled, human readable code and related code is located (SVN, GitHub, CodePlex, institutional GitLab instance, etc.)." ;
         sh:severity sh:Violation ; #MUST/REQUIRED
         sh:message "Software source code *MUST* have a code repository URL." ;
@@ -63,7 +67,10 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:path codemeta:readme ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:class schema:URL ;  #bit more constrained than codemeta which also allows text
+        sh:or (
+            [ sh:class schema:URL ]
+            [ sh:nodeKind sh:IRI ]
+        ) ;
         rdfs:label "Link to software Readme file" ;
         sh:severity sh:Violation ; #MUST/REQUIRED
         sh:message "Software source code *MUST* have a proper README." ;
@@ -71,7 +78,10 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
     [
         sh:path schema:license ;
         sh:minCount 1 ;
-        sh:class schema:URL ;  #bit more constrained than codemeta which also allows text
+        sh:or (
+            [ sh:class schema:URL ]
+            [ sh:nodeKind sh:IRI ]
+        ) ;
         rdfs:label "A license document that applies to this content, indicated by an (SPDX) URL."  ;
         sh:severity sh:Violation ; #MUST/REQUIRED
         sh:message "Software source code *MUST* state its license" ;
