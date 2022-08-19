@@ -1,0 +1,29 @@
+name: SHACL
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          pip3 install -r schemas/shacl/requirements.txt
+
+      - name: Test valid CodeMeta file
+        run: |
+          cd schemas/shacl
+          pyshacl -s software.ttl -f turtle -df json-ld valid.jsonld --allow-infos --allow-warnings

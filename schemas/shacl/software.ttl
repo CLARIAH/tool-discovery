@@ -1,0 +1,204 @@
+@prefix schema: <https://schema.org/> .
+@prefix codemeta: <https://codemeta.github.io/terms/> .
+@prefix clariah: <https://www.clariah.nl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix repostatus: <https://www.repostatus.org/#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix software-types: <https://w3id.org/software-types#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# See https://github.com/CLARIAH/clariah-plus/blob/main/requirements/software-metadata-requirements.md
+
+clariah:SoftwareSourceCodeShape a sh:NodeShape ;
+    sh:targetClass schema:SoftwareSourceCode ;
+    rdfs:label "Source code repository" ;
+    sh:property [
+        sh:path schema:name ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ; #MUST/REQUIRED
+        #Note: I'm trying to keep the messages consistent with the points in the software metadata requirements, as far as possible. This for example is point 6.1
+        sh:message "Software source code *MUST* have a name." ;
+    ] ,
+    [
+        sh:path schema:description ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:severity sh:Violation ; #MUST/REQUIRED
+        sh:message "Software source code *MUST* have one (short) description." ;
+    ] ,
+    [
+        sh:path schema:author ;
+        sh:or (
+            [ sh:class schema:Person ]
+            [ sh:class schema:Organization ]
+        ) ;
+        sh:minCount 1 ;
+        rdfs:label "The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably." ;
+        sh:severity sh:Violation ;
+        sh:message "The authors of the software source code *MUST* be expressed." ;
+    ] ,
+    [
+        sh:path schema:maintainer ;
+        sh:or (
+            [ sh:class schema:Person ]
+            [ sh:class schema:Organization ]
+        ) ;
+        sh:minCount 1 ;
+        rdfs:label "A maintainer of the software. A maintainer is a Person or Organization that manages contributions to a software project." ; #slighly diverging from schema.org description
+        sh:severity sh:Violation ;
+        sh:message "The maintainer of the software source code *MUST* be expressed." ;
+    ] ,
+    [
+        sh:path schema:codeRepository ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class schema:URL ]
+            [ sh:nodeKind sh:IRI ]
+        ) ;
+        rdfs:label "Link to the repository where the un-compiled, human readable code and related code is located (SVN, GitHub, CodePlex, institutional GitLab instance, etc.)." ;
+        sh:severity sh:Violation ; #MUST/REQUIRED
+        sh:message "Software source code *MUST* have a code repository URL." ;
+    ] ,
+    [
+        sh:path codemeta:readme ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:or (
+            [ sh:class schema:URL ]
+            [ sh:nodeKind sh:IRI ]
+        ) ;
+        rdfs:label "Link to software Readme file" ;
+        sh:severity sh:Violation ; #MUST/REQUIRED
+        sh:message "Software source code *MUST* have a proper README." ;
+    ] ,
+    [
+        sh:path schema:license ;
+        sh:minCount 1 ;
+        sh:or (
+            [ sh:class schema:URL ]
+            [ sh:nodeKind sh:IRI ]
+        ) ;
+        rdfs:label "A license document that applies to this content, indicated by an (SPDX) URL."  ;
+        sh:severity sh:Violation ; #MUST/REQUIRED
+        sh:message "Software source code *MUST* state its license" ;
+    ] ,
+    [
+        sh:path schema:version ;
+        sh:minCount 1 ;
+        rdfs:label "The version/release of the software that is being described by this metadata"  ;
+        sh:severity sh:Violation ; #MUST/REQUIRED
+        sh:message "Software source code *MUST* state its version" ;
+    ] ,
+    [
+        sh:path codemeta:contIntegration ;
+        sh:minCount 1 ;
+        sh:class schema:URL ;
+        rdfs:label "link to continuous integration service." ;
+        sh:severity sh:Warning ; #SHOULD/RECOMMENDED
+        sh:message "Software source code *SHOULD* link to a continuous integration service that builds the software and runs the software's test" ;
+    ] ,
+    [
+        sh:path schema:programmingLanguage ;
+        sh:minCount 1 ;
+        sh:or (
+            [ sh:class schema:ComputerLanguage ]
+            [ sh:datatype xsd:string ]
+        ) ;
+        sh:severity sh:Info ; #MAY/OPTIONAL
+        sh:message "Software source code *MAY* express the programming language(s) used" ;
+    ] ,
+    [
+        sh:path codemeta:developmentStatus ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:in (
+            repostatus:abandoned
+            repostatus:active
+            repostatus:concept
+            repostatus:inactive
+            repostatus:moved
+            repostatus:suspended
+            repostatus:unsupported
+            repostatus:wip
+        ) ;
+        rdfs:label "Description of development status, e.g. Active, inactive, suspended. See repostatus.org." ;
+        sh:severity sh:Violation ;
+        sh:message "Development status *MUST* be expressed (unambiguously)" ;
+    ] ,
+    [
+        sh:path schema:applicationCategory ;
+        sh:minCount 0 ;
+    ] ,
+    [
+        sh:path schema:producer ;
+        sh:or (
+            [ sh:class schema:Organization ]  #Though formally persons are allowed, we really prefer organisations here
+        ) ;
+        sh:minCount 1 ;
+        rdfs:label "The organization who produced the software" ;
+        sh:severity sh:Warning ;
+        sh:message "The producer of the software source code *SHOULD* be expressed" ;
+    ] ,
+    [
+        sh:path schema:contributor ;
+        sh:or (
+            [ sh:class schema:Person ]
+            [ sh:class schema:Organization ] #allowed but we really prefer persons
+        ) ;
+        sh:minCount 1 ;
+        rdfs:label "A secondary contributor to the software" ;
+        sh:severity sh:Warning ;
+        sh:message "All contributors *SHOULD* be expressed" ;
+    ] ,
+    [
+        sh:path schema:targetProduct ;
+        sh:or (
+            [ sh:class schema:SoftwareApplication ]
+            [ sh:class schema:WebApplication ]
+            [ sh:class schema:MobileApplication ]
+            [ sh:class schema:VideoGame ]
+            [ sh:class schema:WebAPI ] #This is the only one which is disjoint with SoftwareApplication
+            [ sh:class software-types:CommandLineApplication ] #all subclasses of SofwareApplication
+            [ sh:class software-types:DesktopApplication ]
+            [ sh:class software-types:TerminalApplication ]
+            [ sh:class software-types:ServerApplication ]
+            [ sh:class software-types:NotebookApplication ]
+            [ sh:class software-types:SoftwareLibrary ]
+            [ sh:class software-types:SoftwareImage ]
+            [ sh:class software-types:SoftwarePackage ]
+        ) ;
+        sh:minCount 1 ;
+        sh:severity sh:Info ;
+        sh:label "Target product, a software application which results from the code." ;
+        sh:message "An interface type *SHOULD* be expressed: Software source code should define one or more target products that are the resulting software applications offering specific interfaces" ; #strongly diverging from schema.org definition!!  (see https://github.com/codemeta/codemeta/issues/267)
+    ] ,
+    [
+        sh:path codemeta:referencePublication ;
+        sh:or (
+            [ sh:class schema:ScholarlyArticle ] #codemeta defines only this
+            [ sh:class schema:Article ] #we take it a bit broader for leniency
+            [ sh:class schema:TechArticle ]
+            [ sh:class schema:NewsArticle ]
+            [ sh:class schema:Report ]
+        ) ;
+        sh:minCount 1 ;
+        rdfs:label "An academic publication related to the software." ;
+        sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because there will be many cases where no reference publication exists
+        sh:message "Reference publications *SHOULD* be expressed" ;
+    ] .
+
+clariah:SoftwareApplicationShape a sh:NodeShape ;
+    sh:targetClass schema:SoftwareApplication ;
+    rdfs:label "Software application" .
+
+clariah:WebAPIShape a sh:NodeShape ;
+    sh:targetClass schema:WebAPI ;
+    rdfs:label "An application programming interface accessible over Web/Internet technologies" .
+
+# Software types: https://w3id.org/software-types# https://github.com/CLARIAH/clariah-plus/issues/98
+
+
