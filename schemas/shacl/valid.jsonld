@@ -15,7 +15,7 @@
   "name": "Network of Terms",
   "description": "GraphQL API for searching the Network of Terms",
   "license": {
-    "@id": "https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12"
+    "@id": "https://spdx.org/licenses/EUPL-1.2"
   },
   "codemeta:developmentStatus": {
     "@id": "repostatus:active"
