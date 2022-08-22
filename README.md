@@ -26,6 +26,17 @@ All harvested data is also available as individual files via https://tools.dev.c
 
 ## Usage
 
+For CLARIAH (local development):
+
+```
+docker build -t clariah-tool-discovery .
+docker run -itd -p 8080:80 --env-file=local-dev.env --name=cm-srv -v codemeta_volume:/tool-store-data --restart=unless-stopped clariah-tool-discovery 
+```
+
+We recommend you to also pass an extra ``--env GITHUB_TOKEN=..........`` or you will likely hit GitHub's API rate limit during harvesting.
+
+More generic:
+
 ```
 docker build -t codemeta-server-tool --build-arg nginx_pass=some_password .
 docker run -itd -p 80:80 --env-file=my-env.env --name=cm-srv -v codemeta_volume:/tool-store-data --restart=unless-stopped codemeta-server-tool 
