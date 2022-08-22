@@ -1,5 +1,6 @@
 #Harvester + Store run in the same container as the store is merely a thin layer on top of the former
-FROM proycon/codemeta-harvester
+ARG BASETAG=latest
+FROM proycon/codemeta-harvester:$BASETAG
 
 ENV GIT_TERMINAL_PROMPT=0
 ENV UPLOADER=0
