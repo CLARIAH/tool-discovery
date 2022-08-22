@@ -3,14 +3,20 @@ FROM proycon/codemeta-harvester
 
 ENV GIT_TERMINAL_PROMPT=0
 ENV UPLOADER=0
+#you may set this to something like: git+https://github.com/proycon/codemeta-server.git@master  if you want to use a development version of codemetapy instead of the latest release
+ARG CODEMETASERVER_VERSION="stable"
 RUN mkdir -p /var/www/static && cp /usr/lib/python3.*/site-packages/codemeta/resources/* /var/www/static/
 
 #Install webserver and build dependencies
 #Install codemeta-server, this also pulls in rdflib-endpoint and uvicorn (for which we need the build dependencies)
 #remove build dependencies
 RUN apk add nginx ca-certificates runit cronie rsync py3-dotenv apache2-utils gcc libc-dev make python3-dev ; \
-pip install codemeta-server flask waitress ; \
-apk del gcc libc-dev make python3-dev ; rm -Rf /root/.cache /usr/src
+    if [ "$CODEMETASERVER_VERSION" = "stable" ]; then \
+        python3 -m pip install  --no-cache-dir --prefix /usr codemeta-server flask waitress; \
+    else \
+        python3 -m pip install  --no-cache-dir --prefix /usr $CODEMETASERVER_VERSION flask waitress; \
+    fi &&\
+    apk del gcc libc-dev make python3-dev ; rm -Rf /root/.cache /usr/src
 #what build tools are still needed ?
 
 # Patch to set proper mimetype for logs
