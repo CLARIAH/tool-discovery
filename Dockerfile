@@ -21,6 +21,8 @@ ARG nginx_pass='Gue33mypa33!'
 RUN htpasswd -c -b /etc/nginx/.htpasswd $nginx_user $nginx_pass
 #copy additional static resources
 COPY static/* /var/www/static/
+#SHACL validation schema (opt-in with CODEMETA_VALIDATE=true)
+COPY schemas/shacl/software.ttl /etc/software.ttl
 
 ADD etc /etc
 ADD bin /usr/bin/
