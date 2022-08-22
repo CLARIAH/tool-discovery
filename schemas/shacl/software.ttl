@@ -180,6 +180,16 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:message "An interface type *SHOULD* be expressed: Software source code should define one or more target products that are the resulting software applications offering specific interfaces" ; #strongly diverging from schema.org definition!!  (see https://github.com/codemeta/codemeta/issues/267)
     ] ,
     [
+        sh:path schema:funding ;
+        sh:or (
+            [ sh:class schema:Grant ]
+        ) ;
+        sh:minCount 1 ;
+        rdfs:label "Funding source" ;
+        sh:severity sh:Warning ;
+        sh:message "The funder *SHOULD* be acknowledged" ;
+    ] ,
+    [
         sh:path codemeta:referencePublication ;
         sh:or (
             [ sh:class schema:ScholarlyArticle ] #codemeta defines only this
