@@ -1,5 +1,5 @@
 docker-dev:
-	docker build -t clariah-tool-discovery:dev --build-arg CODEMETASERVER_VERSION=git+https://github.com/proycon/codemeta-server.git@master .
+	docker build -t clariah-tool-discovery:dev --build-arg BASETAG=dev --build-arg CODEMETASERVER_VERSION=git+https://github.com/proycon/codemeta-server.git@master .
 
 docker:
 	docker build -t clariah-tool-discovery:latest .
