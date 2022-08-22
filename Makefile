@@ -6,12 +6,12 @@ docker:
 
 run-dev:
 	mkdir -p /tmp/tool-store-data
-	[ -e token ] || false # store your github in a file named 'token'
+	[ -e token ] || false # store your github token in a file named 'token'
 	docker run --env-file=local-dev.env --env GITHUB_TOKEN="$(shell cat token)" -v /tmp/tool-store-data:/tool-store-data -p 8080:80 clariah-tool-discovery:dev
 
 run:
 	mkdir -p /tmp/tool-store-store
-	[ -e token ] || false # store your github in a file named 'token'
+	[ -e token ] || false # store your github token in a file named 'token'
 	docker run --env-file=local-dev.env --env GITHUB_TOKEN="$(shell cat token)" -v /tmp/tool-store-data:/tool-store-data -p 8080:80 clariah-tool-discovery:latest
 
 push-dev:
