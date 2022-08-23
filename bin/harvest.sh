@@ -21,7 +21,7 @@ fi
 if [ "$CODEMETA_VALIDATE" = "true" ]; then
     HARVEST_OPTS="$HARVEST_OPTS --validate /etc/software.ttl"
     if [ -n "$VALIDATION_TEXT" ]; then
-        HARVEST_OPTS="$HARVEST_OPTS --validatetext \"$VALIDATION_TEXT\""
+        HARVEST_OPTS="$HARVEST_OPTS --validatetext '$VALIDATION_TEXT'"
     fi
 fi
 
