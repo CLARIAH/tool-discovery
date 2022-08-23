@@ -47,11 +47,17 @@ if [ "$LOCAL_SOURCE_REGISTRY" != "true" ]; then
         echo "Cloning configuration repository $CONFIGURL">&2
         cd /usr/src
         git clone "$CONFIGURL" source-registry || die "Unable to clone source registry"
+        if [ -n "$SOURCE_REGISTRY_BRANCH" ]; then
+            git checkout "$SOURCE_REGISTRY_BRANCH" || die "Unable to checkout branch $SOURCE_REGISTRY_BRANCH"
+        fi
         cd -
     else
         echo "Updating configuration repository $CONFIGURL">&2
         cd /usr/src/source-registry
         git pull || die "Unable to update source registry"
+        if [ -n "$SOURCE_REGISTRY_BRANCH" ]; then
+            git checkout "$SOURCE_REGISTRY_BRANCH" || die "Unable to checkout branch $SOURCE_REGISTRY_BRANCH"
+        fi
         cd -
     fi
 fi
