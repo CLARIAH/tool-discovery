@@ -38,6 +38,8 @@ updated_files=$(echo $rsync_out | grep -Eo 'Number of regular files transferred:
 echo "Updated files $updated_files"
 [ "$updated_files" = "0" ] && echo "rsync gave nothing to do" && exit 0
 
+total_files=$(ls /tool-store-data/*.codemeta.json | wc -l)
+[ "$total_files" = "0" ] && die "No codemeta files were produced after harvesting"
 
 #Creating joined graph
 echo "Creating a joined graph with: codemetapy --graph /tool-store-data/*.codemeta.json > /tool-store-data/data.json  --opts \"$CODEMETAPY_OPTS\"" >&2
