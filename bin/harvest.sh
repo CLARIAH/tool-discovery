@@ -20,9 +20,6 @@ fi
 
 if [ "$CODEMETA_VALIDATE" = "true" ]; then
     HARVEST_OPTS="$HARVEST_OPTS --validate /etc/software.ttl"
-    if [ -n "$VALIDATION_TEXT" ]; then
-        HARVEST_OPTS="$HARVEST_OPTS --validatetext '$VALIDATION_TEXT'"
-    fi
 fi
 
 echo "Starting Harvester at $(date)">&2
@@ -66,7 +63,7 @@ fi
 
 #Run the codemeta-harvester
 CONFIGPATH="${3:-$SOURCE_REGISTRY_ROOT}"
-echo "Invoking harvester: codemeta-harvester $HARVEST_OPTS --opts \"$CODEMETAPY_OPTS\" --outputdir /tmp/out /usr/src/source-registry/$CONFIGPATH" >&2
-codemeta-harvester $HARVEST_OPTS --opts "$CODEMETAPY_OPTS" --outputdir /tmp/out "/usr/src/source-registry/$CONFIGPATH" 2>&1 | tee /tmp/out/harvest.log
+echo "Invoking harvester: codemeta-harvester $HARVEST_OPTS --validatetext "$VALIDATION_TEXT" --opts \"$CODEMETAPY_OPTS\" --outputdir /tmp/out /usr/src/source-registry/$CONFIGPATH" >&2
+codemeta-harvester $HARVEST_OPTS --validatetext "$VALIDATION_TEXT" --opts "$CODEMETAPY_OPTS" --outputdir /tmp/out "/usr/src/source-registry/$CONFIGPATH" 2>&1 | tee /tmp/out/harvest.log
 
 echo "codemeta-harvester finished at $(date)">&2
