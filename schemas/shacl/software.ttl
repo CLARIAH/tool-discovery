@@ -48,7 +48,6 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
             [ sh:class schema:Organization ]
             [ sh:nodeKind sh:Literal ]
         ) ;
-        ) ;
         sh:minCount 1 ;
         rdfs:label "A maintainer of the software. A maintainer is a Person or Organization that manages contributions to a software project." ; #slighly diverging from schema.org description
         sh:severity sh:Violation ;
@@ -156,7 +155,6 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
             [ sh:class schema:Organization ] #allowed but we really prefer persons
             [ sh:nodeKind sh:Literal ]
         ) ;
-        ) ;
         sh:minCount 1 ;
         rdfs:label "A secondary contributor to the software" ;
         sh:severity sh:Warning ;
@@ -210,9 +208,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:or (
             [ sh:class schema:Grant ]
             [ sh:nodeKind sh:Literal ]
-        ) ;
-        ) ;
-        sh:minCount 1 ;
+        )  ;
         rdfs:label "Funding source" ;
         sh:severity sh:Warning ;
         sh:message "The funder *SHOULD* be acknowledged" ;
@@ -226,7 +222,6 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
             [ sh:class schema:NewsArticle ]
             [ sh:class schema:Report ]
             [ sh:nodeKind sh:Literal ] #discouraged but better this than nothing
-        ) ;
         ) ;
         sh:minCount 1 ;
         rdfs:label "An academic publication related to the software." ;
