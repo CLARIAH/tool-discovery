@@ -8,11 +8,16 @@ die() {
     exit 1
 }
 
+die-usage() {
+    die "Usage: harvest.sh [BASEURI] [SOURCE_REGISTRY_REPO]"
+}
+
+
 BASEURI="${1:-$BASEURL}"
 CSS="$BASEURI/resources/codemeta.css,$BASEURI/resources/fontawesome.css"
 if [ -n "$BASEURI" ]; then
-    HARVEST_OPTS="--baseuri $1"
-    CODEMETAPY_OPTS="--baseuri $1 --toolstore --css $CSS"
+    HARVEST_OPTS="--baseuri $BASEURI"
+    CODEMETAPY_OPTS="--baseuri $BASEURI --toolstore --css $CSS"
 else
     HARVEST_OPTS=""
     CODEMETAPY_OPTS="--toolstore --css $CSS"
