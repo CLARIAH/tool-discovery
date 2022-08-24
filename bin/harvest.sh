@@ -42,15 +42,17 @@ mkdir -p /usr/src/
 if [ "$LOCAL_SOURCE_REGISTRY" != "true" ]; then
     CONFIGURL="${2:-$SOURCE_REGISTRY_REPO}"
     [ -n "$CONFIGURL" ] || die "No configuration URL provided (expected a git repository)"
+    OLDPWD=$(pwd)
     # Update the source registry containing the configuration for codemeta-harvester
     if [ ! -d /usr/src/source-registry ]; then
         echo "Cloning configuration repository $CONFIGURL">&2
         cd /usr/src
         git clone "$CONFIGURL" source-registry || die "Unable to clone source registry"
         if [ -n "$SOURCE_REGISTRY_BRANCH" ]; then
+            cd source-registry
             git checkout "$SOURCE_REGISTRY_BRANCH" || die "Unable to checkout branch $SOURCE_REGISTRY_BRANCH"
         fi
-        cd -
+        cd "$OLDPWD"
     else
         echo "Updating configuration repository $CONFIGURL">&2
         cd /usr/src/source-registry
@@ -58,7 +60,7 @@ if [ "$LOCAL_SOURCE_REGISTRY" != "true" ]; then
         if [ -n "$SOURCE_REGISTRY_BRANCH" ]; then
             git checkout "$SOURCE_REGISTRY_BRANCH" || die "Unable to checkout branch $SOURCE_REGISTRY_BRANCH"
         fi
-        cd -
+        cd "$OLDPWD"
     fi
 fi
 
