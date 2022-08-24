@@ -66,7 +66,7 @@ fi
 
 #Run the codemeta-harvester
 CONFIGPATH="${3:-$SOURCE_REGISTRY_ROOT}"
-echo "Invoking harvester: codemeta-harvester $HARVEST_OPTS --validatetext "$VALIDATION_TEXT" --opts \"$CODEMETAPY_OPTS\" --outputdir /tmp/out /usr/src/source-registry/$CONFIGPATH" >&2
+echo "Invoking harvester: codemeta-harvester $HARVEST_OPTS --validatetext \"$VALIDATION_TEXT\" --opts \"$CODEMETAPY_OPTS\" --outputdir /tmp/out /usr/src/source-registry/$CONFIGPATH" >&2
 codemeta-harvester $HARVEST_OPTS --validatetext "$VALIDATION_TEXT" --opts "$CODEMETAPY_OPTS" --outputdir /tmp/out "/usr/src/source-registry/$CONFIGPATH" 2>&1 | tee /tmp/out/harvest.log
 
 echo "codemeta-harvester finished at $(date)">&2
