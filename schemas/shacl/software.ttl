@@ -34,6 +34,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:or (
             [ sh:class schema:Person ]
             [ sh:class schema:Organization ]
+            [ sh:nodeKind sh:Literal ]
         ) ;
         sh:minCount 1 ;
         rdfs:label "The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably." ;
@@ -45,6 +46,8 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:or (
             [ sh:class schema:Person ]
             [ sh:class schema:Organization ]
+            [ sh:nodeKind sh:Literal ]
+        ) ;
         ) ;
         sh:minCount 1 ;
         rdfs:label "A maintainer of the software. A maintainer is a Person or Organization that manages contributions to a software project." ; #slighly diverging from schema.org description
@@ -151,6 +154,8 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:or (
             [ sh:class schema:Person ]
             [ sh:class schema:Organization ] #allowed but we really prefer persons
+            [ sh:nodeKind sh:Literal ]
+        ) ;
         ) ;
         sh:minCount 1 ;
         rdfs:label "A secondary contributor to the software" ;
@@ -204,6 +209,8 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:path codemeta:funding ;
         sh:or (
             [ sh:class schema:Grant ]
+            [ sh:nodeKind sh:Literal ]
+        ) ;
         ) ;
         sh:minCount 1 ;
         rdfs:label "Funding source" ;
@@ -218,6 +225,8 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
             [ sh:class schema:TechArticle ]
             [ sh:class schema:NewsArticle ]
             [ sh:class schema:Report ]
+            [ sh:nodeKind sh:Literal ] #discouraged but better this than nothing
+        ) ;
         ) ;
         sh:minCount 1 ;
         rdfs:label "An academic publication related to the software." ;
