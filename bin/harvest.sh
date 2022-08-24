@@ -8,11 +8,6 @@ die() {
     exit 1
 }
 
-die-usage() {
-    die "Usage: harvest.sh [BASEURI] [SOURCE_REGISTRY_REPO]"
-}
-
-
 BASEURI="${1:-$BASEURL}"
 CSS="$BASEURI/resources/codemeta.css,$BASEURI/resources/fontawesome.css"
 if [ -n "$BASEURI" ]; then
