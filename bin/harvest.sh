@@ -21,6 +21,9 @@ fi
 if [ "$CODEMETA_VALIDATE" = "true" ]; then
     HARVEST_OPTS="$HARVEST_OPTS --validate /etc/software.ttl"
 fi
+if [ "$CODEMETA_DEBUG" = "true" ]; then
+    HARVEST_OPTS="$HARVEST_OPTS --debug"
+fi
 
 echo "Starting Harvester at $(date)">&2
 if [ -n "$GITHUB_TOKEN" ]; then
