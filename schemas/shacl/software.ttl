@@ -96,6 +96,12 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:message "Software source code *MUST* state its version" ;
     ] ,
     [
+        sh:path schema:version ;
+        sh:pattern "-SNAPSHOT$";
+        sh:severity sh:Warning ; 
+        sh:message "Software source code *MUST* state its version: the -SNAPSHOT version suffix does not correspond to a proper release. (Tip: In Java/Maven projects, ensure it is removed from pom.xml on release)" ;
+    ] ,
+    [
         sh:path codemeta:contIntegration ;
         sh:minCount 1 ;
         sh:or (
@@ -210,6 +216,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
             [ sh:nodeKind sh:Literal ]
         )  ;
         rdfs:label "Funding source" ;
+        sh:minCount 1 ;
         sh:severity sh:Info ; #classifying this a bit weaker for now
         sh:message "The funder *SHOULD* be acknowledged" ;
     ] ,
