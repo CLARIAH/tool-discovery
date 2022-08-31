@@ -1,1 +1,4 @@
 source: https://github.com/INL/corpus-frontend
+services:
+    - https://portal.clarin.inl.nl/autocorp/
+    - https://brievenalsbuit.ivdnt.org
