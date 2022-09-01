@@ -15,7 +15,7 @@ This repository contains everything related to tool discovery and software metad
 ## Service
 
 The tool discovery service, consisting of a harvester that runs on regular intervals (each night) and a tool store,
-is deployed at https://tools.clariah.nl (production) and https://tools.dev.clariah.nl (development).
+is deployed at https://tools.clariah.nl (production, *may not be available yet at this time!*) and https://tools.dev.clariah.nl (development).
 
 All harvested data is also available as individual files via https://tools.dev.clariah.nl/files/
  
