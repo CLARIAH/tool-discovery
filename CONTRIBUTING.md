@@ -28,6 +28,10 @@ Additional properties you may specify in your yaml file:
 
 ## Frequently Asked Questions and Troubleshooting
 
+### Q: What is CLARIAH software? I'm not sure if my software qualifies to register here.
+
+**A:** Please see [point 2 of the Software Metadata Requirements](https://github.com/CLARIAH/clariah-plus/blob/main/requirements/software-metadata-requirements.md#2-all-tools-must-be-registered-in-the-tool-store-registry) for an answer to this question.
+
 ### Q: Can I specify multiple source code repositories?
 
 **A:** No, each codebase by definition has its own metadata entry. It is very
@@ -133,3 +137,4 @@ It will output JSON (corresponding to `codemeta.json`) to standard output.
 ### Q: I think there's a bug in the harvester
 
 **A:** Please report it on the [issue tracker](https://github.com/CLARIAH/tool-discovery/issues). Include your ``harvest.log`` and validation report if applicable.
+
