@@ -128,8 +128,11 @@ $ docker pull proycon/codemeta-harvester
 $ docker run -v $(pwd):/data proycon/codemeta-harvester --stdout --validate /data/schemas/shacl/software.ttl /data/source-registry/frog.yml
 ```
 
-It will output a `codemeta.json` file to standard output.
+It will output JSON (corresponding to `codemeta.json`) to standard output.
 
+### Q: I think there's a bug in the harvester
+
+**A:** Please report it on the [https://github.com/CLARIAH/tool-discovery/issues](issue tracker). Include your ``harvest.log`` and validation report if applicable.
 
 
 
