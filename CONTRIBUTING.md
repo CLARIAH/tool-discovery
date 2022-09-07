@@ -138,3 +138,12 @@ It will output JSON (corresponding to `codemeta.json`) to standard output.
 
 **A:** Please report it on the [issue tracker](https://github.com/CLARIAH/tool-discovery/issues). Include your ``harvest.log`` and validation report if applicable.
 
+### Q: There is an error in the metadata for a tool in your index, can you fix it?
+
+**A:** Unless it's a bug on the harvester side: **no**, we can't do anything.
+The maintainers of the tool themselves have full authorship over their metadata
+and only they can change the metadata content for their tool. If you want to
+help/contribute as a third party, contact the maintainer of the tool (or
+preferably send them a pull/merge request on their repository to fix it
+directly).
+
