@@ -121,6 +121,26 @@ A log of the full harvest run of everything is [available here](https://tools.de
     * If you have no releases at all (discouraged, only acceptable for initial Work-in-Progress repositories), the harvester will simply harvest your master/main branch.
 * Check the harvest.log for your tool. There may have been errors during harvesting which should appear in the log (for instance, invalid JSON, network connection problems, etc)
 
+### Q: Why is one of my metadata fields wrong even though I have the correct value?
+
+**A:**  First check the answer given to the above question. If that doesn't solve it, consider the following: 
+Our harvester combines metadata from various information sources it can find. It assigns a different priority to each of these sources, determining what values takes precendence in case of a conflict.
+The priority is roughly the following:
+
+1. ``codemeta.json``, if this file is provided, the harvest won't look at anything else (aside from the two exceptions mentioned at the end).
+2. ``codemeta-harvest.json``
+3. ``CITATION.cff``
+3. Language specific metadata from ``setup.py``, ``pyproject.toml``, ``pom.xml``, ``package.json`` and similar.
+4. files such as `LICENSE`, `MAINTAINERS`, `CONTRIBUTORS`, `AUTHORS`, `README`
+5. Information from git (e.g. contributors, git tag for version, date of first/last commit)
+6. Information from the github or gitlab API (e.g. project name/description)
+
+Two notable exceptions are:
+
+1. For development status, repostatus badge in the `README.md` *in the git master/main branch* takes precendence over all else (overriding whatever is in codemeta.json!)
+2. For maintainers, the parsing of `MAINTAINERS` *in the git master/main branch* is always taken into account (merged with anything in codemeta.json)
+
+
 ### Q: Can I run the harvester myself to check what the harvester makes of my software?
 
 **A:** Yes, this assumes you already registered a YAML file for your software with this source registry, we use `frog.yml` in this example, substitute it with your own:
@@ -146,4 +166,5 @@ and only they can change the metadata content for their tool. If you want to
 help/contribute as a third party, contact the maintainer of the tool (or
 preferably send them a pull/merge request on their repository to fix it
 directly).
+
 
