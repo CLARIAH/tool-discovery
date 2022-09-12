@@ -12,9 +12,11 @@ die() {
 }
 
 if [ -n "$GIT_USER" ] && [ -n "$GIT_PASSWORD" ]; then
-    echo "Registering git credentials"
+    echo "Registering git credentials">&2
     git config --global credential.helper '!f() { sleep 1; echo "username=${GIT_USER}"; echo "password=${GIT_PASSWORD}"; }; f'
 fi
+
+
 
 if [ "$INITIAL_HARVEST" = "true" ]; then
     # we emulate a one-shot service
@@ -26,10 +28,14 @@ if [ "$INITIAL_HARVEST" = "true" ]; then
     fi
 fi
 
+echo "Storing environment to inject into cronjobs">&2
+env | grep -v TERM | grep -v PWD > /tmp/env
+chmod 700 /tmp/env
+
 #redirect cron outs to main container process : https://gist.github.com/mowings/59790ae930accef486bfb9a417e9d446
-[ -n "$CRON_HARVEST_INTERVAL" ] && echo "$CRON_HARVEST_INTERVAL /usr/bin/harvest.sh > /proc/1/fd/1 2>&1 | tee /tmp/cron_harvest.log > /proc/1/fd/1 2>&1" > /tmp/crontab 
+[ -n "$CRON_HARVEST_INTERVAL" ] && echo "$CRON_HARVEST_INTERVAL . /tmp/env && /usr/bin/harvest.sh > /proc/1/fd/1 2>&1 | tee /tmp/cron_harvest.log > /proc/1/fd/1 2>&1" > /tmp/crontab 
 [ -n "$CRON_BATCH_COLLECTOR_INTERVAL_MINS" ] || CRON_BATCH_COLLECTOR_INTERVAL_MINS=2
-echo "*/$CRON_BATCH_COLLECTOR_INTERVAL_MINS * * * * /usr/bin/batch-collector.sh > /proc/1/fd/1 2>&1" >> /tmp/crontab 
+echo "*/$CRON_BATCH_COLLECTOR_INTERVAL_MINS * * * * . /tmp/env && /usr/bin/batch-collector.sh > /proc/1/fd/1 2>&1" >> /tmp/crontab 
 cat /tmp/crontab && crontab /tmp/crontab
 
 if [ "$UPLOADER" = "true" ]; then
@@ -39,3 +45,4 @@ else
     sleep 18748800 #sleep a long time (one month) to prevent continuous restarts (runit doesn't no one-shot services)
 fi
 
+[ -e /tmp/env ] && rm /tmp/env
