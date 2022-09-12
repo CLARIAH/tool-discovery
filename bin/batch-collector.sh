@@ -26,17 +26,18 @@ if [ -z "$1" ]; then
    CODEMETAPY_OPTS="--toolstore --css $CSS"
 fi
 
+
 #Script runs every CRON_BATCH_COLLECTOR_INTERVAL_MINS
 #Remove files older than 2 minutes from this execution start time
 TO_REMOVE=$(find /tmp/out/ -mmin +2 -type f)
 
-echo "Syncing temporary output to target dir">&2
+echo "Syncing temporary output to target dir at $(date)">&2
 rsync_out=$(rsync -c --include='*.codemeta.json' --exclude 'archive' -a --stats  /tmp/out/ /tool-store-data/) || die "Failed to rsync"
 echo "$rsync_out"
 
 updated_files=$(echo $rsync_out | grep -Eo 'Number of regular files transferred: ([0-9]+)'| awk '{split($0,arr,": "); print arr[2]}')
-echo "Updated files $updated_files"
-[ "$updated_files" = "0" ] && echo "rsync gave nothing to do" && exit 0
+echo "Updated files $updated_files ($(date))"
+[ "$updated_files" = "0" ] && echo "rsync gave nothing to do (at $(date))" && exit 0
 
 total_files=$(ls /tool-store-data/*.codemeta.json | wc -l)
 [ "$total_files" = "0" ] && die "No codemeta files were produced after harvesting"
