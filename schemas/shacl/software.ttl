@@ -228,6 +228,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
             [ sh:class schema:TechArticle ]
             [ sh:class schema:NewsArticle ]
             [ sh:class schema:Report ]
+            [ sh:class schema:Dataset ] #some like to use this
             [ sh:nodeKind sh:Literal ] #discouraged but better this than nothing
         ) ;
         sh:minCount 1 ;
