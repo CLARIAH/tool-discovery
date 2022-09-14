@@ -210,17 +210,6 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:message "Documentation *SHOULD* be expressed" ;
     ] ,
     [
-        sh:path codemeta:funding ;
-        sh:or (
-            [ sh:class schema:Grant ]
-            [ sh:nodeKind sh:Literal ]
-        )  ;
-        rdfs:label "Funding source" ;
-        sh:minCount 1 ;
-        sh:severity sh:Info ; #classifying this a bit weaker for now
-        sh:message "The funder *SHOULD* be acknowledged" ;
-    ],
-    [
         sh:path codemeta:referencePublication ;
         sh:or (
             [ sh:class schema:ScholarlyArticle ] #codemeta defines only this
@@ -235,6 +224,19 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         rdfs:label "An academic publication related to the software." ;
         sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because there will be many cases where no reference publication exists
         sh:message "Reference publications *SHOULD* be expressed" ;
+    ] ,
+    [
+        sh:path [ sh:alternativePath ( codemeta:funding schema:funder ) ] ;
+        sh:or (
+            [ sh:class schema:Grant ] #funding
+            [ sh:class schema:Organization ] #funder
+            [ sh:class schema:Person ] #funder
+            [ sh:nodeKind sh:Literal ] #fallback for either
+        ) ;
+        rdfs:label "The funder or funding grant of the software" ;
+        sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because there will be many cases where no reference publication exists
+        sh:message "The funder *SHOULD* be acknowledged" ;
+        sh:minCount 1
     ] .
 
 clariah:SoftwareApplicationShape a sh:NodeShape ;
