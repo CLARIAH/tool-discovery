@@ -1,1 +1,3 @@
 source: https://github.com/knaw-huc/annorepo
+services:
+  - https://annorepo.dev.clariah.nl/
