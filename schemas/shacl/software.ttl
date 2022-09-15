@@ -203,6 +203,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
             [ sh:class schema:ScholarlyArticle ]
             [ sh:class schema:TechArticle ]
             [ sh:class schema:CreativeWork ] #everything goes but we tried to be a bit more specific above
+            [ sh:nodeKind sh:IRI ] #fallback
         ) ;
         sh:minCount 1 ;
         rdfs:label "Software application help (i.e. documentation)" ;
@@ -210,7 +211,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:message "Documentation *SHOULD* be expressed" ;
     ] ,
     [
-        sh:path codemeta:referencePublication ;
+        sh:path [ sh:alternativePath ( codemeta:referencePublication schema:citation ) ] ; #referencePublication is prefered!! citation is a fallback
         sh:or (
             [ sh:class schema:ScholarlyArticle ] #codemeta defines only this
             [ sh:class schema:Article ] #we take it a bit broader for leniency
