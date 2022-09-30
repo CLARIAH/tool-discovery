@@ -1,0 +1,1653 @@
+{
+    "@context": {
+        "nwo": "https://w3id.org/nwo-research-fields#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "og": "http://ogp.me/ns#",
+        "dct": "http://purl.org/dc/terms/",
+        "Concept": { "@id": "skos:Concept" },
+        "ConceptScheme": { "@id": "skos:Concept" },
+        "title": { "@id": "dct:title" },
+        "description": { "@id": "dct:description" },
+        "creator": { "@id": "dct:creator" },
+        "prefLabel": { "@id": "skos:prefLabel" },
+        "altLabel": { "@id": "skos:altLabel" },
+        "definition": { "@id": "skos:definition" },
+        "inScheme": { "@id": "skos:inScheme" },
+        "broader": { "@id": "skos:broader" },
+        "notation": { "@id": "skos:notation" },
+        "image": { "@id": "og:image" }
+    },
+    "@graph": [
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Scheme",
+            "@type": "ConceptScheme",
+            "title": "NWO Research Fields",
+            "description": "Ontology of the NWO Research fields, as used in grant applications by the Dutch Research Council (NWO): https://www.nwo.nl/en/nwo-research-fields",
+            "creator": "Maarten van Gompel"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Archaeology",
+            "@type": "Concept",
+            "prefLabel": "Archeology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Prehistory",
+            "@type": "Concept",
+            "notation": "26.10.00",
+            "prefLabel": "Prehistory",
+            "broader": "https://w3id.org/nwo-research-fields#Archaeology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#AntiquityAndLateAntiquity",
+            "@type": "Concept",
+            "notation": "26.20.00",
+            "prefLabel": "Antiquity and late antiquity",
+            "broader": "https://w3id.org/nwo-research-fields#Archaeology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#OrientalArchaeology",
+            "@type": "Concept",
+            "notation": "26.30.00",
+            "prefLabel": "Oriental archaeology",
+            "broader": "https://w3id.org/nwo-research-fields#Archaeology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#MediaevalArchaeology",
+            "@type": "Concept",
+            "notation": "26.40.00",
+            "prefLabel": "Mediaeval archaeology",
+            "broader": "https://w3id.org/nwo-research-fields#Archaeology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#IndustrialArchaeology",
+            "@type": "Concept",
+            "notation": "26.50.00",
+            "prefLabel": "Industrial archaeology",
+            "broader": "https://w3id.org/nwo-research-fields#Archaeology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#PreservationAndRestorationMuseums",
+            "@type": "Concept",
+            "notation": "26.60.00",
+            "prefLabel": "Preservation and restauration, museums",
+            "broader": "https://w3id.org/nwo-research-fields#Archaeology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#MethodsAndTechniques",
+            "@type": "Concept",
+            "notation": "26.70.00",
+            "prefLabel": "Methods and techniques",
+            "broader": "https://w3id.org/nwo-research-fields#Archaeology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ArchaeologyOther",
+            "@type": "Concept",
+            "notation": "26.90.00",
+            "prefLabel": "Archaeology, other",
+            "broader": "https://w3id.org/nwo-research-fields#Archaeology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#AreaStudies",
+            "@type": "Concept",
+            "prefLabel": "Area studies",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#AsianLanguagesAndLiterature",
+            "@type": "Concept",
+            "notation": "36.10.00",
+            "prefLabel": "Asian languages and literature",
+            "broader": "https://w3id.org/nwo-research-fields#AreaStudies",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#AsianReligionsAndPhilosophies",
+            "@type": "Concept",
+            "notation": "36.15.00",
+            "prefLabel": "Asian religions and philosophies",
+            "broader": "https://w3id.org/nwo-research-fields#AreaStudies",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#JewishStudies",
+            "@type": "Concept",
+            "notation": "36.20.00",
+            "prefLabel": "Jewish studies",
+            "broader": "https://w3id.org/nwo-research-fields#AreaStudies",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#IslamicStudies",
+            "@type": "Concept",
+            "notation": "36.25.00",
+            "prefLabel": "Islamic studies",
+            "broader": "https://w3id.org/nwo-research-fields#AreaStudies",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#IranianAndArmenianStudies",
+            "@type": "Concept",
+            "notation": "36.30.00",
+            "prefLabel": "Iranian and Armenian studies",
+            "broader": "https://w3id.org/nwo-research-fields#AreaStudies",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#CentralAsianStudies",
+            "@type": "Concept",
+            "notation": "36.35.00",
+            "prefLabel": "Central Asian studies",
+            "broader": "https://w3id.org/nwo-research-fields#AreaStudies",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#IndianStudies",
+            "@type": "Concept",
+            "notation": "36.40.00",
+            "prefLabel": "Indian studies",
+            "broader": "https://w3id.org/nwo-research-fields#AreaStudies",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#SouthEastAsianStudies",
+            "@type": "Concept",
+            "notation": "36.45.00",
+            "prefLabel": "South-east Asian studies",
+            "broader": "https://w3id.org/nwo-research-fields#AreaStudies",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Sinology",
+            "@type": "Concept",
+            "notation": "36.50.00",
+            "prefLabel": "Sinology",
+            "broader": "https://w3id.org/nwo-research-fields#AreaStudies",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#JapaneseStudies",
+            "@type": "Concept",
+            "notation": "36.55.00",
+            "prefLabel": "Japanese studies",
+            "broader": "https://w3id.org/nwo-research-fields#AreaStudies",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#AreaStudiesOther",
+            "@type": "Concept",
+            "notation": "36.90.00",
+            "prefLabel": "Area studies, other",
+            "broader": "https://w3id.org/nwo-research-fields#AreaStudies",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ArtAndArchitecture",
+            "@type": "Concept",
+            "prefLabel": "Art and architecture",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#AstronomyAstrophysics",
+            "@type": "Concept",
+            "prefLabel": "Astronomy, astrophysics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Biology",
+            "@type": "Concept",
+            "prefLabel": "Biology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Microbiology",
+            "@type": "Concept",
+            "notation": "22.10.00",
+            "prefLabel": "Microbiology",
+            "broader": "https://w3id.org/nwo-research-fields#Biology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#BiogeographyTaxonomy",
+            "@type": "Concept",
+            "notation": "22.20.00",
+            "prefLabel": "Biogeography, taxonomy",
+            "broader": "https://w3id.org/nwo-research-fields#Biology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#AnimalEthologyAnimalPsychology",
+            "@type": "Concept",
+            "notation": "22.30.00",
+            "prefLabel": "Animal ethology, animal psychology",
+            "broader": "https://w3id.org/nwo-research-fields#Biology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Ecology",
+            "@type": "Concept",
+            "notation": "22.40.00",
+            "prefLabel": "Ecology",
+            "broader": "https://w3id.org/nwo-research-fields#Biology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Botany",
+            "@type": "Concept",
+            "notation": "22.50.00",
+            "prefLabel": "Botany",
+            "broader": "https://w3id.org/nwo-research-fields#Biology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Zoology",
+            "@type": "Concept",
+            "notation": "22.60.00",
+            "prefLabel": "Zoology",
+            "broader": "https://w3id.org/nwo-research-fields#Biology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ToxicologyPlantsInvertebrates",
+            "@type": "Concept",
+            "notation": "22.70.00",
+            "prefLabel": "Toxicology (plants, invertebrates)",
+            "broader": "https://w3id.org/nwo-research-fields#Biology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Biotechnology",
+            "@type": "Concept",
+            "notation": "22.80.00",
+            "prefLabel": "Biotechnology",
+            "broader": "https://w3id.org/nwo-research-fields#Biology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#BiologyOther",
+            "@type": "Concept",
+            "notation": "22.90.00",
+            "prefLabel": "Biology, other",
+            "broader": "https://w3id.org/nwo-research-fields#Biology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#BusinessAdministration",
+            "@type": "Concept",
+            "notation": "39.90.00",
+            "prefLabel": "Business administration",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Chemistry",
+            "@type": "Concept",
+            "prefLabel": "Chemistry",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#AnalyticalChemistry",
+            "@type": "Concept",
+            "notation": "13.10.00",
+            "prefLabel": "Analytical chemistry",
+            "broader": "https://w3id.org/nwo-research-fields#Chemistry",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#MacromolecularChemistryPolymerChemistry",
+            "@type": "Concept",
+            "notation": "13.20.00",
+            "prefLabel": "Macromolecular chemistry, polymer chemistry",
+            "broader": "https://w3id.org/nwo-research-fields#Chemistry",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#OrganicChemistry",
+            "@type": "Concept",
+            "notation": "13.30.00",
+            "prefLabel": "Organic chemistry",
+            "broader": "https://w3id.org/nwo-research-fields#Chemistry",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#InorganicChemistry",
+            "@type": "Concept",
+            "notation": "13.40.00",
+            "prefLabel": "Inorganic chemistry",
+            "broader": "https://w3id.org/nwo-research-fields#Chemistry",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#PhysicalChemistry",
+            "@type": "Concept",
+            "notation": "13.50.00",
+            "prefLabel": "Physical chemistry",
+            "broader": "https://w3id.org/nwo-research-fields#Chemistry",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Catalysis",
+            "@type": "Concept",
+            "notation": "13.60.00",
+            "prefLabel": "Catalysis",
+            "broader": "https://w3id.org/nwo-research-fields#Chemistry",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#TheoreticalChemistryQuantumChemistry",
+            "@type": "Concept",
+            "notation": "13.70.00",
+            "prefLabel": "Theoretical chemistry, quantum chemistry",
+            "broader": "https://w3id.org/nwo-research-fields#Chemistry",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ChemistryOther",
+            "@type": "Concept",
+            "notation": "13.90.00",
+            "prefLabel": "Chemistry, other",
+            "broader": "https://w3id.org/nwo-research-fields#Chemistry",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#CommunicationScience",
+            "@type": "Concept",
+            "prefLabel": "Communication science",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ComputerScience",
+            "@type": "Concept",
+            "notation": "49.90.00",
+            "prefLabel": "Computer science",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ComputerSystemsArchitecturesNetworks",
+            "@type": "Concept",
+            "prefLabel": "Computer systems, architectures, networks",
+            "notation": "16.10.00",
+            "broader": "https://w3id.org/nwo-research-fields#ComputerScience",
+            "inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#SoftwareAlgorithmsControlSystems",
+            "@type": "Concept",
+            "prefLabel": "Software, algorithms, control systems",
+            "notation": "16.20.00",
+            "broader": "https://w3id.org/nwo-research-fields#ComputerScience",
+            "inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#TheoreticalComputerScience",
+            "@type": "Concept",
+            "prefLabel": "Theoretical computer science",
+            "notation": "16.30.00",
+            "broader": "https://w3id.org/nwo-research-fields#ComputerScience",
+            "inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#InformationSystemsDatabases",
+            "@type": "Concept",
+            "prefLabel": "Information systems, databases",
+            "notation": "16.40.00",
+            "broader": "https://w3id.org/nwo-research-fields#ComputerScience",
+            "inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#UserInterfacesMultimedia",
+            "@type": "Concept",
+            "prefLabel": "User interfaces, multimedia",
+            "notation": "16.50.00",
+            "broader": "https://w3id.org/nwo-research-fields#ComputerScience",
+            "inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ArtificialIntelligenceExpertSystems",
+            "@type": "Concept",
+            "prefLabel": "Artificial intelligence, export systems",
+            "notation": "16.60.00",
+            "broader": "https://w3id.org/nwo-research-fields#ComputerScience",
+            "inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ComputerGraphics",
+            "@type": "Concept",
+            "prefLabel": "Computer graphics",
+            "notation": "16.70.00",
+            "broader": "https://w3id.org/nwo-research-fields#ComputerScience",
+            "inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ComputerSimulationVirtualReality",
+            "@type": "Concept",
+            "prefLabel": "Computer simulation, virtual reality",
+            "notation": "16.80.00",
+            "broader": "https://w3id.org/nwo-research-fields#ComputerScience",
+            "inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ComputerScienceOther",
+            "@type": "Concept",
+            "prefLabel": "Computer science, other",
+            "notation": "16.90.00",
+            "broader": "https://w3id.org/nwo-research-fields#ComputerScience",
+            "inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#BioInformaticsBiostatisticsBiomathematicsBiomechanics",
+            "@type": "Concept",
+            "prefLabel": "Bioinformations/biostatistics, biomathematics, biomechanics",
+            "notation": "21.10.00",
+            "broader": "https://w3id.org/nwo-research-fields#ComputerScience",
+            "broader": "https://w3id.org/nwo-research-fields#LifeSciences",
+            "inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ComputersAndTheHumanities",
+            "@type": "Concept",
+            "prefLabel": "Computers and the humanities",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#SoftwareForHumanities",
+            "@type": "Concept",
+            "prefLabel": "Software for humanities",
+            "notation": "37.10.00",
+            "broader": "https://w3id.org/nwo-research-fields#ComputersAndTheHumanities",
+            "inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#TextualAndContentAnalysis",
+            "@type": "Concept",
+            "prefLabel": "Textual and content analysis",
+            "notation": "37.20.00",
+            "broader": "https://w3id.org/nwo-research-fields#ComputersAndTheHumanities",
+            "inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#TextualAndLinguisticCorpora",
+            "@type": "Concept",
+            "prefLabel": "Textual and linguistic corpora",
+            "notation": "37.30.00",
+            "broader": "https://w3id.org/nwo-research-fields#ComputersAndTheHumanities",
+            "inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#DatabasesForHumanities",
+            "@type": "Concept",
+            "prefLabel": "Databases for humanities",
+            "notation": "37.40.00",
+            "broader": "https://w3id.org/nwo-research-fields#ComputersAndTheHumanities",
+            "inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#HypertextsAndMultimedia",
+            "@type": "Concept",
+            "prefLabel": "HypertextsAndMultimedia",
+            "notation": "37.50.00",
+            "broader": "https://w3id.org/nwo-research-fields#ComputersAndTheHumanities",
+            "inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ComputersAndTheHumanitiesOther",
+            "@type": "Concept",
+            "prefLabel": "Computers and the humanities, other",
+            "notation": "37.20.00",
+            "broader": "https://w3id.org/nwo-research-fields#ComputersAndTheHumanities",
+            "inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#CulturalAnthropology",
+            "@type": "Concept",
+            "notation": "46.90.00",
+            "prefLabel": "Cultural anthropology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Demography",
+            "@type": "Concept",
+            "notation": "48.90.00",
+            "prefLabel": "Demography",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#DevelopmentStudies",
+            "@type": "Concept",
+            "notation": "51.90.00",
+            "prefLabel": "Development studies",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#EarthSciences",
+            "@type": "Concept",
+            "prefLabel": "Earth sciences",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Economics",
+            "@type": "Concept",
+            "prefLabel": "Economics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#MicroEconomics",
+            "@type": "Concept",
+            "notation": "38.10.00",
+            "prefLabel": "Microeconomics",
+            "broader": "https://w3id.org/nwo-research-fields#Economics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#MacroEconomics",
+            "@type": "Concept",
+            "notation": "38.20.00",
+            "prefLabel": "Macroeconomics",
+            "broader": "https://w3id.org/nwo-research-fields#Economics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Econometrics",
+            "@type": "Concept",
+            "notation": "38.30.00",
+            "prefLabel": "Econometrics",
+            "broader": "https://w3id.org/nwo-research-fields#Economics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#EducationalSciences",
+            "@type": "Concept",
+            "notation": "41.90.00",
+            "prefLabel": "Educational Sciences",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#EnvironmentalScience",
+            "@type": "Concept",
+            "notation": "50.90.00",
+            "prefLabel": "Environmental science",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#GenderStudies",
+            "@type": "Concept",
+            "notation": "28.90.00",
+            "prefLabel": "Gender studies",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#GeographyPlanning",
+            "@type": "Concept",
+            "prefLabel": "Geography / Planning",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Geography",
+            "@type": "Concept",
+            "notation": "49.10.00",
+            "prefLabel": "Geography",
+            "broader": "https://w3id.org/nwo-research-fields#GeographyPlanning",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Planning",
+            "@type": "Concept",
+            "notation": "49.11.00",
+            "prefLabel": "Planning",
+            "broader": "https://w3id.org/nwo-research-fields#GeographyPlanning",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#History",
+            "@type": "Concept",
+            "prefLabel": "History",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#PreclassicalCivilizations",
+            "@type": "Concept",
+            "notation": "27.10.00",
+            "prefLabel": "Pre-classical civilizations",
+            "broader": "https://w3id.org/nwo-research-fields#History",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#AntiquityAndLateAntiquityHistory",
+            "@type": "Concept",
+            "notation": "27.20.00",
+            "prefLabel": "Antiquity and late antiquity history",
+            "broader": "https://w3id.org/nwo-research-fields#History",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#MediaevalHistory",
+            "@type": "Concept",
+            "notation": "27.30.00",
+            "prefLabel": "Mediaeval history",
+            "broader": "https://w3id.org/nwo-research-fields#History",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ModernAndContemporaryHistory",
+            "@type": "Concept",
+            "notation": "27.40.00",
+            "prefLabel": "Modern and contemporary history",
+            "broader": "https://w3id.org/nwo-research-fields#History",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#SocialAndEconomicHistory",
+            "@type": "Concept",
+            "notation": "27.50.00",
+            "prefLabel": "Social and economic history",
+            "broader": "https://w3id.org/nwo-research-fields#History",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#CulturalHistory",
+            "@type": "Concept",
+            "notation": "27.60.00",
+            "prefLabel": "Cultural history",
+            "broader": "https://w3id.org/nwo-research-fields#History",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ComparativePoliticalHistory",
+            "@type": "Concept",
+            "notation": "27.70.00",
+            "prefLabel": "Comparative political history",
+            "broader": "https://w3id.org/nwo-research-fields#History",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#LibrarianshipArchiveStudies",
+            "@type": "Concept",
+            "notation": "27.80.00",
+            "prefLabel": "Librarianship, archive studies",
+            "broader": "https://w3id.org/nwo-research-fields#History",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#HistoryOther",
+            "@type": "Concept",
+            "notation": "27.90.00",
+            "prefLabel": "History, other",
+            "broader": "https://w3id.org/nwo-research-fields#History",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#HistoryAndPhilosophyOfScienceAndTechnology",
+            "@type": "Concept",
+            "notation": "10.10.00",
+            "prefLabel": "History and philosophy of science and technology",
+            "broader": "https://w3id.org/nwo-research-fields#History",
+            "broader": "https://w3id.org/nwo-research-fields#ScienceAndTechnology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#HistoryofScience",
+            "@type": "Concept",
+            "prefLabel": "History of science",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#HistoryOfAncientScience",
+            "@type": "Concept",
+            "notation": "34.10.00",
+            "prefLabel": "History of ancient science",
+            "broader": "https://w3id.org/nwo-research-fields#History",
+            "broader": "https://w3id.org/nwo-research-fields#HistoryOfScience",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#HistoryOfMediaevalScience",
+            "@type": "Concept",
+            "notation": "34.20.00",
+            "prefLabel": "History of mediaeval science",
+            "broader": "https://w3id.org/nwo-research-fields#History",
+            "broader": "https://w3id.org/nwo-research-fields#HistoryOfScience",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#HistoryOfModernScience",
+            "@type": "Concept",
+            "notation": "34.30.00",
+            "prefLabel": "History of modern science",
+            "broader": "https://w3id.org/nwo-research-fields#History",
+            "broader": "https://w3id.org/nwo-research-fields#HistoryOfScience",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#HistoryOfContemporaryScience",
+            "@type": "Concept",
+            "notation": "34.40.00",
+            "prefLabel": "History of contemporary science",
+            "broader": "https://w3id.org/nwo-research-fields#History",
+            "broader": "https://w3id.org/nwo-research-fields#HistoryOfScience",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#HistoryOfTechnology",
+            "@type": "Concept",
+            "notation": "34.45.00",
+            "prefLabel": "History of technology",
+            "broader": "https://w3id.org/nwo-research-fields#History",
+            "broader": "https://w3id.org/nwo-research-fields#HistoryOfScience",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#HistoryOfScienceOther",
+            "@type": "Concept",
+            "notation": "34.90.00",
+            "prefLabel": "History of Science, other",
+            "broader": "https://w3id.org/nwo-research-fields#History",
+            "broader": "https://w3id.org/nwo-research-fields#HistoryOfScience",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#HistoryOfReligions",
+            "@type": "Concept",
+            "notation": "35.10.00",
+            "prefLabel": "History of religions",
+            "broader": "https://w3id.org/nwo-research-fields#History",
+            "broader": "https://w3id.org/nwo-research-fields#ReligiousStudiesAndTheology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#HistoryOfChristianity",
+            "@type": "Concept",
+            "notation": "35.20.00",
+            "prefLabel": "History of Christianity",
+            "broader": "https://w3id.org/nwo-research-fields#History",
+            "broader": "https://w3id.org/nwo-research-fields#ReligiousStudiesAndTheology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#TheologyAndHistoryOfTheology",
+            "@type": "Concept",
+            "notation": "35.30.00",
+            "prefLabel": "Theology and history of theology",
+            "broader": "https://w3id.org/nwo-research-fields#History",
+            "broader": "https://w3id.org/nwo-research-fields#ReligiousStudiesAndTheology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#LanguageAndLiterature",
+            "@type": "Concept",
+            "prefLabel": "Language and literature",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#PreclassicalPhilologyAndLiterature",
+            "@type": "Concept",
+            "notation": "31.10.00",
+            "prefLabel": "Pre-classical philology and literature",
+            "broader": "https://w3id.org/nwo-research-fields#LanguageAndLiterature",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#GreekAndLatinPhilologyAndLiterature",
+            "@type": "Concept",
+            "notation": "31.15.00",
+            "prefLabel": "Greek and Latin philology and literature",
+            "broader": "https://w3id.org/nwo-research-fields#LanguageAndLiterature",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#MediaevalAndNeoLatinLanguagesAndLiterature",
+            "@type": "Concept",
+            "notation": "31.20.00",
+            "prefLabel": "Mediaeval and Neo-Latin languages and literature",
+            "broader": "https://w3id.org/nwo-research-fields#LanguageAndLiterature",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#MediaevalEuropeanLanguagesAndLiterature",
+            "@type": "Concept",
+            "notation": "31.25.00",
+            "prefLabel": "Mediaeval European languages and literature",
+            "broader": "https://w3id.org/nwo-research-fields#LanguageAndLiterature",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ModernEuropeanLanguagesAndLiterature",
+            "@type": "Concept",
+            "notation": "31.30.00",
+            "prefLabel": "Modern European languages and literature",
+            "broader": "https://w3id.org/nwo-research-fields#LanguageAndLiterature",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#AngloAmericanLiterature",
+            "@type": "Concept",
+            "notation": "31.35.00",
+            "prefLabel": "Anglo-American Literature",
+            "broader": "https://w3id.org/nwo-research-fields#LanguageAndLiterature",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#HispanicAndBrazilianLiterature",
+            "@type": "Concept",
+            "notation": "31.40.00",
+            "prefLabel": "Hispanic and Brazilian literature",
+            "broader": "https://w3id.org/nwo-research-fields#LanguageAndLiterature",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#African language and literature",
+            "@type": "Concept",
+            "notation": "31.45.00",
+            "prefLabel": "African languages and literature",
+            "broader": "https://w3id.org/nwo-research-fields#LanguageAndLiterature",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ComparativeLiterature",
+            "@type": "Concept",
+            "notation": "31.50.00",
+            "prefLabel": "Comparative literature",
+            "broader": "https://w3id.org/nwo-research-fields#LanguageAndLiterature",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#LanguageAndLiteratureOther",
+            "@type": "Concept",
+            "notation": "31.90.00",
+            "prefLabel": "Language and literature, other",
+            "broader": "https://w3id.org/nwo-research-fields#LanguageAndLiterature",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Law",
+            "@type": "Concept",
+            "prefLabel": "Law",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#PrivateLaw",
+            "@type": "Concept",
+            "notation": "43.10.00",
+            "prefLabel": "Private law",
+            "broader": "https://w3id.org/nwo-research-fields#Law",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ConstitutionalAndAdministrativeLaw",
+            "@type": "Concept",
+            "notation": "43.20.00",
+            "prefLabel": "Constitutinal and Administrative Law",
+            "broader": "https://w3id.org/nwo-research-fields#Law",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#InternationalAndEuropeanLaw",
+            "@type": "Concept",
+            "notation": "43.30.00",
+            "prefLabel": "International and European law",
+            "broader": "https://w3id.org/nwo-research-fields#Law",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#CriminalLawAndCriminology",
+            "@type": "Concept",
+            "notation": "43.40.00",
+            "prefLabel": "Criminal law and Criminology",
+            "broader": "https://w3id.org/nwo-research-fields#Law",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#LifeSciences",
+            "@type": "Concept",
+            "prefLabel": "Life sciences",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#LifeSciencesAndMedicine",
+            "@type": "Concept",
+            "prefLabel": "Life sciences and medicine",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Linguistics",
+            "@type": "Concept",
+            "prefLabel": "Linguistics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#PhoneticsAndPhonology",
+            "@type": "Concept",
+            "notation": "30.10.00",
+            "prefLabel": "Phonetics and phonology",
+            "broader": "https://w3id.org/nwo-research-fields#Linguistics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#MorphologyGrammarAndSyntax",
+            "@type": "Concept",
+            "notation": "30.15.00",
+            "prefLabel": "Morphology, grammar and syntax",
+            "broader": "https://w3id.org/nwo-research-fields#Linguistics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#SemanticsAndPhilosophyOfLanguage",
+            "@type": "Concept",
+            "notation": "30.20.00",
+            "prefLabel": "Semantics and philosophy of language",
+            "broader": "https://w3id.org/nwo-research-fields#Linguistics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#LinguisticTypologyAndComparativeLinguistics",
+            "@type": "Concept",
+            "notation": "30.25.00",
+            "prefLabel": "Linguistic typology and comparative linguistics",
+            "broader": "https://w3id.org/nwo-research-fields#Linguistics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#DialectologyLinguisticGeographySociolinguistics",
+            "@type": "Concept",
+            "notation": "30.30.00",
+            "prefLabel": "Dialetology, linguistic geography, sociolinguistics",
+            "broader": "https://w3id.org/nwo-research-fields#Linguistics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#LexiconAndLexicography",
+            "@type": "Concept",
+            "notation": "30.35.00",
+            "prefLabel": "Lexicon and lexicography",
+            "broader": "https://w3id.org/nwo-research-fields#Linguistics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#PsycholinguisticsAndNeurolinguistics",
+            "@type": "Concept",
+            "notation": "30.40.00",
+            "prefLabel": "Psycholinguistics and neurolinguistics",
+            "broader": "https://w3id.org/nwo-research-fields#Linguistics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ComputationalLinguisticsandPhilology",
+            "@type": "Concept",
+            "notation": "30.45.00",
+            "prefLabel": "Computational linguistics and philology",
+            "broader": "https://w3id.org/nwo-research-fields#Linguistics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#LinguisticStatistics",
+            "@type": "Concept",
+            "notation": "30.50.00",
+            "prefLabel": "Linguistic statistics",
+            "broader": "https://w3id.org/nwo-research-fields#Linguistics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#LanguageTeachingAndAcquisition",
+            "@type": "Concept",
+            "notation": "30.55.00",
+            "prefLabel": "Language teaching and acquisition",
+            "broader": "https://w3id.org/nwo-research-fields#Linguistics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#TranslationStudies",
+            "@type": "Concept",
+            "notation": "30.60.00",
+            "prefLabel": "Translation studies",
+            "broader": "https://w3id.org/nwo-research-fields#Linguistics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#LinguisticsOthers",
+            "@type": "Concept",
+            "notation": "30.90.00",
+            "prefLabel": "Linguistics, other",
+            "broader": "https://w3id.org/nwo-research-fields#Linguistics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Mathematics",
+            "@type": "Concept",
+            "prefLabel": "Mathematics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#LogicSetTheoryAndArithmetic",
+            "@type": "Concept",
+            "notation": "11.10.00",
+            "prefLabel": "Logic, set theory and arithmetic",
+            "broader": "https://w3id.org/nwo-research-fields#Mathematics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#AlgebraGroupTheory",
+            "@type": "Concept",
+            "notation": "11.20.00",
+            "prefLabel": "AlgebraGroupTheory",
+            "broader": "https://w3id.org/nwo-research-fields#Mathematics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#FunctionsDifferentialEquations",
+            "@type": "Concept",
+            "notation": "11.30.00",
+            "prefLabel": "Fucntions, differential equations",
+            "broader": "https://w3id.org/nwo-research-fields#Mathematics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#FourierAnalysisFunctionalAnalysis",
+            "@type": "Concept",
+            "notation": "11.40.00",
+            "prefLabel": "Fourier analysis, functional analysis",
+            "broader": "https://w3id.org/nwo-research-fields#Mathematics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#GeometryTopology",
+            "@type": "Concept",
+            "notation": "11.50.00",
+            "prefLabel": "Geometry, topology",
+            "broader": "https://w3id.org/nwo-research-fields#Mathematics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ProbabilityTheoryStatistisc",
+            "@type": "Concept",
+            "notation": "11.60.00",
+            "prefLabel": "Probability theory, statistics",
+            "broader": "https://w3id.org/nwo-research-fields#Mathematics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#OperationsResearch",
+            "@type": "Concept",
+            "notation": "11.70.00",
+            "prefLabel": "Operations research",
+            "broader": "https://w3id.org/nwo-research-fields#Mathematics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#NumericalAnalysis",
+            "@type": "Concept",
+            "notation": "11.80.00",
+            "prefLabel": "Numerical analysis",
+            "broader": "https://w3id.org/nwo-research-fields#Mathematics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#MathematicsOther",
+            "@type": "Concept",
+            "notation": "11.90.00",
+            "prefLabel": "Mathematics, other",
+            "broader": "https://w3id.org/nwo-research-fields#Mathematics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Medicine",
+            "@type": "Concept",
+            "prefLabel": "Medicine",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#PathologyPathologicalAnatomy",
+            "@type": "Concept",
+            "notation": "23.10.00",
+            "prefLabel": "Pathology, pathological anatomy",
+            "broader": "https://w3id.org/nwo-research-fields#Medicine",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#OrgansAndOrganSystems",
+            "@type": "Concept",
+            "notation": "23.20.00",
+            "prefLabel": "Organs and organ systems",
+            "broader": "https://w3id.org/nwo-research-fields#Medicine",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#MedicalSpecialisms",
+            "@type": "Concept",
+            "notation": "23.30.00",
+            "prefLabel": "Medical specialisms",
+            "broader": "https://w3id.org/nwo-research-fields#Medicine",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#HealthSciences",
+            "@type": "Concept",
+            "notation": "23.40.00",
+            "prefLabel": "Health sciences",
+            "broader": "https://w3id.org/nwo-research-fields#Medicine",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Kinesiology",
+            "@type": "Concept",
+            "notation": "23.50.00",
+            "prefLabel": "Kinesiology",
+            "broader": "https://w3id.org/nwo-research-fields#Medicine",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Gerontology",
+            "@type": "Concept",
+            "notation": "23.60.00",
+            "prefLabel": "Gerontology",
+            "broader": "https://w3id.org/nwo-research-fields#Medicine",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Nutrition",
+            "@type": "Concept",
+            "notation": "23.70.00",
+            "prefLabel": "Nutrition",
+            "broader": "https://w3id.org/nwo-research-fields#Medicine",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Epidemiology",
+            "@type": "Concept",
+            "notation": "23.80.00",
+            "prefLabel": "Epidemiology",
+            "broader": "https://w3id.org/nwo-research-fields#Medicine",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#HealthServicesResearch",
+            "@type": "Concept",
+            "notation": "23.48.00",
+            "prefLabel": "Health Services Research",
+            "broader": "https://w3id.org/nwo-research-fields#Medicine",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#HealthLaw",
+            "@type": "Concept",
+            "notation": "23.42.00",
+            "prefLabel": "Health law",
+            "broader": "https://w3id.org/nwo-research-fields#Medicine",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#HealthEconomics",
+            "@type": "Concept",
+            "notation": "23.44.00",
+            "prefLabel": "Health economics",
+            "broader": "https://w3id.org/nwo-research-fields#Medicine",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#MedicalSociology",
+            "@type": "Concept",
+            "notation": "23.46.00",
+            "prefLabel": "Medical sociology",
+            "broader": "https://w3id.org/nwo-research-fields#Medicine",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#MedicineOther",
+            "@type": "Concept",
+            "notation": "23.90.00",
+            "prefLabel": "Medicine, other",
+            "broader": "https://w3id.org/nwo-research-fields#Medicine",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#MusicTheatrePerformingArtsMedia",
+            "@type": "Concept",
+            "prefLabel": "Music, theatre, performing arts and media",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Ethnomusicology",
+            "@type": "Concept",
+            "notation": "32.10.00",
+            "prefLabel": "Ethnomusicology",
+            "broader": "https://w3id.org/nwo-research-fields#MusicTheatrePerformingArtsMedia",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#HistoryOfMusicAndMusicalIconography",
+            "@type": "Concept",
+            "notation": "32.20.00",
+            "prefLabel": "History of music and musical iconography",
+            "broader": "https://w3id.org/nwo-research-fields#MusicTheatrePerformingArtsMedia",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Musicology",
+            "@type": "Concept",
+            "notation": "32.30.00",
+            "prefLabel": "Musicology",
+            "broader": "https://w3id.org/nwo-research-fields#MusicTheatrePerformingArtsMedia",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#OperaAndDance",
+            "@type": "Concept",
+            "notation": "32.40.00",
+            "prefLabel": "Opera and dance",
+            "broader": "https://w3id.org/nwo-research-fields#MusicTheatrePerformingArtsMedia",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#TheatreStudiesAndIconography",
+            "@type": "Concept",
+            "notation": "32.50.00",
+            "prefLabel": "Theatre studies and iconography",
+            "broader": "https://w3id.org/nwo-research-fields#MusicTheatrePerformingArtsMedia",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#FilmPhotographyAndAudiovisualMedia",
+            "@type": "Concept",
+            "notation": "32.60.00",
+            "prefLabel": "Film, photography and audio-visual media",
+            "broader": "https://w3id.org/nwo-research-fields#MusicTheatrePerformingArtsMedia",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#JournalismAndMassCommunications",
+            "@type": "Concept",
+            "notation": "32.10.00",
+            "prefLabel": "Journalism and mass communications",
+            "broader": "https://w3id.org/nwo-research-fields#MusicTheatrePerformingArtsMedia",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#MediaStudies",
+            "@type": "Concept",
+            "notation": "32.80.00",
+            "prefLabel": "Media studies",
+            "broader": "https://w3id.org/nwo-research-fields#MusicTheatrePerformingArtsMedia",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#MusicTheatrePerformingArtsMediaOther",
+            "@type": "Concept",
+            "notation": "32.10.00",
+            "prefLabel": "Music, theatre, performing arts and media, other",
+            "broader": "https://w3id.org/nwo-research-fields#MusicTheatrePerformingArtsMedia",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Pedagogics",
+            "@type": "Concept",
+            "notation": "42.00.00",
+            "prefLabel": "Pedagogics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Philosophy",
+            "@type": "Concept",
+            "prefLabel": "Philosophy",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#MetaphysicsTheoreticalPhilosophy",
+            "@type": "Concept",
+            "notation": "33.10.00",
+            "prefLabel": "Metaphysics, theoretical philosophy",
+            "broader": "https://w3id.org/nwo-research-fields#Philosophy",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#EthicsMoralPhilosophy",
+            "@type": "Concept",
+            "notation": "33.25.00",
+            "prefLabel": "Ethics, moral philosophy",
+            "broader": "https://w3id.org/nwo-research-fields#Philosophy",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#LogicAndHistoryOfLogic",
+            "@type": "Concept",
+            "notation": "33.30.00",
+            "prefLabel": "Logic and history of logic",
+            "broader": "https://w3id.org/nwo-research-fields#Philosophy",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#EpistemologyPhilosophyOfScience",
+            "@type": "Concept",
+            "notation": "33.35.00",
+            "prefLabel": "Epistemology, philosophy of science",
+            "broader": "https://w3id.org/nwo-research-fields#Philosophy",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#AestheticsPhilosophyOfArt",
+            "@type": "Concept",
+            "notation": "33.40.00",
+            "prefLabel": "Aesthetics, philosophy of art",
+            "broader": "https://w3id.org/nwo-research-fields#Philosophy",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#PhilosophyOfLanguageSemiotics",
+            "@type": "Concept",
+            "notation": "33.45.00",
+            "prefLabel": "Philosophy of language, semiotics",
+            "broader": "https://w3id.org/nwo-research-fields#Philosophy",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#HistoryOfIdeasAndIntellectualHistory",
+            "@type": "Concept",
+            "notation": "33.50.00",
+            "prefLabel": "History of ideas and intellectual history",
+            "broader": "https://w3id.org/nwo-research-fields#Philosophy",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#HistoryOfAncientAndMediaevalPhilosophy",
+            "@type": "Concept",
+            "notation": "33.55.00",
+            "prefLabel": "History of ancient and mediaeval philosophy",
+            "broader": "https://w3id.org/nwo-research-fields#Philosophy",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#HistoryOfModernAndContemporaryPhilosophy",
+            "@type": "Concept",
+            "notation": "33.60.00",
+            "prefLabel": "History of modern and contemporary philosophy",
+            "broader": "https://w3id.org/nwo-research-fields#Philosophy",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#HistoryOfPoliticalAndEconomicTheory",
+            "@type": "Concept",
+            "notation": "33.65.00",
+            "prefLabel": "History of political and economic theory",
+            "broader": "https://w3id.org/nwo-research-fields#Philosophy",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#PhilosophyOther",
+            "@type": "Concept",
+            "notation": "33.90.00",
+            "prefLabel": "Philosophy, other",
+            "broader": "https://w3id.org/nwo-research-fields#Philosophy",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Physics",
+            "@type": "Concept",
+            "prefLabel": "Physics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#SubatomicPhysics",
+            "@type": "Concept",
+            "notation": "12.10.00",
+            "prefLabel": "Subatomic physics",
+            "broader": "https://w3id.org/nwo-research-fields#Physics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#NanophysicsTechnology",
+            "@type": "Concept",
+            "notation": "12.20.00",
+            "prefLabel": "Nanophysics/technology",
+            "broader": "https://w3id.org/nwo-research-fields#Physics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#CondensedMatterAndOpticalPhysics",
+            "@type": "Concept",
+            "notation": "12.30.00",
+            "prefLabel": "Condensed Matter and Optical Physics",
+            "broader": "https://w3id.org/nwo-research-fields#Physics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ProcessesInLivingSystems",
+            "@type": "Concept",
+            "notation": "12.40.00",
+            "prefLabel": "Processes in living systems",
+            "broader": "https://w3id.org/nwo-research-fields#Physics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#FusionPhysics",
+            "@type": "Concept",
+            "notation": "12.50.00",
+            "prefLabel": "Fusion physics",
+            "broader": "https://w3id.org/nwo-research-fields#Physics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#PhenomenologicalPhysics",
+            "@type": "Concept",
+            "notation": "12.60.00",
+            "prefLabel": "Phenomenological physics",
+            "broader": "https://w3id.org/nwo-research-fields#Physics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#OtherPhysics",
+            "@type": "Concept",
+            "notation": "12.70.00",
+            "prefLabel": "Other physics",
+            "broader": "https://w3id.org/nwo-research-fields#Physics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#TheoreticalPhysics",
+            "@type": "Concept",
+            "notation": "12.80.00",
+            "prefLabel": "Theoretical Physics",
+            "broader": "https://w3id.org/nwo-research-fields#Physics",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Psychology",
+            "@type": "Concept",
+            "prefLabel": "Psychology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ClinicalPsychology",
+            "@type": "Concept",
+            "notation": "40.10.00",
+            "prefLabel": "Clinical Psychology",
+            "broader": "https://w3id.org/nwo-research-fields#Psychology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#BiologicalAndMedicalPsychology",
+            "@type": "Concept",
+            "notation": "40.20.00",
+            "prefLabel": "Biological and Medical Psychology",
+            "broader": "https://w3id.org/nwo-research-fields#Psychology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#DevelopmentalPsychology",
+            "@type": "Concept",
+            "notation": "40.30.00",
+            "prefLabel": "Developmental Psychology",
+            "broader": "https://w3id.org/nwo-research-fields#Psychology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#PsychonomicsAndCognitivePsychology",
+            "@type": "Concept",
+            "notation": "40.40.00",
+            "prefLabel": "Psychonomics and Cognitive Psychology",
+            "broader": "https://w3id.org/nwo-research-fields#Psychology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#SocialAndOrganizationalPsychology",
+            "@type": "Concept",
+            "notation": "40.50.00",
+            "prefLabel": "Social and Organizational Psychology",
+            "broader": "https://w3id.org/nwo-research-fields#Psychology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Psychometrics",
+            "@type": "Concept",
+            "notation": "40.60.00",
+            "prefLabel": "Psychometrics",
+            "broader": "https://w3id.org/nwo-research-fields#Psychology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#PublicAdministrationAndPoliticalScience",
+            "@type": "Concept",
+            "prefLabel": "Public administration and political science",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#PublicAdministration",
+            "@type": "Concept",
+            "notation": "44.10.00",
+            "prefLabel": "Public administration",
+            "broader": "https://w3id.org/nwo-research-fields#PublicAdministrationAndPoliticalScience",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#PoliticalScience",
+            "@type": "Concept",
+            "notation": "44.20.00",
+            "prefLabel": "Political science",
+            "broader": "https://w3id.org/nwo-research-fields#PublicAdministrationAndPoliticalScience",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ReligiousStudiesAndTheology",
+            "@type": "Concept",
+            "prefLabel": "Religious studies and theology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#BibleStudies",
+            "@type": "Concept",
+            "notation": "35.40.00",
+            "prefLabel": "Bible studies",
+            "broader": "https://w3id.org/nwo-research-fields#ReligiousStudiesAndTheology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ReligiousStudiesAndTheologyOther",
+            "@type": "Concept",
+            "notation": "35.90.00",
+            "prefLabel": "Religious studies and theology, other",
+            "broader": "https://w3id.org/nwo-research-fields#ReligiousStudiesAndTheology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ScienceAndTechnology",
+            "@type": "Concept",
+            "prefLabel": "Science and technology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Sociology",
+            "@type": "Concept",
+            "notation": "45.90.00",
+            "prefLabel": "Sociology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Technology",
+            "@type": "Concept",
+            "prefLabel": "Technology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#MaterialsTechnology",
+            "@type": "Concept",
+            "notation": "14.10.00",
+            "prefLabel": "Materials technology",
+            "broader": "https://w3id.org/nwo-research-fields#Technology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#MechanicalEngineering",
+            "@type": "Concept",
+            "notation": "14.20.00",
+            "prefLabel": "MechanicalEngineering",
+            "broader": "https://w3id.org/nwo-research-fields#Technology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ElectricalEngineering",
+            "@type": "Concept",
+            "notation": "14.30.00",
+            "prefLabel": "ElectricalEngineering",
+            "broader": "https://w3id.org/nwo-research-fields#Technology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#CivilEngineering",
+            "@type": "Concept",
+            "notation": "14.40.00",
+            "prefLabel": "Civil engineering",
+            "broader": "https://w3id.org/nwo-research-fields#Technology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#ChemicalTechnologyProcessTechnology",
+            "@type": "Concept",
+            "notation": "14.50.00",
+            "prefLabel": "Chemical technology, process technology",
+            "broader": "https://w3id.org/nwo-research-fields#Technology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Geotechnics",
+            "@type": "Concept",
+            "notation": "14.60.00",
+            "prefLabel": "Geotechnics",
+            "broader": "https://w3id.org/nwo-research-fields#Technology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#TechnologyAssessment",
+            "@type": "Concept",
+            "notation": "14.70.00",
+            "prefLabel": "Technology assessment",
+            "broader": "https://w3id.org/nwo-research-fields#Technology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#Nanotechnology",
+            "@type": "Concept",
+            "notation": "14.80.00",
+            "prefLabel": "Nanotechnology",
+            "broader": "https://w3id.org/nwo-research-fields#Technology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#TechnologyOther",
+            "@type": "Concept",
+            "notation": "14.90.00",
+            "prefLabel": "Technology, other",
+            "broader": "https://w3id.org/nwo-research-fields#Technology",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        },
+        {
+            "@id": "https://w3id.org/nwo-research-fields#VeterinaryMedicine",
+            "@type": "Concept",
+            "notation": "24.00.90",
+            "prefLabel": "Veterinary medicine",
+            "inScheme": "https://w3id.org/nwo-research-fields#Scheme"
+        }
+  ]
+}
