@@ -243,7 +243,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:minCount 1
     ] ,
     [
-        sh:path [ trl:technologyReadinessLevel ] ;
+        sh:path trl:technologyReadinessLevel ;
         sh:class trl:TechnologyReadinessLevel ;
         rdfs:label "The technology readiness level of the software" ;
         sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because there will be many cases where no reference publication exists
@@ -251,7 +251,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:minCount 1
     ] ,
     [
-        sh:path [ schema:applicationCategory ] ;
+        sh:path schema:applicationCategory ;
         sh:class nwo:ResearchField ;
         rdfs:label "The research field of the software" ;
         sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because there will be many cases where no reference publication exists
@@ -259,7 +259,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:minCount 1
     ] ,
     [
-        sh:path [ schema:applicationCategory ] ;
+        sh:path schema:applicationCategory ;
         sh:class skos:Concept ; #doesn't really check whether it matches TaDiRaH yet.
         rdfs:label "The research activity of the software" ;
         sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because there will be many cases where no reference publication exists
