@@ -6,7 +6,9 @@
 @prefix repostatus: <https://www.repostatus.org/#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix software-types: <https://w3id.org/software-types#> .
+@prefix softwaretypes: <https://w3id.org/software-types#> .
+@prefix softwareiodata: <https://w3id.org/software-iodata#> .
+@prefix trl: <https://w3id.org/research-technology-readiness-level#>
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # See https://github.com/CLARIAH/clariah-plus/blob/main/requirements/software-metadata-requirements.md
@@ -237,6 +239,14 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         rdfs:label "The funder or funding grant of the software" ;
         sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because there will be many cases where no reference publication exists
         sh:message "The funder *SHOULD* be acknowledged" ;
+        sh:minCount 1
+    ] ,
+    [
+        sh:path [ trl:technologyReadinessLevel ] ;
+        sh:class tlr:TechnologyReadinessLevel ;
+        rdfs:label "The technology readiness level of the software" ;
+        sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because there will be many cases where no reference publication exists
+        sh:message "The technology readiness level *SHOULD* be expressed" ;
         sh:minCount 1
     ] .
 
