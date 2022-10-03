@@ -176,14 +176,14 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
             [ sh:class schema:MobileApplication ]
             [ sh:class schema:VideoGame ]
             [ sh:class schema:WebAPI ] #This is the only one which is disjoint with SoftwareApplication
-            [ sh:class software-types:CommandLineApplication ] #all subclasses of SofwareApplication
-            [ sh:class software-types:DesktopApplication ]
-            [ sh:class software-types:TerminalApplication ]
-            [ sh:class software-types:ServerApplication ]
-            [ sh:class software-types:NotebookApplication ]
-            [ sh:class software-types:SoftwareLibrary ]
-            [ sh:class software-types:SoftwareImage ]
-            [ sh:class software-types:SoftwarePackage ]
+            [ sh:class softwaretypes:CommandLineApplication ] #all subclasses of SofwareApplication
+            [ sh:class softwaretypes:DesktopApplication ]
+            [ sh:class softwaretypes:TerminalApplication ]
+            [ sh:class softwaretypes:ServerApplication ]
+            [ sh:class softwaretypes:NotebookApplication ]
+            [ sh:class softwaretypes:SoftwareLibrary ]
+            [ sh:class softwaretypes:SoftwareImage ]
+            [ sh:class softwaretypes:SoftwarePackage ]
         ) ;
         sh:minCount 1 ;
         sh:severity sh:Info ;
