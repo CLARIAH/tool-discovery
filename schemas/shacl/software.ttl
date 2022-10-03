@@ -6,6 +6,7 @@
 @prefix repostatus: <https://www.repostatus.org/#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix nwo: <https://w3id.org/nwo-research-types#> .
 @prefix softwaretypes: <https://w3id.org/software-types#> .
 @prefix softwareiodata: <https://w3id.org/software-iodata#> .
 @prefix trl: <https://w3id.org/research-technology-readiness-level#> .
@@ -243,10 +244,26 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
     ] ,
     [
         sh:path [ trl:technologyReadinessLevel ] ;
-        sh:class tlr:TechnologyReadinessLevel ;
+        sh:class trl:TechnologyReadinessLevel ;
         rdfs:label "The technology readiness level of the software" ;
         sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because there will be many cases where no reference publication exists
         sh:message "The technology readiness level *SHOULD* be expressed" ;
+        sh:minCount 1
+    ] ,
+    [
+        sh:path [ schema:applicationCategory ] ;
+        sh:class nwo:ResearchField ;
+        rdfs:label "The research field of the software" ;
+        sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because there will be many cases where no reference publication exists
+        sh:message "A research domain *SHOULD* be expressed as a category using the NWO Research Fields vocabulary" ;
+        sh:minCount 1
+    ] ,
+    [
+        sh:path [ schema:applicationCategory ] ;
+        sh:class skos:Concept ; #doesn't really check whether it matches TaDiRaH yet.
+        rdfs:label "The research activity of the software" ;
+        sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because there will be many cases where no reference publication exists
+        sh:message "A research activity *SHOULD* be expressed as a category using the TaDiRaH vocabulary" ;
         sh:minCount 1
     ] .
 
