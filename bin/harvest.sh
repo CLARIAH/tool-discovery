@@ -10,12 +10,13 @@ die() {
 
 BASEURI="${1:-$BASEURL}"
 CSS="$BASEURI/resources/codemeta.css,$BASEURI/resources/fontawesome.css"
+ADDCONTEXT="--includecontext --addcontext https://w3id.org/nwo-research-fields --addcontext https://raw.githubusercontent.com/CLARIAH/tool-discovery/master/schemas/research-technology-readiness-levels.jsonld"
 if [ -n "$BASEURI" ]; then
     HARVEST_OPTS="--baseuri $BASEURI"
-    CODEMETAPY_OPTS="--baseuri $BASEURI --toolstore --css $CSS"
+    CODEMETAPY_OPTS="--baseuri $BASEURI --toolstore --css $CSS $ADDCONTEXT"
 else
     HARVEST_OPTS=""
-    CODEMETAPY_OPTS="--toolstore --css $CSS"
+    CODEMETAPY_OPTS="--toolstore --css $CSS $ADDCONTEXT"
 fi
 
 if [ "$CODEMETA_VALIDATE" = "true" ]; then
