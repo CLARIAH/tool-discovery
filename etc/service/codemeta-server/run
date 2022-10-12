@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ "$INITIAL_HARVEST" == "true" ]; then
+if [ "$INITIAL_HARVEST" = "true" ]; then
 while [ ! -e /tool-store-data/data.json ]; do
     echo "(waiting for /tool-store-data/data.json before codemeta-server can start)">&2
     sleep 5
