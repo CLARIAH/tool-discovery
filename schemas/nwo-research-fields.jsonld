@@ -6,25 +6,21 @@
         "dct": "http://purl.org/dc/terms/",
         "Concept": { "@id": "skos:Concept" },
         "ConceptScheme": { "@id": "skos:ConceptScheme" },
-        "title": { "@id": "dct:title" },
-        "description": { "@id": "dct:description" },
-        "creator": { "@id": "dct:creator" },
         "prefLabel": { "@id": "skos:prefLabel" },
         "altLabel": { "@id": "skos:altLabel" },
         "definition": { "@id": "skos:definition" },
         "inScheme": { "@id": "skos:inScheme" },
         "broader": { "@id": "skos:broader" },
         "notation": { "@id": "skos:notation" },
-        "image": { "@id": "og:image" },
         "ResearchField": { "@id": "nwo:ResearchField" }
     },
     "@graph": [
         {
             "@id": "https://w3id.org/nwo-research-fields#Scheme",
             "@type": "ConceptScheme",
-            "title": "NWO Research Fields",
-            "description": "Ontology of the NWO Research fields, as used in grant applications by the Dutch Research Council (NWO): https://www.nwo.nl/en/nwo-research-fields",
-            "creator": "Maarten van Gompel"
+            "dct:title": "NWO Research Fields",
+            "dct:description": "Ontology of the NWO Research fields, as used in grant applications by the Dutch Research Council (NWO): https://www.nwo.nl/en/nwo-research-fields",
+            "dct:creator": "Maarten van Gompel"
         },
         {
             "@id": "https://w3id.org/nwo-research-fields#Archaeology",
