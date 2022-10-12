@@ -252,19 +252,24 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
     ] ,
     [
         sh:path schema:applicationCategory ;
-        sh:class nwo:ResearchField ;
+        sh:qualifiedValueShape [
+            sh:class nwo:ResearchField
+        ] ;
         rdfs:label "The research field of the software" ;
         sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because there will be many cases where no reference publication exists
         sh:message "A research domain *SHOULD* be expressed as a category using the NWO Research Fields vocabulary" ;
-        sh:minCount 1
+        sh:qualifiedMinCount 1
     ] ,
     [
         sh:path schema:applicationCategory ;
-        sh:class skos:Concept ; #doesn't really check whether it matches TaDiRaH yet.
+        sh:qualifiedValueShape [
+            sh:path skos:inScheme ;
+            sh:hasValue <https://vocabs.dariah.eu/tadirah/> 
+        ] ;
         rdfs:label "The research activity of the software" ;
         sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because there will be many cases where no reference publication exists
         sh:message "A research activity *SHOULD* be expressed as a category using the TaDiRaH vocabulary" ;
-        sh:minCount 1
+        sh:qualifiedMinCount 1
     ] .
 
 clariah:SoftwareApplicationShape a sh:NodeShape ;
