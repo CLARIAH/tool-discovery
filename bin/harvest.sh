@@ -64,6 +64,10 @@ if [ "$LOCAL_SOURCE_REGISTRY" != "true" ]; then
     fi
 fi
 
+
+#ensure context cache is redownloaded every harvest
+rm /tmp/*.jsonld 2>/dev/null
+
 #Run the codemeta-harvester
 CONFIGPATH="${3:-$SOURCE_REGISTRY_ROOT}"
 echo "Invoking harvester: codemeta-harvester $HARVEST_OPTS --validatetext \"$VALIDATION_TEXT\" --opts \"$CODEMETAPY_OPTS\" --outputdir /tmp/out /usr/src/source-registry/$CONFIGPATH" >&2
