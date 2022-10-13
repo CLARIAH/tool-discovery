@@ -140,6 +140,9 @@ Two notable exceptions are:
 1. For development status, repostatus badge in the `README.md` *in the git master/main branch* takes precendence over all else (overriding whatever is in codemeta.json!)
 2. For maintainers, the parsing of `MAINTAINERS` *in the git master/main branch* is always taken into account (merged with anything in codemeta.json)
 
+### Q: There is are duplicate authors and some of the names or e-mail addresses are wrong. Why?
+
+**A:** If no explicit authors have been specified, our harvester falls back to considering everybody who contributed to the git repository as an author. However, not everybody has their git clients set-up properly, so this may lead to duplicates when people use inconsistent git configurations from multiple systems. To remedy this, set explicit authors in one of the supported ways.
 
 ### Q: Can I run the harvester myself to check what the harvester makes of my software?
 
@@ -166,5 +169,4 @@ and only they can change the metadata content for their tool. If you want to
 help/contribute as a third party, contact the maintainer of the tool (or
 preferably send them a pull/merge request on their repository to fix it
 directly).
-
 
