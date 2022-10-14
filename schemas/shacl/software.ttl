@@ -241,7 +241,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:minCount 1
     ] ,
     [
-        sh:path trl:developmentStatus ;
+        sh:path codemeta:developmentStatus ;
         sh:qualifiedValueShape [
             sh:path skos:inScheme ;
             sh:hasValue <https://w3id.org/research-technology-readiness-level> 
