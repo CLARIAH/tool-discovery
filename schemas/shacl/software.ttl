@@ -127,25 +127,23 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
     ] ,
     [
         sh:path codemeta:developmentStatus ;
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:in (
-            repostatus:abandoned
-            repostatus:active
-            repostatus:concept
-            repostatus:inactive
-            repostatus:moved
-            repostatus:suspended
-            repostatus:unsupported
-            repostatus:wip
-        ) ;
+        sh:qualifiedValueShape [
+            sh:in (
+                repostatus:abandoned
+                repostatus:active
+                repostatus:concept
+                repostatus:inactive
+                repostatus:moved
+                repostatus:suspended
+                repostatus:unsupported
+                repostatus:wip
+            ) ;
+        ] ;
         rdfs:label "Description of development status, e.g. Active, inactive, suspended. See repostatus.org." ;
         sh:severity sh:Violation ;
         sh:message "Development status *MUST* be expressed (unambiguously)" ;
-    ] ,
-    [
-        sh:path schema:applicationCategory ;
-        sh:minCount 0 ;
+        sh:qualifiedMinCount 1
+        sh:qualifiedMaxCount 1
     ] ,
     [
         sh:path schema:producer ;
@@ -243,12 +241,16 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:minCount 1
     ] ,
     [
-        sh:path trl:technologyReadinessLevel ;
-        sh:class trl:TechnologyReadinessLevel ;
+        sh:path trl:developmentStatus ;
+        sh:qualifiedValueShape [
+            sh:path skos:inScheme ;
+            sh:hasValue <https://w3id.org/research-technology-readiness-level> 
+        ] ;
         rdfs:label "The technology readiness level of the software" ;
         sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because there will be many cases where no reference publication exists
         sh:message "The technology readiness level *SHOULD* be expressed" ;
-        sh:minCount 1
+        sh:qualifiedMinCount 1
+        sh:qualifiedMaxCount 1
     ] ,
     [
         sh:path schema:applicationCategory ;
