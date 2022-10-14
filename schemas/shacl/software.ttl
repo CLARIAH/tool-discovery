@@ -142,7 +142,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         rdfs:label "Description of development status, e.g. Active, inactive, suspended. See repostatus.org." ;
         sh:severity sh:Violation ;
         sh:message "Development status *MUST* be expressed (unambiguously)" ;
-        sh:qualifiedMinCount 1
+        sh:qualifiedMinCount 1 ;
         sh:qualifiedMaxCount 1
     ] ,
     [
@@ -249,7 +249,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         rdfs:label "The technology readiness level of the software" ;
         sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because there will be many cases where no reference publication exists
         sh:message "The technology readiness level *SHOULD* be expressed" ;
-        sh:qualifiedMinCount 1
+        sh:qualifiedMinCount 1 ;
         sh:qualifiedMaxCount 1
     ] ,
     [
