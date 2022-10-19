@@ -124,7 +124,7 @@ A log of the full harvest run of everything is [available here](https://tools.de
 ### Q: Why is one of my metadata fields wrong even though I have the correct value?
 
 **A:**  First check the answer given to the above question. If that doesn't solve it, consider the following: 
-Our harvester combines metadata from various information sources it can find. It assigns a different priority to each of these sources, determining what values takes precendence in case of a conflict.
+Our harvester combines metadata from various information sources it can find. It assigns a different priority to each of these sources, determining what values takes precedence in case of a conflict.
 The priority is roughly the following:
 
 1. ``codemeta.json``, if this file is provided, the harvest won't look at anything else (aside from the three exceptions mentioned at the end).
