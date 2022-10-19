@@ -127,7 +127,7 @@ A log of the full harvest run of everything is [available here](https://tools.de
 Our harvester combines metadata from various information sources it can find. It assigns a different priority to each of these sources, determining what values takes precendence in case of a conflict.
 The priority is roughly the following:
 
-1. ``codemeta.json``, if this file is provided, the harvest won't look at anything else (aside from the two exceptions mentioned at the end).
+1. ``codemeta.json``, if this file is provided, the harvest won't look at anything else (aside from the three exceptions mentioned at the end).
 2. ``codemeta-harvest.json``
 3. ``CITATION.cff``
 3. Language specific metadata from ``setup.py``, ``pyproject.toml``, ``pom.xml``, ``package.json`` and similar.
@@ -135,10 +135,11 @@ The priority is roughly the following:
 5. Information from git (e.g. contributors, git tag for version, date of first/last commit)
 6. Information from the github or gitlab API (e.g. project name/description)
 
-Two notable exceptions are:
+Three notable exceptions are:
 
 1. For development status, repostatus badge in the `README.md` *in the git master/main branch* takes precendence over all else (overriding whatever is in codemeta.json!)
 2. For maintainers, the parsing of `MAINTAINERS` *in the git master/main branch* is always taken into account (merged with anything in codemeta.json)
+3. If the harvester finds a version-specific DOI at Zenodo for your software, it will always use that (overriding whatever is in codemeta.json)
 
 ### Q: There is are duplicate authors and some of the names or e-mail addresses are wrong. Why?
 
