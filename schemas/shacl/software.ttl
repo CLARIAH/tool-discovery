@@ -64,6 +64,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:or (
             [ sh:class schema:URL ]
             [ sh:nodeKind sh:IRI ]
+            [ sh:nodeKind sh:Literal ]
         ) ;
         rdfs:label "Link to the repository where the un-compiled, human readable code and related code is located (SVN, GitHub, CodePlex, institutional GitLab instance, etc.)." ;
         sh:severity sh:Violation ; #MUST/REQUIRED
@@ -76,6 +77,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:or (
             [ sh:class schema:URL ]
             [ sh:nodeKind sh:IRI ]
+            [ sh:nodeKind sh:Literal ]
         ) ;
         rdfs:label "Link to software Readme file" ;
         sh:severity sh:Violation ; #MUST/REQUIRED
@@ -87,6 +89,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:or (
             [ sh:class schema:URL ]
             [ sh:nodeKind sh:IRI ]
+            [ sh:nodeKind sh:Literal ]
         ) ;
         rdfs:label "A license document that applies to this content, indicated by an (SPDX) URL."  ;
         sh:severity sh:Violation ; #MUST/REQUIRED
@@ -111,6 +114,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:or (
             [ sh:class schema:URL ]
             [ sh:nodeKind sh:IRI ]
+            [ sh:nodeKind sh:Literal ]
         ) ;
         rdfs:label "link to continuous integration service." ;
         sh:severity sh:Warning ; #SHOULD/RECOMMENDED
