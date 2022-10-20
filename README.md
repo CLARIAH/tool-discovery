@@ -48,3 +48,9 @@ Event-based collection, i.e. allowing clients to pushing codemeta files, can be 
 
 For private git repo add to ``docker run -e  GIT_USER='youruser' -e GIT_PASSWORD='yourtoken'``
 To clean up remove the volume ``codemeta_volume``
+
+## Integration: API usage instructions
+
+If you want to query the Tool Store from other software, please read [this document](API_USAGE.md) for instructions on how to use our SPARQL endpoint.
+
+
