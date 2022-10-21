@@ -128,8 +128,8 @@ SELECT ?res ?rating WHERE {
 ### Query by repostatus
 
 To get a list of tools with development status 'active' or 'inactive' according to repostatus. This
-filters out tools that are clearly experimental, abandoned or suspended and should return 'usable'
-tools.
+filters out tools that are clearly concepts, work in progress, abandoned or suspended and should return a fair selection of usable
+tools for end users.
 
 ```sparql
 SELECT ?res ?status WHERE {

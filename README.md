@@ -33,7 +33,7 @@ docker build -t clariah-tool-discovery .
 docker run -itd -p 8080:80 --env-file=local-dev.env --name=cm-srv -v codemeta_volume:/tool-store-data --restart=unless-stopped clariah-tool-discovery 
 ```
 
-We recommend you to also pass an extra ``--env GITHUB_TOKEN=..........`` or you will likely hit GitHub's API rate limit during harvesting.
+We recommend you to also pass an extra ``--env GITHUB_TOKEN=..........`` or you will likely hit GitHub's API rate limit during harvestinh. Similarly you can pass a `ZENODO_ACCESS_TOKEN`
 
 More generic:
 

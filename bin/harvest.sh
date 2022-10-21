@@ -37,6 +37,17 @@ else
     echo "(Github API access token is not set)" >&2
 fi
 
+if [ -n "$ZENODO_ACCESS_TOKEN" ]; then
+    echo "(zenodo API access token is set)" >&2
+    echo "$ZENODO_ACCESS_TOKEN" > /tmp/zenodo_token
+    chmod go-rwx /tmp/zenodo_token
+elif [ -e /tmp/zenodo_token ]; then
+    export ZENODO_ACCESS_TOKEN=$(cat /tmp/zenodo_token)
+    echo "(zenodo API access token is read from file)" >&2
+else
+    echo "(zenodo API access token is not set)" >&2
+fi
+
 
 mkdir -p /usr/src/
 if [ "$LOCAL_SOURCE_REGISTRY" != "true" ]; then
