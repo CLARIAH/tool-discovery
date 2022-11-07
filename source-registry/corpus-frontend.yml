@@ -3,4 +3,5 @@ services:
     - https://portal.clarin.inl.nl/autocorp/
     - https://brievenalsbuit.ivdnt.org
     - https://chn.ivdnt.org/
+group: "Blacklab & Corpus Search"
 

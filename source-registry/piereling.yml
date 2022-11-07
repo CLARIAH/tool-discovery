@@ -1,3 +1,4 @@
 source: https://github.com/proycon/piereling
 services:
   - https://webservices.cls.ru.nl/piereling
+group: FoLiA

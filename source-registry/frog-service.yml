@@ -1,3 +1,4 @@
 source: https://github.com/proycon/frog_webservice
 services:
   - https://webservices.cls.ru.nl/frog/
+group: Frog

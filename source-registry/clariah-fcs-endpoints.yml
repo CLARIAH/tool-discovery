@@ -1,4 +1,5 @@
 source: https://github.com/INL/clariah-fcs-endpoints
 services:
   - https://portal.clarin.inl.nl/fcscorpora/clariah-fcs-endpoints/sru
+group: "Blacklab & Corpus Search"
 
