@@ -1,0 +1,4 @@
+source: https://github.com/CLARIAH/tool-discovery
+services:
+  - https://tools.clariah.nl
+group: "CLARIAH Tool Discovery"
