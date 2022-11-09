@@ -1,4 +1,4 @@
 source: https://github.com/proycon/flat
 services:
   - https://webservices.cls.ru.nl/flat/
-group: FoLiA
+group: FLAT
