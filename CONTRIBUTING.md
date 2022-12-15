@@ -141,7 +141,7 @@ Three notable exceptions are:
 2. For maintainers, the parsing of `MAINTAINERS` *in the git master/main branch* is always taken into account (merged with anything in codemeta.json)
 3. If the harvester finds a version-specific DOI at Zenodo for your software, it will always use that (overriding whatever is in codemeta.json)
 
-### Q: There is are duplicate authors and some of the names or e-mail addresses are wrong. Why?
+### Q: There are duplicate authors and some of the names or e-mail addresses are wrong. Why?
 
 **A:** If no explicit authors have been specified, our harvester falls back to considering everybody who contributed to the git repository as an author. However, not everybody has their git clients set-up properly, so this may lead to duplicates when people use inconsistent git configurations from multiple systems. To remedy this, set explicit authors in one of the supported ways.
 
