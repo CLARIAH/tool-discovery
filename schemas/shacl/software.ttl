@@ -9,7 +9,7 @@
 @prefix nwo: <https://w3id.org/nwo-research-types#> .
 @prefix softwaretypes: <https://w3id.org/software-types#> .
 @prefix softwareiodata: <https://w3id.org/software-iodata#> .
-@prefix trl: <https://w3id.org/research-technology-readiness-level#> .
+@prefix trl: <https://w3id.org/research-technology-readiness-levels#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # See https://github.com/CLARIAH/clariah-plus/blob/main/requirements/software-metadata-requirements.md
