@@ -95,7 +95,7 @@ store](https://tools.dev.clariah.nl) for your software (click the title of your 
 1. Are there any harvesting errors? If so, check the harvest log (see next section)
     * Errors occur if the harvester fails to extract something
 2. Look at the ranking your software metadata gets (0 to 5 stars) and inspect the validation report (click the validation stars).
-    * Three degrees of severity are distinguished: violations, warnings and informational notices. All are formulated in reference to the [CLARIAH Software Metadata Requirements](https://github.com/CLARIAH/clariah-plus/blob/main/requirements/software-metadata-requirements.md). Consult the descriptions there to learn how to improve your metadata.
+    * Three degrees of severity are distinguished: violations, warnings and informational notices. All are formulated in reference to the [CLARIAH Software Metadata Requirements](https://github.com/CLARIAH/clariah-plus/blob/main/requirements/software-metadata-requirements.md). Consult the descriptions there to learn how to improve your metadata. Make sure to resolve all violations and warnings, it is fine to have some *info* notices in the validation report and you can still get a 4/5 rating that way. No need to obsess over getting to 5/5 if you feel some info notices are not applicable. As a guideline for CLARIAH, aim for at least a 3/5 rating, because other front-end systems like Ineo and the VLO are recommended to use that as a minimum threshold for software they incorporate into their systems.
 
 ### Q: Is there a log of the harvest run?
 
