@@ -265,7 +265,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         ] ;
         rdfs:label "The research field of the software" ;
         sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because there will be many cases where no reference publication exists
-        sh:message "A research domain *SHOULD* be expressed as a category using the NWO Research Fields vocabulary" ;
+        sh:message "A research domain *SHOULD* be expressed as a category using the NWO Research Fields vocabulary, if applicable" ;
         sh:qualifiedMinCount 1
     ] ,
     [
