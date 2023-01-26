@@ -231,7 +231,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:minCount 1 ;
         rdfs:label "An academic publication related to the software." ;
         sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because there will be many cases where no reference publication exists
-        sh:message "Reference publications *SHOULD* be expressed" ;
+        sh:message "Reference publications *SHOULD* be expressed, if any" ;
     ] ,
     [
         sh:path [ sh:alternativePath ( codemeta:funding schema:funder ) ] ;
@@ -253,7 +253,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
             sh:hasValue <https://w3id.org/research-technology-readiness-level> 
         ] ;
         rdfs:label "The technology readiness level of the software" ;
-        sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because there will be many cases where no reference publication exists
+        sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because it is not always something that can be derived automatically 
         sh:message "The technology readiness level *SHOULD* be expressed" ;
         sh:qualifiedMinCount 1 ;
         sh:qualifiedMaxCount 1
@@ -264,7 +264,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
             sh:class nwo:ResearchField
         ] ;
         rdfs:label "The research field of the software" ;
-        sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because there will be many cases where no reference publication exists
+        sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because it is not always applicable and is not something that can be derived automatically 
         sh:message "A research domain *SHOULD* be expressed as a category using the NWO Research Fields vocabulary, if applicable" ;
         sh:qualifiedMinCount 1
     ] ,
@@ -275,7 +275,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
             sh:hasValue <https://vocabs.dariah.eu/tadirah/> 
         ] ;
         rdfs:label "The research activity of the software" ;
-        sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because there will be many cases where no reference publication exists
+        sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because it is not always applicable and is not something that can be derived automatically 
         sh:message "A research activity *SHOULD* be expressed as a category using the TaDiRaH vocabulary" ;
         sh:qualifiedMinCount 1
     ] .
