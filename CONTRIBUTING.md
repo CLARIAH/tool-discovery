@@ -147,7 +147,7 @@ Three notable exceptions are:
 
 ### Q: Can I run the harvester myself to check what the harvester makes of my software?
 
-**A:** Yes, this assumes you already registered a YAML file for your software with this source registry, we use `frog.yml` in this example, substitute it with your own:
+**A:** Yes, there are two methods. The first assumes you already registered a YAML file for your software with this source registry and will be very similar to how our harvester runs. We use `frog.yml` in this example, substitute it with your own:
 
 ```
 $ git clone https://github.com/CLARIAH/tool-discovery/
@@ -157,6 +157,17 @@ $ docker run -v $(pwd):/data proycon/codemeta-harvester --stdout --validate /dat
 ```
 
 It will output JSON (corresponding to `codemeta.json`) to standard output.
+
+The first method corresponds to how our the harvester is invoked on the CLARIAH server. It means, it will clone *the latest stable release* of your git repository and do the conversion and run the validation. However, this may not be what you want, as you may want to check the validation output *before you even commit or release* your changes. This is where the second method comes in. This tests a project in the directory you are in, you can run:
+
+```
+$ git clone https://github.com/CLARIAH/tool-discovery/
+$ export TOOL_DISCOVERY_PATH=$(pwd)/tool-discovery
+$ docker pull proycon/codemeta-harvester
+$ cd /path/to/your/project
+$ docker run -v $(pwd):/data -v $TOOL_DISCOVERY_PATH:/tool-discovery proycon/codemeta-harvester --stdout --validate /tool-discovery/schemas/shacl/software.ttl
+```
+
 
 ### Q: I think there's a bug in the harvester
 
@@ -170,4 +181,3 @@ and only they can change the metadata content for their tool. If you want to
 help/contribute as a third party, contact the maintainer of the tool (or
 preferably send them a pull/merge request on their repository to fix it
 directly).
-
