@@ -250,7 +250,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:path codemeta:developmentStatus ;
         sh:qualifiedValueShape [
             sh:path skos:inScheme ;
-            sh:hasValue <https://w3id.org/research-technology-readiness-level> 
+            sh:hasValue <https://w3id.org/research-technology-readiness-levels> 
         ] ;
         rdfs:label "The technology readiness level of the software" ;
         sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because it is not always something that can be derived automatically 
