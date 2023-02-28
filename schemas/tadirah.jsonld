@@ -1,4 +1,4 @@
-[
+{ "@graph": [
   {
     "@id": "https://vocabs.dariah.eu/tadirah/semantification",
     "@type": [
@@ -7114,3 +7114,4 @@
     ]
   }
 ]
+}
