@@ -234,7 +234,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:message "Reference publications *SHOULD* be expressed, if any" ;
     ] ,
     [
-        sh:path [ sh:alternativePath ( codemeta:funding schema:funder ) ] ;
+        sh:path [ sh:alternativePath ( schema:funding codemeta:funding schema:funder ) ] ;
         sh:or (
             [ sh:class schema:Grant ] #funding
             [ sh:class schema:Organization ] #funder
