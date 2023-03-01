@@ -249,8 +249,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
     [
         sh:path codemeta:developmentStatus ;
         sh:qualifiedValueShape [
-            sh:path skos:inScheme ;
-            sh:hasValue <https://w3id.org/research-technology-readiness-levels> 
+            sh:pattern "^https://w3id.org/research-technology-readiness-levels"
         ] ;
         rdfs:label "The technology readiness level of the software" ;
         sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because it is not always something that can be derived automatically 
@@ -261,7 +260,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
     [
         sh:path schema:applicationCategory ;
         sh:qualifiedValueShape [
-            sh:class nwo:ResearchField
+            sh:pattern "^https://w3id.org/nwo-research-fields"
         ] ;
         rdfs:label "The research field of the software" ;
         sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because it is not always applicable and is not something that can be derived automatically 
@@ -271,8 +270,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
     [
         sh:path schema:applicationCategory ;
         sh:qualifiedValueShape [
-            sh:path skos:inScheme ;
-            sh:hasValue <https://vocabs.dariah.eu/tadirah/> 
+            sh:pattern "^https://vocabs.dariah.eu/tadirah/"
         ] ;
         rdfs:label "The research activity of the software" ;
         sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because it is not always applicable and is not something that can be derived automatically 
