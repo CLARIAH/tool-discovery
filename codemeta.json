@@ -1,0 +1,118 @@
+{
+    "@context": [
+        "https://doi.org/10.5063/schema/codemeta-2.0",
+        "http://schema.org",
+        "https://w3id.org/software-types",
+        "https://w3id.org/software-iodata"
+    ],
+    "author": {
+        "@id": "https://orcid.org/0000-0002-1046-0006",
+        "affiliation": {
+            "@id": "https://huc.knaw.nl"
+        },
+        "familyName": "van Gompel",
+        "givenName": "Maarten",
+        "url": "https://proycon.anaproy.nl",
+        "@type": "Person"
+    },
+    "@id": "https://github.com/CLARIAH/tool-discovery.git",
+    "@type": "SoftwareSourceCode",
+    "name": "CLARIAH Tool Discovery",
+    "version": "1.1",
+    "dateCreated": "2022-01-05T16:21:48Z",
+    "dateModified": "2023-03-02T14:55:44Z",
+    "description": "This is the over-arching project for CLARIAH Tool Discovery, its components harvest and aggregate codemeta from source repositories and service endpoints, automatically converting known metadata schemes in the process. This project holds the Tool Source Registry, pointing to all the tools that are to be harvested. It also holds the validation schema.",
+    "developmentStatus": [ "https://www.repostatus.org/#active", "https://w3id.org/research-technology-readiness-levels#Level7ReleaseCandidate" ],
+    "codeRepository": "https://github.com/CLARIAH/tool-discovery.git",
+    "license": "https://spdx.org/licenses/GPL-3.0-only",
+    "identifier": "tool-discovery",
+    "issueTracker": "https://github.com/CLARIAH/tool-discovery/issues",
+    "readme": "https://github.com/proycon/CLARIAH/tool-discovery/blob/master/README.md",
+    "softwareHelp": [
+        {
+            "@type": "HowTo",
+            "name": "Contributor Guidelines",
+            "description": "This explains how to add your own software to be harvested by us and answers various Frequently Asked Questions.",
+            "url": "https://github.com/CLARIAH/tool-discovery/blob/master/CONTRIBUTING.md"
+        },
+        {
+            "@type": "TechArticle",
+            "name": "Software Metadata Requirements",
+            "description": "This document specifies the technical and organisational requirements for your software metadata, including the precise form in which it can be supplied.",
+            "url": "https://github.com/CLARIAH/clariah-plus/blob/main/requirements/software-metadata-requirements.md"
+        },
+        {
+            "@type": "TechArticle",
+            "name": "Querying the CLARIAH Tool Store for integration in other software",
+            "description": "This document is intended for other developers and explains that want to make use of the information that has been harvested and aggregated in the tool discovery pipeline. It explains the API available in our backend.",
+            "url": "https://github.com/CLARIAH/tool-discovery/blob/master/API_USAGE.md"
+        }
+    ],
+    "applicationCategory": [ "https://vocabs.dariah.eu/tadirah/exploration", "https://vocabs.dariah.eu/tadirah/en/page/browsing", "https://vocabs.dariah.eu/tadirah/en/page/discovering", "https://w3id.org/nwo-research-fields#SoftwareForHumanities", "https://w3id.org/nwo-research-fields#DatabasesForHumanities"  ], 
+    "keywords": [
+        "metadata",
+        "codemeta",
+        "rdf",
+        "software metadata",
+        "schema.org",
+        "linked data",
+        "harvester"
+    ],
+    "maintainer": {
+        "@id": "https://orcid.org/0000-0002-1046-0006",
+        "affiliation": {
+            "@id": "https://huc.knaw.nl"
+        },
+        "familyName": "van Gompel",
+        "givenName": "Maarten",
+        "url": "https://proycon.anaproy.nl",
+        "@type": "Person"
+    },
+    "producer": {
+        "@id": "https://huc.knaw.nl",
+        "@type": "Organization",
+        "name": "KNAW Humanities Cluster",
+        "url": "https://huc.knaw.nl",
+        "parentOrganization": {
+            "@id": "https://knaw.nl",
+            "@type": "Organization",
+            "name": "KNAW",
+            "url": "https://knaw.nl",
+            "location": {
+                "@type": "Place",
+                "name": "Amsterdam"
+            }
+        }
+    },
+    "programmingLanguage": "shell",
+    "softwareRequirements": [
+        {
+            "@id": "/dependency/codemetapy",
+            "@type": "SoftwareApplication",
+            "identifier": "codemetapy",
+            "name": "codemetapy",
+            "runtimePlatform": "Python 3"
+        },
+        {
+            "@id": "/dependency/codemeta-harvester",
+            "@type": "SoftwareApplication",
+            "identifier": "codemeta-harvester",
+            "name": "codemeta-harvester"
+        },
+        {
+            "@id": "/dependency/codemeta-server",
+            "@type": "WebApplication",
+            "identifier": "codemeta-server",
+            "name": "codemeta-server"
+        }
+    ],
+    "funding": {
+        "@type": "Grant",
+        "name": "CLARIAH-PLUS (NWO grant 184.034.023)",
+        "funder": {
+            "@type": "Organization",
+            "name": "NWO", 
+            "url": "https://www.nwo.nl"
+        }
+    }
+}

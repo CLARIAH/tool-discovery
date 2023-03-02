@@ -207,6 +207,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
             [ sh:class schema:Guide ]
             [ sh:class schema:HowTo ]
             [ sh:class schema:DigitalDocument ]
+            [ sh:class schema:TextDigitalDocument ]
             [ sh:class schema:ScholarlyArticle ]
             [ sh:class schema:TechArticle ]
             [ sh:class schema:CreativeWork ] #everything goes but we tried to be a bit more specific above
