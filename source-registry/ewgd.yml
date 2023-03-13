@@ -1,0 +1,4 @@
+source: https://github.com/ErwinKomen/RU-wnd
+root: "wgd/"
+services:
+  - https://e-wgd.nl/

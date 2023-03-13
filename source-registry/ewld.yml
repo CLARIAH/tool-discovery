@@ -1,0 +1,4 @@
+source: https://github.com/ErwinKomen/RU-wnd
+root: "wld/"
+services:
+  - https://e-wld.nl/

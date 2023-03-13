@@ -1,0 +1,4 @@
+source: https://github.com/ErwinKomen/RU-wnd
+root: "wbd/"
+services:
+  - https://e-wbd.nl/

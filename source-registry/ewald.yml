@@ -1,6 +1,4 @@
 source: https://github.com/ErwinKomen/RU-wnd
+root: "wald/"
 services:
-  - https://e-wbd.nl/
-  - https://e-wld.nl/
-  - https://e-wgd.nl/
   - https://e-wald.nl/
