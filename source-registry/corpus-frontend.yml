@@ -1,6 +1,7 @@
 source: https://github.com/INL/corpus-frontend
 services:
     - https://portal.clarin.inl.nl/autocorp/
+      https://opensonar.ivdnt.org/
     - https://brievenalsbuit.ivdnt.org
     - https://chn.ivdnt.org/
 group: "Blacklab & Corpus Search"
