@@ -1,4 +1,4 @@
 source: https://github.com/netwerk-digitaal-erfgoed/network-of-terms
 group: 'Netwerk Digitaal Erfgoed (NDE)'
 root: packages/network-of-terms-graphql
-tagprefix: @netwerk-digitaal-erfgoed/network-of-terms-graphql@
+tagprefix: '@netwerk-digitaal-erfgoed/network-of-terms-graphql@'
