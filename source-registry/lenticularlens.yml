@@ -1,0 +1,5 @@
+source: https://github.com/knaw-huc/lenticular-lens
+services:
+  - https://lenticularlens.org
+  - https://lenticularlens.goldenagents.org
+group: Lenticular Lens
