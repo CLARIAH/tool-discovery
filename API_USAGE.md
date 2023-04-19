@@ -60,6 +60,8 @@ default. You can use content negotiation to retrieve an entire resource:
 $ curl --header "Accept: application/ld+json" -L https://tools.clariah.nl/frog
 ```
 
+Alternatively, and with the same end-result, you can fetch any of the `*.codemeta.json` files listed at <https://tools.clariah.nl/files/>.
+
 A graph of all data can also be obtained, this will contain a `@graph` field under which all
 `SoftwareSourceCode` instances can be found in expanded form:
 
@@ -67,22 +69,37 @@ A graph of all data can also be obtained, this will contain a `@graph` field und
 $ curl --header "Accept: application/ld+json" -L https://tools.clariah.nl
 ```
 
+Alternatively, you just fetch this file, which returns the same data: ``https://tools.clariah.nl/data.json``
+
 Although it is recommended to use JSON-LD and RDF-aware technologies, the canonical serialisation is
 uniform enough for you to consider just using simple JSON parser and extraction. Most notably:
 
 * All nodes are fully expanded in the JSON-LD representation. This leads to a fair degree of duplication/redundancy but makes parsing easier.
 * The JSON-LD context is fixed.
-* The data is enriched with information from other vocabularies. 
+* The data is enriched with information from other vocabularies, so you don't need to query those separately. 
 
 When you do use a simple JSON parser, do take into account that many RDF properties may occur more
 than once, so that you need to take into account that an item is either a list or a singleton
 (primitive or json object).
+
+You can find a full explanation of the JSON-LD vocabulary we use in the Tool
+producers/providers learn how to provide metadata by following the [CLARIAH
+Software Metadata
+Requirements](https://github.com/CLARIAH/clariah-plus/blob/main/requirements/software-metadata-requirements.md).
+A [full template
+example](https://github.com/CLARIAH/clariah-plus/blob/main/requirements/software-metadata-requirements.md#codemeta-json-ld-example)
+is worked out in the appendix there. Furthermore, you can use any of the
+actually existing JSON-LD files as examples, it is recommended to look at the
+ones with a high validation score.
 
 ## Querying
 
 We offer a [SPARQL endpoint](https://tools.clariah.nl/api/sparql) (with a [YASGUI web
 interface](https://tools.clariah.nl/api/) for interactive experimentation). This is the main
 interface to query the tool store unless you opt to parse the JSON-LD directly as mentioned above.
+
+Do note that our backend is not optimized for heavy real-time loads, so it is recommended
+you implement caching on your side.
 
 In this section we will mainly provide some example SPARQL queries. We define here, once, the
 prefixes for all the possible namespaces/vocabularies that may occur in these queries:
@@ -138,4 +155,3 @@ SELECT ?res ?status WHERE {
   FILTER (?status = repostatus:active || ?status = repostatus:inactive) 
 } 
 ```
-
