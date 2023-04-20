@@ -22,6 +22,12 @@ create_pidfile
 BASEURI="$BASEURL"
 CSS="$BASEURI/resources/codemeta.css,$BASEURI/resources/fontawesome.css"
 
+if [ "$1" = "--purge" ]; then
+    #this is run when invoked after the initial harvest
+    echo "Clearing all previous output before collection">&2
+    rm /tool-store-data/*.codemeta.json /tool-store-data/*.harvest.log
+fi
+
 if [ -z "$1" ]; then
    CODEMETAPY_OPTS="--toolstore --css $CSS"
 fi
@@ -32,7 +38,7 @@ fi
 TO_REMOVE=$(find /tmp/out/ -mmin +2 -type f)
 
 echo "Syncing temporary output to target dir at $(date)">&2
-rsync_out=$(rsync -c --include='*.codemeta.json' --exclude 'archive' -a --stats  /tmp/out/ /tool-store-data/) || die "Failed to rsync"
+rsync_out=$(rsync -c --include='*.codemeta.json' --exclude 'archive' -a --stats /tmp/out/ /tool-store-data/) || die "Failed to rsync"
 echo "$rsync_out"
 
 updated_files=$(echo $rsync_out | grep -Eo 'Number of regular files transferred: ([0-9]+)'| awk '{split($0,arr,": "); print arr[2]}')

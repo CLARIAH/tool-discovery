@@ -21,7 +21,8 @@ fi
 if [ "$INITIAL_HARVEST" = "true" ]; then
     # we emulate a one-shot service
     if  /usr/bin/harvest.sh "$BASEURL" "$SOURCE_REGISTRY_REPO" "$SOURCE_REGISTRY_ROOT"; then
-        /usr/bin/batch-collector.sh || die "Batch collector failed"
+        #                           v--- purges all prior files that were **NOT** produced in this harvest   run
+        /usr/bin/batch-collector.sh --purge || die "Batch collector failed"
         echo "Initial harvest finished.">&2
     else
         echo "Initial harvest failed!">&2
