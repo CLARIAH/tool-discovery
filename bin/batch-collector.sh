@@ -20,7 +20,6 @@ trap remove_pidfile EXIT
 create_pidfile
 
 BASEURI="$BASEURL"
-CSS="$BASEURI/resources/codemeta.css,$BASEURI/resources/fontawesome.css"
 
 if [ "$1" = "--purge" ]; then
     #this is run when invoked after the initial harvest
@@ -28,9 +27,6 @@ if [ "$1" = "--purge" ]; then
     rm /tool-store-data/*.codemeta.json /tool-store-data/*.harvest.log
 fi
 
-if [ -z "$1" ]; then
-   CODEMETAPY_OPTS="--toolstore --css $CSS"
-fi
 
 
 #Script runs every CRON_BATCH_COLLECTOR_INTERVAL_MINS
@@ -50,7 +46,7 @@ total_files=$(ls /tool-store-data/*.codemeta.json | wc -l)
 
 #Creating joined graph
 echo "Creating a joined graph with: codemetapy --graph /tool-store-data/*.codemeta.json > /tool-store-data/data.json  --opts \"$CODEMETAPY_OPTS\"" >&2
-codemetapy $CODEMETAPY_OPTS --graph /tool-store-data/*.codemeta.json > /tmp/data.json || die "failed to create joined graph"
+codemetapy --graph /tool-store-data/*.codemeta.json > /tmp/data.json || die "failed to create joined graph"
 mv -f /tmp/data.json /tool-store-data/data.json
 
 echo "Stopping the Tool Store API (will automatically restart)">&2

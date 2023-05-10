@@ -9,13 +9,12 @@ die() {
 }
 
 BASEURI="${1:-$BASEURL}"
-CSS="$BASEURI/resources/codemeta.css,$BASEURI/resources/fontawesome.css"
 if [ -n "$BASEURI" ]; then
     HARVEST_OPTS="--baseuri $BASEURI"
-    CODEMETAPY_OPTS="--baseuri $BASEURI --toolstore --css $CSS $CODEMETAPY_EXTRA_OPTS"
+    CODEMETAPY_OPTS="--baseuri $BASEURI $CODEMETAPY_EXTRA_OPTS"
 else
     HARVEST_OPTS=""
-    CODEMETAPY_OPTS="--toolstore --css $CSS $CODEMETAPY_EXTRA_OPTS"
+    CODEMETAPY_OPTS="$CODEMETAPY_EXTRA_OPTS"
 fi
 
 if [ "$CODEMETA_VALIDATE" = "true" ]; then
