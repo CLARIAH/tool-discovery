@@ -966,7 +966,7 @@
             "skos:inScheme": "https://w3id.org/nwo-research-fields#Scheme"
         },
         {
-            "@id": "https://w3id.org/nwo-research-fields#ComputationalLinguisticsandPhilology",
+            "@id": "https://w3id.org/nwo-research-fields#ComputationalLinguisticsAndPhilology",
             "@type": [ "skos:Concept", "ResearchField" ],
             "skos:notation": "30.45.00",
             "skos:prefLabel": "Computational linguistics and philology",
