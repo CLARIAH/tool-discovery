@@ -7,22 +7,22 @@ ENV UPLOADER=0
 #you may set this to something like: git+https://github.com/proycon/codemeta-server.git@master  if you want to use a development version of codemetapy instead of the latest release
 ARG CODEMETASERVER_VERSION="stable"
 ARG CODEMETA2HTML_VERSION="stable"
-RUN mkdir -p /var/www/static && cp /usr/lib/python3.*/site-packages/codemeta/resources/* /var/www/static/
 
 #Install webserver and build dependencies
 #Install codemeta-server, this also pulls in rdflib-endpoint and uvicorn (for which we need the build dependencies)
 #remove build dependencies
 RUN apk add nginx ca-certificates runit cronie rsync py3-dotenv apache2-utils gcc libc-dev make python3-dev ; \
+    if [ "$CODEMETA2HTML_VERSION" = "stable" ]; then \
+        python3 -m pip install  --no-cache-dir --prefix /usr codemeta2html; \
+    else \
+        python3 -m pip install  --no-cache-dir --prefix /usr $CODEMETA2HTML_VERSION; \
+    fi &&\
     if [ "$CODEMETASERVER_VERSION" = "stable" ]; then \
         python3 -m pip install  --no-cache-dir --prefix /usr codemeta-server flask waitress; \
     else \
         python3 -m pip install  --no-cache-dir --prefix /usr $CODEMETASERVER_VERSION flask waitress; \
     fi &&\
-    if [ "$CODEMETA2HTML_VERSION" = "stable" ]; then \
-        python3 -m pip install  --no-cache-dir --prefix /usr codemeta2html flask waitress; \
-    else \
-        python3 -m pip install  --no-cache-dir --prefix /usr $CODEMETA2HTML_VERSION flask waitress; \
-    fi &&\
+    mkdir -p /var/www/static && cp /usr/lib/python3.*/site-packages/codemeta2html/style/* /var/www/static/ &&\
     apk del gcc libc-dev make python3-dev ; rm -Rf /root/.cache /usr/src
 #what build tools are still needed ?
 
