@@ -364,7 +364,7 @@
             "skos:prefLabel": "Computer systems, architectures, networks",
             "skos:notation": "16.10.00",
             "skos:broader": "https://w3id.org/nwo-research-fields#ComputerScience",
-            "skos:inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+            "skos:inScheme": "https://w3id.org/nwo-research-fields#Scheme"
         },
         {
             "@id": "https://w3id.org/nwo-research-fields#SoftwareAlgorithmsControlSystems",
@@ -372,7 +372,7 @@
             "skos:prefLabel": "Software, algorithms, control systems",
             "skos:notation": "16.20.00",
             "skos:broader": "https://w3id.org/nwo-research-fields#ComputerScience",
-            "skos:inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+            "skos:inScheme": "https://w3id.org/nwo-research-fields#Scheme"
         },
         {
             "@id": "https://w3id.org/nwo-research-fields#TheoreticalComputerScience",
@@ -380,7 +380,7 @@
             "skos:prefLabel": "Theoretical computer science",
             "skos:notation": "16.30.00",
             "skos:broader": "https://w3id.org/nwo-research-fields#ComputerScience",
-            "skos:inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+            "skos:inScheme": "https://w3id.org/nwo-research-fields#Scheme"
         },
         {
             "@id": "https://w3id.org/nwo-research-fields#InformationSystemsDatabases",
@@ -388,7 +388,7 @@
             "skos:prefLabel": "Information systems, databases",
             "skos:notation": "16.40.00",
             "skos:broader": "https://w3id.org/nwo-research-fields#ComputerScience",
-            "skos:inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+            "skos:inScheme": "https://w3id.org/nwo-research-fields#Scheme"
         },
         {
             "@id": "https://w3id.org/nwo-research-fields#UserInterfacesMultimedia",
@@ -396,7 +396,7 @@
             "skos:prefLabel": "User interfaces, multimedia",
             "skos:notation": "16.50.00",
             "skos:broader": "https://w3id.org/nwo-research-fields#ComputerScience",
-            "skos:inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+            "skos:inScheme": "https://w3id.org/nwo-research-fields#Scheme"
         },
         {
             "@id": "https://w3id.org/nwo-research-fields#ArtificialIntelligenceExpertSystems",
@@ -404,7 +404,7 @@
             "skos:prefLabel": "Artificial intelligence, export systems",
             "skos:notation": "16.60.00",
             "skos:broader": "https://w3id.org/nwo-research-fields#ComputerScience",
-            "skos:inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+            "skos:inScheme": "https://w3id.org/nwo-research-fields#Scheme"
         },
         {
             "@id": "https://w3id.org/nwo-research-fields#ComputerGraphics",
@@ -412,7 +412,7 @@
             "skos:prefLabel": "Computer graphics",
             "skos:notation": "16.70.00",
             "skos:broader": "https://w3id.org/nwo-research-fields#ComputerScience",
-            "skos:inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+            "skos:inScheme": "https://w3id.org/nwo-research-fields#Scheme"
         },
         {
             "@id": "https://w3id.org/nwo-research-fields#ComputerSimulationVirtualReality",
@@ -420,7 +420,7 @@
             "skos:prefLabel": "Computer simulation, virtual reality",
             "skos:notation": "16.80.00",
             "skos:broader": "https://w3id.org/nwo-research-fields#ComputerScience",
-            "skos:inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+            "skos:inScheme": "https://w3id.org/nwo-research-fields#Scheme"
         },
         {
             "@id": "https://w3id.org/nwo-research-fields#ComputerScienceOther",
@@ -428,7 +428,7 @@
             "skos:prefLabel": "Computer science, other",
             "skos:notation": "16.90.00",
             "skos:broader": "https://w3id.org/nwo-research-fields#ComputerScience",
-            "skos:inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+            "skos:inScheme": "https://w3id.org/nwo-research-fields#Scheme"
         },
         {
             "@id": "https://w3id.org/nwo-research-fields#BioInformaticsBiostatisticsBiomathematicsBiomechanics",
@@ -437,7 +437,7 @@
             "skos:notation": "21.10.00",
             "skos:broader": "https://w3id.org/nwo-research-fields#ComputerScience",
             "skos:broader": "https://w3id.org/nwo-research-fields#LifeSciences",
-            "skos:inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+            "skos:inScheme": "https://w3id.org/nwo-research-fields#Scheme"
         },
         {
             "@id": "https://w3id.org/nwo-research-fields#ComputersAndTheHumanities",
@@ -451,7 +451,7 @@
             "skos:prefLabel": "Software for humanities",
             "skos:notation": "37.10.00",
             "skos:broader": "https://w3id.org/nwo-research-fields#ComputersAndTheHumanities",
-            "skos:inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+            "skos:inScheme": "https://w3id.org/nwo-research-fields#Scheme"
         },
         {
             "@id": "https://w3id.org/nwo-research-fields#TextualAndContentAnalysis",
@@ -459,7 +459,7 @@
             "skos:prefLabel": "Textual and content analysis",
             "skos:notation": "37.20.00",
             "skos:broader": "https://w3id.org/nwo-research-fields#ComputersAndTheHumanities",
-            "skos:inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+            "skos:inScheme": "https://w3id.org/nwo-research-fields#Scheme"
         },
         {
             "@id": "https://w3id.org/nwo-research-fields#TextualAndLinguisticCorpora",
@@ -467,7 +467,7 @@
             "skos:prefLabel": "Textual and linguistic corpora",
             "skos:notation": "37.30.00",
             "skos:broader": "https://w3id.org/nwo-research-fields#ComputersAndTheHumanities",
-            "skos:inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+            "skos:inScheme": "https://w3id.org/nwo-research-fields#Scheme"
         },
         {
             "@id": "https://w3id.org/nwo-research-fields#DatabasesForHumanities",
@@ -475,7 +475,7 @@
             "skos:prefLabel": "Databases for humanities",
             "skos:notation": "37.40.00",
             "skos:broader": "https://w3id.org/nwo-research-fields#ComputersAndTheHumanities",
-            "skos:inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+            "skos:inScheme": "https://w3id.org/nwo-research-fields#Scheme"
         },
         {
             "@id": "https://w3id.org/nwo-research-fields#HypertextsAndMultimedia",
@@ -483,7 +483,7 @@
             "skos:prefLabel": "HypertextsAndMultimedia",
             "skos:notation": "37.50.00",
             "skos:broader": "https://w3id.org/nwo-research-fields#ComputersAndTheHumanities",
-            "skos:inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+            "skos:inScheme": "https://w3id.org/nwo-research-fields#Scheme"
         },
         {
             "@id": "https://w3id.org/nwo-research-fields#ComputersAndTheHumanitiesOther",
@@ -491,7 +491,7 @@
             "skos:prefLabel": "Computers and the humanities, other",
             "skos:notation": "37.20.00",
             "skos:broader": "https://w3id.org/nwo-research-fields#ComputersAndTheHumanities",
-            "skos:inScheme": "https://www.nwo.nl/en/nwo-research-fields"
+            "skos:inScheme": "https://w3id.org/nwo-research-fields#Scheme"
         },
         {
             "@id": "https://w3id.org/nwo-research-fields#CulturalAnthropology",
