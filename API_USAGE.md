@@ -94,9 +94,9 @@ ones with a high validation score.
 
 ## Querying
 
-We offer a [SPARQL endpoint](https://tools.clariah.nl/api/sparql) (with a [YASGUI web
-interface](https://tools.clariah.nl/api/) for interactive experimentation). This is the main
-interface to query the tool store unless you opt to parse the JSON-LD directly as mentioned above.
+We offer a [SPARQL endpoint](https://tools.clariah.nl/api/) (with a YASGUI web
+interface). This is the main interface to query the tool store unless you opt
+to parse the JSON-LD directly as mentioned above.
 
 Do note that our backend is not optimized for heavy real-time loads, so it is recommended
 you implement caching on your side.
