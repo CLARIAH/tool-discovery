@@ -1,0 +1,4 @@
+source: https://github.com/beeldengeluid/clariah-mediasuite
+services:
+  - https://mediasuite.clariah.nl/
+group: "Media Suite"
