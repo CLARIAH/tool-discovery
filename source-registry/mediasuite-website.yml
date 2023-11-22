@@ -1,4 +1,2 @@
-source: https://github.com/CLARIAH/mediasuite-website
-services:
-  - https://mediasuite.clariah.nl/
+source: https://github.com/beeldengeluid/mediasuite-website
 group: Media Suite
