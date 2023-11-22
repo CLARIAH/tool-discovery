@@ -1,0 +1,4 @@
+source: https://github.com/CLARIAH/labo-components
+services:
+  - https://mediasuite.clariah.nl/
+group: Media Suite
