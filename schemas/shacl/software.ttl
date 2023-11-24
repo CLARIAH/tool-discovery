@@ -118,7 +118,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
             [ sh:nodeKind sh:Literal ]
         ) ;
         rdfs:label "link to continuous integration service." ;
-        sh:severity sh:Warning ; #SHOULD/RECOMMENDED
+        sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because the impact on the metadata presentation is small 
         sh:message "Software source code *SHOULD* link to a continuous integration service that builds the software and runs the software's tests" ;
     ] ,
     [
