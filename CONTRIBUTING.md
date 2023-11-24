@@ -25,6 +25,8 @@ Additional properties you may specify in your yaml file:
 * `ref` - The git reference (a branch name of tag name) to use. You can set this if you want to harvest one particular
     version. **If not set, codemeta-harvester will check out the latest
     version tag by default** (this assumes you use some kind of semantic versioning for your tags). Only if no tags are present at all, it falls back to using the `master` or `main` branch directly.
+* `tagprefix` - A prefix used for the git tags (only applicable in edge cases), the last part of the tag must still comply to a semantic versioning scheme.
+* `tagignore` - A regular expression (`grep -E`) of git tags to ignore (only applicable in edge cases), by default tags with "alpha" will be ignored.
 
 ## Frequently Asked Questions and Troubleshooting
 
