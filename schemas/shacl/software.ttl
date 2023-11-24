@@ -11,6 +11,7 @@
 @prefix softwareiodata: <https://w3id.org/software-iodata#> .
 @prefix trl: <https://w3id.org/research-technology-readiness-levels#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix codemetapy: <https://github.com/proycon/codemetapy/> . #for internal use
 
 # See https://github.com/CLARIAH/clariah-plus/blob/main/requirements/software-metadata-requirements.md
 
@@ -277,7 +278,13 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:severity sh:Info ; #I'm classifying this a bit weaker (SHOULD -> sh:Warning) because it is not always applicable and is not something that can be derived automatically 
         sh:message "A research activity *SHOULD* be expressed as a category using the TaDiRaH vocabulary" ;
         sh:qualifiedMinCount 1
-    ] .
+    ] ,
+    [
+        sh:path codemetapy:stub ; #this is an internal flag set by codemeta-harvester
+        sh:maxCount 0 ;
+        sh:severity sh:Violation ; #MUST/REQUIRED
+        sh:message "Software metadata *MUST* be kept as close to the source code as possible, but this source code repository seems to be a stub without actual code." ;
+    ] ,
 
 clariah:SoftwareApplicationShape a sh:NodeShape ;
     sh:targetClass schema:SoftwareApplication ;
