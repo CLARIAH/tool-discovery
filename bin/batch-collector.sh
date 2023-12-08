@@ -45,9 +45,10 @@ total_files=$(ls /tool-store-data/*.codemeta.json | wc -l)
 [ "$total_files" = "0" ] && die "No codemeta files were produced after harvesting"
 
 #Creating joined graph
-echo "Creating a joined graph with: codemetapy --graph /tool-store-data/*.codemeta.json > /tool-store-data/data.json  --opts \"$CODEMETAPY_OPTS\"" >&2
+echo "Creating a joined graph with: codemetapy --graph /tool-store-data/*.codemeta.json > /tmp/data.json  --opts \"$CODEMETAPY_OPTS\"" >&2
 codemetapy --graph /tool-store-data/*.codemeta.json > /tmp/data.json || die "failed to create joined graph"
-mv -f /tmp/data.json /tool-store-data/data.json
+[ -s /tmp/data.json ] || die "joined graph is not sane (missing or zero-sized)"
+mv -f /tmp/data.json /tool-store-data/data.json || die "failed to copy new data.json"
 
 echo "Stopping the Tool Store API (will automatically restart)">&2
 killall uvicorn
