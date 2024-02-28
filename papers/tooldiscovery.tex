@@ -5,15 +5,16 @@
 \usepackage{CLARIN2024}
 % - - - - - - - IMPORTANT - - - - - - - -
 % The next three lines allow XeLaTeX, graphics import and hyperlinks, set font and language
-\usepackage{xltxtra,polyglossia,graphicx,hyperref}
-\setmainfont[Mapping=tex-text]{Times}
-\setdefaultlanguage{english}
+%\usepackage{xltxtra,polyglossia,graphicx,hyperref}
+%\setmainfont[Mapping=tex-text]{Times}
+%\setdefaultlanguage{english}
 % If for some reason the above three lines are not compatible with your LaTeX installation,
 % comment out the above three instructions and uncomment the following four instead:
-%\usepackage{times}
-%\usepackage{url}
-%\usepackage{latexsym}
-%\usepackage{hyperref}
+\usepackage{times}
+\usepackage{url}
+\usepackage{latexsym}
+\usepackage{hyperref}
+\usepackage{graphicx}
 \usepackage[english]{babel}
 \usepackage{csquotes}
 \usepackage[
@@ -32,7 +33,7 @@
 
 %\usepackage{covington} % if needed, for linguistic examples
 
-\title{CLARIAH Tool Discovery: an automated software metadata harvesting pipeline}
+\title{FAIR Tool Discovery: an automated software metadata harvesting pipeline for CLARIAH}
 
 % - - - - - - - IMPORTANT - - - - - - -
 % Leave the author information empty until your paper has been accepted 
@@ -66,9 +67,12 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-  We present the Tool Discovery pipeline, a core component of the Dutch CLARIAH infrastructure. This pipeline
-  harvests software metadata from the source, converts it to a uniform representation based on schema.org and codemeta,
-  and makes the resulting data available for further ingestion into user-facing portal systems. 
+  We present the Tool Discovery pipeline, a core component of the CLARIAH
+    infrastructure in the Netherlands. This pipeline harvests software metadata
+    from the source, detects existing heterogeneous metadata formats already in
+    use by software developers, and converts it to a uniform representation
+    based on schema.org and codemeta. The resulting data is then made available
+    for further ingestion into other user-facing catalogue/portal systems. 
 \end{abstract}
 
 \section{Introduction} \label{intro}
@@ -113,10 +117,10 @@ For scholars it is therefore important to be able to find and identify
 tools suitable for their research, we call this \emph{tool discovery}. We
 define \emph{tool} here and throughout this paper to broadly refer to any kind
 of software, regardless of the interface it offers and the audience it targets.
-The scholar's requirement to find tools is expressed as the letter \textsc{F}
+The scholar's requirement to find tools is reflected in the letter \textsc{F}
 for \emph{Findable} in the ubiquitous acronym \textsc{FAIR} \footnote{Findable,
-Accessible, Interoperable and Reusable} that has been popularised in recent
-years. In order to find tools, researchers must have access to catalogues that
+Accessible, Interoperable and Reusable} that has received a lot of attention in recent
+years in academic circles. In order to find tools, researchers must have access to catalogues that
 relay \emph{accurate} software metadata.
 
 There is no shortage in existing initiatives in building such catalogues; many
@@ -130,20 +134,20 @@ We developed a generic pipeline that harvests software metadata from the source,
 various existing metadata formats, and converts it to a uniform linked open data representation.
 This we then make available for further ingestion into catalogues. 
 
-\section{Accurate and complete software metadata}
+\section{The need for high-quality metadata}
 
 Unlike most digital data, software is uniquely characterised as a constantly
 moving target. New releases are expected periodically in which bugs or security
 vulnerabilities are fixed, or new features requested by users are added.
 Updates also address the fact that software lives not in isolation, but in
-connection to other software, its dependencies. Software regularly needs to
+connection to other software; its dependencies. Software regularly needs to
 adapt to changes in its environment.
 
-For software metadata to be accurate, it needs to describe a
+For software metadata to be accurate in this dynamic situation, it needs to describe a
 particular version of the software, and be explicit about that version and in
 what stage of development the software is. After all, if software is not
 updated in a while, then that in itself is important metadata for an end-user
-to have; the software may have been abandoned or become unmaintained. The user
+to have; the tool may have been abandoned or become unmaintained. The user
 would be wise to exercise caution in adopting such software, as there may be no
 support, or if may not even install anymore.
 
@@ -158,44 +162,56 @@ information for the researcher to make an informed judgement on whether the
 tool is suitable for them. Metadata must have a certain \emph{completeness} to
 be useful.
 
-\section{The source}
+\section{Bottom-up harvesting from the source}
 
-What we propose is a \emph{fully automated} pipeline where software metadata is kept
-at the very source, which by definition is alongside the software source code, and
-harvested from there. This has a number of important advantages and can be contrasted
-with metadata that lives in a database of some intermediary:
+What we propose is a \emph{fully automated} pipeline where software metadata is
+kept at the very source, which by definition is alongside the software source
+code, and harvested from there\footnote{Formally, the software source code has
+no knowledge when, where, and by whom it may be deployed as a service. This linking is
+therefore established at a higher level.}. This has a number of important advantages and
+can be contrasted with metadata that lives in a database of some intermediary:
 
 \begin{itemize}
 \item The software source code is often already accompanied by software metadata in an existing schema,
-  because many programming language ecosystems already either require or recommend this.
+  because many programming language ecosystems already either require or recommend this. Our aim is 
+  to avoid any duplication of metadata and reuse these existing sources to the maximum extent possible.
   Consider for example \texttt{pyproject.toml} or \texttt{setup.py} for Python projects, \texttt{package.json} for javascript/npm/nodejs projects,
-  \texttt{pom.xml} for Java/Maven and \texttt{Cargo.toml} for Rust. Multiple sources may be present.
+        \texttt{pom.xml} for Java/Maven and \texttt{Cargo.toml} for Rust. Aside from these, valuable machine parsable metadata may be extracted from other files such as a \texttt{LICENSE} file or 
+        , `README` file which often contains machine-interpretable badges\footnote{Badges are small images often included on top a \texttt{README} file to express certain properties of the software, such as links to documentation, continuous integration services, development status, packaging status, etc..}, or a \texttt{CITATION.cff} file, amongst others.
+  Multiple such sources may be present and can be recombined.
 \item Software source code is typically held in a version control system (usually git) and published in 
   forges such as Github, Gitlab, Bitbucket, Codeberg or Sourcehut. This solves versioning
-  issues and ensures metadata can exactly describe the version alongside which it is stored.
+  issues and ensures metadata can exactly describe the version alongside which it is stored. It also enables the 
+  harvester to properly identify the latest stable release\footnote{provided some kind of industry-standard versioning system like semantic versioning is adhered to} and pick that instead of development branches.
+  Moreover, the software forges themselves may also provide an API that may serve as an extra source to find software metadata (e.g. descriptions, keywords, links to issue trackers and/or continuous integration services).
 \item The developers of the tool have full control and authorship over their metadata. There are no middlemen.
-\item The forges were designed for open source collaboration, so mechanisms for any
-  third party to amend or correct the metadata are also in place (e.g. via a pull/merge request or patches).
+\item The forges were designed precisely for collaboration on open source software development, so mechanisms for any
+  third party to amend or correct the metadata are already in place (e.g. via a pull/merge request or patches).
   So while developers retain full authorship, this does not mean curation is not possible.
 \end{itemize}
 
-We do not harvest any metadata from intermediaries as that would defeat our
-philosphy. We do have one extra source of harvesting: In case the tool in
-question is Software as a Service, i.e. a web-application, web-service, or
-website, we harvest not only the software source code, but also a web endpoint
-and attempt to automatically extract metadata from there. In the resulting
-metadata, there will be an explicit link between the source code and any target
-products that are \emph{instances} of that source code. These sources for
-harvesting (URLs) are the only input that needs to be manually provided to our
-system, we call this the \emph{source registry}. 
+We do not harvest any metadata from intermediaries\footnote{other catalogues, for instance via PMI-OAI
+endpoints} as that would defeat our philosophy. We do have one extra source for
+harvesting: In case the tool in question is Software as a Service, i.e. a
+web-application, web-service, or website, we harvest not only the software
+source code, but also a web endpoint and attempt to automatically extract
+metadata from there. In the resulting metadata, there will be an explicit link
+between the source code and any \emph{target products} or \emph{instances} of
+that source code. The sources for harvesting source repositories and web
+endpoints (URLs) are the only input that needs to be manually provided to our
+system, we call this the \emph{source registry} and we keep this in a simple
+git repository containing very minimalistic configuration files (one per tool).
+This is also the only point in our pipeline where there is the possibility for
+human supervision; to decide whether or not to include a tool.
 
-\section{Unified Vocabulary for software metadata}
+\section{A unified vocabulary for software metadata}
 
-The challenge we are facing is primarily one of mapping from multiple heterogeneous
-sources of software metadata to a unified vocabulary. Fortunately, this is an area that
-has been explored previously in the CodeMeta project. They established a
+The challenge we are facing is primarily one of mapping from multiple
+heterogeneous sources of software metadata to a unified vocabulary.
+Fortunately, this is an area that has been explored previously in the CodeMeta
+project\footnote{\url{https://codemeta.github.io}}. They developed a
 vocabulary for describing software source code, building on top of the
-schema.org vocabulary and contributing their extensions back to them. Moreover,
+schema.org vocabulary and contributing their efforts back to them. Moreover,
 the CodeMeta project defines mappings, called crosswalks, between their
 vocabulary and many existing metadata schemes. 
 
@@ -215,17 +231,21 @@ as Software
 Types\footnote{\url{https://github.com/SoftwareUnderstanding/software_types}},
 Software Input/Output
 Data\footnote{\url{https://github.com/SoftwareUnderstanding/software-iodata}},
-and Research Technology Readiness Levels. These are formulated as SKOS
+and Research Technology Readiness Levels. Most of these are formulated as SKOS
 vocabularies.
 
 \section{Architecture}
 
 The full architecture of our pipeline is illustrated schematically in
-Figure~\ref{fig:architecture}.
+Figure~\ref{fig:architecture}. While we demonstrate this in the context of the
+CLARIAH project, the underlying technology is generic and can be reapplied in
+other projects as well.
 
 \begin{figure}[h]
-\includegraphics[width=14.0cm]{arch.png}
+\begin{center}
+\includegraphics[width=14.0cm]{architecture.png}
 \caption{The CLARIAH Tool Discovery architecture}
+\end{center}
 \label{fig:architecture}
 \end{figure}
 
@@ -233,20 +253,20 @@ Using the input from the source registry, our
 \emph{harvester}\footnote{codemeta-harvester:
 \url{https://github.com/proycon/codemeta-harvester}} fetches all the git
 repositories and queries any service endpoints. It does so at regular intervals
-(e.g. once a day), this ensures the metadata is always up to date. Subsequently, it
-identifies the different kinds of metadata it can find there and and calls the
-converter\footnote{Powered by codemetapy:
+(e.g. once a day). This ensures the metadata is always up to date. When the
+sources are retrieved, it identifies the different kinds of metadata it can
+find there and and calls the converter\footnote{powered by codemetapy:
 \url{https://github.com/proycon/codemetapy}} to turn and combine it into a
 single codemeta representation. This produces one codemeta JSON-LD file per
 input tool. All of these together are loaded in our \emph{tool store}. This is
-implemented as a triple store and servers both as a backend to be queried programatically using SPARQL,
-as well as a simple web frontend to be visited by human end-users as a catalogue
-\footnote{codemeta-server
+implemented as a triple store and servers both as a backend to be queried
+programatically using SPARQL, as well as a simple web frontend to be visited by
+human end-users as a catalogue \footnote{codemeta-server
 (\url{https://github.com/proycon/codemeta-server}) and codemeta2html
 (\url{https://github.com/proycon/codemeta2html}). The results for CLARIAH are
-publicly accessible at \url{https://tools.clariah.nl}}.
+accessible at \url{https://tools.clariah.nl}}.
 
-Our web frontend is not the endpoint; our aim is to propagate the metadata
+Our web frontend is not the final destination; our aim is to propagate the metadata
 we have collected to other existing portal/catalogue systems, such as the
 CLARIN VLO, the CLARIN Switchboard, the SSHOC Marketplace, and CLARIAH's Ineo\footnote{\url{https://ineo.tools}}.
 
@@ -266,23 +286,36 @@ human-readable validation report which references a set of carefully formulated
 software metadata requirements, this directly serves as documentation for
 software producers so they can see what requirements they have not met. The
 level of compliance to these requirements is expressed on a simple scale of 0
-to 5, and visualised by stars and colours in our interface. This evaluation
+to 5, and visualised as a coloured star rating in our interface. This evaluation
 score itself is part of the delivered metadata and something which both end
-users as well as other systems can filter on. It may also serve as a kind of
-'gamification' element to spur tool producers on to provide more accurate
+users as well as other systems can filter on. It may even serve as a kind of
+`gamification' element to spur on developers to provide higher quality
 metadata. 
 
-For propagation to systems further downstream, we set a threshold of requiring
-a metadata validation score of 3 or higher. These systems may also posit
-whatever other criteria they want for inclusion into their systems, including
-human validation and curation. As metadata is stored at the source, we strongly
-recommend any curation efforts directly contributed upstream at the source,
-through the established mechanisms in place by whatever forge (e.g. GitHub)
-they are using to store their source code.
+For propagation to systems further downstream, we set a threshold of a rating
+of 3 or higher. These systems may of course also posit whatever other criteria
+they want for inclusion into their systems, including human validation and
+curation. As metadata is stored at the source, however, we strongly recommend
+any curation efforts to be directly contributed upstream to the source, through
+the established mechanisms in place by whatever forge (e.g. GitHub) they are
+using to store their source code.
+
+\section{Conclusion}
+
+We have shown a way to store metadata at the source and reuse existing metadata
+sources, whilst recombining and converting these into a single unified LOD
+representation using largely established vocabularies. We developed tooling for
+codemeta that is generically reusable and available as free open source
+software\footnote{GNU General Public Licence v3}. We hope that our pipeline
+results metadata that is accurate and complete enough for scholars to assess
+their usability for their research. We also think this is viable solution
+against situations where metadata or entire catalogues often go stale, in worst
+case unbeknowst to the scholar who might still rely on them.
 
 \section*{Acknowledgments}
 
-Development of the tool discovery pipeline has been funded as part of the CLARIAH-PLUS project (NWO grant 184.034.023) 
+The FAIR Tool Discovery track has been developed as part of the CLARIAH-PLUS
+project (NWO grant 184.034.023), as part of the Shared Development Roadmap.
 
 \printbibliography
 
