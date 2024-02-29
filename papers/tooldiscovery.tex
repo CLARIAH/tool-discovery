@@ -22,7 +22,7 @@
     style=apa,
     natbib=true,
     ]{biblatex}
-\addbibresource{bibliography.bib} % add your own bibliography into the format provided in this file
+\addbibresource{tooldiscovery.bib} % add your own bibliography into the format provided in this file
 
 %\setlength\titlebox{5cm}
 
@@ -106,89 +106,109 @@ This work is licenced under a Creative Commons Attribution 4.0 International Lic
     % {http://creativecommons.org/licenses/by/4.0/}
 }
 
-Software is indispensible in a lot of modern-day research, including in sectors
-such as the Humanities and Social Sciences that may have traditionally been
-less focused on information technology. It is also appreciated more and more as
-valid research output, alongside more conventional output such as academic
-publications, presentations, and datasets. Scholars often have a need for
-research software to do their research efficiently.
+% Software is indispensible in a lot of modern-day research, including in sectors
+% such as the Humanities and Social Sciences that may have traditionally been
+% less focused on information technology. It is also appreciated more and more as
+% valid research output, alongside more conventional output such as academic
+% publications, presentations, and datasets. Scholars often have a need for
+% research software to do their research efficiently.
 
-For scholars it is therefore important to be able to find and identify
-tools suitable for their research, we call this \emph{tool discovery}. We
-define \emph{tool} here and throughout this paper to broadly refer to any kind
-of software, regardless of the interface it offers and the audience it targets.
+For scholars it is important to be able to find and identify tools
+suitable for their research, we call this \emph{tool discovery}. We define
+\emph{tool} here and throughout this paper to broadly refer to any kind of
+software, regardless of the interface it offers and the audience it targets.
 The scholar's requirement to find tools is reflected in the letter \textsc{F}
 for \emph{Findable} in the ubiquitous acronym \textsc{FAIR} \footnote{Findable,
-Accessible, Interoperable and Reusable} that has received a lot of attention in recent
-years in academic circles. In order to find tools, researchers must have access to catalogues that
-relay \emph{accurate} software metadata.
+Accessible, Interoperable and Reusable} that has received a lot of attention in
+recent years in academic circles and is also adopted to promote quality and
+sustainability in research software \citep{FAIR}. In order to find tools,
+researchers must have access to catalogues that relay \emph{accurate} software
+metadata.
 
-There is no shortage in existing initiatives in building such catalogues; many
-research groups, projects or institutes have some kind of website featuring
-their tools. Aggregation of software metadata from multiple such partners is
-also not new, as CLARIN itself already does in the CLARIN Virtual Language
-Observatory.
-
-The system we describe in this paper is not an attempt to build another catalogue.
+There is no shortage in existing initiatives in building such catalogues\footnote{CLARIN itself has one in the form of the Virtual Language Observatory: \url{https://vlo.clarin.eu} \citep{VLO}}.
+, %<cut out part below for brevity>
+but the system we describe in this paper is not an attempt to build another catalogue.
 We developed a generic pipeline that harvests software metadata from the source, leveraging
 various existing metadata formats, and converts it to a uniform linked open data representation.
 This we then make available for further ingestion into catalogues. 
 
+%; many
+%research groups, projects or institutes have some kind of website featuring
+%their tools. Aggregation of software metadata from multiple such partners is
+%also not new, as CLARIN itself already does in the CLARIN Virtual Language
+%Observatory\footnote{\url{https://vlo.clarin.eu}} \citep{VLO}.
+
+
 \section{The need for high-quality metadata}
 
 Unlike most digital data, software is uniquely characterised as a constantly
-moving target. New releases are expected periodically in which bugs or security
-vulnerabilities are fixed, or new features requested by users are added.
-Updates also address the fact that software lives not in isolation, but in
-connection to other software; its dependencies. Software regularly needs to
-adapt to changes in its environment.
+moving target. Releases address bugs, security vulnerabilities, or add new
+features. Moreover, software lives not in isolation, but in connection to other
+software; its dependencies. Updates are needed to adapt to changes in its
+environment.
 
-For software metadata to be accurate in this dynamic situation, it needs to describe a
-particular version of the software, and be explicit about that version and in
-what stage of development the software is. After all, if software is not
-updated in a while, then that in itself is important metadata for an end-user
-to have; the tool may have been abandoned or become unmaintained. The user
-would be wise to exercise caution in adopting such software, as there may be no
-support, or if may not even install anymore.
+For software metadata to be informative in this dynamic setting, it needs to
+explicitly link to a particular version of the software. This is also
+facilitates provenance keeping and scientific reproducibility. Metadata should
+also convey information about the stage of development the software is in and
+the level of support an end-user may expect. The user would be wise to exercise
+caution in adopting software that is unmaintained and unsupported. In practice
+we often find this information lacking and come across catalogues that were
+manually compiled once but rarely updated since.
 
-A common pitfall we have observed in practice is that metadata is often
-manually collected at some stage and published in a catalogue, but this is then
-never or rarely updated or revised. In best case, the software has moved on and the
-metadata covers a mere subset, in worst case, the software or the entire
-catalogue is unmaintained and out of date.
+The need for accurate up-to-date metadata goes hand-in-hand with the need for
+\emph{complete} metadata. If vital details are missing, the
+end-user may not be able to make an informed judgment.
 
-Aside from accuracy, it is important that the metadata covers enough
-information for the researcher to make an informed judgement on whether the
-tool is suitable for them. Metadata must have a certain \emph{completeness} to
-be useful.
+% A common pitfall we have observed in practice is that metadata is often
+% manually collected at some stage and published in a catalogue, but never or
+% rarely updated or revised. In best case, the software has moved on and the
+% metadata covers a mere subset, in worst case, the software or the entire
+% catalogue is unmaintained and out of date.
 
 \section{Bottom-up harvesting from the source}
 
 What we propose is a \emph{fully automated} pipeline where software metadata is
-kept at the very source, which by definition is alongside the software source
-code, and harvested from there\footnote{Formally, the software source code has
+kept at the source, i.e. alongside the software source code, and \emph{periodically} harvested from there\footnote{Formally, the software source code has
 no knowledge when, where, and by whom it may be deployed as a service. This linking is
-therefore established at a higher level.}. This has a number of important advantages and
-can be contrasted with metadata that lives in a database of some intermediary:
+therefore established at a higher level.}. This has a number of important advantages: 
+%and can be contrasted with metadata that lives primarily in an intermediate system.
 
-\begin{itemize}
-\item The software source code is often already accompanied by software metadata in an existing schema,
-  because many programming language ecosystems already either require or recommend this. Our aim is 
-  to avoid any duplication of metadata and reuse these existing sources to the maximum extent possible.
-  Consider for example \texttt{pyproject.toml} or \texttt{setup.py} for Python projects, \texttt{package.json} for javascript/npm/nodejs projects,
-        \texttt{pom.xml} for Java/Maven and \texttt{Cargo.toml} for Rust. Aside from these, valuable machine parsable metadata may be extracted from other files such as a \texttt{LICENSE} file or 
-        , `README` file which often contains machine-interpretable badges\footnote{Badges are small images often included on top a \texttt{README} file to express certain properties of the software, such as links to documentation, continuous integration services, development status, packaging status, etc..}, or a \texttt{CITATION.cff} file, amongst others.
-  Multiple such sources may be present and can be recombined.
-\item Software source code is typically held in a version control system (usually git) and published in 
-  forges such as Github, Gitlab, Bitbucket, Codeberg or Sourcehut. This solves versioning
-  issues and ensures metadata can exactly describe the version alongside which it is stored. It also enables the 
-  harvester to properly identify the latest stable release\footnote{provided some kind of industry-standard versioning system like semantic versioning is adhered to} and pick that instead of development branches.
-  Moreover, the software forges themselves may also provide an API that may serve as an extra source to find software metadata (e.g. descriptions, keywords, links to issue trackers and/or continuous integration services).
-\item The developers of the tool have full control and authorship over their metadata. There are no middlemen.
-\item The forges were designed precisely for collaboration on open source software development, so mechanisms for any
+%\begin{itemize}
+
+%\item
+
+Source code is often already accompanied by software metadata in existing
+schemas\footnote{for example \texttt{pyproject.toml}, \texttt{setup.py}, \texttt{pom.xml}, \texttt{package.json}, \texttt{CITATION.cff} and others. Even files such as \texttt{README} and \texttt{LICENSE} may be a source for certain metadata.} because many programming language ecosystems already either require or
+recommend this. Our aim is to avoid any duplication of metadata and
+\emph{reuse} these existing sources to the maximum extent possible.
+
+%Consider
+%for example \texttt{pyproject.toml} or \texttt{setup.py} for Python projects,
+%\texttt{package.json} for javascript/npm/nodejs projects, \texttt{pom.xml} for
+%Java/Maven and \texttt{Cargo.toml} for Rust. Aside from these, valuable machine
+%parsable metadata may be extracted from other files such as a \texttt{LICENSE}
+%file or , `README` file which often contains machine-interpretable
+%badges\footnote{Badges are small images often included on top a \texttt{README}
+%file to express certain properties of the software, such as links to
+%documentation, continuous integration services, development status, packaging
+%status, etc..}, or a \texttt{CITATION.cff} file, amongst others. Multiple such
+%sources may be present and can be recombined.
+
+%\item 
+  Second, source code should be under version control (e.g. git) and published in a forge (e.g. GitHub).
+  %  is typically held in a version control system (usually git) and published in 
+  %forges such as Github, Gitlab, Bitbucket, Codeberg or Sourcehut.
+  This solves versioning issues and ensures metadata can exactly describe the version alongside which it is stored. It also enables the 
+  harvester to properly identify the latest stable release\footnote{provided some kind of industry-standard versioning system like semantic versioning is adhered to}.
+  Software forges themselves may also provide an API that may serve as an extra source to find software metadata (e.g. descriptions, keywords, links to issue trackers and/or continuous integration services).
+%\item 
+  Third, The developers of the tool have full control and authorship over their metadata. There are no middlemen.
+%\item 
+  Last, the forges were designed precisely for collaboration on open source software development, so mechanisms for any
   third party to amend or correct the metadata are already in place (e.g. via a pull/merge request or patches).
   So while developers retain full authorship, this does not mean curation is not possible.
-\end{itemize}
+%\end{itemize}
 
 We do not harvest any metadata from intermediaries\footnote{other catalogues, for instance via PMI-OAI
 endpoints} as that would defeat our philosophy. We do have one extra source for
@@ -225,9 +245,9 @@ We link to various other LOD vocabularies, such as
 \emph{repostatus.org}\footnote{\url{https://repostatus.org}} (development
 status), \emph{SPDX}\footnote{\url{https://spdx.dev}} (open source software
 licenses), \emph{TaDiRaH}\footnote{\url{https://vocabs.dariah.eu/tadirah/}}
-(research activities) and \emph{NWO Research Domains}. Moreover, we
-formulated some of our own extensions on top of codemeta and schema.org, such
-as Software
+(research activities) \citep{TADIRAH} and \emph{NWO Research Domains}.
+Moreover, we formulated some of our own extensions on top of codemeta and
+schema.org, such as Software
 Types\footnote{\url{https://github.com/SoftwareUnderstanding/software_types}},
 Software Input/Output
 Data\footnote{\url{https://github.com/SoftwareUnderstanding/software-iodata}},
@@ -266,9 +286,12 @@ human end-users as a catalogue \footnote{codemeta-server
 (\url{https://github.com/proycon/codemeta2html}). The results for CLARIAH are
 accessible at \url{https://tools.clariah.nl}}.
 
-Our web frontend is not the final destination; our aim is to propagate the metadata
-we have collected to other existing portal/catalogue systems, such as the
-CLARIN VLO, the CLARIN Switchboard, the SSHOC Marketplace, and CLARIAH's Ineo\footnote{\url{https://ineo.tools}}.
+Our web frontend is not the final destination; our aim is to propagate the
+metadata we have collected to other existing portal/catalogue systems, such as
+the CLARIN VLO, the CLARIN
+Switchboard\footnote{\url{https://switchboard.clarin.eu/}}, the SSHOC
+Marketplace\footnote{\url{https://marketplace.sshopencloud.eu/}}, and CLARIAH's
+Ineo\footnote{\url{https://ineo.tools}}.
 
 \section{Validation \& Curation}
 
@@ -283,14 +306,13 @@ schema\footnote{formulated in SHACL} that tests whether certain fields are
 present (completeness), and whether the values are sensible (accuracy, it is
 capable of detecting various discrepancies). The validation process outputs a
 human-readable validation report which references a set of carefully formulated
-software metadata requirements, this directly serves as documentation for
-software producers so they can see what requirements they have not met. The
-level of compliance to these requirements is expressed on a simple scale of 0
-to 5, and visualised as a coloured star rating in our interface. This evaluation
-score itself is part of the delivered metadata and something which both end
-users as well as other systems can filter on. It may even serve as a kind of
-`gamification' element to spur on developers to provide higher quality
-metadata. 
+software metadata requirements. Developers can clearly identify what
+specific requirements they have not met. The level of compliance is expressed on a
+simple scale of 0 to 5, and visualised as a coloured star rating in our
+interface. This evaluation score itself is part of the delivered metadata and
+something which both end users as well as other systems can filter on. It may
+even serve as a kind of `gamification' element to spur on developers to provide
+higher quality metadata. 
 
 For propagation to systems further downstream, we set a threshold of a rating
 of 3 or higher. These systems may of course also posit whatever other criteria
