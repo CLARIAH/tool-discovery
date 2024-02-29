@@ -1,5 +1,6 @@
 %!TEX encoding = UTF-8 Unicode
-%!TEX TS-program = xelatex
+%!TEX TS-program = pdflatex
+% vim: spell spelllang=en_gb
 
 \documentclass[a4paper,11pt]{article}
 \usepackage{CLARIN2024}
@@ -279,18 +280,18 @@ Using the input from the source registry, our
 repositories and queries any service endpoints. It does so at regular intervals
 (e.g. once a day). This ensures the metadata is always up to date. When the
 sources are retrieved, it identifies the different kinds of metadata it can
-find there and and calls the converter\footnote{powered by codemetapy:
+find there and calls the converter\footnote{powered by codemetapy:
 \url{https://github.com/proycon/codemetapy}} to turn and combine it into a
 single codemeta representation. This produces one codemeta JSON-LD file per
 input tool. All of these together are loaded in our \emph{tool store}. This is
 implemented as a triple store and servers both as a backend to be queried
-programatically using SPARQL, as well as a simple web frontend to be visited by
+programmatically using SPARQL, as well as a simple web frontend to be visited by
 human end-users as a catalogue \footnote{codemeta-server
 (\url{https://github.com/proycon/codemeta-server}) and codemeta2html
 (\url{https://github.com/proycon/codemeta2html}). The results for CLARIAH are
 accessible at \url{https://tools.clariah.nl}}.
 
-Our web frontend is not the final destination; our aim is to propagate the
+Our web front-end is not the final destination; our aim is to propagate the
 metadata we have collected to other existing portal/catalogue systems, such as
 the CLARIN VLO, the CLARIN
 Switchboard\footnote{\url{https://switchboard.clarin.eu/}}, the SSHOC
