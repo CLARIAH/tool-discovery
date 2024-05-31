@@ -1,2 +1,4 @@
 source: https://github.com/INL/galahad
 group: GaLAHaD
+services:
+  - https://portal.clarin.ivdnt.org/galahad
