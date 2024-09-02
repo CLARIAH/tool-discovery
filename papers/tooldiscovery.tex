@@ -179,8 +179,12 @@ end-user may not be able to make an informed judgment.
 \section{Bottom-up harvesting from the source}
 
 What we propose is a \emph{fully automated} pipeline where software metadata is
-kept at the source, i.e. alongside the software source code, and \emph{periodically} harvested from there. This has a number of important advantages: 
-%and can be contrasted with metadata that lives primarily in an intermediate system.
+kept at the source, i.e. alongside the software source code, and
+\emph{periodically} harvested from there. This is in contrast to approaches
+where metadata primarily resides in an intermediate system that is manually
+constructed or curated, which is a common approach for many
+software catalogues\footnote{for example, \url{https://research-software-directory.org/}
+offers such a platform. Metadata can often be exported via OAI-PMH.}. Our approach has a number of important advantages:
 
 %\begin{itemize}
 
@@ -218,8 +222,8 @@ recommend this. Our aim is to avoid any duplication of metadata and
   So while developers retain full authorship, this does not mean outside contribution and curation is not possible.
 %\end{itemize}
 
-We do not harvest any metadata from intermediaries\footnote{other catalogues,
-for instance via OAI-PMH endpoints} as that would defeat our philosophy. We do
+We do not harvest any metadata from intermediaries\footnote{from other catalogues,
+for instance via the aforementioned OAI-PMH endpoints} as that would defeat our philosophy. We do
 have one extra source for harvesting: In case the tool in question is Software
 as a Service, i.e. a web-application, web-service, or website, we harvest not
 only its software source code, but also its web endpoint and attempt to
