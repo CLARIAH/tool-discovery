@@ -257,16 +257,14 @@ commit the resulting codemeta file, or to not add anything and let the harvester
 dynamically reconstruct the metadata every harvest cycle.
 
 We link to various other LOD vocabularies, such as
-\emph{repostatus.org}\footnote{\url{https://repostatus.org}} (development
-status), \emph{SPDX}\footnote{\url{https://spdx.dev}} (open source software
-licenses), \emph{TaDiRaH}\footnote{\url{https://vocabs.dariah.eu/tadirah/}}
-(research activities) \citep{TADIRAH} and \emph{NWO Research Domains}.
+\emph{repostatus.org} (development
+status), \emph{SPDX} (open source software
+licenses), \emph{TaDiRaH} (research activities) \citep{TADIRAH} and \emph{NWO Research Domains}\footnote{\url{https://repostatus.org}, \url{https://spdx.dev}, \url{https://vocabs.dariah.eu/tadirah/}, \url{https://www.nwo.nl/en/nwo-research-fields}}.
 Moreover, we formulated some of our own extensions on top of codemeta and
 schema.org, such as Software
-Types\footnote{\url{https://github.com/SoftwareUnderstanding/software_types}},
-Software Input/Output
-Data\footnote{\url{https://github.com/SoftwareUnderstanding/software-iodata}},
-and Research Technology Readiness Levels. Most of these are formulated as SKOS\footnote{\url{https://www.w3.org/TR/skos-reference/}}
+Types and Software Input/Output
+Data\footnote{\url{https://github.com/SoftwareUnderstanding/software_types}, \url{https://github.com/SoftwareUnderstanding/software-iodata}},
+as well as Research Technology Readiness Levels. Most of these are formulated as SKOS\footnote{\url{https://www.w3.org/TR/skos-reference/}}
 vocabularies.
 
 \section{Architecture}
@@ -303,11 +301,13 @@ accessible at \url{https://tools.clariah.nl}}.
 
 Our web front-end is not the final destination; our aim is to propagate the
 metadata we have collected to other existing portal/catalogue systems, such as
-the CLARIN VLO, the CLARIN
-Switchboard\footnote{\url{https://switchboard.clarin.eu/}}, the SSH Open
-Marketplace\footnote{\url{https://marketplace.sshopencloud.eu/}}, and CLARIAH's
-Ineo\footnote{\url{https://ineo.tools}}. The latter has already been
-implemented, the first is in progress via a conversion from codemeta to CMDI.
+the CLARIN VLO, the CLARIN Switchboard, the SSH Open Marketplace, and CLARIAH's
+Ineo\footnote{\url{https://vlo.clarin.eu/},
+\url{https://switchboard.clarin.eu/},
+\url{https://marketplace.sshopencloud.eu/}, \url{https://ineo.tools}}. The
+latter has already been implemented, the VLO export will be done via a conversion
+from codemeta to CMDI, and the Marketplace conversion has started in collaboration with
+DARIAH.
 
 \section{Validation \& Curation}
 
