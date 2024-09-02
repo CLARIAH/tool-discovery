@@ -291,17 +291,18 @@ Using the input from the source registry, our
 \url{https://github.com/proycon/codemeta-harvester}} fetches all the git
 repositories and queries any service endpoints. It does so at regular intervals
 (e.g. once a day). This ensures the metadata is always up to date. When the
-sources are retrieved, it looks for different kinds of metadata it can
-identify there and calls the converter\footnote{powered by codemetapy:
+sources are retrieved, it looks for different kinds of metadata it can identify
+there and calls the converter\footnote{powered by codemetapy:
 \url{https://github.com/proycon/codemetapy}} to turn and combine these into a
 single codemeta representation. This produces one codemeta JSON-LD file per
 input tool. All of these together are loaded in our \emph{tool store}. This is
 implemented as a triple store and serves both as a backend to be queried
-programmatically using SPARQL, as well as a simple web frontend to be visited by
-human end-users as a catalogue \footnote{codemeta-server
+programmatically using SPARQL, as well as a simple web frontend to be visited
+by human end-users as a catalogue \footnote{codemeta-server
 (\url{https://github.com/proycon/codemeta-server}) and codemeta2html
-(\url{https://github.com/proycon/codemeta2html}). The results for CLARIAH are
-accessible at \url{https://tools.clariah.nl}}.
+(\url{https://github.com/proycon/codemeta2html}).} The results for CLARIAH are
+accessible at \url{https://tools.clariah.nl}, with at the time of writing
+114 registered source repositories and 34 web endpoints.
 
 Our web front-end is not the final destination; our aim is to propagate the
 metadata we have collected to other existing portal/catalogue systems, such as
@@ -322,17 +323,23 @@ error. In absence of human curation, which is explicitly out of our intended
 scope, we tackle this issue through an automatic validation mechanism.
 
 The harvested codemeta metadata is held against a validation
-schema\footnote{formulated in SHACL} that tests whether certain fields are
+schema (SHACL) that tests whether certain fields are
 present (completeness), and whether the values are sensible (accuracy, it is
 capable of detecting various discrepancies). The validation process outputs a
 human-readable validation report which references a set of carefully formulated
-\emph{software metadata requirements} \footnote{CLARIAH Software Metadata Requirements: \url{https://github.com/CLARIAH/clariah-plus/blob/main/requirements/software-metadata-requirements.md}}. Developers can clearly identify what
-specific requirements they have not met. The over-all level of compliance is expressed on a
-simple scale of 0 to 5, and visualised as a coloured star rating in our
-interface. This evaluation score itself is part of the delivered metadata and
-something which both end users as well as other systems can filter on. It may
-even serve as a kind of `gamification' element to spur on developers to provide
-higher quality metadata. 
+\emph{software metadata requirements} \footnote{CLARIAH Software Metadata
+Requirements:
+\url{https://github.com/CLARIAH/clariah-plus/blob/main/requirements/software-metadata-requirements.md}}.
+Developers can clearly identify what specific requirements they have not met.
+The over-all level of compliance is expressed on a simple scale of 0 to 5, and
+visualised as a coloured star rating in our interface. This evaluation score
+itself is part of the delivered metadata and something which both end users as
+well as other systems can filter on. It may even serve as a kind of
+`gamification' element to spur on developers to provide higher quality
+metadata. We find that human compliance remains the biggest hurdle and it is
+hard to get developers to provide metadata beyond what we can extract
+automatically from their existing sources. For CLARIAH we measure: 5 stars
+(2\%), 4 (23\%), 3 (45\%), 2 (7\%), 1 (19\%), 0 stars (4\%).
 
 For propagation to systems further downstream, we set a threshold rating of 3
 or higher. Downstream systems may of course posit whatever criteria they want
