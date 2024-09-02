@@ -138,7 +138,7 @@ There is no shortage in existing initiatives in building such catalogues\footnot
 , %<cut out part below for brevity>
 but the system we describe in this paper is not an attempt to build another catalogue.
 We developed a generic pipeline that harvests software metadata from the source, leveraging
-various existing metadata formats, and converts it to a uniform linked open data representation.
+various existing metadata formats, and converting those to a uniform linked open data representation.
 This data can then be used to feed catalogues.
 
 %; many
@@ -219,7 +219,7 @@ recommend this. Our aim is to avoid any duplication of metadata and
 %\end{itemize}
 
 We do not harvest any metadata from intermediaries\footnote{other catalogues,
-for instance via PMI-OAI endpoints} as that would defeat our philosophy. We do
+for instance via OAI-PMH endpoints} as that would defeat our philosophy. We do
 have one extra source for harvesting: In case the tool in question is Software
 as a Service, i.e. a web-application, web-service, or website, we harvest not
 only its software source code, but also its web endpoint and attempt to
@@ -232,8 +232,8 @@ for harvesting source repositories and web endpoints (URLs) are the only input
 that needs to be manually provided to our system, we call this the \emph{source
 registry} and we keep this in a simple git repository containing very
 minimalistic configuration files (one yaml file per tool). This is also the
-only point in our pipeline where there is the possibility for human
-supervision on the top level; to decide whether or not to include a tool.
+only point in our pipeline where there is the possibility for a human curator
+to decide whether or not to include a tool.
 
 \section{A unified vocabulary for software metadata}
 
@@ -241,7 +241,7 @@ The challenge we are facing is primarily one of mapping from multiple
 heterogeneous sources of software metadata to a unified vocabulary.
 Fortunately, this is an area that has been explored previously in the CodeMeta
 project\footnote{\url{https://codemeta.github.io}}. They developed a
-vocabulary for describing software source code, building on top of the
+vocabulary for describing software source code, extending the
 schema.org vocabulary and contributing their efforts back to them. Moreover,
 the CodeMeta project defines mappings, called crosswalks, between their
 vocabulary and many existing metadata schemes. 
@@ -272,14 +272,14 @@ vocabularies.
 \section{Architecture}
 
 The full architecture of our pipeline is illustrated schematically in
-Figure~\ref{fig:architecture}. While we demonstrate this in the context of the
-CLARIAH project, the underlying technology is generic and can be reapplied in
-other projects as well.
+Figure~\ref{fig:architecture}. Although we demonstrate this in the context of the
+CLARIAH project, the underlying technology is generic and can also be used for
+other projects.
 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=14.0cm]{architecture.png}
-\caption{The CLARIAH Tool Discovery architecture}
+\caption{The architecture of the CLARIAH Tool Discovery pipeline}
 \end{center}
 \label{fig:architecture}
 \end{figure}
@@ -289,9 +289,9 @@ Using the input from the source registry, our
 \url{https://github.com/proycon/codemeta-harvester}} fetches all the git
 repositories and queries any service endpoints. It does so at regular intervals
 (e.g. once a day). This ensures the metadata is always up to date. When the
-sources are retrieved, it identifies the different kinds of metadata it can
-find there and calls the converter\footnote{powered by codemetapy:
-\url{https://github.com/proycon/codemetapy}} to turn and combine them into a
+sources are retrieved, it looks for different kinds of metadata it can
+identify there and calls the converter\footnote{powered by codemetapy:
+\url{https://github.com/proycon/codemetapy}} to turn and combine these into a
 single codemeta representation. This produces one codemeta JSON-LD file per
 input tool. All of these together are loaded in our \emph{tool store}. This is
 implemented as a triple store and serves both as a backend to be queried
@@ -304,10 +304,10 @@ accessible at \url{https://tools.clariah.nl}}.
 Our web front-end is not the final destination; our aim is to propagate the
 metadata we have collected to other existing portal/catalogue systems, such as
 the CLARIN VLO, the CLARIN
-Switchboard\footnote{\url{https://switchboard.clarin.eu/}}, the SSHOC
+Switchboard\footnote{\url{https://switchboard.clarin.eu/}}, the SSH Open
 Marketplace\footnote{\url{https://marketplace.sshopencloud.eu/}}, and CLARIAH's
-Ineo\footnote{\url{https://ineo.tools}}. The latter has already been implemented, 
-and the first is in progress via a conversion from codemeta to CMDI.
+Ineo\footnote{\url{https://ineo.tools}}. The latter has already been
+implemented, the first is in progress via a conversion from codemeta to CMDI.
 
 \section{Validation \& Curation}
 
@@ -330,23 +330,23 @@ something which both end users as well as other systems can filter on. It may
 even serve as a kind of `gamification' element to spur on developers to provide
 higher quality metadata. 
 
-For propagation to systems further downstream, we set a threshold of a rating
-of 3 or higher. Downstream systems may of course posit whatever additional criteria
-they want for inclusion, and may add human validation and curation. As metadata
-is stored at the source, however, we strongly recommend any curation efforts to
-be directly contributed upstream to the source, through the established
-mechanisms in place by whatever forge (e.g. GitHub) they are using to store
-their source code.
+For propagation to systems further downstream, we set a threshold rating of 3
+or higher. Downstream systems may of course posit whatever criteria they want
+for inclusion, and may add human validation and curation. As metadata is stored
+at the source, however, we strongly recommend any curation efforts to be
+directly contributed upstream to the source, through the established mechanisms
+in place by whatever forge (e.g. GitHub) they are using to store their source
+code.
 
 \section{Conclusion}
 
 We have shown a way to store metadata at the source and reuse existing metadata
-sources, whilst recombining and converting these into a single unified LOD
+sources, recombining and converting these into a single unified LOD
 representation using largely established vocabularies. We developed tooling for
 codemeta that is generically reusable and available as free open source
 software\footnote{GNU General Public Licence v3}. We hope that our pipeline
-results metadata that is accurate and complete enough for scholars to assess
-their usability for their research. We think this is viable solution
+results in metadata that is accurate and complete enough for scholars to assess
+their usability for their research. We think this is a viable solution
 against metadata or entire catalogues going stale, in worst
 case unbeknownst to the researcher who might still rely on them.
 
