@@ -28,7 +28,7 @@ date: October 7th, 2024
 ![](archslide1.png){ height=40% }\
 
 * Software metadata is kept at the source
-    1. Metadata lives alongside the source code in a version controlled repository (e.g. git) and published in a forge (e.g GitHub).
+    1. Metadata lives alongside the source code in a version controlled repository (e.g. git) and published in a forge (e.g. GitHub).
     2. (SaaS) metadata provided directly by web endpoints
 
 **Advantages:** Full authorship with the developers, versioned, no duplication, no intermediaries
@@ -57,7 +57,7 @@ Many instances of metadata can be found!
     * CodeMeta and schema.org as our base vocabulary
     * Additional vocabularies on top (e.g. spdx, repostatus.org)
 * The result of the conversion is a single `codemeta.json` file (JSON-LD)
-* Developers may provide a complete `codemeta.json` or an incremental `codemeta-harvest.json`
+    * May be committed back into the source repo
 
 ## Publishing in catalogues
 
@@ -113,12 +113,8 @@ Many instances of metadata can be found!
 * Human compliance is the biggest hurdle
 * Hard to get developers to provide extra metadata
 * Metadata compliance ranking in CLARIAH (114 tools): 
-    * 5 stars: 2%
-    * 4 stars: 23%
-    * 3 stars: 45%
-    * 2 stars: 7%
-    * 1 stars: 19%
-    * 0 stars: 4%
+
+![Compliance histogram](compliance.png){ height=70% }\
 
 ## Questions?
 
