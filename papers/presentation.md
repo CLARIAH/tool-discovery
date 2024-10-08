@@ -1,14 +1,15 @@
 ---
-title: FAIR Tool Discovery -- An automated software metadata harvesting pipeline for CLARIAH
+title: An automated software metadata harvesting pipeline 
+subtitle: CLARIAH FAIR Tool Discovery
 author: Maarten van Gompel, KNAW Humanities Cluster
 date: October 7th, 2024
 ---
 
 ## Introduction
 
-* For scholars it is important to find and identify tools suitable for their research.
+* **Objective:** For scholars it is important to find and identify tools suitable for their research.
     * Users must be able to make an informed enough judgement
-* Many software catalogues exist, but:
+* **Problem:** Many software catalogues exist, but:
     * Information is often outdated
         * manually curated once, version information, provenance, broken links
     * Information is often incomplete
@@ -19,7 +20,7 @@ date: October 7th, 2024
 ## Introduction (2)
 
 * We developed a pipeline for **automatic** software metadata harvesting.
-* We **periodically** harvest software metadata from the source
+* We **periodically** harvest software metadata **from the source**
 * This is not another software catalogue system; we aim to feed data to
   various catalogues
 
