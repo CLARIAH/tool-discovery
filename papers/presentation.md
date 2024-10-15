@@ -7,7 +7,7 @@ date: October 7th, 2024
 
 ## Introduction
 
-* **Objective:** For scholars it is important to find and identify tools suitable for their research.
+* **Objective:** Help researchers **F**ind and identify tools suitable for their research.
     * Users must be able to make an informed enough judgement
 * **Problem:** Many software catalogues exist, but:
     * Information is often outdated
