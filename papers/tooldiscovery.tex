@@ -122,7 +122,7 @@ valid research output, alongside more conventional output such as academic
 publications, presentations, and datasets. Scholars often have a need for
 research software to do their research efficiently.
 
-For scholars it is important to be able to find and identify tools suitable for
+For scholars it is therefore important to be able to find and identify tools suitable for
 their research, we call this process \emph{tool discovery}. We define
 \emph{tool} here and throughout this paper to broadly refer to any kind of
 software, regardless of the interface it offers and the audience it targets.
@@ -134,15 +134,17 @@ sustainability in research software \citep{FAIR}. In order to find tools,
 researchers must have access to catalogues that relay \emph{accurate} software
 metadata.
 
-There is no shortage in existing initiatives in building such catalogues; 
-many research groups, projects or institutes have some kind of website featuring
+There is no shortage in existing initiatives in building such catalogues; many
+research groups, projects or institutes have some kind of website featuring
 their tools. Aggregation of software metadata from multiple such partners is
 also not new, as CLARIN itself already does in the CLARIN Virtual Language
-Observatory\footnote{\url{https://vlo.clarin.eu}} \citep{VLO}.
-However, the system we describe in this paper is not an attempt to build another catalogue.
-We developed a generic pipeline that harvests software metadata from the source, leveraging
-various existing metadata formats, and converting those to a uniform linked open data representation.
-This data can then be used to feed catalogues.
+Observatory\footnote{\url{https://vlo.clarin.eu}} \citep{VLO} and DARIAH in the
+SSHOC Open Marketplace\footnote{\url{https://marketplace.sshopencloud.eu/}} .
+However, the system we describe in this paper is not an attempt to build
+another catalogue. We developed a generic pipeline that harvests software
+metadata from the source, leveraging various existing metadata formats, and
+converting those to a uniform linked open data representation. This data can
+then be used to feed catalogues.
 
 \section{The need for high-quality metadata}
 
@@ -155,7 +157,7 @@ needed to adapt to changes in its runtime environment.
 For software metadata to be informative in this dynamic setting, it needs to
 reflect this moving target and explicitly link to a particular version of the
 software. This also facilitates provenance keeping and scientific
-reproducibility. Metadata should also convey information about the stage of
+reproducibility. Furthermore, metadata should convey information about the stage of
 development the software is in and the level of support an end-user may expect.
 The user would be wise to exercise caution in adopting software that is
 unmaintained and unsupported. In practice we often find this information
@@ -182,11 +184,11 @@ constructed or curated, which is a common approach for many
 software catalogues\footnote{for example, \url{https://research-software-directory.org/}
 offers such a platform. Metadata can often be exported via OAI-PMH.}. Our approach has a number of important advantages:
 
-\begin{itemize}
+\begin{enumerate}
 
 \item
 Source code is often already accompanied by software metadata in existing
-schemas\footnote{for example \texttt{pyproject.toml}, \texttt{setup.py}, \texttt{pom.xml}, \texttt{package.json}, \texttt{CITATION.cff} and others. Even files such as \texttt{README} and \texttt{LICENSE} may be a source for certain metadata.} because many programming language ecosystems already either require or
+schemas because many programming language ecosystems already either require or
 recommend this. Our aim is to avoid any duplication of metadata and
 \emph{reuse} these existing sources to the maximum extent possible.
 
@@ -195,29 +197,29 @@ for example \texttt{pyproject.toml} or \texttt{setup.py} for Python projects,
 \texttt{package.json} for javascript/npm/nodejs projects, \texttt{pom.xml} for
 Java/Maven and \texttt{Cargo.toml} for Rust. Aside from these, valuable machine
 parsable metadata may be extracted from other files such as a \texttt{LICENSE}
-file or , `README` file which often contains machine-interpretable
-badges\footnote{Badges are small images often included on top a \texttt{README}
+file or a \texttt{README.md} file which often contains machine-interpretable
+badges. Badges are small images often included on top a \texttt{README}
 file to express certain properties of the software, such as links to
 documentation, continuous integration services, development status, packaging
-status, etc..}, or a \texttt{CITATION.cff} file, amongst others. Multiple such
+status, etc.., or a \texttt{CITATION.cff} file, amongst others. Multiple such
 sources may be present and can be recombined.
 
 \item 
-  Second, source code 
+  Source code 
   is typically held in a version control system (usually git) and published in 
   forges such as Github, Gitlab, Bitbucket, Codeberg or Sourcehut.
   This solves versioning issues and ensures metadata can exactly describe the version alongside which it is stored. It also enables the 
-  harvester to properly identify the latest stable release\footnote{provided some kind of industry-standard versioning system like semantic versioning is adhered to}.
+  harvester to properly identify the latest stable release, provided some kind of industry-standard versioning system like semantic versioning is adhered to.
   Software forges themselves may also provide an API that may serve as an extra source to find software metadata (e.g. descriptions, keywords, links to issue trackers and/or continuous integration services).
 \item 
-  Third, the developers of the tool have full control and authorship over their metadata. There are no middlemen.
+  The developers of the tool have full control and authorship over their metadata. There are no middlemen.
 \item 
-  Last, the forges were designed precisely for collaboration on open source software development, so mechanisms for any
+  Software forges were designed precisely for collaboration on open source software development, so mechanisms for any
   third party to amend or correct the metadata are already in place (e.g. via a pull/merge request or patch via e-mail).
   So while developers retain full authorship, this does not mean outside contribution and curation is not possible.
-\end{itemize}
+\end{enumerate}
 
-We do not harvest any metadata from intermediaries\footnote{from other catalogues,
+We do not harvest any metadata from intermediaries\footnote{that is, from other catalogues,
 for instance via the aforementioned OAI-PMH endpoints} as that would defeat our philosophy. We do
 have one extra source for harvesting: In case the tool in question is Software
 as a Service, i.e. a web-application, web-service, or website, we harvest not
@@ -234,37 +236,106 @@ minimalistic configuration files (one yaml file per tool). This is also the
 only point in our pipeline where there is the possibility for a human curator
 to decide whether or not to include a tool.
 
+Usage of a manually curated source registry means that, for this project,
+automatic discovery of tools is not in scope. That is, we do not actively crawl
+the web in search for tools that might or might not fit a certain domain. Some
+interpret the term `tool discovery' to also include such functionality. Such a step,
+however, can be envisioned as a separate step before our pipeline.
+
 \section{A unified vocabulary for software metadata}
 
 The challenge we are facing is primarily one of mapping from multiple
 heterogeneous sources of software metadata to a unified vocabulary.
 Fortunately, this is an area that has been explored previously in the CodeMeta
-project\footnote{\url{https://codemeta.github.io}}. They developed a
-vocabulary for describing software source code, extending the
-schema.org vocabulary and contributing their efforts back to them. Moreover,
-the CodeMeta project defines mappings, called crosswalks, between their
-vocabulary and many existing metadata schemes. 
+project\footnote{\url{https://codemeta.github.io}}. They developed a vocabulary
+for describing software source code, extending the schema.org vocabulary and
+contributing their efforts back to them. Moreover, the CodeMeta project defines
+mappings, called crosswalks, between their vocabulary and many existing
+metadata schemes, such as those used in particular programming languages
+ecosystems or by particular package managers
 
 Schema.org and codemeta are both linked open data (LOD)
 vocabularies\footnote{i.e. building upon RDF and being retrievable over HTTP},
 and codemeta is canonically serialised to a
 JSON-LD\footnote{\url{https://www.w3.org/TR/json-ld/}} file which makes it
 easily parsable for both machine and human alike. This \texttt{codemeta.json}
-file can be kept under version control alongside a tool's source code. The
-developer has a choice to either run our harvester and converter themselves and
+file can be kept under version control alongside a tool's source code. 
+
+The developer has a choice to either run our harvester and converter themselves and
 commit the resulting codemeta file, or to not add anything and let the harvester
 dynamically reconstruct the metadata every harvest cycle.
 
-We link to various other LOD vocabularies, such as
-\emph{repostatus.org} (development
-status), \emph{SPDX} (open source software
-licenses), \emph{TaDiRaH} (research activities) \citep{TADIRAH} and \emph{NWO Research Domains}\footnote{\url{https://repostatus.org}, \url{https://spdx.dev}, \url{https://vocabs.dariah.eu/tadirah/}, \url{https://www.nwo.nl/en/nwo-research-fields}}.
-Moreover, we formulated some of our own extensions on top of codemeta and
-schema.org, such as Software
-Types and Software Input/Output
-Data\footnote{\url{https://github.com/SoftwareUnderstanding/software_types}, \url{https://github.com/SoftwareUnderstanding/software-iodata}},
-as well as Research Technology Readiness Levels. Most of these are formulated as SKOS\footnote{\url{https://www.w3.org/TR/skos-reference/}}
+The convention to add a \texttt{codemeta.json} file alongside the source code
+was established by the Codemeta project. In addition to this, we define another
+method that is specific for our metadata harvester: Developers can add a
+\texttt{codemeta-harvest.json} file instead of \texttt{codemeta.json}. Whereas
+\texttt{codemeta.json} by definition contains the complete metadata, the
+\texttt{codemeta-harvest.json} file contains an arbitrary subset and is used to
+supplement any automatically harvested metadata. This allows developers to rely
+on the harvester for most fields, without having to run it themselves, but
+still allows them to provide additional manual metadata. All these options ensure
+that developers themselves can choose precisely how much control to exert over
+the metadata and harvester.
+
+\subsection{Additional Vocabularies}
+
+We link to various other linked open data vocabularies, listed below. Most of these are
+formulated as SKOS\footnote{\url{https://www.w3.org/TR/skos-reference/}}
 vocabularies.
+
+\begin{itemize}
+\item \textbf{repostatus.org}\footnote{\url{https://repostatus.org}} -- \emph{Development Status} -- The repostatus.org project allows developers to express usability and development/support status of a project.
+A LOD (SKOS) version of this vocabulary was developed in the scope of this project and contributed back to the repostatus project.
+\item \textbf{SPDX}\footnote{\url{https://spdx.dev}} -- \emph{Open-source software licenses} -- The Software Package Data Exchange project is a Linux Foundation project that defines, amongst other things, open source software licenses. It is widely used, e.g. by package managers. 
+\item \textbf{TaDiRaH}\footnote{\url{https://vocabs.dariah.eu/tadirah/}} -- \emph{Research activities} -- The TaDiRAH vocabulary ``classifies and categorizes the activities that comprise digital humanities'' \citep{TADIRAH} with the aim to help scholars group and identify projects that share certain commonalities.
+We adopt this vocabulary to describe the research activities a software tool can be used for. Example of some top-level categories in this vocabulary are `Analyzing', `Capturing', `Creating`, `Enriching'. An example of a deeper-level category that is particularly common in language resources such as those 
+seen in CLARIN is for example `Enriching $\rightarrow$ Annotating $\rightarrow$ Named Entity Recognition'.
+\item \textbf{NWO Research Domains}\footnote{\url{https://www.nwo.nl/en/nwo-research-fields}} -- NWO is the Dutch Research Council. They define several research fields that are used for official grant applications. As CLARIAH is a Dutch project, we use this vocabulary to express the research domain a tool is used for. A LOD (SKOS) version of this vocabulary was developed in the scope of this project.
+\end{itemize}
+
+The first two vocabularies are generic enough to be applicable to almost all
+software projects, the latter two may be more constrained to research software
+as developed in CLARIAH and CLARIN. In your projects, you can use whatever you
+find applicable, the power to mix and match is at the heart of linked open
+data after all.
+
+Moreover, we formulated some of our own extensions on top of codemeta and
+schema.org:
+
+\begin{itemize}
+\item \textbf{Software Types}\footnote{\url{https://github.com/SoftwareUnderstanding/software_types}}
+-- Software comes in many shapes and forms, targeting a variety of
+audiences with different skills and needs. We want
+to software metadata to be able to accurately express what type of
+interfaces their software provides. The schema.org vocabulary
+distinguishes \texttt{softwareApplication} \texttt{WebApplication},
+\texttt{MobileApplication} and even \texttt{VideoGame}. This covers
+some interfaces from a user-perspective, but is not as extensive or as
+fine-grained as we would like yet, as interface types from a more
+developer-oriented perspective are not formulated. We therefore define
+additional classes such as \texttt{DesktopApplication} (software
+offering a desktop GUI), \texttt{CommandLineApplication},
+\texttt{SoftwareLibrary} and others.
+\item \textbf{Software Input/Output Data}\footnote{\url{https://github.com/SoftwareUnderstanding/software-iodata}}
+-- This minimal vocabulary defines two new properties that allows for software metadata to
+express what kind of data it consumes (e.g. takes as input) and what
+kind of data it produces (e.g. output). It does not define actual data types because schema.org already has 
+classes covering most common data types (e.g. \texttt{AudioObject}, \texttt{ImageObject}, \texttt{VideoObject}, \texttt{TextDigitalDocument}, etc...) and properties
+like \texttt{encodingFormat} to tie these to MIME-types.
+
+Do note that a describing a full API is explicitly out of scope for our project.
+This would describe exactly which function or
+web-endpoints take and return what data. Although this too can be
+considered metadata, such functionality goes beyond what we consider
+the primary software metadata which end-users need to make a informed
+decision regarding the suitability of a tool for their ends. Other
+existing projects such as the OpenAPI
+Initiative\footnote{\url{https://www.openapis.org}} already provide such
+functionality for Web APIs. For software libraries there are also
+various existing API documentation generators\footnote{e.g. doxygen, sphinx,
+rustdoc, etc...} that derive documentation directly from the source
+code in a formalised way.
+\end{itemize}
 
 \section{Architecture}
 
@@ -283,21 +354,42 @@ other projects.
 
 Using the input from the source registry, our
 \emph{harvester}\footnote{codemeta-harvester:
-\url{https://github.com/proycon/codemeta-harvester}} fetches all the git
+\url{https://github.com/proycon/codemeta-harvester}, written in POSIX shell script} fetches all the git
 repositories and queries any service endpoints. It does so at regular intervals
 (e.g. once a day). This ensures the metadata is always up to date. When the
 sources are retrieved, it looks for different kinds of metadata it can identify
 there and calls the converter\footnote{powered by codemetapy:
-\url{https://github.com/proycon/codemetapy}} to turn and combine these into a
+\url{https://github.com/proycon/codemetapy}, written in Python} to turn and combine these into a
 single codemeta representation. This produces one codemeta JSON-LD file per
-input tool. All of these together are loaded in our \emph{tool store}. This is
+input tool. 
+
+All of these together are loaded in our \emph{tool store}. This is
 implemented as a triple store and serves both as a backend to be queried
 programmatically using SPARQL, as well as a simple web frontend to be visited
 by human end-users as a catalogue \footnote{powered by codemeta-server
 (\url{https://github.com/proycon/codemeta-server}) and codemeta2html
-(\url{https://github.com/proycon/codemeta2html}).}. The frontend for CLARIAH is
-accessible at \url{https://tools.clariah.nl}, with at the time of writing
-114 registered source repositories and 34 web endpoints.
+(\url{https://github.com/proycon/codemeta2html}, both written in Python).}. The frontend for CLARIAH is
+accessible at \url{https://tools.clariah.nl} and shown in 
+Figures~\ref{fig:toolstore1} and~\ref{fig:toolstore2}.
+At the time of writing, there are 114 registered source repositories and 34 web endpoints.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=14.0cm]{screenshot.png}
+\caption{Screenshot of the CLARIAH Tool Store showing the index page}
+\end{center}
+\label{fig:toolstore1}
+\end{figure}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=14.0cm]{screenshot2.png}
+\caption{Screenshot of the CLARIAH Tool Store showing the metadata page for a specific tool}
+\end{center}
+\label{fig:toolstore2}
+\end{figure}
+
+\subsection{Propagation to Software Catalogues}
 
 Our web front-end is not the final destination; our aim is to propagate the
 metadata we have collected to other existing portal/catalogue systems, such as
@@ -308,6 +400,8 @@ Ineo\footnote{\url{https://vlo.clarin.eu/},
 latter has already been implemented, the VLO export will be done via a conversion
 from codemeta to CMDI, and the Marketplace conversion has started in collaboration with
 DARIAH.
+
+%TODO: two or three paragraphs on the Ineo pipeline and the CMDI/VLO pipeline?
 
 \section{Validation \& Curation}
 
@@ -322,19 +416,37 @@ schema (SHACL) that tests whether certain fields are
 present (completeness), and whether the values are sensible (accuracy, it is
 capable of detecting various discrepancies). The validation process outputs a
 human-readable validation report which references a set of carefully formulated
-\emph{software metadata requirements} \footnote{CLARIAH Software Metadata
-Requirements:
-\url{https://github.com/CLARIAH/clariah-plus/blob/main/requirements/software-metadata-requirements.md}}.
-Developers can clearly identify what specific requirements they have not met.
-The over-all level of compliance is expressed on a simple scale of 0 to 5, and
-visualised as a coloured star rating in our interface. This evaluation score
-itself is part of the delivered metadata and something which both end users as
-well as other systems can filter on. It may even serve as a kind of
-`gamification' element to spur on developers to provide higher quality
-metadata. We find that human compliance remains the biggest hurdle and it is
-hard to get developers to provide metadata beyond what we can extract
-automatically from their existing sources. For CLARIAH we measure: 5 stars
-(2\%), 4 (23\%), 3 (45\%), 2 (7\%), 1 (19\%), 0 stars (4\%).
+\emph{software metadata requirements} \footnote{\url{https://github.com/CLARIAH/clariah-plus/blob/main/requirements/software-metadata-requirements.md}.}.
+An example of this is shown in Figure~\ref{fig:validatationreport}.
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=14.0cm]{screenshot_report.png}
+\caption{Screenshot of a validation report for a particular tool, viewed from the tool store}
+\end{center}
+\label{fig:validationreport}
+\end{figure}
+
+Using this report, developers can clearly identify what specific requirements
+they have not met. The over-all level of compliance is expressed on a simple
+scale of 0 to 5, and visualised as a coloured star rating in our interface.
+This evaluation score itself is part of the delivered metadata and something
+which both end users as well as other systems can filter on. It may even serve
+as a kind of `gamification' element to spur on developers to provide higher
+quality
+
+We find that human compliance remains the biggest hurdle and it is hard to get
+developers to provide metadata beyond what we can extract automatically from
+their existing sources. The metadata compliance rankings for CLARIAH are shown
+in Figure~\ref{fig:compliance}.
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=10.0cm]{compliance.png}
+\caption{Histogram of metadata compliance ranking in CLARIAH (114 tools)}
+\end{center}
+\label{fig:compliance}
+\end{figure}
 
 For propagation to systems further downstream, we set a threshold rating of 3
 or higher. Downstream systems may of course posit whatever criteria they want
