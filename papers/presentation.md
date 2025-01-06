@@ -2,7 +2,7 @@
 title: An automated software metadata harvesting pipeline 
 subtitle: CLARIAH FAIR Tool Discovery
 author: Maarten van Gompel, KNAW Humanities Cluster
-date: October 7th, 2024
+date: October 17th, 2024
 ---
 
 ## Introduction
@@ -118,5 +118,4 @@ Many instances of metadata can be found!
 ![Compliance histogram](compliance.png){ height=70% }\
 
 ## Questions?
-
 
