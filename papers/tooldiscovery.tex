@@ -5,8 +5,8 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% This paper is a work in progress and still pending submission!
-% It has not yet been peer-reviewed!
+% This extended-abstract version of this paper was submitted, accepted and presented to/at the CLARIN conference 2024. 
+% The post-proceedings paper is a work in progress and still pending submission and further peer review.
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
@@ -115,12 +115,12 @@ This work is licenced under a Creative Commons Attribution 4.0 International Lic
     % {http://creativecommons.org/licenses/by/4.0/}
 }
 
-% Software is indispensible in a lot of modern-day research, including in sectors
-% such as the Humanities and Social Sciences that may have traditionally been
-% less focused on information technology. It is also appreciated more and more as
-% valid research output, alongside more conventional output such as academic
-% publications, presentations, and datasets. Scholars often have a need for
-% research software to do their research efficiently.
+Software is indispensible in a lot of modern-day research, including in sectors
+such as the Humanities and Social Sciences that may have traditionally been
+less focused on information technology. It is also appreciated more and more as
+valid research output, alongside more conventional output such as academic
+publications, presentations, and datasets. Scholars often have a need for
+research software to do their research efficiently.
 
 For scholars it is important to be able to find and identify tools suitable for
 their research, we call this process \emph{tool discovery}. We define
@@ -134,19 +134,15 @@ sustainability in research software \citep{FAIR}. In order to find tools,
 researchers must have access to catalogues that relay \emph{accurate} software
 metadata.
 
-There is no shortage in existing initiatives in building such catalogues\footnote{CLARIN itself has one in the form of the Virtual Language Observatory (VLO): \url{https://vlo.clarin.eu} \citep{VLO}}.
-, %<cut out part below for brevity>
-but the system we describe in this paper is not an attempt to build another catalogue.
+There is no shortage in existing initiatives in building such catalogues; 
+many research groups, projects or institutes have some kind of website featuring
+their tools. Aggregation of software metadata from multiple such partners is
+also not new, as CLARIN itself already does in the CLARIN Virtual Language
+Observatory\footnote{\url{https://vlo.clarin.eu}} \citep{VLO}.
+However, the system we describe in this paper is not an attempt to build another catalogue.
 We developed a generic pipeline that harvests software metadata from the source, leveraging
 various existing metadata formats, and converting those to a uniform linked open data representation.
 This data can then be used to feed catalogues.
-
-%; many
-%research groups, projects or institutes have some kind of website featuring
-%their tools. Aggregation of software metadata from multiple such partners is
-%also not new, as CLARIN itself already does in the CLARIN Virtual Language
-%Observatory\footnote{\url{https://vlo.clarin.eu}} \citep{VLO}.
-
 
 \section{The need for high-quality metadata}
 
@@ -170,11 +166,11 @@ The need for accurate up-to-date metadata goes hand-in-hand with the need for
 \emph{complete} metadata. If vital details are missing, the
 end-user may not be able to make an informed judgment.
 
-% A common pitfall we have observed in practice is that metadata is often
-% manually collected at some stage and published in a catalogue, but never or
-% rarely updated or revised. In best case, the software has moved on and the
-% metadata covers a mere subset, in worst case, the software or the entire
-% catalogue is unmaintained and out of date.
+A common pitfall we have observed in practice is that metadata is often
+manually collected at some stage and published in a catalogue, but never or
+rarely updated or revised. In best case, the software has moved on and the
+metadata covers a mere subset, in worst case, the software or the entire
+catalogue is unmaintained and out of date.
 
 \section{Bottom-up harvesting from the source}
 
@@ -186,41 +182,40 @@ constructed or curated, which is a common approach for many
 software catalogues\footnote{for example, \url{https://research-software-directory.org/}
 offers such a platform. Metadata can often be exported via OAI-PMH.}. Our approach has a number of important advantages:
 
-%\begin{itemize}
+\begin{itemize}
 
-%\item
-
+\item
 Source code is often already accompanied by software metadata in existing
 schemas\footnote{for example \texttt{pyproject.toml}, \texttt{setup.py}, \texttt{pom.xml}, \texttt{package.json}, \texttt{CITATION.cff} and others. Even files such as \texttt{README} and \texttt{LICENSE} may be a source for certain metadata.} because many programming language ecosystems already either require or
 recommend this. Our aim is to avoid any duplication of metadata and
 \emph{reuse} these existing sources to the maximum extent possible.
 
-%Consider
-%for example \texttt{pyproject.toml} or \texttt{setup.py} for Python projects,
-%\texttt{package.json} for javascript/npm/nodejs projects, \texttt{pom.xml} for
-%Java/Maven and \texttt{Cargo.toml} for Rust. Aside from these, valuable machine
-%parsable metadata may be extracted from other files such as a \texttt{LICENSE}
-%file or , `README` file which often contains machine-interpretable
-%badges\footnote{Badges are small images often included on top a \texttt{README}
-%file to express certain properties of the software, such as links to
-%documentation, continuous integration services, development status, packaging
-%status, etc..}, or a \texttt{CITATION.cff} file, amongst others. Multiple such
-%sources may be present and can be recombined.
+Consider
+for example \texttt{pyproject.toml} or \texttt{setup.py} for Python projects,
+\texttt{package.json} for javascript/npm/nodejs projects, \texttt{pom.xml} for
+Java/Maven and \texttt{Cargo.toml} for Rust. Aside from these, valuable machine
+parsable metadata may be extracted from other files such as a \texttt{LICENSE}
+file or , `README` file which often contains machine-interpretable
+badges\footnote{Badges are small images often included on top a \texttt{README}
+file to express certain properties of the software, such as links to
+documentation, continuous integration services, development status, packaging
+status, etc..}, or a \texttt{CITATION.cff} file, amongst others. Multiple such
+sources may be present and can be recombined.
 
-%\item 
-  Second, source code should be under version control (e.g. git) and published in a forge (e.g. GitHub, Gitlab, Sourcehut).
-  %  is typically held in a version control system (usually git) and published in 
-  %forges such as Github, Gitlab, Bitbucket, Codeberg or Sourcehut.
+\item 
+  Second, source code 
+  is typically held in a version control system (usually git) and published in 
+  forges such as Github, Gitlab, Bitbucket, Codeberg or Sourcehut.
   This solves versioning issues and ensures metadata can exactly describe the version alongside which it is stored. It also enables the 
   harvester to properly identify the latest stable release\footnote{provided some kind of industry-standard versioning system like semantic versioning is adhered to}.
   Software forges themselves may also provide an API that may serve as an extra source to find software metadata (e.g. descriptions, keywords, links to issue trackers and/or continuous integration services).
-%\item 
+\item 
   Third, the developers of the tool have full control and authorship over their metadata. There are no middlemen.
-%\item 
+\item 
   Last, the forges were designed precisely for collaboration on open source software development, so mechanisms for any
   third party to amend or correct the metadata are already in place (e.g. via a pull/merge request or patch via e-mail).
   So while developers retain full authorship, this does not mean outside contribution and curation is not possible.
-%\end{itemize}
+\end{itemize}
 
 We do not harvest any metadata from intermediaries\footnote{from other catalogues,
 for instance via the aforementioned OAI-PMH endpoints} as that would defeat our philosophy. We do
