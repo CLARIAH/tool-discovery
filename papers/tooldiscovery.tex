@@ -136,23 +136,24 @@ metadata.
 
 There is no shortage in existing initiatives in building such catalogues; many
 research groups, projects or institutes have some kind of website featuring
-their tools. Aggregation of software metadata from multiple such partners is
-also not new, as CLARIN itself already does in the CLARIN Virtual Language
-Observatory\footnote{\url{https://vlo.clarin.eu}} \citep{VLO} and DARIAH in the
-SSHOC Open Marketplace\footnote{\url{https://marketplace.sshopencloud.eu/}} .
-However, the system we describe in this paper is not an attempt to build
+their tools. Aggregation of software metadata from multiple sources is also not
+new. CLARIN itself already does this in the CLARIN Virtual Language
+Observatory\footnote{\url{https://vlo.clarin.eu}} \citep{VLO}, and DARIAH in
+the SSHOC Open Marketplace\footnote{\url{https://marketplace.sshopencloud.eu/}}
+. However, the system we describe in this paper is not an attempt to build
 another catalogue. We developed a generic pipeline that harvests software
-metadata from the source, leveraging various existing metadata formats, and
-converting those to a uniform linked open data representation. This data can
-then be used to feed catalogues.
+metadata from the software's source, leveraging various existing metadata
+formats, and converting those to a uniform linked open data representation.
+This data can then be used to feed catalogues.
 
 \section{The need for high-quality metadata}
 
 Unlike most digital data, software is uniquely characterised as a constantly
-moving target rather than a static deliverable entity. Releases address bugs,
-security vulnerabilities, or add new features. Moreover, software lives not in
-isolation, but in connection to other software; its dependencies. Updates are
-needed to adapt to changes in its runtime environment.
+moving target rather than a static deliverable entity. Releases at different
+points in time address bugs, security vulnerabilities, or add new features.
+Moreover, software lives not in isolation, but in connection to other software;
+its dependencies. Updates are needed to adapt to changes in its runtime
+environment.
 
 For software metadata to be informative in this dynamic setting, it needs to
 reflect this moving target and explicitly link to a particular version of the
@@ -196,13 +197,12 @@ Consider
 for example \texttt{pyproject.toml} or \texttt{setup.py} for Python projects,
 \texttt{package.json} for javascript/npm/nodejs projects, \texttt{pom.xml} for
 Java/Maven and \texttt{Cargo.toml} for Rust. Aside from these, valuable machine
-parsable metadata may be extracted from other files such as a \texttt{LICENSE}
-file or a \texttt{README.md} file which often contains machine-interpretable
-badges. Badges are small images often included on top a \texttt{README}
-file to express certain properties of the software, such as links to
+parsable metadata may be extracted from other conventional files such as a \texttt{LICENSE}
+file or a \texttt{README.md} file. The latter often contains machine-interpretable
+badges. Badges are small images often included on top of the README to express certain properties of the software, such as links to
 documentation, continuous integration services, development status, packaging
-status, etc.., or a \texttt{CITATION.cff} file, amongst others. Multiple such
-sources may be present and can be recombined.
+status. Research software developers also often include a \texttt{CITATION.cff}\footnote{\url{https://citation-file-format.github.io/}} file which we can automatically parse for metadata. All these different
+sources may be present and can be recombined in our harvesting process.
 
 \item 
   Source code 
@@ -219,63 +219,91 @@ sources may be present and can be recombined.
   So while developers retain full authorship, this does not mean outside contribution and curation is not possible.
 \end{enumerate}
 
-We do not harvest any metadata from intermediaries\footnote{that is, from other catalogues,
-for instance via the aforementioned OAI-PMH endpoints} as that would defeat our philosophy. We do
-have one extra source for harvesting: In case the tool in question is Software
-as a Service, i.e. a web-application, web-service, or website, we harvest not
-only its software source code, but also its web endpoint and attempt to
-automatically extract metadata from there\footnote{Formally, the software
-source code has no knowledge when, where, and by whom it may be deployed as a
-service. This linking is therefore established at a higher level.}. In the
-resulting metadata, there will be an explicit link between the source code and
-any \emph{target products} or \emph{instances} of that source code. The sources
-for harvesting source repositories and web endpoints (URLs) are the only input
+We do not harvest any metadata from intermediaries. By that we mean that we do
+not use other catalogues as sources (e.g. via the aforementioned OAI-PMH
+endpoints), only the software source itself. Using intermediaries would defeat
+our philosophy. We do have one extra input source for harvesting: In case the
+tool in question is Software as a Service (SaaS), i.e. a web-application,
+web-service, or website, we harvest not only its software source code, but also
+its web endpoint and attempt to automatically extract metadata from there. We
+make a clear distinction between the software source code, software instances
+(executables) you can run locally, and software instances offered as a service
+via the web. Formally, the software source code has no knowledge when, where,
+and by whom it may be deployed as a service. This link is therefore established
+at an indepenent and higher level. In the resulting metadata, there will also
+be an explicit link between the source code and any \emph{target products} or
+\emph{instances} of that source code. The sources for harvesting source
+repositories and web endpoints (both effectively just URLs) are the only input
 that needs to be manually provided to our system, we call this the \emph{source
-registry} and we keep this in a simple git repository containing very
-minimalistic configuration files (one yaml file per tool). This is also the
-only point in our pipeline where there is the possibility for a human curator
-to decide whether or not to include a tool.
+registry}. This is the higher level we referred to earlier. We keep the source
+registry in a simple git repository containing very minimalistic configuration
+files (one yaml file per tool). This is also the only point in our pipeline
+where there is the possibility for a human curator to decide whether or not to
+include a tool.
 
-Usage of a manually curated source registry means that, for this project,
+Usage of such a manually curated source registry means that, for this project,
 automatic discovery of tools is not in scope. That is, we do not actively crawl
 the web in search for tools that might or might not fit a certain domain. Some
-interpret the term `tool discovery' to also include such functionality. Such a step,
-however, can be envisioned as a separate step before our pipeline.
+interpret the term `tool discovery' to also include such functionality, but we do
+not. Such a step, however, can be envisioned as a separate step before our
+pipeline.
 
 \section{A unified vocabulary for software metadata}
 
-The challenge we are facing is primarily one of mapping from multiple
-heterogeneous sources of software metadata to a unified vocabulary.
-Fortunately, this is an area that has been explored previously in the CodeMeta
-project\footnote{\url{https://codemeta.github.io}}. They developed a vocabulary
-for describing software source code, extending the schema.org vocabulary and
-contributing their efforts back to them. Moreover, the CodeMeta project defines
-mappings, called crosswalks, between their vocabulary and many existing
+The challenge we are facing is primarily one of mapping multiple heterogeneous
+sources of software metadata to a unified vocabulary. Fortunately, this is an
+area that has been explored previously in the CodeMeta
+project\footnote{\url{https://codemeta.github.io}}. They developed a generic
+vocabulary for describing software source code, extending schema.org vocabulary
+and contributing their efforts back to them. Moreover, the CodeMeta project
+defines mappings, called crosswalks, between their vocabulary and many existing
 metadata schemes, such as those used in particular programming languages
-ecosystems or by particular package managers
+ecosystems or by particular package managers.
 
-Schema.org and codemeta are both linked open data (LOD)
+Schema.org and CodeMeta are both linked open data (LOD)
 vocabularies\footnote{i.e. building upon RDF and being retrievable over HTTP},
 and codemeta is canonically serialised to a
 JSON-LD\footnote{\url{https://www.w3.org/TR/json-ld/}} file which makes it
 easily parsable for both machine and human alike. This \texttt{codemeta.json}
-file can be kept under version control alongside a tool's source code. 
+file can be kept under version control alongside a tool's source code. A 
+rather minimal example of a such a file is shown below:
+
+\begin{verbatim}
+{
+    "@context": [
+        "https://doi.org/10.5063/schema/codemeta-2.0",
+        "http://schema.org",
+    ],
+    "@id": "https://example.org/mysoftware",
+    "@type": "SoftwareSourceCode",
+    "identifier": "mysoftware",
+    "name": "My Software",
+    "author": {
+        "@type": "Person", "givenName": "John", "familyName": "Doe"
+    },
+    "description": "My software does nice stuff",
+    "codeRepository": "https://github.com/someuser/mysoftware",
+    "license": "https://spdx.org/licenses/GPL-3.0-only",
+    "developmentStatus": "https://www.repostatus.org/#active",
+    "thumbnailUrl": "https://example.org/thumbnail.jpg"
+}
+\end{verbatim}
 
 The developer has a choice to either run our harvester and converter themselves and
 commit the resulting codemeta file, or to not add anything and let the harvester
 dynamically reconstruct the metadata every harvest cycle.
 
 The convention to add a \texttt{codemeta.json} file alongside the source code
-was established by the Codemeta project. In addition to this, we define another
+was established by the CodeMeta project. In addition to this, we define another
 method that is specific for our metadata harvester: Developers can add a
 \texttt{codemeta-harvest.json} file instead of \texttt{codemeta.json}. Whereas
 \texttt{codemeta.json} by definition contains the complete metadata, the
 \texttt{codemeta-harvest.json} file contains an arbitrary subset and is used to
 supplement any automatically harvested metadata. This allows developers to rely
 on the harvester for most fields, without having to run it themselves, but
-still allows them to provide additional manual metadata. All these options ensure
-that developers themselves can choose precisely how much control to exert over
-the metadata and harvester.
+still allows them to provide additional manual metadata. All these different
+options ensure that developers themselves can choose precisely how much control
+to exert over the metadata and harvester.
 
 \subsection{Additional Vocabularies}
 
@@ -295,7 +323,7 @@ seen in CLARIN is for example `Enriching $\rightarrow$ Annotating $\rightarrow$ 
 
 The first two vocabularies are generic enough to be applicable to almost all
 software projects, the latter two may be more constrained to research software
-as developed in CLARIAH and CLARIN. In your projects, you can use whatever you
+as developed in CLARIAH and CLARIN. In your projects, you can adopt whatever you
 find applicable, the power to mix and match is at the heart of linked open
 data after all.
 
@@ -321,20 +349,20 @@ offering a desktop GUI), \texttt{CommandLineApplication},
 express what kind of data it consumes (e.g. takes as input) and what
 kind of data it produces (e.g. output). It does not define actual data types because schema.org already has 
 classes covering most common data types (e.g. \texttt{AudioObject}, \texttt{ImageObject}, \texttt{VideoObject}, \texttt{TextDigitalDocument}, etc...) and properties
-like \texttt{encodingFormat} to tie these to MIME-types.
+like \texttt{encodingFormat} to tie these to MIME-types or \texttt{inLanguage} to tie it to natural languages.
 
-Do note that a describing a full API is explicitly out of scope for our project.
-This would describe exactly which function or
+Do note that describing a full API is explicitly out of scope for our project.
+A full API description would describe exactly which function or
 web-endpoints take and return what data. Although this too can be
-considered metadata, such functionality goes beyond what we consider
+considered a type of metadata, such functionality goes beyond what we consider
 the primary software metadata which end-users need to make a informed
 decision regarding the suitability of a tool for their ends. Other
 existing projects such as the OpenAPI
-Initiative\footnote{\url{https://www.openapis.org}} already provide such
-functionality for Web APIs. For software libraries there are also
+Initiative\footnote{\url{https://www.openapis.org}} delve into this realm 
+functionality for Web APIs. For software libraries there are 
 various existing API documentation generators\footnote{e.g. doxygen, sphinx,
 rustdoc, etc...} that derive documentation directly from the source
-code in a formalised way.
+code in a formalised way. We do not intend to duplicate those efforts.
 \end{itemize}
 
 \section{Architecture}
@@ -353,23 +381,19 @@ other projects.
 \end{figure}
 
 Using the input from the source registry, our
-\emph{harvester}\footnote{codemeta-harvester:
-\url{https://github.com/proycon/codemeta-harvester}, written in POSIX shell script} fetches all the git
+\emph{harvester}\footnote{\url{https://github.com/proycon/codemeta-harvester}} \citep{CODEMETAHARVESTER} fetches all the git
 repositories and queries any service endpoints. It does so at regular intervals
 (e.g. once a day). This ensures the metadata is always up to date. When the
 sources are retrieved, it looks for different kinds of metadata it can identify
-there and calls the converter\footnote{powered by codemetapy:
-\url{https://github.com/proycon/codemetapy}, written in Python} to turn and combine these into a
-single codemeta representation. This produces one codemeta JSON-LD file per
-input tool. 
+there and calls the converter powered by codemetapy\footnote{\url{https://github.com/proycon/codemetapy}} \citep{CODEMETAPY}
+to turn and combine these into a single codemeta representation. This produces
+one codemeta JSON-LD file per input tool. 
 
-All of these together are loaded in our \emph{tool store}. This is
+All of these together are loaded in our \emph{tool store}, powered by codemeta-server\footnote{\url{https://github.com/proycon/codemeta-server}} \citep{CODEMETASERVER} and codemeta2html\footnote{\url{https://github.com/proycon/codemeta2html}}. This is
 implemented as a triple store and serves both as a backend to be queried
 programmatically using SPARQL, as well as a simple web frontend to be visited
-by human end-users as a catalogue \footnote{powered by codemeta-server
-(\url{https://github.com/proycon/codemeta-server}) and codemeta2html
-(\url{https://github.com/proycon/codemeta2html}, both written in Python).}. The frontend for CLARIAH is
-accessible at \url{https://tools.clariah.nl} and shown in 
+by human end-users as a catalogue. The frontend for CLARIAH is
+accessible as a service at \url{https://tools.clariah.nl} and shown in 
 Figures~\ref{fig:toolstore1} and~\ref{fig:toolstore2}.
 At the time of writing, there are 114 registered source repositories and 34 web endpoints.
 
@@ -403,6 +427,8 @@ DARIAH.
 
 %TODO: two or three paragraphs on the Ineo pipeline and the CMDI/VLO pipeline?
 
+%TODO: propagation to SSHOC marketplace
+
 \section{Validation \& Curation}
 
 Having an automated metadata harvesting pipeline may raise some concerns
@@ -411,13 +437,19 @@ sources and immediately propagated to our tool store, this is not without
 error. In absence of human curation, which is explicitly out of our intended
 scope, we tackle this issue through an automatic validation mechanism.
 
-The harvested codemeta metadata is held against a validation
-schema (SHACL) that tests whether certain fields are
-present (completeness), and whether the values are sensible (accuracy, it is
-capable of detecting various discrepancies). The validation process outputs a
-human-readable validation report which references a set of carefully formulated
-\emph{software metadata requirements} \footnote{\url{https://github.com/CLARIAH/clariah-plus/blob/main/requirements/software-metadata-requirements.md}.}.
-An example of this is shown in Figure~\ref{fig:validatationreport}.
+The harvested codemeta metadata is held against a validation schema (SHACL)
+that tests whether certain fields are present (completeness), and whether the
+values are sensible (accuracy, it is capable of detecting various
+discrepancies). The validation process outputs a human-readable validation
+report which references a set of carefully formulated \emph{software metadata
+requirements}
+\footnote{\url{https://github.com/CLARIAH/clariah-plus/blob/main/requirements/software-metadata-requirements.md}.}.
+These requirements state exactly what kind of metadata we expect for software
+in the CLARIAH project, and instructs developers how they can provide this
+metadata in \texttt{codemeta.json} or \texttt{codemeta-harvest.json} if it can
+not be automatically extracted from existing sources. An example of such a
+validation report referencing the metadata requirements is shown in
+Figure~\ref{fig:validationreport}.
 
 \begin{figure}[h]
 \begin{center}
@@ -429,11 +461,11 @@ An example of this is shown in Figure~\ref{fig:validatationreport}.
 
 Using this report, developers can clearly identify what specific requirements
 they have not met. The over-all level of compliance is expressed on a simple
-scale of 0 to 5, and visualised as a coloured star rating in our interface.
-This evaluation score itself is part of the delivered metadata and something
-which both end users as well as other systems can filter on. It may even serve
-as a kind of `gamification' element to spur on developers to provide higher
-quality
+scale of 0 (no compliance) to 5 (perfect compliance), and visualised as a
+coloured star rating in our interface. This evaluation score itself becomes part of
+the delivered metadata and is something which both end users as well as other
+systems can filter on. It may even serve as a kind of `gamification' element to
+spur on developers to provide higher quality metadata.
 
 We find that human compliance remains the biggest hurdle and it is hard to get
 developers to provide metadata beyond what we can extract automatically from
@@ -456,6 +488,48 @@ directly contributed upstream to the source, through the established mechanisms
 in place by whatever forge (e.g. GitHub) they are using to store their source
 code.
 
+\section{Discussion \& Related Work}
+
+We limit automatic metadata extraction to those fields and sources that we can
+extract fairly reliably and unambiguously. In certain cases, it is already a
+sufficient challenge to map certain existing vocabularies onto codemeta and
+schema.org, as concepts are not always used in the same way and do not always
+map one-to-one.
+
+We do extract some information from README files, but that is mostly limited to
+badges which follow a very standard pattern that is easy to extract with simple
+regular expressions. Extracting more data from READMEs is something that was
+done in \cite{SOMEF} and predecessor \cite{SOMEF19}; they analyze the actual
+README text and extract metadata from it. They use various methods to do so,
+including building supervised classifiers to identify common section headers
+and mapping those to a metadata category such as `description', `installation',
+`license', etc\ldots. Their classifiers, however, only produced adequate
+results for four common categories, so they diverted to alternative methods
+such as exploration/detection of other files (like \texttt{LICENSE}), using
+regular expressions to capture badges, and calling APIs like GitHub's. All of
+those techniques we have implemented as well in our harvesting pipeline. In
+line with their findings, we did not expect much from supervised classification
+(measured against the effort that goes into labelling data) so did not pursue
+that.
+
+With the advent of Large Language Models in recent years, we can also envision
+these playing a role in metadata extraction. We would, however, caution
+restraint here as their innate nature to hallucinate and lack of transparency
+is at odds with the objective to extract accurate metadata. Our extraction
+pipeline focusses on using relatively simple techniques to quickly get high
+precision results and on re-using already existing metadata schemes. We do
+think it is good practise to have developers manually provide metadata, we just
+want to ensure they only need to do it once alongside their own source-code,
+using schemas they use anyway, and not duplicate the effort for every software
+catalogue or package manager.
+
+We also want to draw a line of comparison with the Research Software Directory
+\citep{RSD, RSD2}. This is an open-source content management system for
+software catalogues, so a different beast than our metadata extraction pipeline
+in principle. They do, however, offer some integrations with third party
+services such as GitHub, Zenodo, ORCID, etc\ldots to automatically extract or
+autocomplete certain metadata.
+
 \section{Conclusion}
 
 We have shown a way to store metadata at the source and reuse existing metadata
@@ -464,9 +538,9 @@ representation using largely established vocabularies. We developed tooling for
 codemeta that is generically reusable and available as free open source
 software\footnote{GNU General Public Licence v3}. We hope that our pipeline
 results in metadata that is accurate and complete enough for scholars to assess
-software usability for their research. We think this is a viable solution
-against metadata or entire catalogues going stale, in worst
-case unbeknownst to the researcher who might still rely on them.
+whether certain software is worth exploring for their research. We think this
+is a viable solution against metadata or entire catalogues going stale, in
+worst case unbeknownst to the researcher who might still rely on them.
 
 \section*{Acknowledgments}
 
