@@ -147,6 +147,7 @@ formats, and converting those to a uniform linked open data representation.
 This data can then be used to feed catalogues.
 
 \section{The need for high-quality metadata}
+\label{sec:need}
 
 Unlike most digital data, software is uniquely characterised as a constantly
 moving target rather than a static deliverable entity. Releases at different
@@ -167,7 +168,7 @@ updated since.
 
 The need for accurate up-to-date metadata goes hand-in-hand with the need for
 \emph{complete} metadata. If vital details are missing, the
-end-user may not be able to make an informed judgment.
+end-user may not be able to make an informed judgement.
 
 A common pitfall we have observed in practice is that metadata is often
 manually collected at some stage and published in a catalogue, but never or
@@ -230,11 +231,11 @@ make a clear distinction between the software source code, software instances
 (executables) you can run locally, and software instances offered as a service
 via the web. Formally, the software source code has no knowledge when, where,
 and by whom it may be deployed as a service. This link is therefore established
-at an indepenent and higher level. In the resulting metadata, there will also
+at an independent and higher level. In the resulting metadata, there will also
 be an explicit link between the source code and any \emph{target products} or
 \emph{instances} of that source code. The sources for harvesting source
 repositories and web endpoints (both effectively just URLs) are the only input
-that needs to be manually provided to our system, we call this the \emph{source
+that needs to be manually provided to our system; we call this the \emph{source
 registry}. This is the higher level we referred to earlier. We keep the source
 registry in a simple git repository containing very minimalistic configuration
 files (one yaml file per tool). This is also the only point in our pipeline
@@ -425,6 +426,14 @@ latter has already been implemented, the VLO export will be done via a conversio
 from codemeta to CMDI, and the Marketplace conversion has started in collaboration with
 DARIAH.
 
+Propagation of software metadata can be visualised as a simple input/output
+process where the input side connects to our tool store, either via our SPARQL
+endpoint or by simply obtaining the entire (or a specific part of) the graph in
+JSON-LD. This may be a periodic query or even a real-time query. The output
+side connects to either a catalogue-specific API or directly to some kind of
+database. The process itself consists of conversion from our codemeta
+representation to whatever representation is suited for the catalogue system.
+
 %TODO: two or three paragraphs on the Ineo pipeline and the CMDI/VLO pipeline?
 
 %TODO: propagation to SSHOC marketplace
@@ -445,10 +454,14 @@ report which references a set of carefully formulated \emph{software metadata
 requirements}
 \footnote{\url{https://github.com/CLARIAH/clariah-plus/blob/main/requirements/software-metadata-requirements.md}.}.
 These requirements state exactly what kind of metadata we expect for software
-in the CLARIAH project, and instructs developers how they can provide this
-metadata in \texttt{codemeta.json} or \texttt{codemeta-harvest.json} if it can
-not be automatically extracted from existing sources. An example of such a
-validation report referencing the metadata requirements is shown in
+in the CLARIAH project, using normative keywords such as MUST, SHOULD and MAY
+in accordance with RFC2119 \citep{RFC2119}. These requirements provide
+instructions to developers about how they can provide this metadata in
+\texttt{codemeta.json} or \texttt{codemeta-harvest.json} if metadata can not be
+automatically extracted from existing sources. The validation schema and
+requirements document are specific to the CLARIAH project, but may serve as an
+example for others to adapt and adopt. An example of a validation report
+referencing the metadata requirements is shown in
 Figure~\ref{fig:validationreport}.
 
 \begin{figure}[h]
@@ -523,12 +536,15 @@ want to ensure they only need to do it once alongside their own source-code,
 using schemas they use anyway, and not duplicate the effort for every software
 catalogue or package manager.
 
-We also want to draw a line of comparison with the Research Software Directory
-\citep{RSD, RSD2}. This is an open-source content management system for
-software catalogues, so a different beast than our metadata extraction pipeline
-in principle. They do, however, offer some integrations with third party
-services such as GitHub, Zenodo, ORCID, etc\ldots to automatically extract or
-autocomplete certain metadata.
+We also want to draw a quick line of comparison with the Research Software
+Directory \citep{RSD, RSD2}. This is an open-source content management system
+for software catalogues, so a different beast than our metadata extraction
+pipeline. They do, however, offer some integrations with third party services
+such as GitHub, Zenodo, ORCID, etc\ldots to automatically extract or
+autocomplete certain metadata. It illustrates there are hybrid approaches
+possible where a content management system is available for human metadata
+curation, but with key parts automated to reduce both the human workload as
+well as the common pitfalls we addressed in section~\ref{sec:need}.
 
 \section{Conclusion}
 
@@ -540,7 +556,11 @@ software\footnote{GNU General Public Licence v3}. We hope that our pipeline
 results in metadata that is accurate and complete enough for scholars to assess
 whether certain software is worth exploring for their research. We think this
 is a viable solution against metadata or entire catalogues going stale, in
-worst case unbeknownst to the researcher who might still rely on them.
+worst case unbeknownst to the researcher who might still rely on them. Quality
+insurance can be addressed, in part, via automated validations against
+carefully formulated validation rules. Furthermore, we also showed that the
+metadata we collect can be propagated to other downstream software
+catalogue systems.
 
 \section*{Acknowledgments}
 
