@@ -471,12 +471,17 @@ process where the input side connects to our tool store, either via our SPARQL
 endpoint or by simply obtaining the entire (or a specific part of) the graph in
 JSON-LD. This may be a periodic query or even a real-time query. The output
 side connects to either a catalogue-specific API or directly to some kind of
-database. The process itself consists of conversion from our codemeta
-representation to whatever representation is suited for the catalogue system.
+database underlying the catalogue system. The process itself consists of
+conversion from our codemeta representation to whatever representation is
+suited for the catalogue system.
+
+The connection to the SSHOC Open Marketplace is still ongoing work\footnote{An
+initial prototype can be found at
+\url{https://github.com/proycon/codemeta2mp}}. For this conversion, we load the
+JSON-LD graph into an in-memory triple store, iterate over specific triples, and
+then perform API calls to the SSHOC Open Marketplace API.
 
 %TODO: two or three paragraphs on the Ineo pipeline and the CMDI/VLO pipeline?
-
-%TODO: propagation to SSHOC marketplace
 
 \section{Validation \& Curation}
 
@@ -509,8 +514,8 @@ Figure~\ref{fig:validationreport}.
 \begin{center}
 \includegraphics[width=14.0cm]{screenshot_report.png}
 \caption{Screenshot of a validation report for a particular tool, viewed from the tool store}
-\end{center}
 \label{fig:validationreport}
+\end{center}
 \end{figure}
 
 Using this report, developers can clearly identify what specific requirements
@@ -610,10 +615,13 @@ Future work will focus on keeping in sync with vocabulary developments in
 CodeMeta and schema.org, as well as on working on the automatic propagation of
 harvested metadata into catalogue systems such as the SSHOC Open Marketplace.
 
-\section*{Acknowledgments}
+\section*{Acknowledgements}
 
 The FAIR Tool Discovery track has been developed as part of the CLARIAH-PLUS
 project (NWO grant 184.034.023), as part of the Shared Development Roadmap.
+
+Connectivity to the SSHOC Open Marketplace is being continued in the 
+SSHOC-NL project as part of Task 1.1.
 
 \printbibliography
 
