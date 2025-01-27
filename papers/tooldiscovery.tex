@@ -26,12 +26,47 @@
 \usepackage{graphicx}
 \usepackage[english]{babel}
 \usepackage{csquotes}
+\usepackage{listings}
+\usepackage{xcolor}
 \usepackage[
     backend=biber,
     style=apa,
     natbib=true,
     ]{biblatex}
 \addbibresource{tooldiscovery.bib} % add your own bibliography into the format provided in this file
+
+
+% JSON highlighting, copied from https://tex.stackexchange.com/questions/83085/how-to-improve-listings-display-of-json-files
+\definecolor{eclipseStrings}{RGB}{42,0.0,255}
+\definecolor{eclipseKeywords}{RGB}{127,0,85}
+\colorlet{numb}{magenta!60!black}
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily\footnotesize,
+    commentstyle=\color{eclipseStrings}, % style of comment
+    stringstyle=\color{eclipseKeywords}, % style of strings
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    string=[s]{"}{"},
+    comment=[l]{:\ "},
+    morecomment=[l]{:"},
+    literate=
+        *{0}{{{\color{numb}0}}}{1}
+         {1}{{{\color{numb}1}}}{1}
+         {2}{{{\color{numb}2}}}{1}
+         {3}{{{\color{numb}3}}}{1}
+         {4}{{{\color{numb}4}}}{1}
+         {5}{{{\color{numb}5}}}{1}
+         {6}{{{\color{numb}6}}}{1}
+         {7}{{{\color{numb}7}}}{1}
+         {8}{{{\color{numb}8}}}{1}
+         {9}{{{\color{numb}9}}}{1}
+}
+
 
 %\setlength\titlebox{5cm}
 
@@ -168,7 +203,7 @@ updated since.
 
 The need for accurate up-to-date metadata goes hand-in-hand with the need for
 \emph{complete} metadata. If vital details are missing, the
-end-user may not be able to make an informed judgement.
+end-user may not be able to make an informed judgment.
 
 A common pitfall we have observed in practice is that metadata is often
 manually collected at some stage and published in a catalogue, but never or
@@ -211,7 +246,7 @@ sources may be present and can be recombined in our harvesting process.
   forges such as Github, Gitlab, Bitbucket, Codeberg or Sourcehut.
   This solves versioning issues and ensures metadata can exactly describe the version alongside which it is stored. It also enables the 
   harvester to properly identify the latest stable release, provided some kind of industry-standard versioning system like semantic versioning is adhered to.
-  Software forges themselves may also provide an API that may serve as an extra source to find software metadata (e.g. descriptions, keywords, links to issue trackers and/or continuous integration services).
+  Software forges themselves may also provide an Application Programming Interface (API) that may serve as an extra source to find software metadata (e.g. descriptions, keywords, links to issue trackers and/or continuous integration services).
 \item 
   The developers of the tool have full control and authorship over their metadata. There are no middlemen.
 \item 
@@ -230,24 +265,24 @@ its web endpoint and attempt to automatically extract metadata from there. We
 make a clear distinction between the software source code, software instances
 (executables) you can run locally, and software instances offered as a service
 via the web. Formally, the software source code has no knowledge when, where,
-and by whom it may be deployed as a service. This link is therefore established
-at an independent and higher level. In the resulting metadata, there will also
-be an explicit link between the source code and any \emph{target products} or
-\emph{instances} of that source code. The sources for harvesting source
-repositories and web endpoints (both effectively just URLs) are the only input
-that needs to be manually provided to our system; we call this the \emph{source
-registry}. This is the higher level we referred to earlier. We keep the source
-registry in a simple git repository containing very minimalistic configuration
-files (one yaml file per tool). This is also the only point in our pipeline
-where there is the possibility for a human curator to decide whether or not to
-include a tool.
+and by whom it may be deployed, neither locally on some user's computer nor as
+a service on some server. This link is therefore established at an independent
+and higher level. In the resulting metadata, there will be an explicit
+link between the source code and these so-called \emph{target products} or \emph{instances}
+of that source code. The sources for harvesting source repositories and web
+endpoints (both effectively just URLs) are the only input that needs to be
+manually provided to our harvesting system, we call this the \emph{source registry}. This
+is the higher level we referred to earlier. We keep the source registry in a
+simple git repository containing very minimalistic configuration files (one
+yaml file per tool). This is also the only point in our pipeline where there is
+the possibility for a human curator to decide whether or not to include a tool.
 
 Usage of such a manually curated source registry means that, for this project,
 automatic discovery of tools is not in scope. That is, we do not actively crawl
 the web in search for tools that might or might not fit a certain domain. Some
-interpret the term `tool discovery' to also include such functionality, but we do
-not. Such a step, however, can be envisioned as a separate step before our
-pipeline.
+interpret the term `tool discovery' to also include such functionality, but we
+do not. Such a step, however, can be envisioned as a separate step prior to
+execution of our pipeline.
 
 \section{A unified vocabulary for software metadata}
 
@@ -257,7 +292,7 @@ area that has been explored previously in the CodeMeta
 project\footnote{\url{https://codemeta.github.io}}. They developed a generic
 vocabulary for describing software source code, extending schema.org vocabulary
 and contributing their efforts back to them. Moreover, the CodeMeta project
-defines mappings, called crosswalks, between their vocabulary and many existing
+defines mappings, which they call \emph{crosswalks}, between their vocabulary and many existing
 metadata schemes, such as those used in particular programming languages
 ecosystems or by particular package managers.
 
@@ -269,7 +304,7 @@ easily parsable for both machine and human alike. This \texttt{codemeta.json}
 file can be kept under version control alongside a tool's source code. A 
 rather minimal example of a such a file is shown below:
 
-\begin{verbatim}
+\begin{lstlisting}[language=json] 
 {
     "@context": [
         "https://doi.org/10.5063/schema/codemeta-2.0",
@@ -280,7 +315,9 @@ rather minimal example of a such a file is shown below:
     "identifier": "mysoftware",
     "name": "My Software",
     "author": {
-        "@type": "Person", "givenName": "John", "familyName": "Doe"
+        "@type": "Person", 
+        "givenName": "John",
+        "familyName": "Doe"
     },
     "description": "My software does nice stuff",
     "codeRepository": "https://github.com/someuser/mysoftware",
@@ -288,7 +325,7 @@ rather minimal example of a such a file is shown below:
     "developmentStatus": "https://www.repostatus.org/#active",
     "thumbnailUrl": "https://example.org/thumbnail.jpg"
 }
-\end{verbatim}
+\end{lstlisting}
 
 The developer has a choice to either run our harvester and converter themselves and
 commit the resulting codemeta file, or to not add anything and let the harvester
@@ -304,7 +341,10 @@ supplement any automatically harvested metadata. This allows developers to rely
 on the harvester for most fields, without having to run it themselves, but
 still allows them to provide additional manual metadata. All these different
 options ensure that developers themselves can choose precisely how much control
-to exert over the metadata and harvester.
+to exert over the metadata and harvester. It allows us to accommodate both
+projects that aren't even aware they're being harvested, as well as projects
+that want to fine-tune every metadata field to their liking, effectively
+rendering most of our periodic harvester out of work at run-time.
 
 \subsection{Additional Vocabularies}
 
@@ -323,10 +363,10 @@ seen in CLARIN is for example `Enriching $\rightarrow$ Annotating $\rightarrow$ 
 \end{itemize}
 
 The first two vocabularies are generic enough to be applicable to almost all
-software projects, the latter two may be more constrained to research software
-as developed in CLARIAH and CLARIN. In your projects, you can adopt whatever you
-find applicable, the power to mix and match is at the heart of linked open
-data after all.
+software projects, we strongly recommend their usage. The latter two may be
+more constrained to research software as developed in CLARIAH and CLARIN. In
+your projects, you can adopt whatever you find suits your needs best, the power to mix and
+match is at the heart of linked open data after all.
 
 Moreover, we formulated some of our own extensions on top of codemeta and
 schema.org:
@@ -335,18 +375,18 @@ schema.org:
 \item \textbf{Software Types}\footnote{\url{https://github.com/SoftwareUnderstanding/software_types}}
 -- Software comes in many shapes and forms, targeting a variety of
 audiences with different skills and needs. We want
-to software metadata to be able to accurately express what type of
-interfaces their software provides. The schema.org vocabulary
-distinguishes \texttt{softwareApplication} \texttt{WebApplication},
+software metadata to be able to accurately express what type(s) of
+interface their software provides. The schema.org vocabulary
+distinguishes \texttt{softwareApplication}, \texttt{WebApplication},
 \texttt{MobileApplication} and even \texttt{VideoGame}. This covers
-some interfaces from a user-perspective, but is not as extensive or as
-fine-grained as we would like yet, as interface types from a more
+some interfaces from a user-perspective, but is not as extensive nor as
+fine-grained as we would like yet. Interface types from a more
 developer-oriented perspective are not formulated. We therefore define
 additional classes such as \texttt{DesktopApplication} (software
 offering a desktop GUI), \texttt{CommandLineApplication},
-\texttt{SoftwareLibrary} and others.
+\texttt{SoftwareLibrary} and others in this add-on vocabulary.
 \item \textbf{Software Input/Output Data}\footnote{\url{https://github.com/SoftwareUnderstanding/software-iodata}}
--- This minimal vocabulary defines two new properties that allows for software metadata to
+-- This minimal vocabulary defines just two new properties that allows for software metadata to
 express what kind of data it consumes (e.g. takes as input) and what
 kind of data it produces (e.g. output). It does not define actual data types because schema.org already has 
 classes covering most common data types (e.g. \texttt{AudioObject}, \texttt{ImageObject}, \texttt{VideoObject}, \texttt{TextDigitalDocument}, etc...) and properties
@@ -360,7 +400,7 @@ the primary software metadata which end-users need to make a informed
 decision regarding the suitability of a tool for their ends. Other
 existing projects such as the OpenAPI
 Initiative\footnote{\url{https://www.openapis.org}} delve into this realm 
-functionality for Web APIs. For software libraries there are 
+for Web APIs. For software libraries there are 
 various existing API documentation generators\footnote{e.g. doxygen, sphinx,
 rustdoc, etc...} that derive documentation directly from the source
 code in a formalised way. We do not intend to duplicate those efforts.
@@ -377,8 +417,8 @@ other projects.
 \begin{center}
 \includegraphics[width=14.0cm]{architecture.png}
 \caption{The architecture of the CLARIAH Tool Discovery pipeline}
-\end{center}
 \label{fig:architecture}
+\end{center}
 \end{figure}
 
 Using the input from the source registry, our
@@ -391,7 +431,7 @@ to turn and combine these into a single codemeta representation. This produces
 one codemeta JSON-LD file per input tool. 
 
 All of these together are loaded in our \emph{tool store}, powered by codemeta-server\footnote{\url{https://github.com/proycon/codemeta-server}} \citep{CODEMETASERVER} and codemeta2html\footnote{\url{https://github.com/proycon/codemeta2html}}. This is
-implemented as a triple store and serves both as a backend to be queried
+implemented as an RDF triple store and serves both as a backend to be queried
 programmatically using SPARQL, as well as a simple web frontend to be visited
 by human end-users as a catalogue. The frontend for CLARIAH is
 accessible as a service at \url{https://tools.clariah.nl} and shown in 
@@ -402,16 +442,16 @@ At the time of writing, there are 114 registered source repositories and 34 web 
 \begin{center}
 \includegraphics[width=14.0cm]{screenshot.png}
 \caption{Screenshot of the CLARIAH Tool Store showing the index page}
-\end{center}
 \label{fig:toolstore1}
+\end{center}
 \end{figure}
 
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=14.0cm]{screenshot2.png}
 \caption{Screenshot of the CLARIAH Tool Store showing the metadata page for a specific tool}
-\end{center}
 \label{fig:toolstore2}
+\end{center}
 \end{figure}
 
 \subsection{Propagation to Software Catalogues}
@@ -444,20 +484,21 @@ Having an automated metadata harvesting pipeline may raise some concerns
 regarding quality assurance. Data is automatically converted from heterogeneous
 sources and immediately propagated to our tool store, this is not without
 error. In absence of human curation, which is explicitly out of our intended
-scope, we tackle this issue through an automatic validation mechanism.
+scope, we tackle this issue through an automatic validation mechanism. This mechanism provides
+feedback for the developers or curators.
 
 The harvested codemeta metadata is held against a validation schema (SHACL)
 that tests whether certain fields are present (completeness), and whether the
-values are sensible (accuracy, it is capable of detecting various
+values are sensible (accuracy; it is capable of detecting various
 discrepancies). The validation process outputs a human-readable validation
 report which references a set of carefully formulated \emph{software metadata
 requirements}
 \footnote{\url{https://github.com/CLARIAH/clariah-plus/blob/main/requirements/software-metadata-requirements.md}.}.
 These requirements state exactly what kind of metadata we expect for software
-in the CLARIAH project, using normative keywords such as MUST, SHOULD and MAY
+in the CLARIAH project, using normative keywords such as \textsc{MUST}, \textsc{SHOULD} and \textsc{MAY}
 in accordance with RFC2119 \citep{RFC2119}. These requirements provide
 instructions to developers about how they can provide this metadata in
-\texttt{codemeta.json} or \texttt{codemeta-harvest.json} if metadata can not be
+their \texttt{codemeta.json} or \texttt{codemeta-harvest.json} if metadata can not be
 automatically extracted from existing sources. The validation schema and
 requirements document are specific to the CLARIAH project, but may serve as an
 example for others to adapt and adopt. An example of a validation report
@@ -475,10 +516,11 @@ Figure~\ref{fig:validationreport}.
 Using this report, developers can clearly identify what specific requirements
 they have not met. The over-all level of compliance is expressed on a simple
 scale of 0 (no compliance) to 5 (perfect compliance), and visualised as a
-coloured star rating in our interface. This evaluation score itself becomes part of
-the delivered metadata and is something which both end users as well as other
-systems can filter on. It may even serve as a kind of `gamification' element to
-spur on developers to provide higher quality metadata.
+coloured star rating in our interface. This evaluation score and the validation
+report itself becomes part of the delivered metadata and is something which
+both end users as well as other systems can filter on. It may even serve as a
+kind of `gamification' element to spur on developers to provide higher quality
+metadata.
 
 We find that human compliance remains the biggest hurdle and it is hard to get
 developers to provide metadata beyond what we can extract automatically from
@@ -497,7 +539,7 @@ For propagation to systems further downstream, we set a threshold rating of 3
 or higher. Downstream systems may of course posit whatever criteria they want
 for inclusion, and may add human validation and curation. As metadata is stored
 at the source, however, we strongly recommend any curation efforts to be
-directly contributed upstream to the source, through the established mechanisms
+directly contributed back upstream to the source, through the established mechanisms
 in place by whatever forge (e.g. GitHub) they are using to store their source
 code.
 
@@ -506,13 +548,13 @@ code.
 We limit automatic metadata extraction to those fields and sources that we can
 extract fairly reliably and unambiguously. In certain cases, it is already a
 sufficient challenge to map certain existing vocabularies onto codemeta and
-schema.org, as concepts are not always used in the same way and do not always
+schema.org, as concepts are not always used in the same manner and do not always
 map one-to-one.
 
-We do extract some information from README files, but that is mostly limited to
+We do extract certain information from README files, but that is mostly limited to
 badges which follow a very standard pattern that is easy to extract with simple
 regular expressions. Extracting more data from READMEs is something that was
-done in \cite{SOMEF} and predecessor \cite{SOMEF19}; they analyze the actual
+done in \cite{SOMEF} and predecessor \cite{SOMEF19}; they analyse the actual
 README text and extract metadata from it. They use various methods to do so,
 including building supervised classifiers to identify common section headers
 and mapping those to a metadata category such as `description', `installation',
@@ -543,10 +585,12 @@ pipeline. They do, however, offer some integrations with third party services
 such as GitHub, Zenodo, ORCID, etc\ldots to automatically extract or
 autocomplete certain metadata. It illustrates there are hybrid approaches
 possible where a content management system is available for human metadata
-curation, but with key parts automated to reduce both the human workload as
-well as the common pitfalls we addressed in section~\ref{sec:need}.
+curation, but with key parts automated to reduce both the human workload as well as 
+the common pitfalls we addressed in
+section~\ref{sec:need}.
 
-\section{Conclusion}
+
+\section{Conclusion \& Future Work}
 
 We have shown a way to store metadata at the source and reuse existing metadata
 sources, recombining and converting these into a single unified LOD
@@ -561,6 +605,10 @@ insurance can be addressed, in part, via automated validations against
 carefully formulated validation rules. Furthermore, we also showed that the
 metadata we collect can be propagated to other downstream software
 catalogue systems.
+
+Future work will focus on keeping in sync with vocabulary developments in
+CodeMeta and schema.org, as well as on working on the automatic propagation of
+harvested metadata into catalogue systems such as the SSHOC Open Marketplace.
 
 \section*{Acknowledgments}
 
