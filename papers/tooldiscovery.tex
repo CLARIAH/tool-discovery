@@ -482,6 +482,19 @@ JSON-LD graph into an in-memory triple store, iterate over specific triples, and
 then perform API calls to the SSHOC Open Marketplace API.
 
 %TODO: two or three paragraphs on the Ineo pipeline and the CMDI/VLO pipeline?
+In the case of CLARIN's VLO the codemeta schema has been translated into a CMDI
+profile\citep{windhouwer2022component}. The VLO's harvester has been extended to, 
+next to the tradional OAI protocol, allow other "protocols" to be pluggged
+in\footnote{\url{https://github.com/clarin-eric/oai-harvest-manager}, 
+\url{https://github.com/CLARIAH/oai-harvest-manager}}. In this case the plugin takes
+the JSON-LD dump and converts the records to equivalent CMDI records compliant with
+the profile. The changes CLARIAH made to the harvester are currently being tested by
+CLARIN. Once a new stable version of the harvester has been released the harvesting
+cycle of CLARIN will be extended to harvest the metadata.
+
+Finally, CLARIAH's INEO also has a harvesting cycle, which transforms the JSON-LD records
+into the JSON expected by INEOs update API. These transformations are minimal as the tool
+metadata has been designed with this target catalogue in mind.
 
 \section{Validation \& Curation}
 
