@@ -830,7 +830,7 @@
             "skos:inScheme": "https://w3id.org/nwo-research-fields#Scheme"
         },
         {
-            "@id": "https://w3id.org/nwo-research-fields#African language and literature",
+            "@id": "https://w3id.org/nwo-research-fields#AfricanLanguageAndLiterature",
             "@type": [ "skos:Concept", "ResearchField" ],
             "skos:notation": "31.45.00",
             "skos:prefLabel": "African languages and literature",
