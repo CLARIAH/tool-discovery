@@ -1,0 +1,3 @@
+source: https://github.com/odissei-data/odissei-devstack
+services:
+    - https://portal.odissei.nl/
