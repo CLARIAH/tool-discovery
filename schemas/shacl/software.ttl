@@ -110,7 +110,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:message "Software source code *MUST* state its version: the -SNAPSHOT version suffix does not correspond to a proper release. (Tip: In Java/Maven projects, ensure it is removed from pom.xml on release)" ;
     ] ,
     [
-        sh:path codemeta:contIntegration ;
+        sh:path codemeta:continuousIntegration ;
         sh:minCount 1 ;
         sh:or (
             [ sh:class schema:URL ]
@@ -175,7 +175,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         sh:message "All contributors *SHOULD* be expressed" ;
     ] ,
     [
-        sh:path schema:targetProduct ;
+        sh:path codemeta:isSourceCodeOf ;
         sh:or (
             [ sh:class schema:SoftwareApplication ]
             [ sh:class schema:WebApplication ]
@@ -193,7 +193,7 @@ clariah:SoftwareSourceCodeShape a sh:NodeShape ;
         ) ;
         sh:minCount 1 ;
         sh:severity sh:Info ;
-        sh:label "Target product, a software application which results from the code." ;
+        sh:label "Software application which results from the code." ;
         sh:message "An interface type *SHOULD* be expressed: Software source code should define one or more target products that are the resulting software applications offering specific interfaces" ; #strongly diverging from schema.org definition!!  (see https://github.com/codemeta/codemeta/issues/267)
     ] ,
     [
