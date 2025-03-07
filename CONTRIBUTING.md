@@ -15,7 +15,7 @@ The ``source`` property specifies a **single** source code repository where the 
 be a *git* repository that is publicly accessible.  Note that you can specify only one repository here, choose the one
 that is representative for the software as a whole.
 
-The ``services`` property lists zero or more URLs where the tool can be accessed as a service. This may be a web application, simple webpage, or some other form of webservice. For webservices, rather than enumerate all service endpoints individually, this should be pointed to a URL that itself provides a specification of endpoints, for example a URL serving an [OpenAPI](https://www.openapis.org/) specification. The information provided here will be expressed in the resulting `codemeta.json` through the ``targetProduct`` schema.org property as described in issue [codemeta/codemeta#271](https://github.com/codemeta/codemeta/issues/271). This links the source code to specific instantiations of the software.
+The ``services`` property lists zero or more URLs where the tool can be accessed as a service. This may be a web application, simple webpage, or some other form of webservice. For webservices, rather than enumerate all service endpoints individually, this should be pointed to a URL that itself provides a specification of endpoints, for example a URL serving an [OpenAPI](https://www.openapis.org/) specification. The information provided here will be expressed in the resulting `codemeta.json` through the ``isSourceCodeOf`` codemeta property (see also <https://softwareunderstanding.github.io/software_types/>). This links the source code to specific instantiations of the software.
 
 Additional properties you may specify in your yaml file:
 

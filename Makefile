@@ -4,10 +4,15 @@ docker-dev:
 docker:
 	docker build -t clariah-tool-discovery:latest .
 
-run-dev:
+run-minimal-dev:
 	mkdir -p /tmp/tool-store-data
 	[ -e token ] || false # store your github token in a file named 'token'
 	docker run --env-file=local-dev.env --env GITHUB_TOKEN="$(shell cat token)" --env SOURCE_REGISTRY_BRANCH=minimal-test -v /tmp/tool-store-data:/tool-store-data -p 8080:80 clariah-tool-discovery:dev
+
+run-dev:
+	mkdir -p /tmp/tool-store-data
+	[ -e token ] || false # store your github token in a file named 'token'
+	docker run --env-file=local-dev.env --env GITHUB_TOKEN="$(shell cat token)" -v /tmp/tool-store-data:/tool-store-data -p 8080:80 clariah-tool-discovery:dev
 
 run:
 	mkdir -p /tmp/tool-store-store
