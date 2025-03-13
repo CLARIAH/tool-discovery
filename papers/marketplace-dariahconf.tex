@@ -1,0 +1,140 @@
+%!TEX encoding = UTF-8 Unicode
+%!TEX TS-program = pdflatex
+% vim: spell spelllang=en_gb
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% This extended-abstract version of this paper was submitted, accepted and presented to/at the CLARIN conference 2024. 
+% The post-proceedings paper is a work in progress and still pending submission and further peer review.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+\documentclass[a4paper,11pt]{article}
+\usepackage{CLARIN2024}
+% - - - - - - - IMPORTANT - - - - - - - -
+% The next three lines allow XeLaTeX, graphics import and hyperlinks, set font and language
+%\usepackage{xltxtra,polyglossia,graphicx,hyperref}
+%\setmainfont[Mapping=tex-text]{Times}
+%\setdefaultlanguage{english}
+% If for some reason the above three lines are not compatible with your LaTeX installation,
+% comment out the above three instructions and uncomment the following four instead:
+\usepackage{times}
+\usepackage{url}
+\usepackage{latexsym}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[
+    backend=biber,
+    style=apa,
+    natbib=true,
+    ]{biblatex}
+\addbibresource{tooldiscovery.bib} % add your own bibliography into the format provided in this file
+
+
+% JSON highlighting, copied from https://tex.stackexchange.com/questions/83085/how-to-improve-listings-display-of-json-files
+\definecolor{eclipseStrings}{RGB}{42,0.0,255}
+\definecolor{eclipseKeywords}{RGB}{127,0,85}
+\colorlet{numb}{magenta!60!black}
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily\footnotesize,
+    commentstyle=\color{eclipseStrings}, % style of comment
+    stringstyle=\color{eclipseKeywords}, % style of strings
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    string=[s]{"}{"},
+    comment=[l]{:\ "},
+    morecomment=[l]{:"},
+    literate=
+        *{0}{{{\color{numb}0}}}{1}
+         {1}{{{\color{numb}1}}}{1}
+         {2}{{{\color{numb}2}}}{1}
+         {3}{{{\color{numb}3}}}{1}
+         {4}{{{\color{numb}4}}}{1}
+         {5}{{{\color{numb}5}}}{1}
+         {6}{{{\color{numb}6}}}{1}
+         {7}{{{\color{numb}7}}}{1}
+         {8}{{{\color{numb}8}}}{1}
+         {9}{{{\color{numb}9}}}{1}
+}
+
+
+%\setlength\titlebox{5cm}
+
+% You can expand the titlebox if you need extra space
+% to show all the authors. Please do not make the titlebox
+% smaller than 5cm (the original size); we will check this
+% in the camera-ready version and ask you to change it back.
+
+%\usepackage{covington} % if needed, for linguistic examples
+
+\title{From source code to the SSH Open Marketplace -- a software metadata journey}
+
+% - - - - - - - IMPORTANT - - - - - - -
+% Leave the author information empty until your paper has been accepted 
+
+% Uncomment the following line ONLY if you need two author rows
+%\setlength\titlebox{80mm} 
+
+\author{Maarten van Gompel \\
+  KNAW Humanities Cluster \\
+  Amsterdam, the Netherlands \\
+  {\tt proycon@anaproy.nl} %\And % if needed: this makes a second column
+%  Department (optional)\\
+%  University Name without city \\
+%  City, Country \\
+% {\tt email@domain} \\
+% \AND % if needed: this makes a second row
+%  Third Author \\
+%  Department (optional)\\
+%  University of City, Country \\
+%  {\tt email@domain} \\\And
+%  Fourth Author \\
+%  Department (optional)\\
+%  University Name without city \\
+%  City, Country \\
+%  {\tt email@domain} \\
+} 
+
+\date{}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+We developed a harvesting pipeline that automatically and periodically harvests
+software metadata from the source \citep{CLARINCONF2024}. Software source code is often accompanied,
+by metadata in various metadata formats, living together in the same source
+code repository. We automatically convert all metadata we can find there to a
+single CodeMeta representation. This is a linked open data vocabulary that
+re-uses and extends schema.org. It acts as a pivot language for software
+metadata. 
+
+The harvesting pipeline was built for the Dutch CLARIAH project to catalogue all
+the tools delivered in that project. In the current follow-up study, we seek
+integration with existing software catalogues and worked on extending the
+pipeline to ingest its data into the SSH Open Marketplace \citep{MPSPEC,MPINTEROP,MPDATAPOP}. We do so by
+translating the Codemeta to Marketplace API calls. We will discuss the
+solutions and challenges we encountered on this path. 
+\end{abstract}
+
+
+\section*{Acknowledgements}
+
+The FAIR Tool Discovery track has been developed as part of the CLARIAH-PLUS
+project (NWO grant 184.034.023), as part of the Shared Development Roadmap.
+
+Connectivity to the SSHOC Open Marketplace is developed in the 
+SSHOC-NL project as part of Task 1.1.
+
+\printbibliography
+
+\end{document}
