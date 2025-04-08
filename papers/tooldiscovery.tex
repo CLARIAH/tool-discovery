@@ -271,13 +271,15 @@ make a clear distinction between the software source code, software instances
 via the web. Formally, the software source code has no knowledge when, where,
 and by whom it may be deployed, neither locally on some user's computer nor as
 a service on some server. This link is therefore established at an independent
-and higher level. In the resulting metadata, there will be an explicit
-link between the source code and these so-called \emph{target products} or \emph{instances}
-of that source code. The sources for harvesting source repositories and web
-endpoints (both effectively just URLs) are the only input that needs to be
-manually provided to our harvesting system, we call this the \emph{source registry}. This
-is the higher level we referred to earlier. We keep the source registry in a
-simple git repository containing very minimalistic configuration files (one
+and higher level. In the resulting metadata, there will be an explicit link
+between the source code and \emph{applications} of that source
+code\footnote{Applications are instances of the source-code in executable form
+after build and deployment and may also refer to availability as a service over
+a network}. The sources for harvesting source repositories and web endpoints
+(both effectively just URLs) are the only input that needs to be manually
+provided to our harvesting system, we call this the \emph{source registry}.
+This is the higher level we referred to earlier. We keep the source registry in
+a simple git repository containing very minimalistic configuration files (one
 yaml file per tool). This is also the only point in our pipeline where there is
 the possibility for a human curator to decide whether or not to include a tool.
 
@@ -311,7 +313,7 @@ rather minimal example of a such a file is shown below:
 \begin{lstlisting}[language=json] 
 {
     "@context": [
-        "https://doi.org/10.5063/schema/codemeta-2.0",
+        "https://w3id.org/codemeta/3.0",
         "http://schema.org",
     ],
     "@id": "https://example.org/mysoftware",
