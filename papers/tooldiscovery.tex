@@ -24,6 +24,7 @@
 \usepackage{latexsym}
 \usepackage{hyperref}
 \usepackage{graphicx}
+\usepackage{placeins}
 \usepackage[english]{babel}
 \usepackage{csquotes}
 \usepackage{listings}
@@ -550,10 +551,12 @@ in Figure~\ref{fig:compliance}.
 \begin{figure}[h!]
 \begin{center}
 \includegraphics[width=10.0cm]{compliance.png}
-\caption{Histogram of metadata compliance ranking in CLARIAH (114 tools)}
+    \caption{Histogram of metadata compliance ranking in CLARIAH (114 tools), the ranking is to the number of stars given (0 to 5, where 5 is perfect compliance)}
 \label{fig:compliance}
 \end{center}
 \end{figure}
+
+\FloatBarrier
 
 For propagation to systems further downstream, we set a threshold rating of 3
 or higher. Downstream systems may of course posit whatever criteria they want
