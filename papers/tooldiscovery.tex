@@ -419,21 +419,21 @@ other projects.
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=14.0cm]{architecture.png}
-\caption{The architecture of the CLARIAH Tool Discovery pipeline}
+\caption{The architecture of the CLARIAH Tool Discovery pipeline. Key steps are numbered in red and referenced in the text.}
 \label{fig:architecture}
 \end{center}
 \end{figure}
 
 Using the input from the source registry, our
-\emph{harvester}\footnote{\url{https://github.com/proycon/codemeta-harvester}} \citep{CODEMETAHARVESTER} fetches all the git
+\emph{harvester}\footnote{\url{https://github.com/proycon/codemeta-harvester}, marked with a red 1 in Figure~\ref{fig:architecture}} (1) \citep{CODEMETAHARVESTER} fetches all the git
 repositories and queries any service endpoints. It does so at regular intervals
 (e.g. once a day). This ensures the metadata is always up to date. When the
 sources are retrieved, it looks for different kinds of metadata it can identify
-there and calls the converter powered by codemetapy\footnote{\url{https://github.com/proycon/codemetapy}} \citep{CODEMETAPY}
+there and calls the converter (2) powered by codemetapy\footnote{\url{https://github.com/proycon/codemetapy}} \citep{CODEMETAPY}
 to turn and combine these into a single codemeta representation. This produces
 one codemeta JSON-LD file per input tool. 
 
-All of these together are loaded in our \emph{tool store}, powered by codemeta-server\footnote{\url{https://github.com/proycon/codemeta-server}} \citep{CODEMETASERVER} and codemeta2html\footnote{\url{https://github.com/proycon/codemeta2html}}. This is
+All of these together are loaded in our \emph{tool store} (3), powered by codemeta-server\footnote{\url{https://github.com/proycon/codemeta-server}} \citep{CODEMETASERVER} and codemeta2html\footnote{\url{https://github.com/proycon/codemeta2html}}. This is
 implemented as an RDF triple store and serves both as a backend to be queried
 programmatically using SPARQL, as well as a simple web frontend to be visited
 by human end-users as a catalogue. The frontend for CLARIAH is
@@ -460,7 +460,7 @@ At the time of writing, there are 114 registered source repositories and 34 web 
 \subsection{Propagation to Software Catalogues}
 
 Our web front-end is not the final destination; our aim is to propagate the
-metadata we have collected to other existing portal/catalogue systems, such as
+metadata we have collected to other existing portal/catalogue systems (4), such as
 the CLARIN VLO, the CLARIN Switchboard, the SSH Open Marketplace, and CLARIAH's
 Ineo\footnote{\url{https://vlo.clarin.eu/},
 \url{https://switchboard.clarin.eu/},
