@@ -1,4 +1,4 @@
-source: https://github.com/INL/galahad
+source: https://github.com/instituutnederlandsetaal/galahad
 group: GaLAHaD
 services:
   - https://portal.clarin.ivdnt.org/galahad
