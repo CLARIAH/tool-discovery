@@ -32,7 +32,7 @@
             <title xml:lang="nld">Algemeen Nederlands Woordenboek</title>
             <title xml:lang="eng">General Dutch Dictionary</title>
             <publicationYear>2009</publicationYear>
-            <url>http://anw.ivdnt.org</url><CLARINCentre>Dutch Language Institute</CLARINCentre>
+            <url>https://anw.ivdnt.org</url><CLARINCentre>Dutch Language Institute</CLARINCentre>
             <ReleaseStatus>
                <LifeCycleStatus>published</LifeCycleStatus>
                <lastUpdate>2016-01-01</lastUpdate>
@@ -122,7 +122,7 @@
                <license>unknown</license>
                <distributionType>public</distributionType>
 	       <availability/>
-               <url>http://anw.ivdnt.org</url>
+               <url>https://anw.ivdnt.org</url>
                <Price>
                   <amount>0</amount>
                   <ISO4217>
@@ -134,16 +134,16 @@
                <Email>servicedesk@ivdnt.org</Email>
                <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
                <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-               <Url>http://www.ivdnt.org/</Url>
+               <Url>https://www.ivdnt.org/</Url>
             </Contact>
          </Access>
          <ResourceDocumentation>
             <Documentation>
                <title>Frequently Asked Questions</title>
                <documentationTarget>user</documentationTarget>
-               <url>http://anw.ivdnt.org/about</url>
+               <url>https://anw.ivdnt.org/about</url>
                <ISO639>
-                  <iso-639-3-code>ndl</iso-639-3-code>
+                  <iso-639-3-code>nld</iso-639-3-code>
                </ISO639>
             </Documentation>
          </ResourceDocumentation>
@@ -152,12 +152,12 @@
                <name>ANW</name>
                <title>Algemeen Nederlands Woordenboek</title>
                <funder>IVDNT.ORG</funder>
-               <url>http://ivdnt.org</url>
+               <url>https://ivdnt.org</url>
                <Contact>
                   <Email>servicedesk@ivdnt.org</Email>
 		  <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
 		  <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-		  <Url>http://www.ivdnt.org/</Url>
+		  <Url>https://www.ivdnt.org/</Url>
                </Contact>
                <Duration/>
             </Project>
@@ -167,7 +167,7 @@
                   <Email>carole.tiberius@ivdnt.org</Email>
 		  <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
 		  <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-		  <Url>http://www.ivdnt.org/over-ons/contact/medewerkers</Url>
+		  <Url>https://www.ivdnt.org/over-ons/contact/medewerkers</Url>
                </Contact>
             </Creator>
          </SoftwareDevelopment>

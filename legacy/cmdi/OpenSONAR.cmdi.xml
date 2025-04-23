@@ -10,7 +10,7 @@
 	<ResourceProxyList>
 		<ResourceProxy id="OpenSoNaR001">
 			<ResourceType>SearchPage</ResourceType>
-			<ResourceRef> http://opensonar.inl.nl</ResourceRef>
+			<ResourceRef>https://opensonar.ivdnt.org/</ResourceRef>
 		</ResourceProxy>
 	</ResourceProxyList>
 	<JournalFileProxyList/>
@@ -22,7 +22,7 @@
             <name xml:lang="eng">OpenSONAR</name>
             <title xml:lang="eng">OpenSONAR: a 500 MW reference corpus of Contemporary Written Dutch</title>
             <publicationYear>2013</publicationYear>
-            <url> http://opensonar.inl.nl</url><CLARINCentre>Dutch Language Institute</CLARINCentre><OriginalSource>http://portal.clarin.nl/node/4195</OriginalSource>
+            <url>https://opensonar.ivdnt.org/</url><CLARINCentre>Dutch Language Institute</CLARINCentre><OriginalSource>http://portal.clarin.nl/node/4195</OriginalSource>
             <ReleaseStatus>
                <LifeCycleStatus>published</LifeCycleStatus>
                <lastUpdate>2014-10-06</lastUpdate>
@@ -102,12 +102,12 @@
             </Output>
          </SoftwareImplementation>
          <Access>
-	   <catalogueLink>https://portal.clarin.inl.nl</catalogueLink>
+	   <catalogueLink>https://portal.clarin.ivdnt.org</catalogueLink>
             <ResourceLicense>
                <license>other</license>
                <distributionType>academic</distributionType>
 	       <availability>Free, accessible through CLARIN Institutional login</availability>
-               <url>https://portal.clarin.inl.nl/opensonar_whitelab/page/search</url>
+               <url>https://opensonar.ivdnt.org/</url>
                <Price>
                   <amount>0</amount>
                   <ISO4217>
@@ -119,7 +119,7 @@
               <Email>servicedesk@ivdnt.org</Email>
               <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
               <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-              <Url>http://www.ivdnt.org/</Url>
+              <Url>https://www.ivdnt.org/</Url>
             </Contact>
          </Access>
          <ResourceDocumentation>

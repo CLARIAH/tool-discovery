@@ -94,12 +94,12 @@
             </Output>
          </SoftwareImplementation>
          <Access>
-	   <catalogueLink>https://portal.clarin.inl.nl</catalogueLink>
+	   <catalogueLink>https://portal.clarin.ivdnt.org</catalogueLink>
             <ResourceLicense>
                <license>other</license>
                <distributionType>academic</distributionType>
 	       <availability>Free, accessible through CLARIN Institutional login</availability>
-               <url>https://portal.clarin.inl.nl/autocorp/</url>
+               <url>https://portal.clarin.ivdnt.org/autocorp/</url>
                <Price>
                   <amount>0</amount>
                   <ISO4217>
@@ -111,14 +111,14 @@
               <Email>servicedesk@ivdnt.org</Email>
               <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
               <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-              <Url>http://www.ivdnt.org/</Url>
+              <Url>https://www.ivdnt.org/</Url>
             </Contact>
          </Access>
          <ResourceDocumentation>
             <Documentation>
                <title>AutoSearch demo: a brief overview</title>
                <documentationTarget>user</documentationTarget>
-               <url>https://portal.clarin.inl.nl/autocorp/doc/AutoSearch-manual.pdf</url>
+               <url>https://portal.clarin.ivdnt.org/autocorp/doc/AutoSearch-manual.pdf</url>
                <ISO639>
                   <iso-639-3-code>eng</iso-639-3-code>
                </ISO639>
@@ -146,7 +146,7 @@
                 <Email>servicedesk@ivdnt.org</Email>
                 <Organisation>Institute of Dutch Lexicology</Organisation>
                 <Organisation>Instituut voor Nederlandse Lexicology</Organisation>
-                <Url>http://www.ivdnt.org</Url>
+                <Url>https://www.ivdnt.org</Url>
               </Contact>
             </Creator>
          </SoftwareDevelopment>

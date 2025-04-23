@@ -10,7 +10,7 @@
 	<ResourceProxyList>
 		<ResourceProxy id="WebCELEX001">
 			<ResourceType>Resource</ResourceType>
-			<ResourceRef>https://portal.clarin.inl.nl/webcelex/</ResourceRef>
+			<ResourceRef>https://portal.clarin.ivdnt.org/webcelex/</ResourceRef>
 		</ResourceProxy>
 	</ResourceProxyList>
       <JournalFileProxyList/>
@@ -22,7 +22,7 @@
             <name xml:lang="eng">WebCelex</name>
             <title xml:lang="eng">WebCelex</title>
             <publicationYear>2013</publicationYear>
-            <url>https://portal.clarin.inl.nl/webcelex/</url><CLARINCentre>Dutch Language Institute</CLARINCentre>
+            <url>https://portal.clarin.ivdnt.org/webcelex/</url><CLARINCentre>Dutch Language Institute</CLARINCentre>
             <ReleaseStatus>
                <LifeCycleStatus>published</LifeCycleStatus>
                <lastUpdate>0001-01-01</lastUpdate>
@@ -125,7 +125,7 @@
             </Output>
          </SoftwareImplementation>
          <Access>
-	   <catalogueLink>https://portal.clarin.inl.nl/webcelex/</catalogueLink>
+	   <catalogueLink>https://portal.clarin.ivdnt.org/webcelex/</catalogueLink>
             <ResourceLicense>
                <license>other</license>
                <distributionType>academic</distributionType>
@@ -142,14 +142,14 @@
               <Email>servicedesk@ivdnt.org</Email>
               <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
               <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-              <Url>http://www.ivdnt.org/</Url>
+              <Url>https://www.ivdnt.org/</Url>
             </Contact>
          </Access>
          <ResourceDocumentation>
             <Documentation>
                <title>WebCelex help facility</title>
                <documentationTarget>user</documentationTarget>
-               <url>https://portal.clarin.inl.nl/webcelex/scripts/help01.pl</url>
+               <url>https://portal.clarin.ivdnt.org/webcelex/scripts/help01.pl</url>
                <ISO639>
                   <iso-639-3-code>eng</iso-639-3-code>
                </ISO639>
@@ -173,7 +173,7 @@
                 <Email>carole.tiberius@ivdnt.org</Email>
 		<Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
 		<Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-		<Url>http://www.ivdnt.org/over-ons/contact/medewerkers</Url>
+		<Url>https://www.ivdnt.org/over-ons/contact/medewerkers</Url>
               </Contact>
             </Creator>
          </SoftwareDevelopment>

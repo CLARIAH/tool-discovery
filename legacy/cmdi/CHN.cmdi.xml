@@ -10,7 +10,7 @@
       <ResourceProxyList>
 	  <ResourceProxy id="CHN001">
 			<ResourceType>Resource</ResourceType>
-			<ResourceRef>http://chn.inl.nl/</ResourceRef>
+			<ResourceRef>https://chn.ivdnt.org/</ResourceRef>
 	  </ResourceProxy>	
 	</ResourceProxyList>
       <JournalFileProxyList/>
@@ -24,7 +24,7 @@
             <title xml:lang="nld">Corpus Hedendaags Nederlands</title>
             <title xml:lang="eng">Corpus of Contemporary Dutch</title>
             <publicationYear>2013</publicationYear>
-            <url>http://chn.inl.nl</url><CLARINCentre>Dutch Language Institute</CLARINCentre>
+            <url>https://chn.ivdnt.org/</url><CLARINCentre>Dutch Language Institute</CLARINCentre>
             <ReleaseStatus>
                <LifeCycleStatus>published</LifeCycleStatus>
                <lastUpdate>2014-10-06</lastUpdate>
@@ -116,7 +116,7 @@
                <license>other</license>
                <distributionType>academic</distributionType>
 	       <availability>Free, accessible through CLARIN Institutional login</availability>
-               <url>https://portal.clarin.inl.nl/opensonar_whitelab/page/search</url>
+               <url>https://chn.ivdnt.org/</url>
                <Price>
                   <amount>0</amount>
                   <ISO4217>
@@ -128,14 +128,14 @@
               <Email>servicedesk@ivdnt.org</Email>
               <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
               <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-              <Url>http://www.ivdnt.org/</Url>
+              <Url>https://www.ivdnt.org/</Url>
             </Contact>
          </Access>
          <ResourceDocumentation>
             <Documentation>
                <title>HELP</title>
                <documentationTarget>user</documentationTarget>
-               <url>https://portal.clarin.inl.nl/search/page/help#help</url>
+               <url>https://portal.clarin.ivdnt.org/corpus-frontend-chn/chn-extern/help</url>
                <ISO639>
                   <iso-639-3-code>eng</iso-639-3-code>
                </ISO639>
@@ -146,12 +146,12 @@
                <name>CHN</name>
                <title>Corpus Hedendaags Nederlands</title>
                <funder>NTU/IMPACT/CLARIN</funder>
-               <url>https://portal.clarin.inl.nl/search/page/help</url>
+               <url>https://portal.clarin.ivdnt.org/corpus-frontend-chn/chn-extern/help</url>
                <Contact>
                   <Email>servicedesk@ivdnt.org</Email>
 		  <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
 		  <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-		  <Url>http://www.ivdnt.org/</Url>
+		  <Url>https://www.ivdnt.org/</Url>
                </Contact>
                <Duration/>
             </Project>
@@ -160,7 +160,7 @@
                   <Email>servicedesk@ivdnt.org</Email>
 		  <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
 		  <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-		  <Url>http://www.ivdnt.org/</Url>
+		  <Url>https://www.ivdnt.org/</Url>
 	      </Contact>
 	    </Creator>
          </SoftwareDevelopment>

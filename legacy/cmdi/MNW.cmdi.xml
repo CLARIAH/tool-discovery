@@ -32,7 +32,7 @@
             <title xml:lang="nld">Middelnederlandsch Woordenboek</title>
             <title xml:lang="eng">Dictionary of Middle Dutch</title>
             <publicationYear>2009</publicationYear>
-            <url>http://gtb.ivdnt.org/</url><CLARINCentre>Dutch Language Institute</CLARINCentre>
+            <url>https://gtb.ivdnt.org/</url><CLARINCentre>Dutch Language Institute</CLARINCentre>
             <ReleaseStatus>
                <LifeCycleStatus>published</LifeCycleStatus>
                <lastUpdate>2015-12-10</lastUpdate>
@@ -123,7 +123,7 @@
                <license>unknown</license>
                <distributionType>academic</distributionType>
 	       <availability>free for academic use; non applicable for commercial parties</availability>
-               <url>http://gtb.ivdnt.org/openlaszlo/my-apps/GTB/Productie/HuidigeVersie/src/inlgtb.html</url>
+               <url>https://gtb.ivdnt.org/</url>
                <Price>
                   <amount>0</amount>
                   <ISO4217>
@@ -135,16 +135,16 @@
                <Email>servicedesk@ivdnt.org</Email>
                <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
                <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-               <Url>http://www.ivdnt.org/</Url>
+               <Url>https://www.ivdnt.org/</Url>
             </Contact>
          </Access>
          <ResourceDocumentation>
             <Documentation>
-               <title>Frequently Asked Questions</title>
+               <title>Help</title>
                <documentationTarget>user</documentationTarget>
-               <url>http://gtb.ivdnt.org/openlaszlo/my-apps/GTB/Productie/HuidigeVersie/src/faq.html</url>
+               <url>https://gtb.ivdnt.org/</url>
                <ISO639>
-                  <iso-639-3-code>eng</iso-639-3-code>
+                  <iso-639-3-code>nld</iso-639-3-code>
                </ISO639>
             </Documentation>
          </ResourceDocumentation>
@@ -153,12 +153,12 @@
                <name>GTB</name>
                <title>Geïntegreerde Taalbank Nederlands</title>
                <funder>IVDNT.ORG</funder>
-               <url>http://ivdnt.org</url>
+               <url>https://ivdnt.org</url>
                <Contact>
 		 <Email>servicedesk@ivdnt.org</Email>
 		 <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
 		 <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-		 <Url>http://www.ivdnt.org/</Url>
+		 <Url>https://www.ivdnt.org/</Url>
                </Contact>
                <Duration/>
             </Project>
@@ -168,7 +168,7 @@
                  <Email>katrien.depuydt@ivdnt.org</Email>
 		 <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
 		 <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-		 <Url>http://www.ivdnt.org/over-ons/contact/medewerkers</Url>
+		 <Url>https://www.ivdnt.org/over-ons/contact/medewerkers</Url>
                </Contact>
             </Creator>
          </SoftwareDevelopment>
