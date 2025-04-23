@@ -26,7 +26,7 @@
             <name xml:lang="eng">VU-DNC</name>
             <title xml:lang="eng">VU University Diachronic News text Corpus</title>
             <publicationYear>2013</publicationYear>
-            <url>http://portal.clarin.inl.nl/vu-dnc/</url><CLARINCentre>Dutch Language Institute</CLARINCentre><OriginalSource>http://portal.clarin.nl/node/4194</OriginalSource>
+            <url>https://portal.clarin.ivdnt.org/vu-dnc/</url><CLARINCentre>Dutch Language Institute</CLARINCentre><OriginalSource>http://portal.clarin.nl/node/4194</OriginalSource>
             <ReleaseStatus>
                <LifeCycleStatus>published</LifeCycleStatus>
                <lastUpdate>2014-10-06</lastUpdate>
@@ -118,7 +118,7 @@
             </Output>
          </SoftwareImplementation>
          <Access>
-	   <catalogueLink>https://portal.clarin.inl.nl/vu-dnc/</catalogueLink>
+	   <catalogueLink>https://portal.clarin.ivdnt.org/vu-dnc/</catalogueLink>
             <ResourceLicense>
                <license>other</license>
                <distributionType>academic</distributionType>
@@ -135,7 +135,7 @@
               <Email>servicedesk@ivdnt.org</Email>
               <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
               <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-              <Url>http://www.ivdnt.org/</Url>
+              <Url>https://www.ivdnt.org/</Url>
             </Contact>
          </Access>
          <ResourceDocumentation>
@@ -184,7 +184,7 @@
 		<Email>	laura.vaneerten@ivdnt.org</Email>
 		<Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
 		<Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-		<Url>http://www.ivdnt.org/over-ons/contact/medewerkers</Url>
+		<Url>https://www.ivdnt.org/over-ons/contact/medewerkers</Url>
 	      </Contact>
 	    </Creator>
 	    <Creator>

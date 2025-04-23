@@ -60,7 +60,7 @@
          <SoftwareImplementation>
             <distributionMedium>Download</distributionMedium>
             <distributionMedium>Online available</distributionMedium>
-			<sourcecodeURI>https://github.com/INL/OpenConvert</sourcecodeURI>
+			<sourcecodeURI>https://github.com/instituutnederlandsetaal/OpenConvert</sourcecodeURI>
             <UserInterface>
                <interfaceType>command line interface</interfaceType>
                <applicationType>local desktop</applicationType>
@@ -156,7 +156,7 @@
             <ResourceLicense>
                <license>other</license>
                <distributionType>public</distributionType>
-               <url>https://github.com/INL/OpenConvert</url>
+               <url>https://github.com/instituutnederlandsetaal/OpenConvert</url>
 	       <Description>
 		 <Description>Free for academic use. Non-applicable for commercial parties</Description>
                  <Description>CLARIN based login required. The Clarin federation accepts login from many europian institutions. please seehttp://www.clarin.eu/content/service-provider-federation for more details </Description>
@@ -172,7 +172,7 @@
                <Email>servicedesk@ivdnt.org</Email>
                <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
                <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-               <Url>http://www.ivdnt.org/</Url>
+               <Url>https://www.ivdnt.org/</Url>
             </Contact>
          </Access>
          <ResourceDocumentation>
@@ -209,7 +209,7 @@
                  <Email>jantheo.bakker@ivdnt.org</Email>
 		 <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
 		 <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-		 <Url>http://www.ivdnt.org/over-ons/contact/medewerkers</Url>
+		 <Url>https://www.ivdnt.org/over-ons/contact/medewerkers</Url>
                </Contact>
                <Duration/>
             </Project>
@@ -220,7 +220,7 @@
                  <Email>jantheo.bakker@ivdnt.org</Email>
 		 <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
 		 <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-		 <Url>http://www.ivdnt.org/over-ons/contact/medewerkers</Url>
+		 <Url>https://www.ivdnt.org/over-ons/contact/medewerkers</Url>
                </Contact>
             </Creator>
          </SoftwareDevelopment>

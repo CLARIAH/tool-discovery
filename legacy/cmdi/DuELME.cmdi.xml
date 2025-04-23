@@ -100,7 +100,7 @@
                <Email>servicedesk@ivdnt.org</Email>
                <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
                <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-               <Url>http://www.ivdnt.org/</Url>
+               <Url>https://www.ivdnt.org/</Url>
             </Contact>
          </Access>
          <ResourceDocumentation>
@@ -115,7 +115,7 @@
             <Documentation>
                <title>user documentation</title>
                <documentationTarget>user</documentationTarget>
-               <url>http://www.ivdnt.org/images/stories/producten/duelme_lmf_documentation.zip</url>
+               <url>https://www.ivdnt.org/images/stories/producten/duelme_lmf_documentation.zip</url>
                <ISO639>
                   <iso-639-3-code>eng</iso-639-3-code>
                </ISO639>

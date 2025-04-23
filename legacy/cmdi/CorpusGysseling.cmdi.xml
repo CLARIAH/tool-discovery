@@ -36,7 +36,7 @@
             <title xml:lang="eng"/>
             <owner>INL</owner>
             <publicationYear>2008</publicationYear>
-            <url>http://gysseling.corpus.taalbanknederlands.ivdnt.org/gysseling/page/search/</url><CLARINCentre>Dutch Language Institute</CLARINCentre>
+            <url>https://corpusgysseling.ivdnt.org/corpus-frontend/Gysseling/search</url><CLARINCentre>Dutch Language Institute</CLARINCentre>
             <ReleaseStatus>
                <LifeCycleStatus>published</LifeCycleStatus>
                <lastUpdate>2013-01-01</lastUpdate>
@@ -106,7 +106,7 @@
                <Email>servicedesk@ivdnt.org</Email>
                <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
                <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-               <Url>http://www.ivdnt.org/</Url>
+               <Url>https://www.ivdnt.org/</Url>
             </Contact>
          </Access>
          <ResourceDocumentation>
@@ -130,7 +130,7 @@
 		 <Email>servicedesk@ivdnt.org</Email>
 		 <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
 		 <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-		 <Url>http://www.ivdnt.org/</Url>
+		 <Url>https://www.ivdnt.org/</Url>
                </Contact>
                <Duration/>
             </Project>
@@ -141,7 +141,7 @@
                 <Email>katrien.depuydt@ivdnt.org</Email>
 		<Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
 		<Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-		<Url>http://www.ivdnt.org/over-ons/contact/medewerkers</Url>
+		<Url>https://www.ivdnt.org/over-ons/contact/medewerkers</Url>
               </Contact>
             </Creator>
          </SoftwareDevelopment>

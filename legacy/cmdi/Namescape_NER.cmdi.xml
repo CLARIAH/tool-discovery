@@ -139,7 +139,7 @@
                <Email>servicedesk@ivdnt.org</Email>
                <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
                <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-               <Url>http://www.ivdnt.org/</Url>
+               <Url>https://www.ivdnt.org/</Url>
             </Contact>
          </Access>
          <ResourceDocumentation>
@@ -221,7 +221,7 @@
 	       <Email/>
                <Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
                <Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-	       <Url>http://www.ivdnt.org/over-ons/contact/medewerkers</Url>
+	       <Url>https://www.ivdnt.org/over-ons/contact/medewerkers</Url>
             </Contact>
 	    </Creator>
 	    <Creator>
@@ -231,7 +231,7 @@
 		<Email/>
 		<Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
 		<Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-		<Url>http://www.ivdnt.org/over-ons/contact/medewerkers</Url>
+		<Url>https://www.ivdnt.org/over-ons/contact/medewerkers</Url>
               </Contact>
 	    </Creator>
 	    <Creator>
@@ -241,7 +241,7 @@
 		<Email/>
 		<Organisation xml:lang="nld">Instituut voor de Nederlandse Taal</Organisation>
 		<Organisation xml:lang="eng">Institute for the Dutch Language</Organisation>
-		<Url>http://www.ivdnt.org/over-ons/contact/medewerkers</Url>
+		<Url>https://www.ivdnt.org/over-ons/contact/medewerkers</Url>
               </Contact>
 	    </Creator>
          </SoftwareDevelopment>
