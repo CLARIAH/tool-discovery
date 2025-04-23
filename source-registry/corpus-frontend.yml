@@ -1,6 +1,6 @@
-source: https://github.com/INL/corpus-frontend
+source: https://github.com/instituutnederlandsetaal/corpus-frontend
 services:
-    - https://portal.clarin.inl.nl/autocorp/
+    - https://portal.clarin.ivdnt.org/autocorp/
       https://opensonar.ivdnt.org/
     - https://brievenalsbuit.ivdnt.org
     - https://chn.ivdnt.org/
