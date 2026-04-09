@@ -18,9 +18,9 @@ RUN apk add nginx ca-certificates runit cronie rsync py3-dotenv apache2-utils gc
         python3 -m pip install  --no-cache-dir --prefix /usr $CODEMETA2HTML_VERSION; \
     fi &&\
     if [ "$CODEMETASERVER_VERSION" = "stable" ]; then \
-        python3 -m pip install  --no-cache-dir --prefix /usr codemeta-server flask waitress; \
+        python3 -m pip install  --no-cache-dir --prefix /usr codemeta-server codemeta2mp flask waitress; \
     else \
-        python3 -m pip install  --no-cache-dir --prefix /usr $CODEMETASERVER_VERSION flask waitress; \
+        python3 -m pip install  --no-cache-dir --prefix /usr $CODEMETASERVER_VERSION codemeta2mp flask waitress; \
     fi &&\
     mkdir -p /var/www/static && cp /usr/lib/python3.*/site-packages/codemeta2html/style/* /var/www/static/ &&\
     apk del gcc libc-dev make python3-dev ; rm -Rf /root/.cache /usr/src
